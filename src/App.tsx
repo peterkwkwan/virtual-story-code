@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./theme/globalStyles";
+import { theme } from "./theme/theme";
 
 function App() {
   const [name, setName] = useState("");
@@ -18,19 +20,24 @@ function App() {
     }
   };
 
+  const Button = styled.button`
+    color: ${(props) => props.theme.color.primary};
+  `;
+
   return (
     <>
       <GlobalStyle />
-
-      <div>
-        <input
-          ref={inputRef}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button onClick={handleClick}>Focus</button>
-        <p>prev name was this is a test: {prevName.current}</p>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <input
+            ref={inputRef}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Button onClick={handleClick}>Focus</Button>
+          <p>prev name was this is a test: {prevName.current}</p>
+        </div>
+      </ThemeProvider>
     </>
   );
 }
