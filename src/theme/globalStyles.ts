@@ -6,10 +6,10 @@ const GlobalStyle = createGlobalStyle`
     src: url(public/assets/fonts/CONSOLA.TTF); 
   }
   body {
-    margin: 0;
-    padding: 0;
-    background: pink;
     font-family: Consola;
+    padding: 0;
+    margin: 0;
   }
+
 `;
 export default GlobalStyle;

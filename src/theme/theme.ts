@@ -4,7 +4,9 @@ interface Theme {
 
 const theme : Theme = {
     color: {
-        primary: 'yellow'
+        primary: 'yellow',
+        dark02: '#24201F',
+        text: '#6E6E6E',
     }
 }
 
