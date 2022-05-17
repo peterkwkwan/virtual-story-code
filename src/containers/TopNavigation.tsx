@@ -18,10 +18,11 @@ const StyledNavigation = styled.div`
   left: 0;
   display: flex;
   justify-content: space-between;
-  background-color: ${(props) => props.theme.color.dark02};
-  color: ${(props) => props.theme.color.text};
+  background-color: ${(props) => props.theme.color.dark04};
+  color: ${(props) => props.theme.color.text01};
   font-weight: 500;
   width: 100vw;
+  height: 28px;
   font-family: sans-serif;
 `;
 

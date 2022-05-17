@@ -2,8 +2,6 @@
 
 inspired by Visual Studio Code.
 
-feel free to extend features to my app.
-
 started 2022 May.
 
 Tech stack:
