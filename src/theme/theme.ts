@@ -12,13 +12,15 @@ const theme: Theme = {
     text01: "rgb(204, 204, 204)",
     text02: "rgba(204, 204, 204, 0.5)",
 
-    constColor: "#569cd6",
-    objectColor: "#4fc1ff",
-    exportColor: "#c586c0",
-    typeColor: "#4ec9b0",
-    propertyColor: "#9cdcfe",
-    stringColor: "#ce9178",
-    variableColor: "#dcdcaa",
+    constText: "#569cd6",
+    objectText: "#4fc1ff",
+    exportText: "#c586c0",
+    typeText: "#4ec9b0",
+    propertyText: "#9cdcfe",
+    stringText: "#ce9178",
+    variableText: "#dcdcaa",
+
+    buttonFocus: 'rgba(193, 192, 192, 0.05)'
   },
 };
 
