@@ -12,7 +12,7 @@ function App() {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <TopNavigation />
-        <div style={{ display: "flex", height: "calc(100vh - 28px)" }}>
+        <div style={{ display: "flex", height: "calc(100vh - 56px)" }}>
           <SideNavigation />
           <Content />
         </div>
