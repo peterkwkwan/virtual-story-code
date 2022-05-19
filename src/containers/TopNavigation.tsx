@@ -15,6 +15,17 @@ const navOptions = [
   { name: "Help" },
 ];
 
+enum Actions {
+  CLOSE = "close",
+  MINIMIZE = "minimize",
+  EXPAND = "expand",
+}
+const actionsBtns = [
+  { name: Actions.CLOSE },
+  { name: Actions.MINIMIZE },
+  { name: Actions.EXPAND },
+];
+
 const StyledNavigation = styled.div`
   position: relative;
   top: 0;
@@ -37,6 +48,51 @@ const StyledList = styled.ul`
     align-self: center;
     :nth-of-type(1) {
       font-weight: 600;
+    }
+  }
+`;
+
+const StyledActionBtn = styled.span`
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  border-radius: 50%;
+  &:nth-of-type(1) {
+    margin-left: 8px;
+    background-color: #f55549;
+  }
+  &:nth-of-type(2) {
+    background-color: #f5c11b;
+  }
+  &:nth-of-type(3) {
+    background-color: #51d66a;
+  }
+`;
+
+const ActionBtnContainer = styled.div`
+  display: flex;
+  span:after {
+    color: #3b3b3b;
+    position: relative;
+  }
+
+  &:hover {
+    span:nth-of-type(1):after {
+      content: "x";
+      font-size: 11px;
+      font-weight: 300;
+      left: 3px;
+      top: -4.5px;
+    }
+    span:nth-of-type(2):after {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 2px;
+      top: 5px;
+      left: 2px;
+      background-color: #5e5e5e;
     }
   }
 `;
@@ -77,6 +133,20 @@ const TopNavigation = () => {
     }
   };
 
+  const handleActionClick = (action: string) => {
+    if (action === Actions.CLOSE) {
+      window.close();
+      if (
+        window.confirm(
+          'Originally, this button was intended to close the current browser tab (my portfolio website). Unfortunately, I cannot close the tab as browsers have a security feature to prevent this from happening with Javascript. If you click "OK" you would be redirected to the Stack Overflow page explaining this security enhancement.'
+        )
+      ) {
+        window.location.href =
+          "https://stackoverflow.com/questions/25937212/window-close-doesnt-work-scripts-may-close-only-the-windows-that-were-opene";
+      }
+    }
+  };
+
   return (
     <StyledNavigation>
       <Box gradient={gradient}>
@@ -91,7 +161,16 @@ const TopNavigation = () => {
         </StyledList>
       </Box>
       <Box>
-        <StyledList></StyledList>
+        <StyledList>
+          <ActionBtnContainer>
+            {actionsBtns.map((btn) => (
+              <StyledActionBtn
+                key={btn.name}
+                onClick={() => handleActionClick(btn.name)}
+              />
+            ))}
+          </ActionBtnContainer>
+        </StyledList>
         <p style={{ position: "fixed", left: "50%", margin: 0 }}>
           virtual-story-code
         </p>
