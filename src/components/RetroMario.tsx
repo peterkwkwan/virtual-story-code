@@ -20,6 +20,7 @@ const StyledMario = styled.img<MarioProps>`
   width: 16px;
   height: 16px;
   margin: 0 16px;
+  cursor: pointer;
   animation: ${(props) => props.marioIsJumping && "jump 1s linear alternate"};
 `;
 
@@ -28,25 +29,30 @@ const marioJumpingSrc = "../../public/assets/icons/mario-jumping.png";
 
 interface Props {
   handleMarioJump: () => void;
+  marioIsJumping: boolean;
 }
-export const RetroMario = ({ handleMarioJump }: Props) => {
+export const RetroMario = ({ handleMarioJump, marioIsJumping }: Props) => {
   const [marioSrc, setMarioSrc] = useState(marioInitSrc);
-  const [marioIsJumping, setMarioIsJumping] = useState(false);
 
   const handleMouseEnter = () => {
-    setMarioSrc(marioJumpingSrc);
-    setMarioIsJumping(true);
-    handleMarioJump();
-    setTimeout(() => {
-      setMarioSrc(marioInitSrc);
-      setMarioIsJumping(false);
-    }, 1000);
+    if (!marioIsJumping) {
+      setMarioSrc(marioJumpingSrc);
+      handleMarioJump();
+      setTimeout(() => {
+        setMarioSrc(marioInitSrc);
+      }, 1000);
+    }
+  };
+
+  const handleClick = () => {
+    window.open("https://supermario-game.com/", "_blank");
   };
 
   return (
     <StyledMario
       src={marioSrc}
       onMouseOver={handleMouseEnter}
+      onClick={handleClick}
       marioIsJumping={marioIsJumping}
     />
   );

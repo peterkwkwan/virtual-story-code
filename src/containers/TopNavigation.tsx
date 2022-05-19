@@ -44,6 +44,7 @@ const StyledList = styled.ul`
 const Box = styled.div<{ gradient?: boolean }>`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 28px;
   &:nth-of-type(1) {
@@ -62,18 +63,28 @@ const Box = styled.div<{ gradient?: boolean }>`
 
 const TopNavigation = () => {
   const [gradient, setGradient] = useState(false);
+  const [marioIsJumping, setMarioIsJumping] = useState(false);
 
   const handleMarioJump = () => {
-    setTimeout(() => {
-      setGradient((prevState) => !prevState);
-    }, 500);
+    if (!marioIsJumping) {
+      setMarioIsJumping(true);
+      setTimeout(() => {
+        setGradient((prevState) => !prevState);
+      }, 500);
+      setTimeout(() => {
+        setMarioIsJumping(false);
+      }, 1000);
+    }
   };
 
   return (
     <StyledNavigation>
       <Box gradient={gradient}>
         <StyledList>
-          <RetroMario handleMarioJump={handleMarioJump} />
+          <RetroMario
+            handleMarioJump={handleMarioJump}
+            marioIsJumping={marioIsJumping}
+          />
           {navOptions.map((option) => (
             <li key={option.name}>{option.name}</li>
           ))}
