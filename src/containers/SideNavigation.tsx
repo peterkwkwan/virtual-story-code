@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Folder } from "../components/Folder";
 import { FolderNames, IFolderStructure } from "../shared/types";
-
-const Sidebar = styled.aside`
-  background-color: ${(props) => props.theme.color.dark02};
-  height: 100%;
-  width: 48px;
-`;
+import { SidebarBtnContainer } from "./SidebarBtnContainer";
 
 const Explorer = styled.aside`
   background-color: ${(props) => props.theme.color.dark03};
@@ -107,7 +102,7 @@ const SideNavigation = () => {
 
   return (
     <div style={{ display: "flex", height: "100%" }}>
-      <Sidebar />
+      <SidebarBtnContainer />
       <Explorer>
         <StyledHeaderBtn onClick={handleToggle} show={show}>
           VIRTUAL-STORY-CODE

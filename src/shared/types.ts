@@ -9,3 +9,15 @@ export interface FolderContent {
   files?: { title: string }[];
 }
 export type IFolderStructure = Record<FolderNames, FolderContent>;
+
+export enum Actions {
+  CLOSE = "close",
+  MINIMIZE = "minimize",
+  EXPAND = "expand",
+}
+
+export enum TrafficLightColors {
+  RED = "#f55549",
+  YELLOW = "#f5c11b",
+  GREEN = "#51d66a",
+}
