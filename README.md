@@ -1,8 +1,8 @@
 ## virtual story code
 
-inspired by Visual Studio Code. fueled by passion.
+welcome to my virtual story.
 
-started 2022 May.
+journey started 2017 December.
 
 Tech stack:
 
