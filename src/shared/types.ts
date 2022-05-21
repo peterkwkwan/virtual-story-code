@@ -21,3 +21,10 @@ export enum TrafficLightColors {
   YELLOW = "#f5c11b",
   GREEN = "#51d66a",
 }
+
+export enum SidebarOptions {
+  EXPLORER = "Explorer",
+  SEARCH = "Search",
+  GIT = "Git",
+  EXTENSIONS = "Extensions",
+}

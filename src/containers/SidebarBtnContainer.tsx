@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SidebarOptions } from "../shared/types";
 
 const Sidebar = styled.aside`
   background-color: ${(props) => props.theme.color.dark02};
@@ -22,16 +23,20 @@ const SidebarButtons = styled.button`
 
 const buttons = [
   {
-    title: "Explorer",
-    src: "../../public/assets/icons/explorer-sidebar-icon.svg",
+    title: SidebarOptions.EXPLORER,
+    src: "../../public/assets/icons/sidebar/explorer-btn.svg",
   },
   {
-    title: "Explorer",
-    src: "../../public/assets/icons/explorer-sidebar-icon.svg",
+    title: SidebarOptions.SEARCH,
+    src: "../../public/assets/icons/sidebar/search-btn.svg",
   },
   {
-    title: "Explorer",
-    src: "../../public/assets/icons/explorer-sidebar-icon.svg",
+    title: SidebarOptions.GIT,
+    src: "../../public/assets/icons/sidebar/git-btn.svg",
+  },
+  {
+    title: SidebarOptions.EXTENSIONS,
+    src: "../../public/assets/icons/sidebar/extensions-btn.svg",
   },
 ];
 
