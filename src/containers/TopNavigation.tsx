@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { MarioKart } from "../components/MarioKart";
 import { RetroMario } from "../components/RetroMario";
 
 const navOptions = [
@@ -20,10 +21,17 @@ enum Actions {
   MINIMIZE = "minimize",
   EXPAND = "expand",
 }
+
+enum TrafficLightColors {
+  RED = "#f55549",
+  YELLOW = "#f5c11b",
+  GREEN = "#51d66a",
+}
+
 const actionsBtns = [
-  { name: Actions.CLOSE },
-  { name: Actions.MINIMIZE },
-  { name: Actions.EXPAND },
+  { name: Actions.CLOSE, btnColor: TrafficLightColors.RED },
+  { name: Actions.MINIMIZE, btnColor: TrafficLightColors.YELLOW },
+  { name: Actions.EXPAND, btnColor: TrafficLightColors.GREEN },
 ];
 
 const StyledNavigation = styled.div`
@@ -52,22 +60,48 @@ const StyledList = styled.ul`
   }
 `;
 
-const StyledActionBtn = styled.span`
-  content: "";
+const trafficLightAnimation = (actionType: Actions) => keyframes`
+  0% {
+    background-color: ${TrafficLightColors.RED};
+  }
+  33% {
+    background-color: ${
+      actionType === Actions.CLOSE ? TrafficLightColors.RED : "#1e1e1e"
+    };
+  }
+  66% {
+    background-color: ${
+      actionType === Actions.MINIMIZE ? TrafficLightColors.YELLOW : "#1e1e1e"
+    };
+  }
+  100% {
+    background-color: ${
+      actionType === Actions.EXPAND ? TrafficLightColors.GREEN : "#1e1e1e"
+    };
+  }
+
+`;
+
+const animationRule = (actionType: Actions) => {
+  return css(
+    ["", " 3s steps(1, start)"] as any as TemplateStringsArray,
+    trafficLightAnimation(actionType)
+  );
+};
+
+const StyledActionBtn = styled.span<{
+  marioKartIsRacing: boolean;
+  name: Actions;
+  btnColor: string;
+}>`
+  content: ${(props) => props.name};
   width: 12px;
   height: 12px;
   margin: 0 4px;
   border-radius: 50%;
-  &:nth-of-type(1) {
-    margin-left: 8px;
-    background-color: #f55549;
-  }
-  &:nth-of-type(2) {
-    background-color: #f5c11b;
-  }
-  &:nth-of-type(3) {
-    background-color: #51d66a;
-  }
+  z-index: 1;
+  background-color: ${(props) => props.btnColor};
+  animation: ${(props) => props.marioKartIsRacing && animationRule(props.name)};
 `;
 
 const ActionBtnContainer = styled.div`
@@ -81,9 +115,8 @@ const ActionBtnContainer = styled.div`
     span:nth-of-type(1):after {
       content: "x";
       font-size: 11px;
-      font-weight: 300;
       left: 3px;
-      top: -4.5px;
+      top: -4px;
     }
     span:nth-of-type(2):after {
       display: block;
@@ -93,6 +126,28 @@ const ActionBtnContainer = styled.div`
       top: 5px;
       left: 2px;
       background-color: #5e5e5e;
+    }
+    span:nth-of-type(3):before {
+      content: "";
+      border-color: transparent transparent #5e5e5e transparent;
+      border-style: solid;
+      border-width: 0px 3px 3px;
+      top: -7.5px;
+      left: 1.5px;
+      position: relative;
+      display: inline-block;
+      transform: rotate(0.9turn);
+    }
+    span:nth-of-type(3):after {
+      content: "";
+      border-color: transparent transparent #5e5e5e transparent;
+      border-style: solid;
+      border-width: 0px 3px 3px;
+      top: -2.5px;
+      left: -1.5px;
+      position: relative;
+      display: inline-block;
+      transform: rotate(0.4turn);
     }
   }
 `;
@@ -120,6 +175,7 @@ const Box = styled.div<{ gradient?: boolean }>`
 const TopNavigation = () => {
   const [gradient, setGradient] = useState(false);
   const [marioIsJumping, setMarioIsJumping] = useState(false);
+  const [marioKartIsRacing, setMarioKartIsRacing] = useState(false);
 
   const handleMarioJump = () => {
     if (!marioIsJumping) {
@@ -133,18 +189,11 @@ const TopNavigation = () => {
     }
   };
 
-  const handleActionClick = (action: string) => {
-    if (action === Actions.CLOSE) {
-      window.close();
-      if (
-        window.confirm(
-          'Originally, this button was intended to close the current browser tab (my portfolio website). Unfortunately, I cannot close the tab as browsers have a security feature to prevent this from happening with Javascript. If you click "OK" you would be redirected to the Stack Overflow page explaining this security enhancement.'
-        )
-      ) {
-        window.location.href =
-          "https://stackoverflow.com/questions/25937212/window-close-doesnt-work-scripts-may-close-only-the-windows-that-were-opene";
-      }
-    }
+  const handleActionClick = () => {
+    setMarioKartIsRacing(true);
+    setTimeout(() => {
+      setMarioKartIsRacing(false);
+    }, 17000);
   };
 
   return (
@@ -154,6 +203,7 @@ const TopNavigation = () => {
           <RetroMario
             handleMarioJump={handleMarioJump}
             marioIsJumping={marioIsJumping}
+            marioKartIsRacing={marioKartIsRacing}
           />
           {navOptions.map((option) => (
             <li key={option.name}>{option.name}</li>
@@ -166,11 +216,15 @@ const TopNavigation = () => {
             {actionsBtns.map((btn) => (
               <StyledActionBtn
                 key={btn.name}
-                onClick={() => handleActionClick(btn.name)}
+                onClick={handleActionClick}
+                marioKartIsRacing={marioKartIsRacing}
+                name={btn.name}
+                btnColor={btn.btnColor}
               />
             ))}
           </ActionBtnContainer>
         </StyledList>
+        <MarioKart marioKartIsRacing={marioKartIsRacing} />
         <p style={{ position: "fixed", left: "50%", margin: 0 }}>
           virtual-story-code
         </p>

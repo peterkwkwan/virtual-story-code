@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-interface MarioProps {
-  marioIsJumping: boolean;
-}
-
-const StyledMario = styled.img<MarioProps>`
+const StyledMario = styled.img<{ marioIsJumping: boolean }>`
   @keyframes jump {
     0% {
       transform: translateY(0px);
@@ -30,11 +26,17 @@ const marioJumpingSrc = "../../public/assets/icons/mario-jumping.png";
 interface Props {
   handleMarioJump: () => void;
   marioIsJumping: boolean;
+  marioKartIsRacing: boolean;
 }
-export const RetroMario = ({ handleMarioJump, marioIsJumping }: Props) => {
+export const RetroMario = ({
+  handleMarioJump,
+  marioIsJumping,
+  marioKartIsRacing,
+}: Props) => {
   const [marioSrc, setMarioSrc] = useState(marioInitSrc);
 
   const handleMouseEnter = () => {
+    if (marioKartIsRacing) return;
     if (!marioIsJumping) {
       setMarioSrc(marioJumpingSrc);
       handleMarioJump();
