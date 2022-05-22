@@ -90,7 +90,7 @@ const TopNavigation = () => {
   };
 
   const renderCurrentFile = () => {
-    return file && `${file} —`;
+    return file.title && `${file.title} —`;
   };
 
   return (

@@ -4,9 +4,13 @@ export enum FolderNames {
   EDUCATION = "education",
 }
 
+export interface File {
+  title: string;
+  url: string;
+}
 export interface FolderContent {
   opened: boolean;
-  files?: { title: string }[];
+  files?: File[];
 }
 export type IFolderStructure = Record<FolderNames, FolderContent>;
 

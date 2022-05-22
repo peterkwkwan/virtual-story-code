@@ -37,20 +37,20 @@ const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
-      { title: "Serai.tsx" },
-      { title: "PAG.tsx" },
-      { title: "Manulife.tsx" },
-      { title: "Acuris.scss" },
-      { title: "Coleman.scss" },
-      { title: "CathayDragon.test" },
+      { title: "Serai.tsx", url: "serai" },
+      { title: "PAG.tsx", url: "pag" },
+      { title: "Manulife.tsx", url: "manulife" },
+      { title: "Acuris.scss", url: "acuris" },
+      { title: "Coleman.scss", url: "coleman" },
+      { title: "CathayDragon.test", url: "cathay" },
     ],
   },
   [FolderNames.EDUCATION]: {
     opened: true,
     files: [
-      { title: "McGill.html" },
-      { title: "HKU.html" },
-      { title: "BurnabyNorth.md" },
+      { title: "McGill.html", url: "mcgill" },
+      { title: "HKU.html", url: "HKU" },
+      { title: "BurnabyNorth.md", url: "bbynorth" },
     ],
   },
 };

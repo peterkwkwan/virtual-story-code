@@ -5,9 +5,9 @@ import { useIcon } from "../utils/useGetIconPath";
 
 interface Props {
   title: string;
+  url: string;
   selected?: boolean;
   icon?: unknown;
-  url?: string;
 }
 
 const StyledButton = styled.button<Props>`
@@ -38,7 +38,7 @@ export const ExplorerButton = (props: Props) => {
   const iconPath = useIcon(rest.title);
 
   const handleClick = () => {
-    setFile(rest.title);
+    setFile({ title: rest.title, url: rest.url });
   };
 
   return (

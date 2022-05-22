@@ -63,7 +63,7 @@ export const Folder = ({ folder, name, onFolderClick }: FolderProps) => {
       </FolderButton>
       <FolderContents opened={folder.opened}>
         {folder.files?.map((file) => {
-          return <ExplorerButton title={file.title} key={file.title} />;
+          return <ExplorerButton {...file} key={file.title} />;
         })}
       </FolderContents>
     </>
