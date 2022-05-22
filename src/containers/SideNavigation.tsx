@@ -1,11 +1,11 @@
 import React from "react";
 import { Explorer } from "./Explorer";
-import { SidebarBtnContainer } from "./SidebarBtnContainer";
+import { SidebarBtns } from "./SidebarBtns";
 
 const SideNavigation = () => {
   return (
     <div style={{ display: "flex", height: "100%" }}>
-      <SidebarBtnContainer />
+      <SidebarBtns />
       <Explorer />
     </div>
   );

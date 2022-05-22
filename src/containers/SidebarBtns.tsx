@@ -40,7 +40,7 @@ const buttons = [
   },
 ];
 
-export const SidebarBtnContainer = () => {
+export const SidebarBtns = () => {
   return (
     <Sidebar>
       <ButtonUnorderedList>
