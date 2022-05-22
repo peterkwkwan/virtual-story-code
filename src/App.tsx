@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { Content } from "./containers/Content";
 import { SideNavigation } from "./containers/SideNavigation";
 import { TopNavigation } from "./containers/TopNavigation";
@@ -21,7 +22,7 @@ function App() {
   const [file, setFile] = useState(initFile);
 
   return (
-    <>
+    <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
@@ -32,7 +33,7 @@ function App() {
           </div>
         </ThemeProvider>
       </ExplorerContext.Provider>
-    </>
+    </BrowserRouter>
   );
 }
 

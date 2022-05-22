@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { ExplorerButton } from "../components/ExplorerButton";
 import { Folder } from "../components/Folder";
 import { FolderNames, IFolderStructure } from "../shared/types";
 
@@ -37,23 +38,41 @@ const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
-      { title: "Serai.tsx", url: "serai" },
-      { title: "PAG.tsx", url: "pag" },
-      { title: "Manulife.tsx", url: "manulife" },
-      { title: "Acuris.scss", url: "acuris" },
-      { title: "Coleman.scss", url: "coleman" },
-      { title: "CathayDragon.test", url: "cathay" },
+      { title: "Serai.tsx", path: "explorer/serai" },
+      { title: "PAG.tsx", path: "explorer/pag" },
+      { title: "Manulife.tsx", path: "explorer/manulife" },
+      { title: "Acuris.scss", path: "explorer/acuris" },
+      { title: "Coleman.scss", path: "explorer/coleman" },
+      { title: "CathayDragon.test", path: "explorer/cathay" },
     ],
   },
   [FolderNames.EDUCATION]: {
     opened: true,
     files: [
-      { title: "McGill.html", url: "mcgill" },
-      { title: "HKU.html", url: "HKU" },
-      { title: "BurnabyNorth.md", url: "bbynorth" },
+      { title: "McGill.html", path: "explorer/mcgill" },
+      { title: "HKU.html", path: "explorer/HKU" },
+      { title: "BurnabyNorth.md", path: "explorer/bbynorth" },
     ],
   },
 };
+
+const rootFiles = [
+  {
+    title: "README.md",
+    path: "explorer/readme",
+    isRoot: true,
+  },
+  {
+    title: "package.json",
+    path: "explorer/packageJson",
+    isRoot: true,
+  },
+  {
+    title: ".gitignore",
+    path: "explorer/gitignore",
+    isRoot: true,
+  },
+];
 
 export const Explorer = () => {
   const [explorerFolders, setExplorerFolders] = useState(initFolders);
@@ -107,6 +126,9 @@ export const Explorer = () => {
       </StyledHeaderBtn>
 
       {show && folders()}
+      {rootFiles.map((rootFile) => {
+        return <ExplorerButton {...rootFile} />;
+      })}
     </ExplorerContainer>
   );
 };

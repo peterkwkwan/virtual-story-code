@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { StyledLink } from "../components/StyledLink";
 import { SidebarOptions } from "../shared/types";
 
 const Sidebar = styled.aside`
@@ -25,18 +26,22 @@ const buttons = [
   {
     title: SidebarOptions.EXPLORER,
     src: "../../public/assets/icons/sidebar/explorer-btn.svg",
+    path: "explorer",
   },
   {
     title: SidebarOptions.SEARCH,
     src: "../../public/assets/icons/sidebar/search-btn.svg",
+    path: "search",
   },
   {
     title: SidebarOptions.GIT,
     src: "../../public/assets/icons/sidebar/git-btn.svg",
+    path: "git",
   },
   {
     title: SidebarOptions.EXTENSIONS,
     src: "../../public/assets/icons/sidebar/extensions-btn.svg",
+    path: "extensions",
   },
 ];
 
@@ -45,9 +50,11 @@ export const SidebarBtns = () => {
     <Sidebar>
       <ButtonUnorderedList>
         {buttons.map((btn) => (
-          <SidebarButtons key={btn.title}>
-            <img src={btn.src} />
-          </SidebarButtons>
+          <StyledLink key={btn.title} path={btn.path}>
+            <SidebarButtons key={btn.title}>
+              <img src={btn.src} />
+            </SidebarButtons>
+          </StyledLink>
         ))}
       </ButtonUnorderedList>
     </Sidebar>

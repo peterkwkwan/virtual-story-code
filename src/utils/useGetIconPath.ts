@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 export const useIcon = (value: string) => {
   const suffix = value.split(".").pop();
 
-  console.log(suffix);
   let pathName = "";
 
   switch (suffix) {
@@ -21,6 +20,9 @@ export const useIcon = (value: string) => {
       break;
     case "test":
       pathName = "../../public/assets/icons/test.svg";
+      break;
+    case "json":
+      pathName = "../../public/assets/icons/json.svg";
       break;
     default:
       pathName = "../../public/assets/icons/git.svg";

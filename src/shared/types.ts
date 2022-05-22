@@ -6,7 +6,7 @@ export enum FolderNames {
 
 export interface File {
   title: string;
-  url: string;
+  path: string;
 }
 export interface FolderContent {
   opened: boolean;
