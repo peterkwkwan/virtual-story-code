@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ExplorerContext } from "../App";
 import { useIcon } from "../utils/useGetIconPath";
 
 interface Props {
@@ -31,11 +32,17 @@ const StyledButton = styled.button<Props>`
 
 export const ExplorerButton = (props: Props) => {
   const { selected, ...rest } = props;
+  const { currentFile } = useContext(ExplorerContext);
+  const [, setFile] = currentFile;
 
   const iconPath = useIcon(rest.title);
 
+  const handleClick = () => {
+    setFile(rest.title);
+  };
+
   return (
-    <StyledButton selected={selected} {...rest}>
+    <StyledButton selected={selected} {...rest} onClick={handleClick}>
       <img style={{ width: 16, height: 16, marginRight: 4 }} src={iconPath} />
       {rest.title}
     </StyledButton>

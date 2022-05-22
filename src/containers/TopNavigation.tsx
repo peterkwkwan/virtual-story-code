@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
+import { ExplorerContext } from "../App";
 import { ActionButtons } from "../components/ActionButtons";
 import { MarioKart } from "../components/MarioKart";
 import { RetroMario } from "../components/RetroMario";
@@ -67,7 +68,8 @@ const TopNavigation = () => {
   const [gradient, setGradient] = useState(false);
   const [marioIsJumping, setMarioIsJumping] = useState(false);
   const [marioKartIsRacing, setMarioKartIsRacing] = useState(false);
-
+  const { currentFile } = useContext(ExplorerContext);
+  const [file] = currentFile;
   const handleMarioJump = () => {
     if (!marioIsJumping) {
       setMarioIsJumping(true);
@@ -85,6 +87,10 @@ const TopNavigation = () => {
     setTimeout(() => {
       setMarioKartIsRacing(false);
     }, 17000);
+  };
+
+  const renderCurrentFile = () => {
+    return file && `${file} —`;
   };
 
   return (
@@ -108,7 +114,7 @@ const TopNavigation = () => {
         />
         <MarioKart marioKartIsRacing={marioKartIsRacing} />
         <p style={{ position: "fixed", left: "50%", margin: 0 }}>
-          virtual-story-code
+          {renderCurrentFile()} virtual-story-code
         </p>
         <img height="32" src="../../public/assets/icons/link.png" />
       </Box>

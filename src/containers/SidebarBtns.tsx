@@ -45,7 +45,7 @@ export const SidebarBtns = () => {
     <Sidebar>
       <ButtonUnorderedList>
         {buttons.map((btn) => (
-          <SidebarButtons>
+          <SidebarButtons key={btn.title}>
             <img src={btn.src} />
           </SidebarButtons>
         ))}
