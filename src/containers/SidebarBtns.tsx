@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { StyledLink } from "../components/StyledLink";
 import { SidebarOptions } from "../shared/types";
@@ -11,15 +12,19 @@ const Sidebar = styled.aside`
 
 const ButtonUnorderedList = styled.ul`
   margin: 0;
-  padding: 4px 0 0;
+  padding: 0;
 `;
 
-const SidebarButtons = styled.button`
+const SidebarButtons = styled.button<{ selected: Boolean }>`
   border: none;
   background-color: inherit;
   cursor: pointer;
-  width: 48px;
+  width: ${(props) => (props.selected ? "46px" : "48px")};
   height: 48px;
+  border-left: ${(props) => props.selected && "2px solid white"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const buttons = [
@@ -46,12 +51,17 @@ const buttons = [
 ];
 
 export const SidebarBtns = () => {
+  const { pathname } = useLocation();
+
   return (
     <Sidebar>
       <ButtonUnorderedList>
         {buttons.map((btn) => (
           <StyledLink key={btn.title} path={btn.path}>
-            <SidebarButtons key={btn.title}>
+            <SidebarButtons
+              key={btn.title}
+              selected={pathname.includes(btn.path)}
+            >
               <img src={btn.src} />
             </SidebarButtons>
           </StyledLink>

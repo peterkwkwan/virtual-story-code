@@ -127,7 +127,7 @@ export const Explorer = () => {
 
       {show && folders()}
       {rootFiles.map((rootFile) => {
-        return <ExplorerButton {...rootFile} />;
+        return <ExplorerButton key={rootFile.title} {...rootFile} />;
       })}
     </ExplorerContainer>
   );

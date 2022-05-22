@@ -7,7 +7,7 @@ interface Props {
 
 const Container = styled.div<{ marioKartIsRacing: boolean }>`
   position: relative;
-  visibility: ${(props) => (props.marioKartIsRacing ? "visible" : "hidden")};
+  display: ${(props) => (props.marioKartIsRacing ? "block" : "none")};
   align-items: flex-end;
   width: calc(100% - 124px);
 `;
