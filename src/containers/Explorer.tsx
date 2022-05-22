@@ -24,7 +24,7 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   cursor: pointer;
   background-color: ${(props) => props.theme.color.dark03};
   &:before {
-    content: url("../../public/assets/icons/arrow.svg");
+    content: url("../../assets/icons/arrow.svg");
     display: inline-block;
     transform: ${(props) => props.show && "rotate(90deg)"};
     margin-right: 4px;

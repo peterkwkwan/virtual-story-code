@@ -32,7 +32,7 @@ const FolderButton = styled.button<StyledFolder>`
   cursor: pointer;
   padding-left: 16px;
   &:before {
-    content: url("../../public/assets/icons/arrow.svg");
+    content: url("../../assets/icons/arrow.svg");
     display: inline-block;
     transform: ${(props) => props.opened && "rotate(90deg)"};
     margin-right: 4px;

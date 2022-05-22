@@ -93,6 +93,10 @@ const TopNavigation = () => {
     return file.title && `${file.title} —`;
   };
 
+  const handleZeldaClick = () => {
+    window.open("https://en.wikipedia.org/wiki/The_Legend_of_Zelda", "_blank");
+  };
+
   return (
     <StyledNavigation>
       <Box gradient={gradient}>
@@ -116,7 +120,13 @@ const TopNavigation = () => {
         <p style={{ position: "fixed", left: "50%", margin: 0 }}>
           {renderCurrentFile()} virtual-story-code
         </p>
-        <img height="32" src="../../public/assets/icons/link.png" />
+
+        <img
+          height="32"
+          style={{ cursor: "pointer" }}
+          src="../../assets/icons/link.png"
+          onClick={handleZeldaClick}
+        />
       </Box>
     </StyledNavigation>
   );

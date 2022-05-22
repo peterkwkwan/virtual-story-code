@@ -67,13 +67,10 @@ export const MarioKart = ({ marioKartIsRacing }: Props) => {
     <Container marioKartIsRacing={marioKartIsRacing}>
       {MKRacers.map((racer) => {
         return (
-          <Sprite
-            key={racer}
-            src={`../../public/assets/icons/${racer}-mk.png`}
-          />
+          <Sprite key={racer} src={`../../assets/icons/${racer}-mk.png`} />
         );
       })}
-      <Pipe src="../../public/assets/icons/mario-pipe.png" />
+      <Pipe src="../../assets/icons/mario-pipe.png" />
     </Container>
   );
 };

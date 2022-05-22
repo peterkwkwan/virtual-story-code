@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Consola';
-    src: url(public/assets/fonts/CONSOLA.TTF); 
+    src: url(/assets/fonts/CONSOLA.TTF); 
   }
   body {
     font-family: Consola;
