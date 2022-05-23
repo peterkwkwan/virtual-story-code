@@ -1,6 +1,6 @@
 ## virtual story code
 
-welcome to my virtual story.
+this is my virtual story.
 
 journey started 2017 December.
 

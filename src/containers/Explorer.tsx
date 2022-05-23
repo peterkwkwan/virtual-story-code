@@ -126,9 +126,10 @@ export const Explorer = () => {
       </StyledHeaderBtn>
 
       {show && folders()}
-      {rootFiles.map((rootFile) => {
-        return <ExplorerButton key={rootFile.title} {...rootFile} />;
-      })}
+      {show &&
+        rootFiles.map((rootFile) => {
+          return <ExplorerButton key={rootFile.title} {...rootFile} />;
+        })}
     </ExplorerContainer>
   );
 };

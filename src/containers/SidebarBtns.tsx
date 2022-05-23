@@ -60,7 +60,7 @@ export const SidebarBtns = () => {
           <StyledLink key={btn.title} path={btn.path}>
             <SidebarButtons
               key={btn.title}
-              selected={pathname.includes(btn.path)}
+              selected={pathname.split("/")[1].includes(btn.path)}
             >
               <img src={btn.src} />
             </SidebarButtons>
