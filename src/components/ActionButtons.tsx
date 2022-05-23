@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
+import { Actions, TrafficLightColors } from "../constants";
 import { StyledList } from "../containers/TopNavigation";
-import { Actions, TrafficLightColors } from "../shared/types";
 
 const ActionBtnContainer = styled.div`
   display: flex;
