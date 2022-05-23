@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { ExplorerContext } from "../App";
-import { useIcon } from "../utils/useGetIconPath";
+import { useIcon } from "../utils/useIcon";
 import { StyledLink } from "./StyledLink";
 
 interface Props {
