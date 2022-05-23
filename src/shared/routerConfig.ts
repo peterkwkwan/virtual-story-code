@@ -1,4 +1,6 @@
 import { Acuris } from "../components/explorer-pages/Acuris";
+import { CathayDragon } from "../components/explorer-pages/CathayDragon";
+import { Coleman } from "../components/explorer-pages/Coleman";
 import { Manulife } from "../components/explorer-pages/Manulife";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Serai } from "../components/explorer-pages/Serai";
@@ -35,10 +37,10 @@ export const routerConfig: RouterConfig[] = [
   },
   {
     path: PagePaths.COLEMAN,
-    component: Acuris,
+    component: Coleman,
   },
   {
     path: PagePaths.CATHAY,
-    component: Acuris,
+    component: CathayDragon,
   },
 ];

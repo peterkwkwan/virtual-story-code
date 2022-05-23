@@ -11,6 +11,8 @@ const theme: Theme = {
 
     text01: "rgb(204, 204, 204)",
     text02: "rgba(204, 204, 204, 0.5)",
+    lineNumberText: "#858585",
+    contributors: "#999",
 
     constText: "#569cd6",
     objectText: "#4fc1ff",
@@ -20,7 +22,7 @@ const theme: Theme = {
     stringText: "#ce9178",
     variableText: "#dcdcaa",
 
-    buttonFocus: 'rgba(193, 192, 192, 0.05)'
+    buttonFocus: "rgba(193, 192, 192, 0.05)",
   },
 };
 

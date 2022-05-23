@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ExplorerButton } from "../components/ExplorerButton";
 import { Folder } from "../components/Folder";
-import { FolderNames, IFolderStructure } from "../shared/types";
+import { FolderNames } from "../constants";
+import { IFolderStructure } from "../shared/types";
 
 const ExplorerContainer = styled.aside`
   background-color: ${(props) => props.theme.color.dark03};
