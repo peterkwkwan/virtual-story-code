@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { StyledLink } from "../components/StyledLink";
-import { SidebarOptions } from "../shared/types";
+import { SidebarOptions } from "../constants";
 
 const Sidebar = styled.aside`
   background-color: ${(props) => props.theme.color.dark02};

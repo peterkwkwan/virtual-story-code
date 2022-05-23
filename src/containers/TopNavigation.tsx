@@ -4,7 +4,6 @@ import { ExplorerContext } from "../App";
 import { ActionButtons } from "../components/ActionButtons";
 import { MarioKart } from "../components/MarioKart";
 import { RetroMario } from "../components/RetroMario";
-import { Actions, TrafficLightColors } from "../shared/types";
 
 const navOptions = [
   { name: "Code" },

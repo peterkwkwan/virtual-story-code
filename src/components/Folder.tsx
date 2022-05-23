@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FolderNames, FolderContent } from "../shared/types";
+import { FolderNames } from "../constants";
+import { FolderContent } from "../shared/types";
 import { ExplorerButton } from "./ExplorerButton";
 
 interface FolderProps {
