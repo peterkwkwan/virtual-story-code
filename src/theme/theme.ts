@@ -16,7 +16,7 @@ const theme: Theme = {
 
     constText: "#569cd6",
     objectText: "#4fc1ff",
-    exportText: "#c586c0",
+    importExportText: "#c586c0",
     typeText: "#4ec9b0",
     propertyText: "#9cdcfe",
     stringText: "#ce9178",
