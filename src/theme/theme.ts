@@ -14,7 +14,7 @@ const theme: Theme = {
     lineNumberText: "#858585",
     contributors: "#999",
 
-    constText: "#569cd6",
+    declarationText: "#569cd6",
     objectText: "#4fc1ff",
     importExportText: "#c586c0",
     typeText: "#4ec9b0",

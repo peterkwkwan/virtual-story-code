@@ -1,4 +1,5 @@
 import React from "react";
+import { DeclarationText, ImportExportText, VariableText } from "./StyledText";
 
 export interface IJobDescription {
   role: string;
@@ -26,5 +27,11 @@ export const JobDescription = ({
     techStack,
   } = jobDescription;
 
-  return <div>export const {companyName}</div>;
+  return (
+    <div>
+      <ImportExportText>export</ImportExportText>{" "}
+      <DeclarationText>const</DeclarationText>{" "}
+      <VariableText>{companyName}</VariableText> = (props)
+    </div>
+  );
 };
