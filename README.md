@@ -1,8 +1,8 @@
 ## virtual story code
 
-this is my virtual story.
+this is my virtual story
 
-journey started 2017 December.
+journey started 2017 December
 
 Tech stack:
 
