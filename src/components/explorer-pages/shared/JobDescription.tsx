@@ -1,5 +1,16 @@
 import React from "react";
-import { DeclarationText, ImportExportText, VariableText } from "./StyledText";
+import {
+  DeclarationText,
+  ImportExportText,
+  Indent,
+  LineBreak,
+  ObjectText,
+  PropertyText,
+  StringText,
+  TypeText,
+  VariableText,
+  YellowBrackets,
+} from "./StyledText";
 
 export interface IJobDescription {
   role: string;
@@ -22,16 +33,79 @@ export const JobDescription = ({
     companyName,
     date,
     location,
+    isCurrentRole,
     companyDescription,
     functions,
     techStack,
   } = jobDescription;
-
+  /* eslint-disable react/no-unescaped-entities */
   return (
     <div>
       <ImportExportText>export</ImportExportText>{" "}
       <DeclarationText>const</DeclarationText>{" "}
-      <VariableText>{companyName}</VariableText> = (props)
+      <VariableText>{companyName}</VariableText> ={" "}
+      <YellowBrackets>{"() "}</YellowBrackets>
+      {"=> "} <YellowBrackets>{"{"}</YellowBrackets>
+      {isCurrentRole && (
+        <Indent>
+          <DeclarationText>const</DeclarationText>{" "}
+          <ImportExportText>{"["}</ImportExportText>
+          <ObjectText>isCurrentRole</ObjectText>
+          <ImportExportText>{"]"}</ImportExportText> ={" "}
+          <TypeText>React</TypeText>.<VariableText>useState</VariableText>
+          <ImportExportText>{"("}</ImportExportText>
+          <ObjectText>true</ObjectText>
+          <ImportExportText>{")"}</ImportExportText>
+        </Indent>
+      )}
+      <LineBreak />
+      <Indent>
+        <DeclarationText>const</DeclarationText>{" "}
+        <ObjectText>companyName</ObjectText> ={" "}
+        <StringText>"{companyName}"</StringText>
+      </Indent>
+      <Indent>
+        <DeclarationText>const</DeclarationText> <ObjectText>date</ObjectText> ={" "}
+        <StringText>"{date}"</StringText>
+      </Indent>
+      <Indent>
+        <DeclarationText>const</DeclarationText> <ObjectText>role</ObjectText> ={" "}
+        <StringText>"{role}"</StringText>
+      </Indent>
+      <Indent>
+        <DeclarationText>const</DeclarationText>{" "}
+        <ObjectText>location</ObjectText> ={" "}
+        <StringText>"{location}"</StringText>
+      </Indent>
+      <LineBreak />
+      <Indent>
+        <DeclarationText>const</DeclarationText>{" "}
+        <ObjectText>companyDescription</ObjectText> ={" "}
+        <StringText>"{companyDescription}"</StringText>
+      </Indent>
+      {functions.map((task, idx) => {
+        return (
+          <>
+            <LineBreak />
+            <Indent>
+              <DeclarationText>const</DeclarationText>{" "}
+              <VariableText>project{idx + 1}</VariableText> ={" "}
+              <DeclarationText>function</DeclarationText>{" "}
+              <ImportExportText>{"() {"} </ImportExportText>
+              <Indent>
+                <PropertyText>console</PropertyText>.
+                <VariableText>log</VariableText>
+                <DeclarationText>{"("}</DeclarationText>
+                <StringText>"{task}"</StringText>
+                <DeclarationText>{")"}</DeclarationText>
+              </Indent>
+              <ImportExportText>{"}"} </ImportExportText>
+            </Indent>
+          </>
+        );
+      })}
+      <YellowBrackets>{"}"}</YellowBrackets>
     </div>
   );
 };
+/* eslint-enable react/no-unescaped-entities */

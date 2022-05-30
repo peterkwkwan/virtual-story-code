@@ -9,6 +9,12 @@ export const Serai = () => {
   const diff = useLastContributed(date);
   const contributors = `${diff} | 6 authors (Robert Dong and 5 others)`;
 
+  let SCS = function () {
+    console.log(
+      "Worked in the Supply Chain Solutions (SCS) frontend team, developing features, code review and pair-programming"
+    );
+  };
+
   const jobDescription: IJobDescription = {
     role: "Frontend Developer",
     isCurrentRole: true,

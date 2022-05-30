@@ -21,6 +21,7 @@ const theme: Theme = {
     propertyText: "#9cdcfe",
     stringText: "#ce9178",
     variableText: "#dcdcaa",
+    yellowBrackets: '#ffd700',
 
     buttonFocus: "rgba(193, 192, 192, 0.05)",
   },
