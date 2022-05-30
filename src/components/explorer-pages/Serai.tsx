@@ -1,19 +1,12 @@
 import React from "react";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { useLastContributed } from "../../utils/useLastContributed";
-import { ReactImports } from "./shared/ReactImports";
 import { IJobDescription, JobDescription } from "./shared/JobDescription";
 
 export const Serai = () => {
   const date = new Date("2022-05-22");
   const diff = useLastContributed(date);
   const contributors = `${diff} | 6 authors (Robert Dong and 5 others)`;
-
-  let SCS = function () {
-    console.log(
-      "Worked in the Supply Chain Solutions (SCS) frontend team, developing features, code review and pair-programming"
-    );
-  };
 
   const jobDescription: IJobDescription = {
     role: "Frontend Developer",
@@ -47,7 +40,6 @@ export const Serai = () => {
 
   return (
     <ExplorerWrapper contributors={contributors}>
-      <ReactImports />
       <JobDescription jobDescription={jobDescription} />
     </ExplorerWrapper>
   );
