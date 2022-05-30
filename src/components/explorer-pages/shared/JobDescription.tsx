@@ -85,7 +85,7 @@ export const JobDescription = ({
       </Indent>
       {functions.map((task, idx) => {
         return (
-          <>
+          <React.Fragment key={task}>
             <LineBreak />
             <Indent>
               <DeclarationText>const</DeclarationText>{" "}
@@ -101,9 +101,27 @@ export const JobDescription = ({
               </Indent>
               <ImportExportText>{"}"} </ImportExportText>
             </Indent>
-          </>
+          </React.Fragment>
         );
       })}
+      <LineBreak />
+      <Indent>
+        <>
+          <DeclarationText>const</DeclarationText>{" "}
+          <ObjectText>techStack</ObjectText> ={" "}
+          <ImportExportText>{"["} </ImportExportText>
+          <Indent>
+            {techStack.map((stack) => {
+              return (
+                <div key={stack}>
+                  <StringText>"{stack}",</StringText>
+                </div>
+              );
+            })}
+          </Indent>
+          <ImportExportText>{"]"} </ImportExportText>
+        </>
+      </Indent>
       <YellowBrackets>{"}"}</YellowBrackets>
     </div>
   );
