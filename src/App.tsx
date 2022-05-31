@@ -12,7 +12,7 @@ interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
 }
 
-const initFile: File = { title: "", url: "" };
+const initFile: File = { title: "", path: "" };
 
 export const ExplorerContext = React.createContext<ExplorerContextProp>({
   currentFile: [initFile, () => undefined],
