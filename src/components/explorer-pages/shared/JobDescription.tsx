@@ -1,15 +1,15 @@
 import React from "react";
 import { ReactImports } from "./ReactImports";
 import {
-  DeclarationText,
-  ImportExportText,
+  DarkBlueText,
+  PurpleText,
   Indent,
   LineBreak,
-  ObjectText,
-  PropertyText,
+  BlueText,
+  LightBlueText,
   StringText,
-  TypeText,
-  VariableText,
+  GreenText,
+  LightYellowText,
   YellowBrackets,
 } from "./StyledText";
 
@@ -39,70 +39,70 @@ export const JobDescription = ({
     functions,
     techStack,
   } = jobDescription;
+
+  const basicInfo: Partial<IJobDescription> = {
+    companyName: companyName,
+    date: date,
+    role: role,
+    location: location,
+    companyDescription: companyDescription,
+  };
+
   /* eslint-disable react/no-unescaped-entities */
+
+  const renderBasicInfo = () => {
+    const elementList = [];
+    for (const property in basicInfo) {
+      elementList.push(
+        <Indent>
+          <DarkBlueText>const</DarkBlueText> <BlueText>{property}</BlueText> ={" "}
+          <StringText>
+            "{basicInfo[property as keyof Partial<IJobDescription>]}"
+          </StringText>
+        </Indent>
+      );
+    }
+    return elementList;
+  };
+
   return (
     <>
       <ReactImports />
       <div>
-        <ImportExportText>export</ImportExportText>{" "}
-        <DeclarationText>const</DeclarationText>{" "}
-        <VariableText>{companyName}</VariableText> ={" "}
+        <PurpleText>export</PurpleText> <DarkBlueText>const</DarkBlueText>{" "}
+        <LightYellowText>{companyName}</LightYellowText> ={" "}
         <YellowBrackets>{"() "}</YellowBrackets>
         {"=> "} <YellowBrackets>{"{"}</YellowBrackets>
         {isCurrentRole && (
           <Indent>
-            <DeclarationText>const</DeclarationText>{" "}
-            <ImportExportText>{"["}</ImportExportText>
-            <ObjectText>isCurrentRole</ObjectText>
-            <ImportExportText>{"]"}</ImportExportText> ={" "}
-            <TypeText>React</TypeText>.<VariableText>useState</VariableText>
-            <ImportExportText>{"("}</ImportExportText>
-            <ObjectText>true</ObjectText>
-            <ImportExportText>{")"}</ImportExportText>
+            <DarkBlueText>const</DarkBlueText> <PurpleText>{"["}</PurpleText>
+            <BlueText>isCurrentRole</BlueText>
+            <PurpleText>{"]"}</PurpleText> = <GreenText>React</GreenText>.
+            <LightYellowText>useState</LightYellowText>
+            <PurpleText>{"("}</PurpleText>
+            <BlueText>true</BlueText>
+            <PurpleText>{")"}</PurpleText>
           </Indent>
         )}
         <LineBreak />
-        <Indent>
-          <DeclarationText>const</DeclarationText>{" "}
-          <ObjectText>companyName</ObjectText> ={" "}
-          <StringText>"{companyName}"</StringText>
-        </Indent>
-        <Indent>
-          <DeclarationText>const</DeclarationText> <ObjectText>date</ObjectText>{" "}
-          = <StringText>"{date}"</StringText>
-        </Indent>
-        <Indent>
-          <DeclarationText>const</DeclarationText> <ObjectText>role</ObjectText>{" "}
-          = <StringText>"{role}"</StringText>
-        </Indent>
-        <Indent>
-          <DeclarationText>const</DeclarationText>{" "}
-          <ObjectText>location</ObjectText> ={" "}
-          <StringText>"{location}"</StringText>
-        </Indent>
-        <LineBreak />
-        <Indent>
-          <DeclarationText>const</DeclarationText>{" "}
-          <ObjectText>companyDescription</ObjectText> ={" "}
-          <StringText>"{companyDescription}"</StringText>
-        </Indent>
+        {renderBasicInfo()}
         {functions.map((task, idx) => {
           return (
             <React.Fragment key={task}>
               <LineBreak />
               <Indent>
-                <DeclarationText>const</DeclarationText>{" "}
-                <VariableText>project{idx + 1}</VariableText> ={" "}
-                <DeclarationText>function</DeclarationText>{" "}
-                <ImportExportText>{"() {"} </ImportExportText>
+                <DarkBlueText>const</DarkBlueText>{" "}
+                <LightYellowText>project{idx + 1}</LightYellowText> ={" "}
+                <DarkBlueText>function</DarkBlueText>{" "}
+                <PurpleText>{"() {"} </PurpleText>
                 <Indent>
-                  <PropertyText>console</PropertyText>.
-                  <VariableText>log</VariableText>
-                  <DeclarationText>{"("}</DeclarationText>
+                  <LightBlueText>console</LightBlueText>.
+                  <LightYellowText>log</LightYellowText>
+                  <DarkBlueText>{"("}</DarkBlueText>
                   <StringText>"{task}"</StringText>
-                  <DeclarationText>{")"}</DeclarationText>
+                  <DarkBlueText>{")"}</DarkBlueText>
                 </Indent>
-                <ImportExportText>{"}"} </ImportExportText>
+                <PurpleText>{"}"} </PurpleText>
               </Indent>
             </React.Fragment>
           );
@@ -110,9 +110,8 @@ export const JobDescription = ({
         <LineBreak />
         <Indent>
           <>
-            <DeclarationText>const</DeclarationText>{" "}
-            <ObjectText>techStack</ObjectText> ={" "}
-            <ImportExportText>{"["} </ImportExportText>
+            <DarkBlueText>const</DarkBlueText> <BlueText>techStack</BlueText> ={" "}
+            <PurpleText>{"["} </PurpleText>
             <Indent>
               {techStack.map((stack) => {
                 return (
@@ -122,7 +121,7 @@ export const JobDescription = ({
                 );
               })}
             </Indent>
-            <ImportExportText>{"]"} </ImportExportText>
+            <PurpleText>{"]"} </PurpleText>
           </>
         </Indent>
         <YellowBrackets>{"}"}</YellowBrackets>

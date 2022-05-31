@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ImportExportText, PropertyText, StringText } from "./StyledText";
+import { PurpleText, LightBlueText, StringText } from "./StyledText";
 
 const StyledImport = styled.div`
   margin: 0;
@@ -16,8 +16,8 @@ export const ReactImports = () => {
   return (
     <>
       <StyledImport>
-        <ImportExportText>import</ImportExportText>{" "}
-        <PropertyText>React</PropertyText> from <StringText>'react'</StringText>
+        <PurpleText>import</PurpleText> <LightBlueText>React</LightBlueText>{" "}
+        from <StringText>'react'</StringText>
       </StyledImport>
     </>
   );

@@ -1,31 +1,31 @@
 import styled from 'styled-components';
 
-export const ImportExportText = styled.span`
-  color: ${(props) => props.theme.color.importExportText};
+export const PurpleText = styled.span`
+  color: ${(props) => props.theme.color.purpleText};
 `;
 
 export const StringText = styled.span`
   color: ${(props) => props.theme.color.stringText};
 `;
 
-export const PropertyText = styled.span`
-  color: ${(props) => props.theme.color.propertyText};
+export const LightBlueText = styled.span`
+  color: ${(props) => props.theme.color.lightBlueText};
 `;
 
-export const DeclarationText = styled.span`
-  color: ${(props) => props.theme.color.declarationText};
+export const DarkBlueText = styled.span`
+  color: ${(props) => props.theme.color.darkBlueText};
 `;
 
-export const ObjectText = styled.span`
-  color: ${(props) => props.theme.color.objectText};
+export const BlueText = styled.span`
+  color: ${(props) => props.theme.color.blueText};
 `;
 
-export const VariableText = styled.span`
-  color: ${(props) => props.theme.color.variableText};
+export const LightYellowText = styled.span`
+  color: ${(props) => props.theme.color.lightYellowText};
 `;
 
-export const TypeText = styled.span`
-  color: ${(props) => props.theme.color.typeText};
+export const GreenText = styled.span`
+  color: ${(props) => props.theme.color.greenText};
 `;
 
 export const YellowBrackets = styled.span`
