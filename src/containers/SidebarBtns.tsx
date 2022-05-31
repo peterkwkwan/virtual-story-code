@@ -15,7 +15,7 @@ const ButtonUnorderedList = styled.ul`
   padding: 0;
 `;
 
-const SidebarButtons = styled.button<{ selected: Boolean }>`
+const SidebarButtons = styled.button<{ selected: boolean }>`
   border: none;
   background-color: inherit;
   cursor: pointer;

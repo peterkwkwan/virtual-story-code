@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ExplorerContext } from "../App";
 import { useIcon } from "../utils/useIcon";
@@ -36,7 +37,14 @@ export const ExplorerButton = (props: Props) => {
   const { currentFile } = useContext(ExplorerContext);
   const [, setFile] = currentFile;
 
+  const { pathname } = useLocation();
   const iconPath = useIcon(rest.title);
+
+  useEffect(() => {
+    if (pathname.includes(rest.path)) {
+      setFile({ title: rest.title, path: rest.path });
+    }
+  }, []);
 
   const handleClick = () => {
     setFile({ title: rest.title, path: rest.path });
