@@ -1,5 +1,3 @@
-import React from "react";
-
 export const useLastContributed = (date: Date) => {
   const today = new Date();
 
