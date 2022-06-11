@@ -24,7 +24,7 @@ export interface IJobDescription {
   techStack: string[];
 }
 
-export const JobDescription = ({
+export const JobDescriptionTsx = ({
   jobDescription,
 }: {
   jobDescription: IJobDescription;

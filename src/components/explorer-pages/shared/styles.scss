@@ -1,0 +1,22 @@
+.Acuris {
+    role: 'Relationship Manager';
+    date: 'Mar 2016 - May 2019';
+    location: 'Hong Kong';
+
+    font-family: sans-serif;
+    font-size: 14;
+
+    > ul {
+        li:nth-child(1) {
+            task: 'lorem ipsum';
+        }
+        li:nth-child(2) {
+
+        }
+        li:nth-child(3) {
+
+        }
+
+    }
+
+}

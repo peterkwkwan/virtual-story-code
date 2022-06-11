@@ -1,7 +1,7 @@
 import React from "react";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { useLastContributed } from "../../utils/useLastContributed";
-import { IJobDescription, JobDescription } from "./shared/JobDescription";
+import { IJobDescription, JobDescriptionTsx } from "./shared/JobDescriptionTsx";
 
 export const Manulife = () => {
   const date = new Date("2020-05-01");
@@ -30,7 +30,7 @@ export const Manulife = () => {
   };
   return (
     <ExplorerWrapper contributors={contributors}>
-      <JobDescription jobDescription={jobDescription} />
+      <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   );
 };
