@@ -12,6 +12,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "6",
     "styled-components": "^5.3.5",
+    "typewriter-effect": "^2.18.2",
     "vite-plugin-checker": "^0.4.6"
   },
   "devDependencies": {
