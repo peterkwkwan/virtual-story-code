@@ -8,6 +8,8 @@ export const CathayDragon = () => {
   const contributors = `${diff} | 4 authors (Anthony Yung and 3 others)`;
 
   return (
-    <ExplorerWrapper contributors={contributors}>CathayDragon</ExplorerWrapper>
+    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+      CathayDragon
+    </ExplorerWrapper>
   );
 };

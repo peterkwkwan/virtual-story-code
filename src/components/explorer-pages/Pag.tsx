@@ -34,7 +34,7 @@ export const Pag = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={35}>
       <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   );

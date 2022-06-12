@@ -7,5 +7,9 @@ export const Acuris = () => {
   const diff = useLastContributed(date);
   const contributors = `${diff} | 12 authors (Elissa Hinson and 11 others)`;
 
-  return <ExplorerWrapper contributors={contributors}>Acuris</ExplorerWrapper>;
+  return (
+    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+      Acuris
+    </ExplorerWrapper>
+  );
 };

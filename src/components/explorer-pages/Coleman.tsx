@@ -7,5 +7,9 @@ export const Coleman = () => {
   const diff = useLastContributed(date);
   const contributors = `${diff} | 3 authors (Susana Tang and 2 others)`;
 
-  return <ExplorerWrapper contributors={contributors}>Coleman</ExplorerWrapper>;
+  return (
+    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+      Coleman
+    </ExplorerWrapper>
+  );
 };
