@@ -10,7 +10,7 @@ export const Serai = () => {
   const contributors = `${diff} | 6 authors (Robert Dong and 5 others)`;
 
   const jobDescription: IJobDescription = {
-    role: "Frontend Developer",
+    role: "Software Engineer",
     isCurrentRole: true,
     companyName: "Serai",
     date: "October 2021 - Present",

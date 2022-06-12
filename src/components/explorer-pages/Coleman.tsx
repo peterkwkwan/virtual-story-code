@@ -17,7 +17,9 @@ export const Coleman = () => {
     companyDescription:
       "Coleman Research is a leading expert-network research firm.",
     functions: [
-      "Mentored 3 new employees to the Relationship Management team.",
+      "Effectively manage relationships between experts and clients.",
+      "Primary contact for C-level industry advisers and world's leading PE firms, hedge funds, and consultancies.",
+      "Resolve member service issues both on expert and client levels.",
     ],
   };
 

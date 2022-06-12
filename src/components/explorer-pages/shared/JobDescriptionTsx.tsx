@@ -41,7 +41,7 @@ export const JobDescriptionTsx = ({
   /* eslint-disable react/no-unescaped-entities */
 
   const renderBasicInfo = () => {
-    const elementList = [];
+    const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
         <Indent>

@@ -5,6 +5,9 @@ import {
   StringText,
   YellowText,
   Indent,
+  PurpleText,
+  MutedGreenText,
+  DarkBlueText,
 } from "./StyledText";
 import { INonTechJobDescription } from "./types";
 
@@ -27,7 +30,7 @@ export const JobDescriptionScss = ({
   /* eslint-disable react/no-unescaped-entities */
 
   const renderBasicInfo = () => {
-    const elementList = [];
+    const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
         <Indent>
@@ -41,6 +44,27 @@ export const JobDescriptionScss = ({
     }
     return elementList;
   };
+
+  const renderJobFunctions = () => {
+    const elementList: JSX.Element[] = [];
+    functions.map((item, idx) => {
+      elementList.push(
+        <Indent>
+          <YellowText>li:nth-child</YellowText>
+          <DarkBlueText>{"("}</DarkBlueText>
+          <MutedGreenText>{idx + 1}</MutedGreenText>
+          <DarkBlueText>{")"}</DarkBlueText> <DarkBlueText>{"{"}</DarkBlueText>
+          <Indent>
+            <LightBlueText>task</LightBlueText>:
+            <StringText>"{item}"</StringText>;
+          </Indent>
+          <DarkBlueText>{"}"}</DarkBlueText>
+        </Indent>
+      );
+    });
+    return elementList;
+  };
+
   return (
     <>
       <YellowText>
@@ -48,6 +72,12 @@ export const JobDescriptionScss = ({
       </YellowText>
       {renderBasicInfo()}
       <LineBreak />
+      <Indent>
+        {"> "}
+        <YellowText>ul</YellowText> <PurpleText>{"{"}</PurpleText>
+        {renderJobFunctions()}
+        <PurpleText>{"}"}</PurpleText>
+      </Indent>
       <YellowText>{"}"}</YellowText>
     </>
   );

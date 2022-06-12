@@ -10,7 +10,7 @@ export const Pag = () => {
   const contributors = `${diff} | 3 authors (Paul Chung and 3 others)`;
 
   const jobDescription: IJobDescription = {
-    role: "Frontend Developer",
+    role: "Software Developer",
     companyName: "PAG",
     date: "May 2020 - October 2021",
     location: "Hong Kong",

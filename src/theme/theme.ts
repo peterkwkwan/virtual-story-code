@@ -18,6 +18,7 @@ const theme: Theme = {
     blueText: "#4fc1ff",
     purpleText: "#c586c0",
     greenText: "#4ec9b0",
+    mutedGreenText: "#b5cea8",
     lightBlueText: "#9cdcfe",
     stringText: "#ce9178",
     lightYellowText: "#dcdcaa",

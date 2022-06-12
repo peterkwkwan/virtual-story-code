@@ -17,14 +17,14 @@ export const Acuris = () => {
     companyDescription:
       "Acuris is a leading provider of global corporate financial news, intelligence and analysis to advisory firms, investments banks, law firms, hedge funds, private equity firms and corporations.",
     functions: [
-      "Mentored 3 new employees to the Relationship Management team.",
+      "Official training mentor for 3 new joiners in the Relationship Management team.",
       "Managed 50+ client relationships across investment banking, law firm & private equity sectors to ensure the client’s needs are met.",
       "Identify client motivations, enabling cross-selling plus up-selling opportunities.",
     ],
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={22}>
       <JobDescriptionScss jobDescription={jobDescription} />
     </ExplorerWrapper>
   );

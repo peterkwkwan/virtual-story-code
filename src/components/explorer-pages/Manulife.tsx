@@ -10,7 +10,7 @@ export const Manulife = () => {
   const contributors = `${diff} | 3 authors (Albert Ahg and 2 others)`;
 
   const jobDescription: IJobDescription = {
-    role: "Frontend Developer",
+    role: "Software Developer",
     companyName: "Manulife",
     date: "August 2019 - May 2020",
     location: "Hong Kong",
