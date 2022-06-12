@@ -24,6 +24,10 @@ export const LightYellowText = styled.span`
   color: ${(props) => props.theme.color.lightYellowText};
 `;
 
+export const YellowText = styled.span`
+  color: ${(props) => props.theme.color.yellowText};
+`;
+
 export const GreenText = styled.span`
   color: ${(props) => props.theme.color.greenText};
 `;

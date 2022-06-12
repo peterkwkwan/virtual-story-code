@@ -1,7 +1,8 @@
 import React from "react";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { useLastContributed } from "../../utils/useLastContributed";
-import { IJobDescription, JobDescriptionTsx } from "./shared/JobDescriptionTsx";
+import { JobDescriptionTsx } from "./shared/JobDescriptionTsx";
+import { IJobDescription } from "./shared/types";
 
 export const Manulife = () => {
   const date = new Date("2020-05-01");

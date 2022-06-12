@@ -12,17 +12,7 @@ import {
   LightYellowText,
   YellowBrackets,
 } from "./StyledText";
-
-export interface IJobDescription {
-  role: string;
-  isCurrentRole?: boolean;
-  companyName: string;
-  date: string;
-  location: string;
-  companyDescription: string;
-  functions: string[];
-  techStack: string[];
-}
+import { IJobDescription } from "./types";
 
 export const JobDescriptionTsx = ({
   jobDescription,
@@ -113,7 +103,7 @@ export const JobDescriptionTsx = ({
             <DarkBlueText>const</DarkBlueText> <BlueText>techStack</BlueText> ={" "}
             <PurpleText>{"["} </PurpleText>
             <Indent>
-              {techStack.map((stack) => {
+              {techStack?.map((stack) => {
                 return (
                   <div key={stack}>
                     <StringText>"{stack}",</StringText>
