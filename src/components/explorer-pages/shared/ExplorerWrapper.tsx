@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface Props {
   children: React.ReactNode;
   contributors: React.ReactNode;
+  numberOfLines: number;
 }
 
 const StyledContainer = styled.div`
@@ -24,11 +25,12 @@ const LineNumbers = styled.aside`
     margin: 0;
     li {
       list-style: none;
+      margin: 0;
       direction: rtl;
-      text-align: right;
-      width: 32px;
+      text-align: center;
+      width: 66px;
       font-family: Menlo, Monaco, "Courier New", monospace;
-      line-height: 18px;
+      line-height: 18.4px;
       letter-spacing: 0px;
       font-size: 12px;
       color: ${(props) => props.theme.color.lineNumberText};
@@ -46,8 +48,13 @@ const Contributors = styled.div`
   color: ${(props) => props.theme.color.contributors};
 `;
 
-const lineNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-export const ExplorerWrapper = ({ children, contributors }: Props) => {
+export const ExplorerWrapper = ({
+  children,
+  contributors,
+  numberOfLines,
+}: Props) => {
+  const lineNumbers = [...Array(numberOfLines).keys()];
+
   return (
     <StyledContainer>
       <LineNumbers>
