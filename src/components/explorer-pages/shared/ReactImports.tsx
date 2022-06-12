@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PurpleText, LightBlueText, StringText } from "./StyledText";
+import TypewriterComponent from "typewriter-effect";
 
 const StyledImport = styled.div`
   margin: 0;
@@ -13,11 +13,15 @@ const StyledImport = styled.div`
 
 /* eslint-disable react/no-unescaped-entities */
 export const ReactImports = () => {
+  const typewriterString = `<span style="color: #c586c0;">import</span> <span style="color: #9cdcfe;">React</span> <span style="color: #c586c0;">from</span> <span style="color: #ce9178;">'react'</span>`;
   return (
     <>
       <StyledImport>
-        <PurpleText>import</PurpleText> <LightBlueText>React</LightBlueText>{" "}
-        from <StringText>'react'</StringText>
+        <TypewriterComponent
+          onInit={(typewriter) => {
+            typewriter.typeString(typewriterString).pauseFor(2500).start();
+          }}
+        />
       </StyledImport>
     </>
   );
