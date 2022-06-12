@@ -1,5 +1,11 @@
 import React from "react";
-import { YellowText } from "./StyledText";
+import {
+  LightBlueText,
+  LineBreak,
+  StringText,
+  YellowText,
+  Indent,
+} from "./StyledText";
 import { INonTechJobDescription } from "./types";
 
 export const JobDescriptionScss = ({
@@ -7,15 +13,43 @@ export const JobDescriptionScss = ({
 }: {
   jobDescription: INonTechJobDescription;
 }) => {
-  const {
-    role,
-    companyName,
-    date,
-    location,
-    isCurrentRole,
-    companyDescription,
-    functions,
-  } = jobDescription;
+  const { role, companyName, date, location, companyDescription, functions } =
+    jobDescription;
 
-  return <YellowText>.{companyName}</YellowText>;
+  const basicInfo: Partial<INonTechJobDescription> = {
+    companyName: companyName,
+    date: date,
+    role: role,
+    location: location,
+    companyDescription: companyDescription,
+  };
+
+  /* eslint-disable react/no-unescaped-entities */
+
+  const renderBasicInfo = () => {
+    const elementList = [];
+    for (const property in basicInfo) {
+      elementList.push(
+        <Indent>
+          <LightBlueText>{property}</LightBlueText>:{" "}
+          <StringText>
+            "{basicInfo[property as keyof Partial<INonTechJobDescription>]}"
+          </StringText>
+          ;
+        </Indent>
+      );
+    }
+    return elementList;
+  };
+  return (
+    <>
+      <YellowText>
+        .{companyName} {"{"}
+      </YellowText>
+      {renderBasicInfo()}
+      <LineBreak />
+      <YellowText>{"}"}</YellowText>
+    </>
+  );
 };
+/* eslint-enable react/no-unescaped-entities */
