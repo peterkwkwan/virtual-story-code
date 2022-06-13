@@ -41,7 +41,7 @@ export const YellowBrackets = styled.span`
 `;
 
 export const Indent = styled.div`
-  padding-left: 12px; 
+  padding-left: 16px; 
 `;
 
 export const LineBreak = styled.div`

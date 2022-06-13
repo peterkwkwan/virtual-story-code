@@ -1,4 +1,5 @@
 import React from "react";
+import TypewriterComponent from "typewriter-effect";
 import {
   LightBlueText,
   LineBreak,
@@ -67,9 +68,17 @@ export const JobDescriptionScss = ({
 
   return (
     <>
-      <YellowText>
-        .{companyName} {"{"}
-      </YellowText>
+      <TypewriterComponent
+        onInit={(typewriter) => {
+          typewriter
+            .typeString(
+              '<span style="color: #D7BA7D;">.work-experience {</span>'
+            )
+            .pauseFor(2500)
+            .start();
+        }}
+      />
+      <LineBreak />
       {renderBasicInfo()}
       <LineBreak />
       <Indent>
