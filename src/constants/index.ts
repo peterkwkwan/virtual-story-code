@@ -1,3 +1,4 @@
+import { PagePaths } from "../shared/routerConfig";
 import { IFolderStructure } from "../shared/types";
 
 export enum Actions {
@@ -33,12 +34,12 @@ export const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
-      { title: "Serai.tsx", path: "explorer/serai" },
-      { title: "PAG.tsx", path: "explorer/pag" },
-      { title: "Manulife.tsx", path: "explorer/manulife" },
-      { title: "Acuris.scss", path: "explorer/acuris" },
-      { title: "Coleman.scss", path: "explorer/coleman" },
-      { title: "CathayDragon.test", path: "explorer/cathay" },
+      { title: "Serai.tsx", path: PagePaths.SERAI },
+      { title: "PAG.tsx", path: PagePaths.PAG},
+      { title: "Manulife.tsx", path:PagePaths.MANULIFE },
+      { title: "Acuris.scss", path: PagePaths.ACURIS },
+      { title: "Coleman.scss", path: PagePaths.COLEMAN },
+      { title: "CathayDragon.test", path: PagePaths.CATHAY },
     ],
   },
   [FolderNames.EDUCATION]: {

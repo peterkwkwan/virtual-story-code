@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { Content } from "./containers/Content";
 import { SideNavigation } from "./containers/SideNavigation";
 import { TopNavigation } from "./containers/TopNavigation";
+import { PagePaths } from "./shared/routerConfig";
 import { File } from "./shared/types";
 import GlobalStyle from "./theme/globalStyles";
 import { theme } from "./theme/theme";
@@ -12,7 +13,7 @@ interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
 }
 
-const initFile: File = { title: "", path: "" };
+const initFile: File = { title: "README.md", path: PagePaths.README };
 
 export const ExplorerContext = React.createContext<ExplorerContextProp>({
   currentFile: [initFile, () => undefined],
