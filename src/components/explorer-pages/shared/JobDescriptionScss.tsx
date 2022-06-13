@@ -87,6 +87,7 @@ export const JobDescriptionScss = ({
         {renderJobFunctions()}
         <PurpleText>{"}"}</PurpleText>
       </Indent>
+      <LineBreak />
       <YellowText>{"}"}</YellowText>
     </>
   );

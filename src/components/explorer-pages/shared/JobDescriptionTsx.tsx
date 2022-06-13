@@ -31,7 +31,6 @@ export const JobDescriptionTsx = ({
   } = jobDescription;
 
   const basicInfo: Partial<IJobDescription> = {
-    companyName: companyName,
     date: date,
     role: role,
     location: location,
@@ -75,6 +74,15 @@ export const JobDescriptionTsx = ({
           </Indent>
         )}
         <LineBreak />
+        <Indent>
+          <DarkBlueText>const </DarkBlueText>
+          <BlueText>job </BlueText>= <DarkBlueText>new </DarkBlueText>
+          <GreenText>Job</GreenText>
+          <PurpleText>{"("}</PurpleText>
+          <StringText>"{companyName}"</StringText>
+          <PurpleText>{")"}</PurpleText>
+          <LineBreak />
+        </Indent>
         {renderBasicInfo()}
         {functions.map((task, idx) => {
           return (
