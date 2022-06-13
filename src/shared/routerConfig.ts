@@ -5,6 +5,7 @@ import { Gitignore } from "../components/explorer-pages/Gitignore";
 import { Manulife } from "../components/explorer-pages/Manulife";
 import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
+import { Readme } from "../components/explorer-pages/Readme";
 import { Serai } from "../components/explorer-pages/Serai";
 
 enum PagePaths {
@@ -16,6 +17,7 @@ enum PagePaths {
   CATHAY = "explorer/cathay",
   PACKAGE_JSON = 'explorer/package_json',
   GIT_IGNORE = 'explorer/gitignore',
+  README = 'explorer/readme',
 }
 
 interface RouterConfig {
@@ -54,5 +56,9 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.GIT_IGNORE,
     component: Gitignore,
+  },
+  {
+    path: PagePaths.README,
+    component: Readme,
   },
 ];
