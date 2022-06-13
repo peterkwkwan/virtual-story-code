@@ -32,6 +32,10 @@ export const GreenText = styled.span`
   color: ${(props) => props.theme.color.greenText};
 `;
 
+export const CommentGreen = styled.span`
+  color: ${(props) => props.theme.color.commentGreen};
+`;  
+
 export const MutedGreenText = styled.span`
   color: ${(props) => props.theme.color.mutedGreenText};
 `;
