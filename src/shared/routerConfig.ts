@@ -8,7 +8,7 @@ import { Pag } from "../components/explorer-pages/Pag";
 import { Readme } from "../components/explorer-pages/Readme";
 import { Serai } from "../components/explorer-pages/Serai";
 
-enum PagePaths {
+export enum PagePaths {
   SERAI = "explorer/serai",
   PAG = "explorer/pag",
   MANULIFE = "explorer/manulife",

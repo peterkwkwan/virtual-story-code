@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ExplorerButton } from "../components/ExplorerButton";
 import { Folder } from "../components/Folder";
 import { FolderNames, initFolders } from "../constants";
+import { PagePaths } from "../shared/routerConfig";
 
 const ExplorerContainer = styled.aside`
   background-color: ${(props) => props.theme.color.dark03};
@@ -34,17 +35,17 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
 const rootFiles = [
   {
     title: "README.md",
-    path: "explorer/readme",
+    path: PagePaths.README,
     isRoot: true,
   },
   {
     title: "package.json",
-    path: "explorer/package_json",
+    path: PagePaths.PACKAGE_JSON,
     isRoot: true,
   },
   {
     title: ".gitignore",
-    path: "explorer/gitignore",
+    path: PagePaths.GIT_IGNORE,
     isRoot: true,
   },
 ];

@@ -31,7 +31,7 @@ const buttons = [
   {
     title: SidebarOptions.EXPLORER,
     src: "../../assets/icons/sidebar/explorer-btn.svg",
-    path: "explorer",
+    path: "explorer/readme",
   },
   {
     title: SidebarOptions.SEARCH,
