@@ -1,7 +1,7 @@
 import React from "react";
 import { useLastContributed } from "../../utils/useLastContributed";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
-import { CommentGreen } from "./shared/StyledText";
+import { CommentGreen, LineBreak } from "./shared/StyledText";
 
 export const Gitignore = () => {
   const date = new Date("2022-06-01");
@@ -13,8 +13,7 @@ export const Gitignore = () => {
       node_modules
       <br />
       dist
-      <br />
-      <br />
+      <LineBreak />
       <CommentGreen># food</CommentGreen>
       <br />
       durian
