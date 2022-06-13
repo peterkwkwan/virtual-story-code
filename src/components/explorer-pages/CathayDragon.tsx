@@ -41,10 +41,10 @@ export const CathayDragon = () => {
       <DarkBlueText>function</DarkBlueText>
       <PurpleText>{"() {"}</PurpleText>
       <Indent>
-        <DarkBlueText>let </DarkBlueText>
+        <DarkBlueText>const </DarkBlueText>
         <BlueText>intern </BlueText>= <DarkBlueText>new </DarkBlueText>
         <GreenText>Intern</GreenText>
-        <DarkBlueText>{"()"}</DarkBlueText>
+        <PurpleText>{"()"}</PurpleText>
         <LineBreak />
         <LightYellowText>it</LightYellowText>
         <DarkBlueText>{"("}</DarkBlueText>
