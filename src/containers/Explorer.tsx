@@ -100,11 +100,14 @@ export const Explorer = () => {
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>
 
-      {show && folders()}
-      {show &&
-        rootFiles.map((rootFile) => {
-          return <ExplorerButton key={rootFile.title} {...rootFile} />;
-        })}
+      {show && (
+        <>
+          {folders()}
+          {rootFiles.map((rootFile) => {
+            return <ExplorerButton key={rootFile.title} {...rootFile} />;
+          })}
+        </>
+      )}
     </ExplorerContainer>
   );
 };
