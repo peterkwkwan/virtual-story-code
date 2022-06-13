@@ -39,7 +39,7 @@ const rootFiles = [
   },
   {
     title: "package.json",
-    path: "explorer/packageJson",
+    path: "explorer/package_json",
     isRoot: true,
   },
   {

@@ -1,7 +1,9 @@
 import { Acuris } from "../components/explorer-pages/Acuris";
 import { CathayDragon } from "../components/explorer-pages/CathayDragon";
 import { Coleman } from "../components/explorer-pages/Coleman";
+import { Gitignore } from "../components/explorer-pages/Gitignore";
 import { Manulife } from "../components/explorer-pages/Manulife";
+import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Serai } from "../components/explorer-pages/Serai";
 
@@ -12,6 +14,8 @@ enum PagePaths {
   ACURIS = "explorer/acuris",
   COLEMAN = "explorer/coleman",
   CATHAY = "explorer/cathay",
+  PACKAGE_JSON = 'explorer/package_json',
+  GIT_IGNORE = 'explorer/gitignore',
 }
 
 interface RouterConfig {
@@ -42,5 +46,13 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.CATHAY,
     component: CathayDragon,
+  },
+  {
+    path: PagePaths.PACKAGE_JSON,
+    component: PackageJson,
+  },
+  {
+    path: PagePaths.GIT_IGNORE,
+    component: Gitignore,
   },
 ];
