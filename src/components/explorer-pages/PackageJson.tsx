@@ -69,7 +69,7 @@ export const PackageJson = () => {
         </Indent>
         <Indent>
           <LightBlueText>"numberOfDogs"</LightBlueText>:{" "}
-          <MutedGreenText>0 😔</MutedGreenText>,
+          <MutedGreenText>0</MutedGreenText>,
         </Indent>
         <Indent>
           <LightBlueText>"wife"</LightBlueText>:{" "}
