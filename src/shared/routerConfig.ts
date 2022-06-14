@@ -7,6 +7,7 @@ import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Readme } from "../components/explorer-pages/Readme";
 import { Serai } from "../components/explorer-pages/Serai";
+import { Search } from "../containers/Search";
 
 export enum PagePaths {
   SERAI = "explorer/serai",
@@ -18,6 +19,7 @@ export enum PagePaths {
   PACKAGE_JSON = 'explorer/package_json',
   GIT_IGNORE = 'explorer/gitignore',
   README = 'explorer/readme',
+  SEARCH = 'search',
 }
 
 interface RouterConfig {
@@ -60,5 +62,9 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.README,
     component: Readme,
+  },
+  {
+    path: PagePaths.SEARCH,
+    component: Search,
   },
 ];
