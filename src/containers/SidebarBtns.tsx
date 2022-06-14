@@ -31,7 +31,7 @@ const buttons = [
   {
     title: SidebarOptions.EXPLORER,
     src: "../../assets/icons/sidebar/explorer-btn.svg",
-    path: "explorer/readme",
+    path: "explorer",
   },
   {
     title: SidebarOptions.SEARCH,
@@ -60,7 +60,7 @@ export const SidebarBtns = () => {
           <StyledLink key={btn.title} path={btn.path}>
             <SidebarButtons
               key={btn.title}
-              selected={pathname.split("/")[1].includes(btn.path)}
+              selected={pathname.includes(btn.path)}
             >
               <img src={btn.src} />
             </SidebarButtons>
