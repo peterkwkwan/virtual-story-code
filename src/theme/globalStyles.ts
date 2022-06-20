@@ -5,8 +5,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Consola';
     src: url(/assets/fonts/CONSOLA.TTF); 
   }
+  @font-face {
+    font-family: 'Menlo';
+    src: url(/assets/fonts/Menlo.ttf); 
+  }
   body {
-    font-family: Consola;
+    font-family: Menlo, Monaco, "Courier New", monospace;
     padding: 0;
     margin: 0;
   }

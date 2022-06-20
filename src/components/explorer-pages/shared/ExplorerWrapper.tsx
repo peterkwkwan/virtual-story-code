@@ -14,6 +14,7 @@ const StyledContainer = styled.div`
   background: ${(props) => props.theme.color.dark01};
   color: ${(props) => props.theme.color.text01};
   overflow: scroll;
+  font-size: 12px;
 `;
 
 const LineNumbers = styled.aside`
