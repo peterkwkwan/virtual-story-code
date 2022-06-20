@@ -31,7 +31,7 @@ const LineNumbers = styled.aside`
       text-align: center;
       width: 66px;
       font-family: Menlo, Monaco, "Courier New", monospace;
-      line-height: 18.4px;
+      line-height: 18px;
       letter-spacing: 0px;
       font-size: 12px;
       color: ${(props) => props.theme.color.lineNumberText};

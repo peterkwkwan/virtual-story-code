@@ -68,16 +68,18 @@ export const JobDescriptionScss = ({
 
   return (
     <>
-      <TypewriterComponent
-        onInit={(typewriter) => {
-          typewriter
-            .typeString(
-              '<span style="color: #D7BA7D;">.work-experience {</span>'
-            )
-            .pauseFor(2500)
-            .start();
-        }}
-      />
+      <div style={{ height: "18px" }}>
+        <TypewriterComponent
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(
+                '<span style="color: #D7BA7D;">.work-experience {</span>'
+              )
+              .pauseFor(2500)
+              .start();
+          }}
+        />
+      </div>
       <LineBreak />
       {renderBasicInfo()}
       <LineBreak />

@@ -1,46 +1,50 @@
 import styled from 'styled-components';
 
-export const PurpleText = styled.span`
+const BaseText = styled.span`
+  line-height: 18px;
+`
+
+export const PurpleText = styled(BaseText)`
   color: ${(props) => props.theme.color.purpleText};
 `;
 
-export const StringText = styled.span`
+export const StringText = styled(BaseText)`
   color: ${(props) => props.theme.color.stringText};
 `;
 
-export const LightBlueText = styled.span`
+export const LightBlueText = styled(BaseText)`
   color: ${(props) => props.theme.color.lightBlueText};
 `;
 
-export const DarkBlueText = styled.span`
+export const DarkBlueText = styled(BaseText)`
   color: ${(props) => props.theme.color.darkBlueText};
 `;
 
-export const BlueText = styled.span`
+export const BlueText = styled(BaseText)`
   color: ${(props) => props.theme.color.blueText};
 `;
 
-export const LightYellowText = styled.span`
+export const LightYellowText = styled(BaseText)`
   color: ${(props) => props.theme.color.lightYellowText};
 `;
 
-export const YellowText = styled.span`
+export const YellowText = styled(BaseText)`
   color: ${(props) => props.theme.color.yellowText};
 `;
 
-export const GreenText = styled.span`
+export const GreenText = styled(BaseText)`
   color: ${(props) => props.theme.color.greenText};
 `;
 
-export const CommentGreen = styled.span`
+export const CommentGreen = styled(BaseText)`
   color: ${(props) => props.theme.color.commentGreen};
 `;  
 
-export const MutedGreenText = styled.span`
+export const MutedGreenText = styled(BaseText)`
   color: ${(props) => props.theme.color.mutedGreenText};
 `;
 
-export const YellowBrackets = styled.span`
+export const YellowBrackets = styled(BaseText)`
   color: ${(props) => props.theme.color.yellowBrackets};
 `;
 
