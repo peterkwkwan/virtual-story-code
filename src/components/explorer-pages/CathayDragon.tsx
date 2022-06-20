@@ -29,11 +29,13 @@ export const CathayDragon = () => {
     <ExplorerWrapper contributors={contributors} numberOfLines={20}>
       <PurpleText>import</PurpleText> <LightBlueText>assert</LightBlueText>{" "}
       <PurpleText>from</PurpleText> <StringText>'chai'</StringText>
-      <TypewriterComponent
-        onInit={(typewriter) => {
-          typewriter.typeString(internshipString).pauseFor(2500).start();
-        }}
-      />
+      <div style={{ height: "18px" }}>
+        <TypewriterComponent
+          onInit={(typewriter) => {
+            typewriter.typeString(internshipString).pauseFor(2500).start();
+          }}
+        />
+      </div>
       <LineBreak />
       <LightYellowText>describe</LightYellowText>
       <YellowText>{"("}</YellowText>
