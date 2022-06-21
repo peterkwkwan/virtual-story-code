@@ -9,4 +9,13 @@ export interface IJobDescription {
     techStack: string[];
   }
 
-  export type INonTechJobDescription = Omit<IJobDescription,'techStack'>
+export type INonTechJobDescription = Omit<IJobDescription,'techStack'>
+
+export interface IEducationDescription {
+    schoolName: string;
+    year: string;
+    location: string;
+    degreeType: string;
+    degreeName: string;
+    subjects?: string[];
+}

@@ -78,7 +78,7 @@ export const EducationDescriptionHTML = () => {
           text="meta"
           attributes={[
             { name: "name", value: "year" },
-            { name: "class-of", value: "2014" },
+            { name: "content", value: "class-of-2014" },
           ]}
         />
         <br />

@@ -9,7 +9,7 @@ export const McGill = () => {
   const contributors = `${diff} | 3 authors (Mom & Dad and 1 other)`;
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={24}>
       <EducationDescriptionHTML />
     </ExplorerWrapper>
   );
