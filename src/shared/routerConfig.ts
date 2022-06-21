@@ -1,8 +1,11 @@
 import { Acuris } from "../components/explorer-pages/Acuris";
+import { BurnabyNorth } from "../components/explorer-pages/BurnabyNorth";
 import { CathayDragon } from "../components/explorer-pages/CathayDragon";
 import { Coleman } from "../components/explorer-pages/Coleman";
 import { Gitignore } from "../components/explorer-pages/Gitignore";
+import { HKU } from "../components/explorer-pages/HKU";
 import { Manulife } from "../components/explorer-pages/Manulife";
+import { McGill } from "../components/explorer-pages/McGill";
 import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Readme } from "../components/explorer-pages/Readme";
@@ -16,6 +19,9 @@ export enum PagePaths {
   ACURIS = "explorer/acuris",
   COLEMAN = "explorer/coleman",
   CATHAY = "explorer/cathay",
+  MCGILL = "explorer/mcgill",
+  HKU = "explorer/hku",
+  BBYNORTH = "explorer/bbynorth",
   PACKAGE_JSON = 'explorer/package_json',
   GIT_IGNORE = 'explorer/gitignore',
   README = 'explorer/readme',
@@ -50,6 +56,18 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.CATHAY,
     component: CathayDragon,
+  },
+  {
+    path: PagePaths.MCGILL,
+    component: McGill,
+  },
+  {
+    path: PagePaths.HKU,
+    component: HKU,
+  },
+  {
+    path: PagePaths.BBYNORTH,
+    component: BurnabyNorth,
   },
   {
     path: PagePaths.PACKAGE_JSON,
