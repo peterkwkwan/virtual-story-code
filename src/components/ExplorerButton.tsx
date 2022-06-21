@@ -13,22 +13,35 @@ interface Props {
   isRoot?: boolean;
 }
 
+const calcPadding = (
+  isRoot: boolean | undefined,
+  selected: boolean | undefined
+) => {
+  const selectedPx = selected ? 0 : 1;
+  const rootPx = 13;
+  const nonRootPx = 23;
+
+  return `${selectedPx + (isRoot ? rootPx : nonRootPx)}px`;
+};
+
 const StyledButton = styled.button<Props>`
   width: 100%;
-  background-color: ${(props) => (props.selected ? "red" : "inherit")};
-  border: none;
+  background-color: ${(props) =>
+    props.selected ? "hsla(215, 78%, 30%, 0.83)" : "inherit"};
+  border: ${(props) => (props.selected ? "1px solid #007fd4" : "none")};
   color: inherit;
-  line-height: 22px;
+  line-height: ${(props) => (props.selected ? "20px" : "22px")};
   white-space: pre;
   font-size: 13px;
   text-align: start;
   font-family: Segoe WPC, Segoe UI, sans-serif;
   cursor: pointer;
-  padding-left: ${(props) => (props.isRoot ? "14px" : "24px")};
+  padding-left: ${(props) => calcPadding(props.isRoot, props.selected)};
   display: flex;
   align-items: center;
   &:hover {
-    background-color: ${(props) => props.theme.color.buttonFocus};
+    background-color: ${(props) =>
+      !props.selected && props.theme.color.buttonFocus};
   }
 `;
 
