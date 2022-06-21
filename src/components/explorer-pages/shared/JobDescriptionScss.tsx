@@ -34,13 +34,13 @@ export const JobDescriptionScss = ({
     const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
-        <Indent>
+        <div>
           <LightBlueText>{property}</LightBlueText>:{" "}
           <StringText>
             "{basicInfo[property as keyof Partial<INonTechJobDescription>]}"
           </StringText>
           ;
-        </Indent>
+        </div>
       );
     }
     return elementList;
@@ -50,17 +50,17 @@ export const JobDescriptionScss = ({
     const elementList: JSX.Element[] = [];
     functions.map((item, idx) => {
       elementList.push(
-        <Indent>
+        <div>
           <YellowText>li:nth-child</YellowText>
           <DarkBlueText>{"("}</DarkBlueText>
           <MutedGreenText>{idx + 1}</MutedGreenText>
           <DarkBlueText>{")"}</DarkBlueText> <DarkBlueText>{"{"}</DarkBlueText>
           <Indent>
             <LightBlueText>task</LightBlueText>:
-            <StringText>"{item}"</StringText>;
+            <StringText> "{item}"</StringText>;
           </Indent>
           <DarkBlueText>{"}"}</DarkBlueText>
-        </Indent>
+        </div>
       );
     });
     return elementList;
@@ -80,16 +80,15 @@ export const JobDescriptionScss = ({
           }}
         />
       </div>
-      <LineBreak />
-      {renderBasicInfo()}
-      <LineBreak />
       <Indent>
+        <LineBreak />
+        {renderBasicInfo()}
+        <LineBreak />
         {"> "}
         <YellowText>ul</YellowText> <PurpleText>{"{"}</PurpleText>
-        {renderJobFunctions()}
+        <Indent>{renderJobFunctions()}</Indent>
         <PurpleText>{"}"}</PurpleText>
       </Indent>
-      <LineBreak />
       <YellowText>{"}"}</YellowText>
     </>
   );

@@ -24,7 +24,7 @@ export const CathayDragon = () => {
   /* eslint-disable react/no-unescaped-entities */
 
   const internshipString = `<span style="color: #c586c0;">import </span><span style="color: #9cdcfe;">Intern </span>
-  <span style="color: #c586c0;">from </span><span style="color: #ce9178;">'swire-summer-internship'</span>`;
+  <span style="color: #c586c0;">from </span><span style="color: #ce9178;">'internship'</span>`;
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={20}>
       <PurpleText>import</PurpleText> <LightBlueText>assert</LightBlueText>{" "}
@@ -46,7 +46,12 @@ export const CathayDragon = () => {
         <DarkBlueText>const </DarkBlueText>
         <BlueText>intern </BlueText>= <DarkBlueText>new </DarkBlueText>
         <GreenText>Intern</GreenText>
-        <PurpleText>{"()"}</PurpleText>
+        <PurpleText>{"("}</PurpleText>
+        <StringText>"Swire Summer Internship"</StringText>
+        <PurpleText>{")"}</PurpleText>
+        <br />
+        <BlueText>intern</BlueText>.<LightBlueText>date</LightBlueText> ={" "}
+        <StringText>"Summer 2012"</StringText>
         <LineBreak />
         <LightYellowText>it</LightYellowText>
         <DarkBlueText>{"("}</DarkBlueText>
@@ -92,7 +97,7 @@ export const CathayDragon = () => {
           <LightYellowText>taskCompleted</LightYellowText>
           <PurpleText>{"("}</PurpleText>
           <LightBlueText>intern</LightBlueText>.
-          <LightYellowText>createInternalWiki</LightYellowText>
+          <LightYellowText>publishInternalWiki</LightYellowText>
           <BlueText>{"()"}</BlueText>, <DarkBlueText>true</DarkBlueText>
           <PurpleText>{")"}</PurpleText>;
         </Indent>
