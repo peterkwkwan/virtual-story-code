@@ -8,8 +8,13 @@ import {
   LineBreak,
   StringText,
 } from "./StyledText";
+import { IEducationDescription } from "./types";
 
-export const EducationDescriptionHTML = () => {
+interface Props {
+  educationDescription: IEducationDescription;
+}
+
+export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
   /* eslint-disable react/no-unescaped-entities */
   interface AttributeProps {
     name: string;
@@ -70,7 +75,7 @@ export const EducationDescriptionHTML = () => {
           text="meta"
           attributes={[
             { name: "name", value: "degree" },
-            { name: "content", value: "bachelors" },
+            { name: "content", value: educationDescription.degreeType },
           ]}
         />
         <br />
@@ -78,12 +83,12 @@ export const EducationDescriptionHTML = () => {
           text="meta"
           attributes={[
             { name: "name", value: "year" },
-            { name: "content", value: "class-of-2014" },
+            { name: "content", value: educationDescription.year },
           ]}
         />
         <br />
         <OpeningBrackets text="title" />
-        McGill University
+        {educationDescription.schoolName}
         <ClosingBrackets text="title" />
         <br />
         <OpeningBrackets
@@ -100,21 +105,21 @@ export const EducationDescriptionHTML = () => {
       <Indent>
         <OpeningBrackets text="h1" />
         <Indent>
-          <BaseText>Bachelor of Arts</BaseText>
+          <BaseText>{educationDescription.degreeName}</BaseText>
         </Indent>
         <ClosingBrackets text="h1" />
         <LineBreak />
-        <OpeningBrackets text="h2" />
-        <Indent>
-          <BaseText>Major in Economics</BaseText>
-        </Indent>
-        <ClosingBrackets text="h2" />
-        <LineBreak />
-        <OpeningBrackets text="h2" />
-        <Indent>
-          <BaseText>Minor in International Development</BaseText>
-        </Indent>
-        <ClosingBrackets text="h2" />
+        {educationDescription.subjects &&
+          educationDescription.subjects.map((subject, index) => (
+            <React.Fragment key={index}>
+              <OpeningBrackets text="h2" />
+              <Indent>
+                <BaseText>{subject}</BaseText>
+              </Indent>
+              <ClosingBrackets text="h2" />
+              <LineBreak />
+            </React.Fragment>
+          ))}
       </Indent>
       <ClosingBrackets text="body" />
     </>
