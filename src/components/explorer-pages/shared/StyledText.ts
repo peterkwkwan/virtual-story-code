@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BaseText = styled.span`
+export const BaseText = styled.span`
   line-height: 18px;
 `
 
@@ -46,6 +46,10 @@ export const MutedGreenText = styled(BaseText)`
 
 export const YellowBrackets = styled(BaseText)`
   color: ${(props) => props.theme.color.yellowBrackets};
+`;
+
+export const AngleBrackets = styled(BaseText)`
+  color: ${(props) => props.theme.color.angleBrackets};
 `;
 
 export const Indent = styled.div`
