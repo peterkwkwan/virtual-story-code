@@ -45,9 +45,9 @@ export const initFolders: IFolderStructure = {
   [FolderNames.EDUCATION]: {
     opened: true,
     files: [
-      { title: "McGill.html", path: "explorer/mcgill" },
-      { title: "HKU.html", path: "explorer/HKU" },
-      { title: "BurnabyNorth.md", path: "explorer/bbynorth" },
+      { title: "McGill.html", path: PagePaths.MCGILL },
+      { title: "HKU.html", path: PagePaths.HKU },
+      { title: "BurnabyNorth.md", path: PagePaths.BBYNORTH },
     ],
   },
 };
