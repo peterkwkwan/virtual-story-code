@@ -43,12 +43,12 @@ export const JobDescriptionTsx = ({
     const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
-        <Indent>
+        <div>
           <DarkBlueText>const</DarkBlueText> <BlueText>{property}</BlueText> ={" "}
           <StringText>
             "{basicInfo[property as keyof Partial<IJobDescription>]}"
           </StringText>
-        </Indent>
+        </div>
       );
     }
     return elementList;
@@ -62,19 +62,22 @@ export const JobDescriptionTsx = ({
         <LightYellowText>{companyName}</LightYellowText> ={" "}
         <YellowBrackets>{"() "}</YellowBrackets>
         {"=> "} <YellowBrackets>{"{"}</YellowBrackets>
-        {isCurrentRole && (
-          <Indent>
-            <DarkBlueText>const</DarkBlueText> <PurpleText>{"["}</PurpleText>
-            <BlueText>isCurrentRole</BlueText>
-            <PurpleText>{"]"}</PurpleText> = <GreenText>React</GreenText>.
-            <LightYellowText>useState</LightYellowText>
-            <PurpleText>{"("}</PurpleText>
-            <BlueText>true</BlueText>
-            <PurpleText>{")"}</PurpleText>
-          </Indent>
-        )}
-        <LineBreak />
         <Indent>
+          {isCurrentRole && (
+            <>
+              {/* <Indent> */}
+              <DarkBlueText>const</DarkBlueText> <PurpleText>{"["}</PurpleText>
+              <BlueText>isCurrentRole</BlueText>
+              <PurpleText>{"]"}</PurpleText> = <GreenText>React</GreenText>.
+              <LightYellowText>useState</LightYellowText>
+              <PurpleText>{"("}</PurpleText>
+              <BlueText>true</BlueText>
+              <PurpleText>{")"}</PurpleText>
+              {/* </Indent> */}
+            </>
+          )}
+          <LineBreak />
+          {/* <Indent> */}
           <DarkBlueText>const </DarkBlueText>
           <BlueText>job </BlueText>= <DarkBlueText>new </DarkBlueText>
           <GreenText>Job</GreenText>
@@ -82,13 +85,12 @@ export const JobDescriptionTsx = ({
           <StringText>"{companyName}"</StringText>
           <PurpleText>{")"}</PurpleText>
           <LineBreak />
-        </Indent>
-        {renderBasicInfo()}
-        {functions.map((task, idx) => {
-          return (
-            <React.Fragment key={task}>
-              <LineBreak />
-              <Indent>
+          {/* </Indent> */}
+          {renderBasicInfo()}
+          {functions.map((task, idx) => {
+            return (
+              <React.Fragment key={task}>
+                <LineBreak />
                 <DarkBlueText>const</DarkBlueText>{" "}
                 <LightYellowText>project{idx + 1}</LightYellowText> ={" "}
                 <DarkBlueText>function</DarkBlueText>{" "}
@@ -101,12 +103,10 @@ export const JobDescriptionTsx = ({
                   <DarkBlueText>{")"}</DarkBlueText>
                 </Indent>
                 <PurpleText>{"}"} </PurpleText>
-              </Indent>
-            </React.Fragment>
-          );
-        })}
-        <LineBreak />
-        <Indent>
+              </React.Fragment>
+            );
+          })}
+          <LineBreak />
           <>
             <DarkBlueText>const</DarkBlueText> <BlueText>techStack</BlueText> ={" "}
             <PurpleText>{"["} </PurpleText>

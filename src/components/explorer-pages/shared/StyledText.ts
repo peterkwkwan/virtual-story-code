@@ -49,6 +49,7 @@ export const YellowBrackets = styled(BaseText)`
 `;
 
 export const Indent = styled.div`
+  border-left: 1px solid #515151;
   padding-left: 16px; 
 `;
 
