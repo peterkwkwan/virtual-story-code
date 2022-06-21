@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import React, { useContext, useState } from "react";
+import styled from "styled-components";
 import { ExplorerContext } from "../App";
 import { ActionButtons } from "../components/ActionButtons";
 import { MarioKart } from "../components/MarioKart";

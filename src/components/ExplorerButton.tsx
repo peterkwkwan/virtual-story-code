@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ExplorerContext } from "../App";
@@ -33,7 +33,8 @@ const StyledButton = styled.button<Props>`
 `;
 
 export const ExplorerButton = (props: Props) => {
-  const { selected, ...rest } = props;
+  const { ...rest } = props;
+  const [selected, setSelected] = useState(false);
   const { currentFile } = useContext(ExplorerContext);
   const [, setFile] = currentFile;
 
@@ -43,8 +44,11 @@ export const ExplorerButton = (props: Props) => {
   useEffect(() => {
     if (pathname.includes(rest.path)) {
       setFile({ title: rest.title, path: rest.path });
+      setSelected(true);
+    } else {
+      setSelected(false);
     }
-  }, []);
+  }, [pathname]);
 
   const handleClick = () => {
     setFile({ title: rest.title, path: rest.path });
