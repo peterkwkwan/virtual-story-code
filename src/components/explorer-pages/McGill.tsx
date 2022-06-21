@@ -15,7 +15,6 @@ export const McGill = () => {
     location: { city: "Montreal", country: "Canada" },
     degreeType: "Bachelors",
     degreeName: "Bachelor of Arts",
-    educationType: { rel: "post-secondary-education", href: "degree" },
     subjects: ["Major in Economics", "Minor in International Development"],
   };
 

@@ -104,8 +104,8 @@ export const PackageJson = () => {
           <LightBlueText>Math</LightBlueText>.
           <LightYellowText>max</LightYellowText>
           <PurpleText>{"("}</PurpleText>
-          <DarkBlueText>Infinity</DarkBlueText>,{" "}
-          <MutedGreenText>9999</MutedGreenText>
+          <DarkBlueText>Infinity</DarkBlueText>, over *{" "}
+          <MutedGreenText>9000</MutedGreenText>
           <PurpleText>{")"}</PurpleText>,
         </Indent>
         <PurpleText>{"}"}</PurpleText>,

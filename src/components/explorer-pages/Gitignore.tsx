@@ -1,7 +1,7 @@
 import React from "react";
 import { useLastContributed } from "../../utils/useLastContributed";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
-import { CommentGreen, LineBreak } from "./shared/StyledText";
+import { BaseText, CommentGreen, LineBreak } from "./shared/StyledText";
 
 export const Gitignore = () => {
   const date = new Date("2022-06-01");
@@ -10,19 +10,19 @@ export const Gitignore = () => {
 
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={27}>
-      node_modules
+      <BaseText>node_modules</BaseText>
       <br />
-      dist
+      <BaseText>dist</BaseText>
       <LineBreak />
       <CommentGreen># food</CommentGreen>
       <br />
-      durian
+      <BaseText>durian</BaseText>
       <br />
-      broad_beans
+      <BaseText>broad_beans</BaseText>
       <br />
-      stinky_tofu
+      <BaseText>stinky_tofu</BaseText>
       <br />
-      snail_noodles
+      <BaseText>snail_noodles</BaseText>
     </ExplorerWrapper>
   );
 };

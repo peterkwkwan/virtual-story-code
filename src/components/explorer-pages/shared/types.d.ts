@@ -17,6 +17,5 @@ export interface IEducationDescription {
     location: {city: string, country: string},
     degreeType: string;
     degreeName: string;
-    educationType: {rel: string, href: string},
     subjects?: string[];
 }

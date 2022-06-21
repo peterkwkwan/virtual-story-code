@@ -15,7 +15,6 @@ export const HKU = () => {
     location: { city: "Hong Kong", country: "Hong Kong SAR" },
     degreeType: "PPL",
     degreeName: "Private Pilot License",
-    educationType: { rel: "aviation", href: "license" },
     subjects: ["Certificate in Australian Private Pilot License (PPL)"],
   };
 

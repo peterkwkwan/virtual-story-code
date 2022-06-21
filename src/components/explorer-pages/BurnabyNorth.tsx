@@ -15,7 +15,6 @@ export const BurnabyNorth = () => {
     location: { city: "Vancouver", country: "Canada" },
     degreeType: "secondary education",
     degreeName: "High School Diploma",
-    educationType: { rel: "secondary-education", href: "diploma" },
   };
 
   return (

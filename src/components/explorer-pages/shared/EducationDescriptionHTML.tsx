@@ -98,14 +98,6 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
             { name: "href", value: educationDescription.location.country },
           ]}
         />
-        <br />
-        <OpeningBrackets
-          text="link"
-          attributes={[
-            { name: "rel", value: educationDescription.educationType.rel },
-            { name: "href", value: educationDescription.educationType.href },
-          ]}
-        />
       </Indent>
       <ClosingBrackets text="head" />
       <LineBreak />
