@@ -1,4 +1,5 @@
 import React from "react";
+import TypewriterComponent from "typewriter-effect";
 import {
   AngleBrackets,
   BaseText,
@@ -52,6 +53,8 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
       </>
     );
   };
+
+  const typeWriterString = `<span style="color: #808080;"><<span style="color: #4fc1ff">meta </span><span style="color: #9cdcfe">description</span>=<span style="color: #ce9178">"education"</span>></span>`;
   return (
     <>
       <AngleBrackets>{"<!"}</AngleBrackets>
@@ -66,11 +69,18 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
       <br />
       <OpeningBrackets text="head" />
       <Indent>
-        <OpeningBrackets
+        {/* <OpeningBrackets
           text="meta"
           attributes={[{ name: "charset", value: "UTF-8" }]}
-        />
-        <br />
+        /> */}
+
+        <div style={{ height: "18px" }}>
+          <TypewriterComponent
+            onInit={(typewriter) => {
+              typewriter.typeString(typeWriterString).pauseFor(2500).start();
+            }}
+          />
+        </div>
         <OpeningBrackets
           text="meta"
           attributes={[
