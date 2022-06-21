@@ -13,6 +13,7 @@ const theme: Theme = {
     text02: "rgba(204, 204, 204, 0.5)",
     lineNumberText: "#858585",
     contributors: "#999",
+    angleBrackets: "#808080",
 
     lightBlueText: "#9cdcfe",
     blueText: "#4fc1ff",
