@@ -47,7 +47,7 @@ export const initFolders: IFolderStructure = {
     files: [
       { title: "McGill.html", path: PagePaths.MCGILL },
       { title: "HKU.html", path: PagePaths.HKU },
-      { title: "BurnabyNorth.md", path: PagePaths.BBYNORTH },
+      { title: "BurnabyNorth.html", path: PagePaths.BBYNORTH },
     ],
   },
 };

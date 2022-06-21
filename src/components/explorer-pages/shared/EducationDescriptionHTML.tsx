@@ -102,6 +102,7 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
       <ClosingBrackets text="head" />
       <LineBreak />
       <OpeningBrackets text="body" />
+      <LineBreak />
       <Indent>
         <OpeningBrackets text="h1" />
         <Indent>

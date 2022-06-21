@@ -11,7 +11,7 @@ export const McGill = () => {
 
   const educationDescription: IEducationDescription = {
     schoolName: "McGill University",
-    year: "Class of 2014",
+    year: "2014",
     location: "Montreal, Canada",
     degreeType: "Bachelors",
     degreeName: "Bachelor of Arts",
@@ -19,7 +19,7 @@ export const McGill = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={24}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={26}>
       <EducationDescriptionHTML educationDescription={educationDescription} />
     </ExplorerWrapper>
   );
