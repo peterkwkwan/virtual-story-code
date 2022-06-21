@@ -18,7 +18,7 @@ export const BurnabyNorth = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={22}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={18}>
       <EducationDescriptionHTML educationDescription={educationDescription} />
     </ExplorerWrapper>
   );
