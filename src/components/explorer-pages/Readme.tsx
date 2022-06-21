@@ -7,7 +7,7 @@ import { DarkBlueText, LineBreak } from "./shared/StyledText";
 export const Readme = () => {
   const date = new Date("2019-05-01");
   const diff = useLastContributed(date);
-  const contributors = `${diff} | 2 authors (Santa Claus and 1 other)`;
+  const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`;
 
   const yearsOnly = diff.slice(0, 1);
 
