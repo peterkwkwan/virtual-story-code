@@ -14,8 +14,9 @@ export type INonTechJobDescription = Omit<IJobDescription,'techStack'>
 export interface IEducationDescription {
     schoolName: string;
     year: string;
-    location: string;
+    location: {city: string, country: string},
     degreeType: string;
     degreeName: string;
+    educationType: {rel: string, href: string},
     subjects?: string[];
 }

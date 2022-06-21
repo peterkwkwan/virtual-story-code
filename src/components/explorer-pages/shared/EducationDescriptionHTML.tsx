@@ -94,8 +94,16 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
         <OpeningBrackets
           text="link"
           attributes={[
-            { name: "rel", value: "post-secondary-education" },
-            { name: "href", value: "BurnabyNorth.md" },
+            { name: "rel", value: educationDescription.location.city },
+            { name: "href", value: educationDescription.location.country },
+          ]}
+        />
+        <br />
+        <OpeningBrackets
+          text="link"
+          attributes={[
+            { name: "rel", value: educationDescription.educationType.rel },
+            { name: "href", value: educationDescription.educationType.href },
           ]}
         />
       </Indent>

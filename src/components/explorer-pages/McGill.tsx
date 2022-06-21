@@ -12,9 +12,10 @@ export const McGill = () => {
   const educationDescription: IEducationDescription = {
     schoolName: "McGill University",
     year: "2014",
-    location: "Montreal, Canada",
+    location: { city: "Montreal", country: "Canada" },
     degreeType: "Bachelors",
     degreeName: "Bachelor of Arts",
+    educationType: { rel: "post-secondary-education", href: "degree" },
     subjects: ["Major in Economics", "Minor in International Development"],
   };
 

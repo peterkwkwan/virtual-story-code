@@ -12,9 +12,10 @@ export const HKU = () => {
   const educationDescription: IEducationDescription = {
     schoolName: "HKU Space",
     year: "2015",
-    location: "Hong Kong",
+    location: { city: "Hong Kong", country: "Hong Kong SAR" },
     degreeType: "PPL",
     degreeName: "Private Pilot License",
+    educationType: { rel: "aviation", href: "license" },
     subjects: ["Certificate in Australian Private Pilot License (PPL)"],
   };
 
