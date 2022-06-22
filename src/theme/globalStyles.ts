@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Menlo';
     src: url(/assets/fonts/Menlo.ttf); 
   }
+  @font-face {
+    font-family: 'SF-Pro';
+    src: url(/assets/fonts/SF-Pro.ttf); 
+  }
   body {
     font-family: Menlo, Monaco, "Courier New", monospace;
     padding: 0;
