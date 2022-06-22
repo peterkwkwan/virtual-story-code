@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BaseContainer } from "../../../containers/BaseContainer";
+import { BaseContainer } from "../../../shared/styledContainers";
 
 interface Props {
   children: React.ReactNode;
