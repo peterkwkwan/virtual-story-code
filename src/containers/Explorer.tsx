@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ExplorerButton } from "../components/ExplorerButton";
 import { Folder } from "../components/Folder";
+import { SidebarContentHeader } from "../components/SidebarContentHeader";
 import { FolderNames, initFolders } from "../constants";
 import { PagePaths } from "../shared/routerConfig";
 import { SidebarContentContainer } from "../shared/styledContainers";
@@ -91,6 +92,7 @@ export const Explorer = () => {
 
   return (
     <SidebarContentContainer>
+      <SidebarContentHeader headerName="explorer" />
       <StyledHeaderBtn onClick={handleToggle} show={show}>
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>
