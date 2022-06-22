@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { Content } from "./containers/Content";
 import { SideNavigation } from "./containers/SideNavigation";
 import { TopNavigation } from "./containers/TopNavigation";
@@ -15,6 +15,12 @@ interface ExplorerContextProp {
 
 const initFile: File = { title: "README.md", path: PagePaths.README };
 
+const StyledDiv = styled.div`
+  display: flex;
+  height: calc(100vh - 56px);
+  background-color: #1e1e1e;
+`;
+
 export const ExplorerContext = React.createContext<ExplorerContextProp>({
   currentFile: [initFile, () => undefined],
 });
@@ -28,10 +34,10 @@ function App() {
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <TopNavigation />
-          <div style={{ display: "flex", height: "calc(100vh - 56px)" }}>
+          <StyledDiv>
             <SideNavigation />
             <Content />
-          </div>
+          </StyledDiv>
         </ThemeProvider>
       </ExplorerContext.Provider>
     </BrowserRouter>

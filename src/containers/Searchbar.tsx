@@ -1,5 +1,6 @@
 import React from "react";
+import { SidebarContentContainer } from "../shared/styledContainers";
 
 export const Searchbar = () => {
-  return <div>Searchbar</div>;
+  return <SidebarContentContainer>Searchbar</SidebarContentContainer>;
 };
