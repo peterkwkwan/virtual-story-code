@@ -12,13 +12,26 @@ const ReplaceBox = styled(TextField)`
 `;
 export const ReplaceField = () => {
   return (
-    <ReplaceContainer>
-      <ReplaceBox>Replace</ReplaceBox>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <ReplaceContainer>
+        <ReplaceBox>Replace</ReplaceBox>
+        <Icon
+          height={20}
+          width={20}
+          src="../../../public/assets/icons/search/replace-icon.png"
+        />
+      </ReplaceContainer>
       <Icon
         height={20}
         width={20}
-        src="../../../public/assets/icons/search/replace-icon.png"
+        style={{ position: "relative", left: 4 }}
+        src="../../../public/assets/icons/search/replace-icon2.png"
       />
-    </ReplaceContainer>
+    </div>
   );
 };
