@@ -4,9 +4,9 @@ import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { BaseText, CommentGreen, LineBreak } from "./shared/StyledText";
 
 export const Gitignore = () => {
-  const date = new Date("2022-06-01");
+  const date = new Date("1991-12-07");
   const diff = useLastContributed(date);
-  const contributors = `${diff} | 2 authors (Yucky food and 1 other)`;
+  const contributors = `${diff} | 2 authors (Bad food, Allergies and 1 other)`;
 
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={27}>
