@@ -8,13 +8,13 @@ const theme: Theme = {
     dark02: "rgb(51, 51, 51)",
     dark03: "#252526",
     dark04: "rgb(60, 60, 60)",
-
+    
     text01: "rgb(204, 204, 204)",
     text02: "rgba(204, 204, 204, 0.5)",
     text03: '#BBB',
-    lineNumberText: "#858585",
+    
     contributors: "#999",
-    angleBrackets: "#808080",
+    selectedBlueBorder: '#007fd4',
 
     lightBlueText: "#9cdcfe",
     blueText: "#4fc1ff",
@@ -27,6 +27,8 @@ const theme: Theme = {
     yellowBrackets: '#ffd700',
     stringText: "#ce9178",
     purpleText: "#c586c0",
+    lineNumberText: "#858585",
+    angleBrackets: "#808080",
 
     buttonFocus: "rgba(193, 192, 192, 0.05)",
   },

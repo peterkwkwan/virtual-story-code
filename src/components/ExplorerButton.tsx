@@ -28,7 +28,10 @@ const StyledButton = styled.button<Props>`
   width: 100%;
   background-color: ${(props) =>
     props.selected ? "hsla(215, 78%, 30%, 0.83)" : "inherit"};
-  border: ${(props) => (props.selected ? "1px solid #007fd4" : "none")};
+  border: ${(props) =>
+    props.selected
+      ? "1px solid " + props.theme.color.selectedBlueBorder
+      : "none"};
   color: inherit;
   line-height: ${(props) => (props.selected ? "20px" : "22px")};
   white-space: pre;
