@@ -10,7 +10,7 @@ import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Readme } from "../components/explorer-pages/Readme";
 import { Serai } from "../components/explorer-pages/Serai";
-import { Search } from "../containers/Search";
+import { SearchContent } from "../containers/SearchContent";
 
 export enum PagePaths {
   SERAI = "explorer/serai",
@@ -83,6 +83,6 @@ export const routerConfig: RouterConfig[] = [
   },
   {
     path: PagePaths.SEARCH,
-    component: Search,
+    component: SearchContent,
   },
 ];
