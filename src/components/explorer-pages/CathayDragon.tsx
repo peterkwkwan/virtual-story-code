@@ -26,7 +26,7 @@ export const CathayDragon = () => {
   const internshipString = `<span style="color: #c586c0;">import </span><span style="color: #9cdcfe;">Intern </span>
   <span style="color: #c586c0;">from </span><span style="color: #ce9178;">'internship'</span>`;
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={20}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={21}>
       <PurpleText>import</PurpleText> <LightBlueText>assert</LightBlueText>{" "}
       <PurpleText>from</PurpleText> <StringText>'chai'</StringText>
       <div style={{ height: "18px" }}>

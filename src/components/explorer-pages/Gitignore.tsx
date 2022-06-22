@@ -9,7 +9,7 @@ export const Gitignore = () => {
   const contributors = `${diff} | 2 authors (Bad food, Allergies and 1 other)`;
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={27}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={9}>
       <BaseText>node_modules</BaseText>
       <br />
       <BaseText>dist</BaseText>

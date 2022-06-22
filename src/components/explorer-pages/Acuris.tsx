@@ -24,7 +24,7 @@ export const Acuris = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={25}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={23}>
       <JobDescriptionScss jobDescription={jobDescription} />
     </ExplorerWrapper>
   );

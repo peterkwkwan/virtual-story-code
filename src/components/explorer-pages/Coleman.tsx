@@ -24,7 +24,7 @@ export const Coleman = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={23}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={21}>
       <JobDescriptionScss jobDescription={jobDescription} />
     </ExplorerWrapper>
   );

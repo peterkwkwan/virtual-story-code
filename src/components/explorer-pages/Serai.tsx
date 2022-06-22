@@ -40,7 +40,7 @@ export const Serai = () => {
   };
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={49}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={46}>
       <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   );

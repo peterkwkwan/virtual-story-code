@@ -30,7 +30,7 @@ export const Manulife = () => {
     ],
   };
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={34}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={33}>
       <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   );
