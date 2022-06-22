@@ -24,7 +24,6 @@ export const TextBox = styled.div`
 export const TextField = styled.div`
   font-size: 13px;
   cursor: text;
-  font-family: SF-Pro, sans-serif;
   line-height: 18px;
   letter-spacing: 0.3px;
 `;
