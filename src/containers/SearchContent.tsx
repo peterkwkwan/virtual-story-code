@@ -1,6 +1,6 @@
 import React from "react";
-import { BaseContainer } from "../shared/styledContainers";
+import { BaseContentContainer } from "../shared/styledContainers";
 
 export const SearchContent = () => {
-  return <BaseContainer>Search</BaseContainer>;
+  return <BaseContentContainer>Search</BaseContentContainer>;
 };

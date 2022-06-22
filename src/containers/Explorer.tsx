@@ -4,13 +4,7 @@ import { ExplorerButton } from "../components/ExplorerButton";
 import { Folder } from "../components/Folder";
 import { FolderNames, initFolders } from "../constants";
 import { PagePaths } from "../shared/routerConfig";
-
-const ExplorerContainer = styled.aside`
-  background-color: ${(props) => props.theme.color.dark03};
-  height: 100%;
-  width: 300px;
-  color: ${(props) => props.theme.color.text01};
-`;
+import { SidebarContentContainer } from "../shared/styledContainers";
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
   width: 100%;
@@ -96,7 +90,7 @@ export const Explorer = () => {
   };
 
   return (
-    <ExplorerContainer>
+    <SidebarContentContainer>
       <StyledHeaderBtn onClick={handleToggle} show={show}>
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>
@@ -109,6 +103,6 @@ export const Explorer = () => {
           })}
         </>
       )}
-    </ExplorerContainer>
+    </SidebarContentContainer>
   );
 };

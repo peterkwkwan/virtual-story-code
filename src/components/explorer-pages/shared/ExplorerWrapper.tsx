@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BaseContainer } from "../../../shared/styledContainers";
+import { BaseContentContainer } from "../../../shared/styledContainers";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface Props {
   numberOfLines: number;
 }
 
-const StyledContainer = styled(BaseContainer)`
+const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
 `;
 
