@@ -17,7 +17,7 @@ const Title = styled.h6`
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-family: sans-serif;
+  font-family: SF-Pro, sans-serif;
 `;
 export const SidebarContentHeader = ({
   headerName,
