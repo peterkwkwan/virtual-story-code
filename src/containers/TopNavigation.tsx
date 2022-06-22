@@ -21,6 +21,7 @@ const navOptions = [
 export const StyledList = styled.ul`
   display: flex;
   align-items: center;
+  font-family: SF-Pro, sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
