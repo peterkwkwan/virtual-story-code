@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+	<title>GitHub</title>
+	<defs>
+		<image  width="20" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAARdQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////47yV2QAAAF10Uk5TAARltOX8tVjg/wWS/p5U+7xFnPrz3NvyoUezA4kQAhJ9mIyxPTL25L+il/2u6QDR6Llnc/XvTwcGSesK5udBvtmdDwyZ12zGHqwBr2YTj7sJwamQsgh8GX5RTH8aQoCKGAAAAP1JREFUeJxNj3sjAkEUxc+usp12Nch6FIlFKiJZogg9UB7r/fz+n8PMlm3OP3PPb+6dMxdQMsyJWDwemzQN/MuwEhwpYY1w0nYYybGTYZ/OJJ1SvSnB6ZnZ9Jw7vyAWlzIUKSDrksvASg7IrQJ50s3ClCNrUSbWpTXhkemNMdzcIj0UyG1oypAFCLKowxIpUCZ3dFgky9iVcRUN7pH7qMq4gzGzpK2iRnHoHx0PUf3kVMIaGs2z85ZzcXkFtDtdtXGzAfR4fdPlbR+oDMLte2pkwLv+fZj1oNhjXZWB5zw9q2u8SPYaDJ9/e/dZUoVNPx9EH/n4/FLH989vaP8ATG4ap7cIRaAAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

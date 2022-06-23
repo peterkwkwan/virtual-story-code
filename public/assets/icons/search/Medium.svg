@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+	<title>iconmonstr-medium-5</title>
+	<defs>
+		<image  width="20" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAALRQTFRFAAAAV1dXHh4eDQ0NCAgIBQUFWFhYHx8fBwcHAAAAAgICKSkpQ0NDICAgiYmJEBAQDw8Pj4+P7+/v////Pz8/+vr6Z2dnBwcHycnJ+fn5FRUVWlpaGhoaR0dHrKys5ubmQUFBAwMDAQEB3d3dT09PWFhYVVVVX19fg4OD1tbWBgYG4uLiTk5O9PT08PDwJCQk8vLywsLCwcHB8/PzCwsLTExMSkpK/v7+aGhoXV1dHR0dWVlZL4Ha2QAAADx0Uk5TAAhfvuz/CF3u/////10En////////////////////////////////////////////////////////18I+HWX6AAAAM9JREFUeJxtkdl6gjAUhFMgyADKckLTulaRUpcu2rr2/d/LJNh8vchc/t+ZnMkcxrQePD/gPPC9kFn1IsRJmiYxov4dDTLkRUlKZZEjGxiYQRhksECmWR+iIqtKQL0QRnlJ/1TmUcg8FESPUj4RPQ/liKiAx/xYDVZjTIimwEyNxj4LEm16mS9qWhpIScB4qmHzirZ+62DK/+AK63ZjYWdvSGD7bu1m0cfn1w77b7vIRJr8HOh4Okt50ZGurvC/7m+6C3FX5yxZKbyf49qd4wYxoRgyLNlCbgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

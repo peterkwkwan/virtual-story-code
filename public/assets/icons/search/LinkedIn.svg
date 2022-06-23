@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+	<title>linkedin</title>
+	<defs>
+		<image  width="20" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAAK5QTFRFAAAAAH67AH67AH67AH67AH67AH67AH67AH67AH67AH67AH67AH67AH67DoW/Ya/VLJXHAH67pNHn////5fL4vt7u8fj7F4rBJ5LFl8rjWKrTLJTHUafRSKLOAn+8JpLFc7janc3lbbXYCIK9isTg4fD3B4G9ebvbw+DvuNvsBoG98vn8xuLw9fr8RaHNPp3MWqzTZ7LXCYO+LZXHabPXK5THdrrb2+32weDvJZHFr9w6twAAADp0Uk5TAANjtuT7swRX3/8FnP7///+Q/////////////////////////////////////////////////////1VSDEMAAADESURBVHicbZHnFoIwDIVL2YGiGLe4FRUXuKrv/2K2oBbF+yM9/U6SJreESGlUN0zTsKhG3rIdF15yHbtgns/gI+Z7eZ7Pglpd0VDmOgwa2AwUdcQbol8L2x3VwdUIFUe314eSKNFFHETD0TiKgsl0NhdXnRgiLnAZrxDXiLhJAAxiKrjd7REPAGYZHiFFzCQslZ/gjHiR5ZaCMVxzaOUj/UCaD/8NxfByzRu/JxnnCTw4T+Wa0pDyOoUhxAtZhf03ufodT/BRF56mMwTrAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
