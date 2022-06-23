@@ -58,6 +58,13 @@ const Box = styled.div<{ gradient?: boolean }>`
   }
 `;
 
+const Title = styled.p`
+  position: fixed;
+  left: 50%;
+  margin: 0;
+  font-size: 12;
+`;
+
 const TopNavigation = () => {
   const [gradient, setGradient] = useState(false);
   const [marioIsJumping, setMarioIsJumping] = useState(false);
@@ -111,9 +118,7 @@ const TopNavigation = () => {
           handleActionClick={handleActionClick}
         />
         <MarioKart marioKartIsRacing={marioKartIsRacing} />
-        <p style={{ position: "fixed", left: "50%", margin: 0 }}>
-          {renderCurrentFile()} virtual-story-code
-        </p>
+        <Title>{renderCurrentFile()} virtual-story-code</Title>
 
         <img
           height="32"
