@@ -1,9 +1,14 @@
 import React from "react";
 
 interface Props {
-  icon: string;
+  icon: JSX.Element;
   title: string;
 }
 export const ResultFile = ({ icon, title }: Props) => {
-  return <div>{title}</div>;
+  return (
+    <div>
+      {icon}
+      {title}
+    </div>
+  );
 };
