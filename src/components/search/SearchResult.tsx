@@ -11,6 +11,7 @@ const ResultSummary = styled.div`
 const Icon = styled.img`
   height: 0.75rem;
   width: 0.75rem;
+  padding-right: 6px;
 `;
 
 enum Results {
@@ -28,18 +29,23 @@ const results = [
   {
     icon: <Icon src={getIconPath(Results.GITHUB)} />,
     title: Results.GITHUB,
+    hyperlink: "https://github.com/peterkwkwan",
   },
   {
     icon: <Icon src={getIconPath(Results.LINKEDIN)} />,
     title: Results.LINKEDIN,
+    hyperlink: "https://www.linkedin.com/in/peterkwkwan/",
   },
   {
     icon: <Icon src={getIconPath(Results.MEDIUM)} />,
     title: Results.MEDIUM,
+    hyperlink: "https://medium.com/@peterkwkwan",
   },
   {
     icon: <Icon src={getIconPath(Results.RESUME)} />,
     title: Results.RESUME,
+    hyperlink:
+      "https://docs.google.com/document/d/1UrSSh-qmve1JAw2PRjdnxFfpsIvXbHJs/edit?usp=sharing&ouid=105081154505911274198&rtpof=true&sd=true",
   },
 ];
 export const SearchResult = () => {
