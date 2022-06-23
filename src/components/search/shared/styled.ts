@@ -18,6 +18,7 @@ export const TextBox = styled.div`
   align-items: center;
   height: 24px;
   padding-left: 4px;
+  margin: 0 12px 0 20px;
   border: ${(props) => "1px solid " + props.theme.color.selectedBlueBorder};
 `;
 

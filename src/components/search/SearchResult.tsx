@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ResultFile } from "./ResultFile";
 
 const ResultSummary = styled.div`
-  padding: 14px 0;
+  margin: 14px 0 14px 20px;
   font-size: 13px;
   color: rgba(204, 204, 204, 0.65);
 `;

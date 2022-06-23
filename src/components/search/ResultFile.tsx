@@ -7,27 +7,29 @@ interface Props {
   hyperlink: string;
 }
 
-const Container = styled.div`
+const Container = styled.a`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  padding-left: 20px;
 `;
 
-const Title = styled.a`
+const Title = styled.p`
   color: ${(props) => props.theme.color.text01};
-  cursor: pointer;
   font-size: 13px;
   line-height: 22px;
-  margin-right: 6px;
+  margin: 0 6px 0 0;
 `;
 
-const URL = styled.a`
+const URL = styled.p`
   color: rgba(204, 204, 204, 0.65);
   font-size: 12px;
-  cursor: pointer;
-  max-width: 200px;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
 `;
 
 export const ResultFile = ({ icon, title, hyperlink }: Props) => {

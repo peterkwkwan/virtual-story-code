@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Icon, TextBox, TextField } from "./shared/styled";
 
 const ReplaceContainer = styled(TextBox)`
-  margin-top: 6px;
+  margin: 6px 4px 0 20px;
   border: none;
   width: 242px;
 `;
@@ -29,7 +29,7 @@ export const ReplaceField = () => {
       <Icon
         height={20}
         width={20}
-        style={{ position: "relative", left: 4 }}
+        // style={{ position: "relative", left: 4 }}
         src="../../../public/assets/icons/search/replace-icon2.png"
       />
     </div>
