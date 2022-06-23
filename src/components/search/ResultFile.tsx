@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface Props {
   icon: JSX.Element;
   title: string;
+  hyperlink: string;
 }
 
 const Container = styled.div`
@@ -23,14 +24,18 @@ const URL = styled.a`
   color: rgba(204, 204, 204, 0.65);
   font-size: 12px;
   cursor: pointer;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
-export const ResultFile = ({ icon, title }: Props) => {
+export const ResultFile = ({ icon, title, hyperlink }: Props) => {
   return (
     <Container>
       {icon}
       <Title>{title}</Title>
-      <URL>test</URL>
+      <URL>{hyperlink}</URL>
     </Container>
   );
 };
