@@ -13,6 +13,10 @@ const Container = styled.a`
   cursor: pointer;
   width: calc(100% - 20px);
   padding-left: 20px;
+  text-decoration: none;
+  &:hover {
+    background-color: ${(props) => props.theme.color.buttonFocus};
+  }
 `;
 
 const Title = styled.p`
@@ -34,7 +38,7 @@ const URL = styled.p`
 
 export const ResultFile = ({ icon, title, hyperlink }: Props) => {
   return (
-    <Container>
+    <Container href={hyperlink} target="_blank">
       {icon}
       <Title>{title}</Title>
       <URL>{hyperlink}</URL>

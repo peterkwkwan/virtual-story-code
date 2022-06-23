@@ -44,8 +44,7 @@ const results = [
   {
     icon: <Icon src={getIconPath(Results.RESUME)} />,
     title: Results.RESUME,
-    hyperlink:
-      "https://docs.google.com/document/d/1UrSSh-qmve1JAw2PRjdnxFfpsIvXbHJs/edit?usp=sharing&ouid=105081154505911274198&rtpof=true&sd=true",
+    hyperlink: "https://peterkwkwan.github.io/resume/",
   },
 ];
 export const SearchResult = () => {
