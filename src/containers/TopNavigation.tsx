@@ -6,16 +6,10 @@ import { MarioKart } from "../components/MarioKart";
 import { RetroMario } from "../components/RetroMario";
 
 const navOptions = [
-  { name: "Code" },
-  { name: "File" },
-  { name: "Edit" },
-  { name: "Selection" },
-  { name: "View" },
-  { name: "Go" },
-  { name: "Run" },
-  { name: "Terminal" },
-  { name: "Window" },
-  { name: "Help" },
+  { name: "Home" },
+  { name: "Contact Me" },
+  { name: "Skills" },
+  { name: "Medium" },
 ];
 
 export const StyledList = styled.ul`
