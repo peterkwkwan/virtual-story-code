@@ -17,9 +17,10 @@ const ButtonLink = styled.button`
 
   color: ${(props) => props.theme.color.text03};
   font-weight: 600;
+  font-size: 20px;
   cursor: pointer;
   background: var(--background-color);
-  padding: 0.5em 1.5em;
+  padding: 0.6em 2em;
   border: 0;
   position: relative;
   isolation: isolate;

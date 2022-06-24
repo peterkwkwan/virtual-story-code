@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Content } from "./Content";
-import { HyperLink } from "./shared/types";
+import { HyperLink } from "./shared/constants";
 
 const Container = styled.div`
   display: grid;

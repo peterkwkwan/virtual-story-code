@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ResultFile } from "./ResultFile";
-import { HyperLink } from "./shared/types";
+import { HyperLink } from "./shared/constants";
 
 const ResultSummary = styled.div`
   margin: 14px 0 14px 20px;
