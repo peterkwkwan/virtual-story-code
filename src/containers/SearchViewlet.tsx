@@ -1,13 +1,13 @@
 import React from "react";
 import { SearchContainer } from "../components/search/SearchContainer";
 import { SidebarContentHeader } from "../components/SidebarContentHeader";
-import { SidebarContentContainer } from "../shared/styledContainers";
+import { ViewletContainer } from "../shared/styledContainers";
 
-export const Searchbar = () => {
+export const SearchViewlet = () => {
   return (
-    <SidebarContentContainer>
+    <ViewletContainer>
       <SidebarContentHeader headerName="search" />
       <SearchContainer />
-    </SidebarContentContainer>
+    </ViewletContainer>
   );
 };

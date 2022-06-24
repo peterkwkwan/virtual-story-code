@@ -10,7 +10,7 @@ export const BaseContentContainer = styled.div`
 `;
 
 
-export const SidebarContentContainer = styled.aside`
+export const ViewletContainer = styled.aside`
   background-color: ${(props) => props.theme.color.dark03};
   height: 100%;
   width: 300px;

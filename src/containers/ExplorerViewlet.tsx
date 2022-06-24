@@ -5,7 +5,7 @@ import { Folder } from "../components/Folder";
 import { SidebarContentHeader } from "../components/SidebarContentHeader";
 import { FolderNames, initFolders } from "../constants";
 import { PagePaths } from "../shared/routerConfig";
-import { SidebarContentContainer } from "../shared/styledContainers";
+import { ViewletContainer } from "../shared/styledContainers";
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
   width: 100%;
@@ -45,7 +45,7 @@ const rootFiles = [
   },
 ];
 
-export const Explorer = () => {
+export const ExplorerViewlet = () => {
   const [explorerFolders, setExplorerFolders] = useState(initFolders);
 
   const handleFolderClick = (value: FolderNames) => {
@@ -91,7 +91,7 @@ export const Explorer = () => {
   };
 
   return (
-    <SidebarContentContainer>
+    <ViewletContainer>
       <SidebarContentHeader headerName="explorer" />
       <StyledHeaderBtn onClick={handleToggle} show={show}>
         VIRTUAL-STORY-CODE
@@ -105,6 +105,6 @@ export const Explorer = () => {
           })}
         </>
       )}
-    </SidebarContentContainer>
+    </ViewletContainer>
   );
 };

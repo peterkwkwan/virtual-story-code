@@ -1,12 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Explorer } from "./Explorer";
-import { Searchbar } from "./Searchbar";
+import { ExplorerViewlet } from "./ExplorerViewlet";
+import { ExtensionsViewlet } from "./ExtensionsViewlet";
+import { SearchViewlet } from "./SearchViewlet";
 import { SidebarBtns } from "./SidebarBtns";
 
 const SidebarConfigs = {
-  ["explorer"]: <Explorer />,
-  ["search"]: <Searchbar />,
+  ["explorer"]: <ExplorerViewlet />,
+  ["search"]: <SearchViewlet />,
+  ["extensions"]: <ExtensionsViewlet />,
 };
 
 const SideNavigation = () => {
