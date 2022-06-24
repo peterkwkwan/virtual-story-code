@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { AnimatedButton } from "./AnimatedButton";
 
 const Container = styled.div`
   display: flex;
@@ -15,5 +16,9 @@ interface Props {
 }
 
 export const Content = ({ title, imgUrl }: Props) => {
-  return <Container>{title}</Container>;
+  return (
+    <Container>
+      <AnimatedButton title={title} />
+    </Container>
+  );
 };
