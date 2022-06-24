@@ -1,19 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const BtnSpan = styled.span`
-   {
-    position: absolute;
-    display: block;
-  }
-`;
-
 const ButtonLink = styled.button`
   --background-color: ${(props) => props.theme.color.dark02};
   --border-color: linear-gradient(to bottom right, #5d00ff, #ff2f00);
   --border-width: 0.5em;
   --edge-size: 0.5em;
-  --span-color: #11fa05;
 
   color: ${(props) => props.theme.color.text03};
   font-weight: 600;
@@ -80,54 +72,6 @@ const ButtonLink = styled.button`
         calc(100% - var(--border-width))
     );
   }
-
-  ${BtnSpan}:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--span-color));
-  }
-  &:hover ${BtnSpan}:nth-child(1) {
-    left: 100%;
-    transition: 1s;
-  }
-  ${BtnSpan}:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, var(--span-color));
-  }
-  &:hover ${BtnSpan}:nth-child(2) {
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-  }
-  ${BtnSpan}:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, var(--span-color));
-  }
-  &:hover ${BtnSpan}:nth-child(3) {
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-  }
-  ${BtnSpan}:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, var(--span-color));
-  }
-  &:hover ${BtnSpan}:nth-child(4) {
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-  }
 `;
 
 interface Props {
@@ -150,10 +94,6 @@ export const AnimatedButton = ({
       onMouseLeave={() => handleIsHovering(false)}
       onClick={handleClick}
     >
-      <BtnSpan></BtnSpan>
-      <BtnSpan></BtnSpan>
-      <BtnSpan></BtnSpan>
-      <BtnSpan></BtnSpan>
       {title}
     </ButtonLink>
   );
