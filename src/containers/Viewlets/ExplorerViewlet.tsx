@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ExplorerButton } from "../../components/ExplorerButton";
 import { Folder } from "../../components/Folder";
-import { SidebarContentHeader } from "../../components/SidebarContentHeader";
+import { ViewletHeader } from "./ViewletHeader";
 import { FolderNames, initFolders } from "../../constants";
 import { PagePaths } from "../../shared/routerConfig";
 import { ViewletContainer } from "../../shared/styledContainers";
@@ -92,7 +92,7 @@ export const ExplorerViewlet = () => {
 
   return (
     <ViewletContainer>
-      <SidebarContentHeader headerName="explorer" />
+      <ViewletHeader headerName="explorer" />
       <StyledHeaderBtn onClick={handleToggle} show={show}>
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>

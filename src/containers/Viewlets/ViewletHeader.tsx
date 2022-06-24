@@ -19,11 +19,7 @@ const Title = styled.h6`
   text-overflow: ellipsis;
   font-family: SF-Pro, sans-serif;
 `;
-export const SidebarContentHeader = ({
-  headerName,
-}: {
-  headerName: string;
-}) => {
+export const ViewletHeader = ({ headerName }: { headerName: string }) => {
   return (
     <StyledHeader>
       <Title>{headerName}</Title>
