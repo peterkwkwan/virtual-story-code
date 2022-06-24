@@ -131,10 +131,14 @@ const ButtonLink = styled.button`
 
 interface Props {
   title: string;
+  handleIsHovering: (hovering: boolean) => void;
 }
-export const AnimatedButton = ({ title }: Props) => {
+export const AnimatedButton = ({ title, handleIsHovering }: Props) => {
   return (
-    <ButtonLink>
+    <ButtonLink
+      onMouseOver={() => handleIsHovering(true)}
+      onMouseLeave={() => handleIsHovering(false)}
+    >
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>

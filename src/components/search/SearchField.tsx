@@ -9,7 +9,10 @@ export const SearchField = () => {
         {" "}
         <TypewriterComponent
           onInit={(typewriter) => {
-            typewriter.typeString("peter kwan").pauseFor(2500).start();
+            typewriter
+              .typeString("peter kwan - let's connect!")
+              .pauseFor(2500)
+              .start();
           }}
         />
       </TextField>

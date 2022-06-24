@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { AnimatedButton } from "./AnimatedButton";
 import { Avatar } from "./Avatar";
@@ -19,10 +19,16 @@ interface Props {
 }
 
 export const Content = ({ title, imgUrl }: Props) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleIsHovering = (hovering: boolean) => {
+    setIsHovering(hovering);
+  };
+
   return (
     <Container>
-      <Avatar title={title} />
-      <AnimatedButton title={title} />
+      <Avatar title={title} isHovering={isHovering} />
+      <AnimatedButton title={title} handleIsHovering={handleIsHovering} />
     </Container>
   );
 };
