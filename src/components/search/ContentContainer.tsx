@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Content } from "./Content";
+import { HyperLink } from "./shared/types";
 
 const Container = styled.div`
   display: grid;
@@ -11,10 +12,10 @@ const Container = styled.div`
 `;
 
 const Profiles = [
-  { title: "GitHub", imgUrl: "" },
-  { title: "LinkedIn", imgUrl: "" },
-  { title: "Medium", imgUrl: "" },
-  { title: "Resume", imgUrl: "" },
+  { title: "GitHub", hyperlink: HyperLink.GITHUB },
+  { title: "LinkedIn", hyperlink: HyperLink.LINKEDIN },
+  { title: "Medium", hyperlink: HyperLink.MEDIUM },
+  { title: "Resume", hyperlink: HyperLink.RESUME },
 ];
 
 export const ContentContainer = () => {

@@ -15,10 +15,10 @@ const Container = styled.div`
 
 interface Props {
   title: string;
-  imgUrl: string;
+  hyperlink: string;
 }
 
-export const Content = ({ title, imgUrl }: Props) => {
+export const Content = (props: Props) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleIsHovering = (hovering: boolean) => {
@@ -27,8 +27,8 @@ export const Content = ({ title, imgUrl }: Props) => {
 
   return (
     <Container>
-      <Avatar title={title} isHovering={isHovering} />
-      <AnimatedButton title={title} handleIsHovering={handleIsHovering} />
+      <Avatar title={props.title} isHovering={isHovering} />
+      <AnimatedButton {...props} handleIsHovering={handleIsHovering} />
     </Container>
   );
 };

@@ -131,13 +131,23 @@ const ButtonLink = styled.button`
 
 interface Props {
   title: string;
+  hyperlink: string;
   handleIsHovering: (hovering: boolean) => void;
 }
-export const AnimatedButton = ({ title, handleIsHovering }: Props) => {
+export const AnimatedButton = ({
+  title,
+  hyperlink,
+  handleIsHovering,
+}: Props) => {
+  const handleClick = () => {
+    window.open(hyperlink, "_blank");
+  };
+
   return (
     <ButtonLink
       onMouseOver={() => handleIsHovering(true)}
       onMouseLeave={() => handleIsHovering(false)}
+      onClick={handleClick}
     >
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>

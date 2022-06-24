@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ResultFile } from "./ResultFile";
+import { HyperLink } from "./shared/types";
 
 const ResultSummary = styled.div`
   margin: 14px 0 14px 20px;
@@ -29,22 +30,22 @@ const results = [
   {
     icon: <Icon src={getIconPath(Results.GITHUB)} />,
     title: Results.GITHUB,
-    hyperlink: "https://github.com/peterkwkwan",
+    hyperlink: HyperLink.GITHUB,
   },
   {
     icon: <Icon src={getIconPath(Results.LINKEDIN)} />,
     title: Results.LINKEDIN,
-    hyperlink: "https://www.linkedin.com/in/peterkwkwan/",
+    hyperlink: HyperLink.LINKEDIN,
   },
   {
     icon: <Icon src={getIconPath(Results.MEDIUM)} />,
     title: Results.MEDIUM,
-    hyperlink: "https://medium.com/@peterkwkwan",
+    hyperlink: HyperLink.MEDIUM,
   },
   {
     icon: <Icon src={getIconPath(Results.RESUME)} />,
     title: Results.RESUME,
-    hyperlink: "https://peterkwkwan.github.io/resume/",
+    hyperlink: HyperLink.RESUME,
   },
 ];
 export const SearchResult = () => {
