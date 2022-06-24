@@ -10,8 +10,8 @@ import { PackageJson } from "../components/explorer-pages/PackageJson";
 import { Pag } from "../components/explorer-pages/Pag";
 import { Readme } from "../components/explorer-pages/Readme";
 import { Serai } from "../components/explorer-pages/Serai";
-import { ExtensionsContent } from "../containers/ExtensionsContent";
-import { SearchContent } from "../containers/SearchContent";
+import { ExtensionsContent } from "../containers/Content/ExtensionsContent";
+import { SearchContent } from "../containers/Content/SearchContent";
 
 export enum PagePaths {
   SERAI = "explorer/serai",

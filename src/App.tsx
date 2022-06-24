@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
-import { Content } from "./containers/Content";
+import { Content } from "./containers/Content/Content";
 import { SideNavigation } from "./containers/SideNavigation";
 import { TopNavigation } from "./containers/TopNavigation";
 import { PagePaths } from "./shared/routerConfig";

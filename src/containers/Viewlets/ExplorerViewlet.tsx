@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ExplorerButton } from "../components/ExplorerButton";
-import { Folder } from "../components/Folder";
-import { SidebarContentHeader } from "../components/SidebarContentHeader";
-import { FolderNames, initFolders } from "../constants";
-import { PagePaths } from "../shared/routerConfig";
-import { ViewletContainer } from "../shared/styledContainers";
+import { ExplorerButton } from "../../components/ExplorerButton";
+import { Folder } from "../../components/Folder";
+import { SidebarContentHeader } from "../../components/SidebarContentHeader";
+import { FolderNames, initFolders } from "../../constants";
+import { PagePaths } from "../../shared/routerConfig";
+import { ViewletContainer } from "../../shared/styledContainers";
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
   width: 100%;
