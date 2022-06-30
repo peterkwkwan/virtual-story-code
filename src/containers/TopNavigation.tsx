@@ -50,11 +50,11 @@ const Box = styled.div<{ gradient?: boolean }>`
         ? "linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, rgba(226,0,0,1) 100%)"
         : "linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )"};
     color: ${(props) =>
-      props.gradient ? props.theme.color.dark01 : props.theme.color.text01};
+      props.gradient ? props.theme.palette.dark01 : props.theme.palette.text01};
   }
   &:nth-of-type(2n) {
-    background: ${(props) => props.theme.color.dark04};
-    color: ${(props) => props.theme.color.text01};
+    background: ${(props) => props.theme.palette.dark04};
+    color: ${(props) => props.theme.palette.text01};
   }
 `;
 

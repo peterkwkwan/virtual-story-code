@@ -10,7 +10,7 @@ const StyledHeader = styled.div`
 
 const Title = styled.h6`
   margin: 0;
-  color: ${(props) => props.theme.color.text03};
+  color: ${(props) => props.theme.palette.text03};
   font-weight: 400;
   font-size: 11px;
   line-height: 35px;

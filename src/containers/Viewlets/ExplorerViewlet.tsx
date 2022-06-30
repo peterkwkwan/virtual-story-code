@@ -18,7 +18,7 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   text-align: start;
   font-family: Segoe WPC, Segoe UI, sans-serif;
   cursor: pointer;
-  background-color: ${(props) => props.theme.color.dark03};
+  background-color: ${(props) => props.theme.palette.dark03};
   &:before {
     content: url("../../assets/icons/arrow.svg");
     display: inline-block;

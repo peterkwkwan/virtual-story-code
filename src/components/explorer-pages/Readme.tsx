@@ -6,17 +6,15 @@ import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { DarkBlueText, LineBreak } from "./shared/StyledText";
 
 const BtnSpan = styled.span`
-   {
-    position: absolute;
-    display: block;
-  }
+  position: absolute;
+  display: block;
 `;
 
 const AnimatedButton = styled.button`
-  --background-color: ${(props) => props.theme.color.dark02};
+  --background-color: ${(props) => props.theme.palette.dark02};
   --span-color: #11fa05;
   --hover-color: #2196f3;
-  color: ${(props) => props.theme.color.text03};
+  color: ${(props) => props.theme.palette.text03};
 
   font-weight: 600;
   font-size: 20px;

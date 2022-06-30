@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonLink = styled.button`
-  --background-color: ${(props) => props.theme.color.dark02};
+  --background-color: ${(props) => props.theme.palette.dark02};
   --border-color: linear-gradient(to bottom right, #5d00ff, #ff2f00);
   --border-width: 0.5em;
   --edge-size: 0.5em;
 
-  color: ${(props) => props.theme.color.text03};
+  color: ${(props) => props.theme.palette.text03};
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;

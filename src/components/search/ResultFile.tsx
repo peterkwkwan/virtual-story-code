@@ -15,12 +15,12 @@ const Container = styled.a`
   padding-left: 20px;
   text-decoration: none;
   &:hover {
-    background-color: ${(props) => props.theme.color.buttonFocus};
+    background-color: ${(props) => props.theme.palette.buttonFocus};
   }
 `;
 
 const Title = styled.p`
-  color: ${(props) => props.theme.color.text01};
+  color: ${(props) => props.theme.palette.text01};
   font-size: 13px;
   line-height: 22px;
   margin: 0 6px 0 0;

@@ -31,7 +31,7 @@ const FolderButton = styled.button<StyledFolder>`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.color.buttonFocus};
+    background-color: ${(props) => props.theme.palette.buttonFocus};
   }
 `;
 

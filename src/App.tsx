@@ -7,7 +7,7 @@ import { TopNavigation } from "./containers/TopNavigation";
 import { PagePaths } from "./shared/routerConfig";
 import { File } from "./shared/types";
 import GlobalStyle from "./theme/globalStyles";
-import { theme } from "./theme/theme";
+import { defaultTheme } from "./theme/theme";
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
@@ -32,7 +32,7 @@ function App() {
     <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={defaultTheme}>
           <TopNavigation />
           <StyledDiv>
             <SideNavigation />

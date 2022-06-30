@@ -29,7 +29,7 @@ const LineNumbers = styled.aside`
       line-height: 18px;
       letter-spacing: 0px;
       font-size: 12px;
-      color: ${(props) => props.theme.color.lineNumberText};
+      color: ${(props) => props.theme.palette.lineNumberText};
     }
   }
 `;
@@ -41,7 +41,7 @@ const Contributors = styled.div`
   font-family: sans-serif;
   display: flex;
   align-items: center;
-  color: ${(props) => props.theme.color.contributors};
+  color: ${(props) => props.theme.palette.contributors};
 `;
 
 export const ExplorerWrapper = ({

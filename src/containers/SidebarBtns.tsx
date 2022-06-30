@@ -5,7 +5,7 @@ import { StyledLink } from "../components/StyledLink";
 import { SidebarOptions } from "../constants";
 
 const Sidebar = styled.aside`
-  background-color: ${(props) => props.theme.color.dark02};
+  background-color: ${(props) => props.theme.palette.dark02};
   height: 100%;
   width: 48px;
 `;

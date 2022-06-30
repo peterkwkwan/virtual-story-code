@@ -30,7 +30,7 @@ const StyledButton = styled.button<Props>`
     props.selected ? "hsla(215, 78%, 30%, 0.83)" : "inherit"};
   border: ${(props) =>
     props.selected
-      ? "1px solid " + props.theme.color.selectedBlueBorder
+      ? "1px solid " + props.theme.palette.selectedBlueBorder
       : "none"};
   color: inherit;
   line-height: ${(props) => (props.selected ? "20px" : "22px")};
@@ -44,7 +44,7 @@ const StyledButton = styled.button<Props>`
   align-items: center;
   &:hover {
     background-color: ${(props) =>
-      !props.selected && props.theme.color.buttonFocus};
+      !props.selected && props.theme.palette.buttonFocus};
   }
 `;
 

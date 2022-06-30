@@ -35,10 +35,10 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
         <BlueText>{text}</BlueText>
         {attributes &&
           attributes.map((attribute, index) => (
-            <>
+            <React.Fragment key={attribute.name}>
               <LightBlueText key={index}> {attribute.name}</LightBlueText>=
               <StringText>"{attribute.value}"</StringText>
-            </>
+            </React.Fragment>
           ))}
         <AngleBrackets>{">"}</AngleBrackets>
       </>

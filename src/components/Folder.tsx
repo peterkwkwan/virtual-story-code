@@ -21,7 +21,7 @@ interface StyledFolder {
 const FolderButton = styled.button<StyledFolder>`
   width: 100%;
   background-color: ${(props) =>
-    props.opened ? props.theme.color.buttonFocus : "inherit"};
+    props.opened ? props.theme.palette.buttonFocus : "inherit"};
   border: none;
   line-height: 22px;
   white-space: pre;
@@ -40,7 +40,7 @@ const FolderButton = styled.button<StyledFolder>`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.color.buttonFocus};
+    background-color: ${(props) => props.theme.palette.buttonFocus};
   }
 `;
 

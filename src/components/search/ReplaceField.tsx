@@ -8,7 +8,7 @@ const ReplaceContainer = styled(TextBox)`
   width: 242px;
 `;
 const ReplaceBox = styled(TextField)`
-  color: ${(props) => props.theme.color.text02};
+  color: ${(props) => props.theme.palette.text02};
 `;
 export const ReplaceField = () => {
   return (
