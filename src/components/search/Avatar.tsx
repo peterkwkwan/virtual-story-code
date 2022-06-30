@@ -15,8 +15,7 @@ const Image = styled.img<ImgProps>`
   border-radius: 50%;
   border: 5px solid #5d00ff;
   box-shadow: ${(props) =>
-    props.isHovering &&
-    "inset 0 0 50px #fff, inset 20px 0 80px #f0f,inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff,0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;"};
+    props.isHovering && "-5px 0 40px #d6f1db, 5px 0 40px #d5dddd;"};
   transition: 1s;
 `;
 
