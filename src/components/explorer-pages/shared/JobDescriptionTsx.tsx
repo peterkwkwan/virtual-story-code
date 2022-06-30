@@ -43,7 +43,7 @@ export const JobDescriptionTsx = ({
     const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
-        <div>
+        <div key={property}>
           <DarkBlueText>const</DarkBlueText> <BlueText>{property}</BlueText> ={" "}
           <StringText>
             "{basicInfo[property as keyof Partial<IJobDescription>]}"

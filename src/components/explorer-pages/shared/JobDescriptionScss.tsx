@@ -34,7 +34,7 @@ export const JobDescriptionScss = ({
     const elementList: JSX.Element[] = [];
     for (const property in basicInfo) {
       elementList.push(
-        <div>
+        <div key={property}>
           <LightBlueText>{property}</LightBlueText>:{" "}
           <StringText>
             "{basicInfo[property as keyof Partial<INonTechJobDescription>]}"
@@ -50,7 +50,7 @@ export const JobDescriptionScss = ({
     const elementList: JSX.Element[] = [];
     functions.map((item, idx) => {
       elementList.push(
-        <div>
+        <div key={item}>
           <YellowText>li:nth-child</YellowText>
           <DarkBlueText>{"("}</DarkBlueText>
           <MutedGreenText>{idx + 1}</MutedGreenText>
