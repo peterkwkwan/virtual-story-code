@@ -1,6 +1,6 @@
 import React from "react";
 import TypewriterComponent from "typewriter-effect";
-import { useLastContributed } from "../../utils/useLastContributed";
+import { useLastContributed } from "../../hooks/useLastContributed";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import {
   BlueText,

@@ -1,6 +1,6 @@
 import React from "react";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
-import { useLastContributed } from "../../utils/useLastContributed";
+import { useLastContributed } from "../../hooks/useLastContributed";
 import { JobDescriptionTsx } from "./shared/JobDescriptionTsx";
 import { IJobDescription } from "./shared/types";
 

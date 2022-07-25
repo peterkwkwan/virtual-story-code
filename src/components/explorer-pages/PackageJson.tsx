@@ -1,5 +1,5 @@
 import React from "react";
-import { useLastContributed } from "../../utils/useLastContributed";
+import { useLastContributed } from "../../hooks/useLastContributed";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import {
   DarkBlueText,

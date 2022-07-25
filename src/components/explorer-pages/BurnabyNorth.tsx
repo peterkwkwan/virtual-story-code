@@ -1,5 +1,5 @@
 import React from "react";
-import { useLastContributed } from "../../utils/useLastContributed";
+import { useLastContributed } from "../../hooks/useLastContributed";
 import { EducationDescriptionHTML } from "./shared/EducationDescriptionHTML";
 import { ExplorerWrapper } from "./shared/ExplorerWrapper";
 import { IEducationDescription } from "./shared/types";
