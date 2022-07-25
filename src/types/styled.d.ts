@@ -11,6 +11,7 @@ declare module "styled-components" {
       text01: string;
       text02: string;
       text03: string;
+      text04: string;
 
       contributors: string;
       selectedBlueBorder: string;

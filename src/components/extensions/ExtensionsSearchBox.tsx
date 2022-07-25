@@ -10,7 +10,7 @@ export const TextField = styled.input`
   outline: none;
   border: 1px solid transparent;
   ::placeholder {
-    color: ${(props) => props.theme.palette.text02};
+    color: ${(props) => props.theme.palette.text03};
   }
   :focus {
     border: ${(props) => "1px solid " + props.theme.palette.selectedBlueBorder};

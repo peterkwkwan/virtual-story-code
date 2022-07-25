@@ -7,7 +7,7 @@ const ButtonLink = styled.button`
   --border-width: 0.5em;
   --edge-size: 0.5em;
 
-  color: ${(props) => props.theme.palette.text03};
+  color: ${(props) => props.theme.palette.text04};
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;

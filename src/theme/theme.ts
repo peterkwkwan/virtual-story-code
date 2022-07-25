@@ -8,8 +8,9 @@ export const defaultTheme: DefaultTheme = {
     dark04: "rgb(60, 60, 60)",
 
     text01: "rgb(204, 204, 204)",
-    text02: "rgba(204, 204, 204, 0.5)",
-    text03: "#BBB",
+    text02: "rgba(204, 204, 204, 0.7)",
+    text03: "rgba(204, 204, 204, 0.5)",
+    text04: "#BBB",
 
     contributors: "#999",
     selectedBlueBorder: "#007fd4",
