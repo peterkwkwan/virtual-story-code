@@ -1,5 +1,9 @@
 import React from "react";
+import { Extension } from "./shared/types";
 
-export const ExtensionsButton = () => {
-  return <div>ExtensionsButton</div>;
+interface Props {
+  extension: Extension;
+}
+export const ExtensionsButton = ({ extension }: Props) => {
+  return <div>{extension.name}</div>;
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { ExtensionsButton } from "./ExtensionsButton";
+import { Extension } from "./shared/types";
 
 interface StyledFolder {
   opened: boolean;
@@ -35,10 +37,14 @@ const FolderButton = styled.button<StyledFolder>`
   }
 `;
 
-const techStack = [
-  { title: "React", img: "" },
-  { title: "JavaScript", img: "" },
-  { title: "TypeScript", img: "" },
+const CollapsibleFolder = styled.div<StyledFolder>`
+  visibility: ${(props) => (props.opened ? "visible" : "hidden")};
+`;
+
+const extensions: Extension[] = [
+  { name: "React", iconUrl: "", url: "", description: "" },
+  { name: "JavaScript", iconUrl: "", url: "", description: "" },
+  { name: "TypeScript", iconUrl: "", url: "", description: "" },
 ];
 
 export const SkillsContainer = () => {
@@ -52,8 +58,11 @@ export const SkillsContainer = () => {
       <FolderButton opened={opened} onClick={handleFolderClick}>
         INSTALLED
       </FolderButton>
-      {opened &&
-        techStack.map((tech) => <div key={tech.title}>{tech.title}</div>)}
+      <CollapsibleFolder opened={opened}>
+        {extensions.map((extension) => (
+          <ExtensionsButton key={extension.name} extension={extension} />
+        ))}
+      </CollapsibleFolder>
     </Container>
   );
 };

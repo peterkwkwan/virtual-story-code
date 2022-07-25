@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 export const useIcon = (value: string) => {
   const suffix = value.split(".").pop();
 
