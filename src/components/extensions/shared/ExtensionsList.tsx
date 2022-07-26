@@ -72,4 +72,11 @@ export const ExtensionsList: Extension[] = [
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
   },
+  {
+    name: "Git",
+    icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
+    url: "",
+    description:
+      "Open-source front-end JavaScript library for building user interfaces based on UI components",
+  },
 ];

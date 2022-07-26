@@ -11,13 +11,9 @@ const Content = styled.div`
   width: calc(100% - 16px - 56px);
   font-size: 13px;
   font-family: sans-serif;
-`;
-
-const Title = styled.span`
+  line-height: 18px;
+  padding: 4px 0;
   font-weight: 600;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 `;
 
 const Description = styled.p`
@@ -26,14 +22,21 @@ const Description = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
+  font-weight: 400;
 `;
+
+const Author = styled.span`
+  font-size: 90%;
+`;
+
 export const ExtensionsButton = ({ icon, name, description }: Extension) => {
   return (
     <Container>
       {icon}
       <Content>
-        <Title>{name}</Title>
+        <span>{name}</span>
         <Description>{description}</Description>
+        <Author>testing</Author>
       </Content>
     </Container>
   );

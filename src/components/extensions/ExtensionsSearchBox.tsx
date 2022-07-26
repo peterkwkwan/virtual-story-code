@@ -18,5 +18,5 @@ export const TextField = styled.input`
 `;
 
 export const ExtensionsSearchBox = () => {
-  return <TextField placeholder="Search Skills in Marketplace" />;
+  return <TextField placeholder="Search Peter's skills" />;
 };
