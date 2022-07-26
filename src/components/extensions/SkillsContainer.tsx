@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ExtensionsButton } from "./ExtensionsButton";
-import { Extension } from "./shared/types";
+import { ExtensionsList } from "./shared/ExtensionsList";
 interface StyledFolder {
   opened: boolean;
 }
@@ -38,37 +38,8 @@ const FolderButton = styled.button<StyledFolder>`
 
 const CollapsibleFolder = styled.div<StyledFolder>`
   visibility: ${(props) => (props.opened ? "visible" : "hidden")};
+  height: 100%;
 `;
-
-const ExtensionIcon = styled.img`
-  width: 42px;
-  height: 42px;
-  padding: 10px 14px 10px 0;
-`;
-
-const extensions: Extension[] = [
-  {
-    name: "React",
-    icon: <ExtensionIcon src="../../assets/icons/extensions/react.svg" />,
-    url: "",
-    description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-  },
-  {
-    name: "JavaScript",
-    icon: <ExtensionIcon src="../../assets/icons/extensions/javascript.svg" />,
-    url: "",
-    description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-  },
-  {
-    name: "TypeScript",
-    icon: <ExtensionIcon src="../../assets/icons/extensions/typescript.svg" />,
-    url: "",
-    description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-  },
-];
 
 export const SkillsContainer = () => {
   const [opened, setOpened] = useState(true);
@@ -82,7 +53,7 @@ export const SkillsContainer = () => {
         INSTALLED
       </FolderButton>
       <CollapsibleFolder opened={opened}>
-        {extensions.map((extension) => (
+        {ExtensionsList.map((extension) => (
           <ExtensionsButton key={extension.name} {...extension} />
         ))}
       </CollapsibleFolder>

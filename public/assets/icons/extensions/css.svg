@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 142" width="40" height="46">
+	<title>css-svg</title>
+	<style>
+		.s0 { fill: #1b73ba } 
+		.s1 { fill: #1c88c7 } 
+		.s2 { fill: #ffffff } 
+	</style>
+	<path id="Layer" class="s0" d="m10.4 126.9l-10.4-126.9 124 0.3-11 126.6-50.5 14.6z"/>
+	<path id="Layer" class="s1" d="m62.5 129.3v-117.2l51 0.2-9.1 104.8z"/>
+	<path id="Layer" class="s2" d="m100.8 42l-36 15h33.1l-4 47.8-31.3 9.9-32.7-9.1-2.1-24.4h15.3l1.2 11.7 16.6 4.3 18.3-3.6 2-20.7h-54.1l-2.1-14.8 36.7-15.7h-37.3l-2.1-15.3h78.6z"/>
+</svg>
