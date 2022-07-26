@@ -8,6 +8,7 @@ interface StyledFolder {
 
 const Container = styled.div`
   margin: 12px 0 0;
+  height: calc(100% - 12px - 19.5px);
 `;
 
 const FolderButton = styled.button<StyledFolder>`
@@ -38,7 +39,8 @@ const FolderButton = styled.button<StyledFolder>`
 
 const CollapsibleFolder = styled.div<StyledFolder>`
   visibility: ${(props) => (props.opened ? "visible" : "hidden")};
-  height: 100%;
+  height: calc(100% - 22px);
+  overflow-y: auto;
 `;
 
 export const SkillsContainer = () => {
