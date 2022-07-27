@@ -15,6 +15,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Frontend framework",
   },
   {
     name: "JavaScript",
@@ -22,6 +23,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Programming language",
   },
   {
     name: "TypeScript",
@@ -29,6 +31,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Programming language",
   },
   {
     name: "HTML",
@@ -36,6 +39,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Frontend",
   },
   {
     name: "CSS",
@@ -43,6 +47,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Frontend",
   },
   {
     name: "styled-components",
@@ -50,6 +55,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "UI library",
   },
   {
     name: "Tailwind CSS",
@@ -57,6 +63,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "UI library",
   },
   {
     name: "Material UI",
@@ -64,6 +71,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "UI library",
   },
   {
     name: "Storybook",
@@ -71,6 +79,7 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "UI development tool",
   },
   {
     name: "Git",
@@ -78,5 +87,6 @@ export const ExtensionsList: Extension[] = [
     url: "",
     description:
       "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Source control",
   },
 ];

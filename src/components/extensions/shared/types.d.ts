@@ -3,4 +3,5 @@ export interface Extension {
   description: string;
   url: string;
   icon: JSX.Element;
+  type: string;
 }

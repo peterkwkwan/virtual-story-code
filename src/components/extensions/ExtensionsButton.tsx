@@ -29,14 +29,19 @@ const Author = styled.span`
   font-size: 90%;
 `;
 
-export const ExtensionsButton = ({ icon, name, description }: Extension) => {
+export const ExtensionsButton = ({
+  icon,
+  name,
+  description,
+  type,
+}: Extension) => {
   return (
     <Container>
       {icon}
       <Content>
         <span>{name}</span>
         <Description>{description}</Description>
-        <Author>testing</Author>
+        <Author>{type}</Author>
       </Content>
     </Container>
   );
