@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { ExplorerViewlet } from "../../pages/Explorer/ExplorerViewlet";
-import { ExtensionsViewlet } from "../../pages/Extensions/ExtensionsViewlet";
-import { SearchViewlet } from "../../pages/Search/SearchViewlet";
+import { ExplorerViewlet } from "../../pages/explorer/ExplorerViewlet";
+import { ExtensionsViewlet } from "../../pages/extensions/ExtensionsViewlet";
+import { SearchViewlet } from "../../pages/search/SearchViewlet";
 import { SidebarBtns } from "./SidebarBtns";
 
 const SidebarConfigs = {

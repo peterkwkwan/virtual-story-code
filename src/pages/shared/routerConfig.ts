@@ -1,17 +1,17 @@
-import { Acuris } from "../Explorer/Acuris";
-import { BurnabyNorth } from "../Explorer/BurnabyNorth";
-import { CathayDragon } from "../Explorer/CathayDragon";
-import { Coleman } from "../Explorer/Coleman";
-import { Gitignore } from "../Explorer/Gitignore";
-import { HKU } from "../Explorer/HKU";
-import { Manulife } from "../Explorer/Manulife";
-import { McGill } from "../Explorer/McGill";
-import { PackageJson } from "../Explorer/PackageJson";
-import { Readme } from "../Explorer/Readme";
-import { Serai } from "../Explorer/Serai";
-import { Pag } from "../Explorer/Pag";
-import { ExtensionsContent } from "../Extensions/ExtensionsContent";
-import { SearchContent } from "../Search/SearchContent";
+import { Acuris } from "../explorer/Acuris";
+import { BurnabyNorth } from "../explorer/BurnabyNorth";
+import { CathayDragon } from "../explorer/CathayDragon";
+import { Coleman } from "../explorer/Coleman";
+import { Gitignore } from "../explorer/Gitignore";
+import { HKU } from "../explorer/HKU";
+import { Manulife } from "../explorer/Manulife";
+import { McGill } from "../explorer/McGill";
+import { PackageJson } from "../explorer/PackageJson";
+import { Readme } from "../explorer/Readme";
+import { Serai } from "../explorer/Serai";
+import { Pag } from "../explorer/Pag";
+import { ExtensionsContent } from "../extensions/ExtensionsContent";
+import { SearchContent } from "../search/SearchContent";
 
 export enum PagePaths {
   SERAI = "explorer/serai",

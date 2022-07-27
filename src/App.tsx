@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { Content } from "./components/Content";
 import { SideNavigation } from "./components/side-navigation/SideNavigation";
 import { TopNavigation } from "./components/top-navigation/TopNavigation";
-import { File } from "./pages/Explorer/shared/types";
+import { File } from "./pages/explorer/shared/types";
 import { PagePaths } from "./pages/shared/routerConfig";
 import GlobalStyle from "./theme/globalStyles";
 import { defaultTheme } from "./theme/theme";
