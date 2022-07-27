@@ -1,8 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { StyledLink } from "../components/StyledLink";
-import { SidebarOptions } from "../constants";
+import { StyledLink } from "../ui/StyledLink";
+
+enum SidebarOptions {
+  EXPLORER = "Explorer",
+  SEARCH = "Search",
+  GIT = "Git",
+  EXTENSIONS = "Extensions",
+}
 
 const Sidebar = styled.aside`
   background-color: ${(props) => props.theme.palette.dark02};

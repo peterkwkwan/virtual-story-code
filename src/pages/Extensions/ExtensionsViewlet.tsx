@@ -1,7 +1,7 @@
 import React from "react";
-import { ExtensionsContainer } from "../../components/extensions/ExtensionsContainer";
-import { ViewletContainer } from "../../shared/styledContainers";
-import { ViewletHeader } from "./ViewletHeader";
+import { ViewletContainer } from "../shared/styledContainers";
+import { ViewletHeader } from "../../components/ui/ViewletHeader";
+import { ExtensionsContainer } from "./ExtensionsContainer";
 
 export const ExtensionsViewlet = () => {
   return (

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { ExplorerContext } from "../App";
-import { ActionButtons } from "../components/ActionButtons";
-import { MarioKart } from "../components/MarioKart";
-import { RetroMario } from "../components/RetroMario";
+import { ExplorerContext } from "../../App";
+import { ActionButtons } from "./ActionButtons";
+import { MarioKart } from "./MarioKart";
+import { RetroMario } from "./RetroMario";
 
 const navOptions = [
   { name: "Home" },

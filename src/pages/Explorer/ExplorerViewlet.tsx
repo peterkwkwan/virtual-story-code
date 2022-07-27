@@ -1,11 +1,39 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ExplorerButton } from "../../components/ExplorerButton";
-import { Folder } from "../../components/Folder";
-import { ViewletHeader } from "./ViewletHeader";
-import { FolderNames, initFolders } from "../../constants";
-import { PagePaths } from "../../shared/routerConfig";
-import { ViewletContainer } from "../../shared/styledContainers";
+import { ExplorerButton } from "../../components/ui/ExplorerButton";
+import { Folder } from "./Folder";
+import { ViewletHeader } from "../../components/ui/ViewletHeader";
+import { PagePaths } from "../shared/routerConfig";
+import { ViewletContainer } from "../shared/styledContainers";
+import { FolderContent } from "./shared/types";
+import { FolderNames } from "./shared/constants";
+
+type IFolderStructure = Record<FolderNames, FolderContent>;
+
+const initFolders: IFolderStructure = {
+  [FolderNames.NODE_MODULES]: {
+    opened: false,
+  },
+  [FolderNames.CAREER]: {
+    opened: true,
+    files: [
+      { title: "Serai.tsx", path: PagePaths.SERAI },
+      { title: "PAG.tsx", path: PagePaths.PAG },
+      { title: "Manulife.tsx", path: PagePaths.MANULIFE },
+      { title: "Acuris.scss", path: PagePaths.ACURIS },
+      { title: "Coleman.scss", path: PagePaths.COLEMAN },
+      { title: "CathayDragon.test", path: PagePaths.CATHAY },
+    ],
+  },
+  [FolderNames.EDUCATION]: {
+    opened: true,
+    files: [
+      { title: "McGill.html", path: PagePaths.MCGILL },
+      { title: "HKU.html", path: PagePaths.HKU },
+      { title: "BurnabyNorth.html", path: PagePaths.BBYNORTH },
+    ],
+  },
+};
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
   width: 100%;

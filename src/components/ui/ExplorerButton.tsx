@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { ExplorerContext } from "../App";
-import { useIcon } from "../hooks/useIcon";
+import { ExplorerContext } from "../../App";
+import { useIcon } from "../../hooks/useIcon";
 import { StyledLink } from "./StyledLink";
 
 interface Props {

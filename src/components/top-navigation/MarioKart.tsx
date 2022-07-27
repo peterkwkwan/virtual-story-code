@@ -13,26 +13,26 @@ const Container = styled.div<{ marioKartIsRacing: boolean }>`
 `;
 
 const Sprite = styled.img`
-@keyframes race {
+  @keyframes race {
     0% {
-        transform: translateX(0px);
+      transform: translateX(0px);
     }
     80% {
-        transform: translateX(calc(100vw - 210px));
+      transform: translateX(calc(100vw - 210px));
     }
     81% {
-        visibility: hidden;
-        transform: translateX(calc(100vw - 210px));
+      visibility: hidden;
+      transform: translateX(calc(100vw - 210px));
     }
     100% {
-        visibility: hidden;
-        transform: translateX(calc(100vw - 210px));
+      visibility: hidden;
+      transform: translateX(calc(100vw - 210px));
     }
-}
-height: 24px;
-animation: race 15s ease-in 3s;
-position: relative;
-}`;
+  }
+  height: 24px;
+  animation: race 15s ease-in 3s;
+  position: relative;
+`;
 
 const Pipe = styled.img`
   @keyframes pipeGrow {

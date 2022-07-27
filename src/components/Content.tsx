@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { routerConfig } from "../../shared/routerConfig";
+import { routerConfig } from "../pages/shared/routerConfig";
 
 export const Content = () => {
   return (

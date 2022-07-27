@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
-import { Content } from "./containers/Content/Content";
-import { SideNavigation } from "./containers/SideNavigation";
-import { TopNavigation } from "./containers/TopNavigation";
-import { PagePaths } from "./shared/routerConfig";
-import { File } from "./shared/types";
+import { Content } from "./components/Content";
+import { SideNavigation } from "./components/side-navigation/SideNavigation";
+import { TopNavigation } from "./components/top-navigation/TopNavigation";
+import { File } from "./pages/Explorer/shared/types";
+import { PagePaths } from "./pages/shared/routerConfig";
 import GlobalStyle from "./theme/globalStyles";
 import { defaultTheme } from "./theme/theme";
 

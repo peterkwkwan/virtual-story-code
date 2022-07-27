@@ -1,17 +1,17 @@
-import { Acuris } from "../components/explorer-pages/Acuris";
-import { BurnabyNorth } from "../components/explorer-pages/BurnabyNorth";
-import { CathayDragon } from "../components/explorer-pages/CathayDragon";
-import { Coleman } from "../components/explorer-pages/Coleman";
-import { Gitignore } from "../components/explorer-pages/Gitignore";
-import { HKU } from "../components/explorer-pages/HKU";
-import { Manulife } from "../components/explorer-pages/Manulife";
-import { McGill } from "../components/explorer-pages/McGill";
-import { PackageJson } from "../components/explorer-pages/PackageJson";
-import { Pag } from "../components/explorer-pages/Pag";
-import { Readme } from "../components/explorer-pages/Readme";
-import { Serai } from "../components/explorer-pages/Serai";
-import { ExtensionsContent } from "../containers/Content/ExtensionsContent";
-import { SearchContent } from "../containers/Content/SearchContent";
+import { Acuris } from "../Explorer/Acuris";
+import { BurnabyNorth } from "../Explorer/BurnabyNorth";
+import { CathayDragon } from "../Explorer/CathayDragon";
+import { Coleman } from "../Explorer/Coleman";
+import { Gitignore } from "../Explorer/Gitignore";
+import { HKU } from "../Explorer/HKU";
+import { Manulife } from "../Explorer/Manulife";
+import { McGill } from "../Explorer/McGill";
+import { PackageJson } from "../Explorer/PackageJson";
+import { Readme } from "../Explorer/Readme";
+import { Serai } from "../Explorer/Serai";
+import { Pag } from "../Explorer/Pag";
+import { ExtensionsContent } from "../Extensions/ExtensionsContent";
+import { SearchContent } from "../Search/SearchContent";
 
 export enum PagePaths {
   SERAI = "explorer/serai",
@@ -23,11 +23,11 @@ export enum PagePaths {
   MCGILL = "explorer/mcgill",
   HKU = "explorer/hku",
   BBYNORTH = "explorer/bbynorth",
-  PACKAGE_JSON = 'explorer/package_json',
-  GIT_IGNORE = 'explorer/gitignore',
-  README = 'explorer/readme',
-  SEARCH = 'search',
-  EXTENSIONS = 'extensions',
+  PACKAGE_JSON = "explorer/package_json",
+  GIT_IGNORE = "explorer/gitignore",
+  README = "explorer/readme",
+  SEARCH = "search",
+  EXTENSIONS = "extensions",
 }
 
 interface RouterConfig {

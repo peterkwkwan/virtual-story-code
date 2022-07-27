@@ -1,7 +1,18 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
-import { Actions, TrafficLightColors } from "../constants";
-import { StyledList } from "../containers/TopNavigation";
+import { StyledList } from "./TopNavigation";
+
+enum Actions {
+  CLOSE = "close",
+  MINIMIZE = "minimize",
+  EXPAND = "expand",
+}
+
+enum TrafficLightColors {
+  RED = "#f55549",
+  YELLOW = "#f5c11b",
+  GREEN = "#51d66a",
+}
 
 const ActionBtnContainer = styled.div`
   display: flex;
