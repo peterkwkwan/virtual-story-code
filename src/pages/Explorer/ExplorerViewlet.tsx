@@ -17,6 +17,7 @@ const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
+      { title: "BCWGroup.tsx", path: PagePaths.BCW_GROUP },
       { title: "Serai.tsx", path: PagePaths.SERAI },
       { title: "PAG.tsx", path: PagePaths.PAG },
       { title: "Manulife.tsx", path: PagePaths.MANULIFE },

@@ -5,15 +5,14 @@ import { JobDescriptionTsx } from "./shared/JobDescriptionTsx";
 import { IJobDescription } from "./shared/types";
 
 export const Serai = () => {
-  const date = new Date("2022-05-22");
+  const date = new Date("2022-07-25");
   const diff = useLastContributed(date);
   const contributors = `${diff} | 6 authors (Robert Dong and 5 others)`;
 
   const jobDescription: IJobDescription = {
     role: "Software Engineer",
-    isCurrentRole: true,
     companyName: "Serai",
-    date: "October 2021 - Present",
+    date: "October 2021 - July 2022",
     location: "Hong Kong",
     companyDescription:
       "Serai by HSBC is a B2B platform helping businesses simplify their supply chains.",
@@ -24,11 +23,13 @@ export const Serai = () => {
       "Built components in Storybook to align with UX Design System",
     ],
     techStack: [
-      "CRA",
+      "React v16",
       "Next.js",
+      "React Router v5", 
+      "React Query v3",
       "TypeScript",
       "ArgoCD",
-      "Material UI",
+      "Material UI v4",
       "Figma",
       "styled-components",
       "Git",

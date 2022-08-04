@@ -12,8 +12,10 @@ import { Serai } from "../explorer/Serai";
 import { Pag } from "../explorer/Pag";
 import { ExtensionsContent } from "../extensions/ExtensionsContent";
 import { SearchContent } from "../search/SearchContent";
+import { BCWGroup } from "../explorer/BCWGroup";
 
 export enum PagePaths {
+  BCW_GROUP = "explorer/bcw",
   SERAI = "explorer/serai",
   PAG = "explorer/pag",
   MANULIFE = "explorer/manulife",
@@ -35,6 +37,10 @@ interface RouterConfig {
   component: () => JSX.Element;
 }
 export const routerConfig: RouterConfig[] = [
+  {
+    path: PagePaths.BCW_GROUP,
+    component: BCWGroup,
+  },
   {
     path: PagePaths.SERAI,
     component: Serai,

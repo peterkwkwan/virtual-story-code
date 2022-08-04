@@ -18,6 +18,22 @@ export const ExtensionsList: Extension[] = [
     type: "Frontend framework",
   },
   {
+    name: "React Router",
+    icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
+    url: "",
+    description:
+      "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Asynchronous data handling library",
+  },
+  {
+    name: "React Query",
+    icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
+    url: "",
+    description:
+      "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Asynchronous data handling library",
+  },
+  {
     name: "JavaScript",
     icon: <ExtensionIcon src="../../assets/icons/extensions/javascript.svg" />,
     url: "",
