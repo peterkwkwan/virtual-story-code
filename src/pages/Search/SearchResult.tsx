@@ -1,30 +1,31 @@
-import React from "react";
-import styled from "styled-components";
-import { ResultFile } from "./ResultFile";
-import { HyperLink } from "./shared/constants";
+import React from 'react'
+import styled from 'styled-components'
+
+import { ResultFile } from './ResultFile'
+import { HyperLink } from './shared/constants'
 
 const ResultSummary = styled.div`
   margin: 14px 0 14px 20px;
   font-size: 13px;
   color: rgba(204, 204, 204, 0.65);
-`;
+`
 
 const Icon = styled.img`
   height: 0.75rem;
   width: 0.75rem;
   padding-right: 6px;
-`;
+`
 
 enum Results {
-  GITHUB = "GitHub",
-  LINKEDIN = "LinkedIn",
-  MEDIUM = "Medium",
-  RESUME = "Resume",
+  GITHUB = 'GitHub',
+  LINKEDIN = 'LinkedIn',
+  MEDIUM = 'Medium',
+  RESUME = 'Resume',
 }
 
 const getIconPath = (title: Results) => {
-  return `../../../public/assets/icons/search/${title}.svg`;
-};
+  return `../../../public/assets/icons/search/${title}.svg`
+}
 
 const results = [
   {
@@ -47,7 +48,7 @@ const results = [
     title: Results.RESUME,
     hyperlink: HyperLink.RESUME,
   },
-];
+]
 export const SearchResult = () => {
   return (
     <div>
@@ -56,5 +57,5 @@ export const SearchResult = () => {
         <ResultFile key={result.title} {...result} />
       ))}
     </div>
-  );
-};
+  )
+}
