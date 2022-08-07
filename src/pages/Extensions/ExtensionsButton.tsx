@@ -1,11 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { Extension } from "./shared/types";
+import React from 'react'
+import styled from 'styled-components'
+
+import { Extension } from './shared/types'
 
 const Container = styled.div`
   display: flex;
   margin-left: 16px;
-`;
+`
 
 const Content = styled.div`
   width: calc(100% - 16px - 56px);
@@ -14,7 +15,7 @@ const Content = styled.div`
   line-height: 18px;
   padding: 4px 0;
   font-weight: 600;
-`;
+`
 
 const Description = styled.p`
   color: ${(props) => props.theme.palette.text02};
@@ -23,11 +24,11 @@ const Description = styled.p`
   overflow: hidden;
   margin: 0;
   font-weight: 400;
-`;
+`
 
 const Author = styled.span`
   font-size: 90%;
-`;
+`
 
 export const ExtensionsButton = ({
   icon,
@@ -44,5 +45,5 @@ export const ExtensionsButton = ({
         <Author>{type}</Author>
       </Content>
     </Container>
-  );
-};
+  )
+}

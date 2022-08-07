@@ -45,6 +45,46 @@
     "react/jsx-curly-brace-presence": [
       "error",
       { "props": "never", "children": "never" }
-    ]
+    ],
+    "react/display-name": "off",
+    "react/jsx-first-prop-new-line": 2,
+    "react/jsx-closing-bracket-location": ["error"],
+    "react/jsx-closing-tag-location": ["error"],
+    "react/jsx-curly-newline": ["error", { "multiline": "consistent" }],
+    "react/jsx-curly-spacing": [
+      "error",
+      { "when": "never", "children": { "when": "never" } }
+    ],
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-props-no-multi-spaces": ["error"],
+    "react/jsx-sort-props": [
+      2,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": true,
+        "reservedFirst": ["key", "ref"]
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "when": "multiline"
+      }
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ],
+    "@typescript-eslint/indent": ["error", 2]
   }
 }

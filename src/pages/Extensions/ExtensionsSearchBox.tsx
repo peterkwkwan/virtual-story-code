@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 export const TextField = styled.input`
   color: ${(props) => props.theme.palette.text01};
@@ -13,10 +13,10 @@ export const TextField = styled.input`
     color: ${(props) => props.theme.palette.text03};
   }
   :focus {
-    border: ${(props) => "1px solid " + props.theme.palette.selectedBlueBorder};
+    border: ${(props) => '1px solid ' + props.theme.palette.selectedBlueBorder};
   }
-`;
+`
 
 export const ExtensionsSearchBox = () => {
-  return <TextField placeholder="Search Peter's skills" />;
-};
+  return <TextField placeholder="Search Peter's skills" />
+}

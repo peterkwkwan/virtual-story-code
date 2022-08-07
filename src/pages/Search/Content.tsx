@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { AnimatedButton } from "./AnimatedButton";
-import { Avatar } from "./Avatar";
+import React, { useState } from 'react'
+import styled from 'styled-components'
+
+import { AnimatedButton } from './AnimatedButton'
+import { Avatar } from './Avatar'
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
-`;
+`
 
 interface Props {
   title: string;
@@ -19,16 +20,16 @@ interface Props {
 }
 
 export const Content = (props: Props) => {
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(false)
 
   const handleIsHovering = (hovering: boolean) => {
-    setIsHovering(hovering);
-  };
+    setIsHovering(hovering)
+  }
 
   return (
     <Container>
       <Avatar title={props.title} isHovering={isHovering} />
       <AnimatedButton {...props} handleIsHovering={handleIsHovering} />
     </Container>
-  );
-};
+  )
+}

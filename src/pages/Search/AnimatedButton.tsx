@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const ButtonLink = styled.button`
   --background-color: ${(props) => props.theme.palette.dark02};
@@ -72,7 +72,7 @@ const ButtonLink = styled.button`
         calc(100% - var(--border-width))
     );
   }
-`;
+`
 
 interface Props {
   title: string;
@@ -85,8 +85,8 @@ export const AnimatedButton = ({
   handleIsHovering,
 }: Props) => {
   const handleClick = () => {
-    window.open(hyperlink, "_blank");
-  };
+    window.open(hyperlink, '_blank')
+  }
 
   return (
     <ButtonLink
@@ -96,5 +96,5 @@ export const AnimatedButton = ({
     >
       {title}
     </ButtonLink>
-  );
-};
+  )
+}

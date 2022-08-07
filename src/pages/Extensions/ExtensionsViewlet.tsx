@@ -1,7 +1,8 @@
-import React from "react";
-import { ViewletContainer } from "../shared/styledContainers";
-import { ViewletHeader } from "../../components/ui/ViewletHeader";
-import { ExtensionsContainer } from "./ExtensionsContainer";
+import React from 'react'
+
+import { ViewletContainer } from '../shared/styledContainers'
+import { ViewletHeader } from '../../components/ui/ViewletHeader'
+import { ExtensionsContainer } from './ExtensionsContainer'
 
 export const ExtensionsViewlet = () => {
   return (
@@ -9,5 +10,5 @@ export const ExtensionsViewlet = () => {
       <ViewletHeader headerName="extensions: marketplace" />
       <ExtensionsContainer />
     </ViewletContainer>
-  );
-};
+  )
+}
