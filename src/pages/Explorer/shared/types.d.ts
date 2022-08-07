@@ -9,7 +9,7 @@ export interface IJobDescription {
   techStack: string[];
 }
 
-export type INonTechJobDescription = Omit<IJobDescription, "techStack">;
+export type INonTechJobDescription = Omit<IJobDescription, 'techStack'>;
 
 export interface IEducationDescription {
   schoolName: string;
