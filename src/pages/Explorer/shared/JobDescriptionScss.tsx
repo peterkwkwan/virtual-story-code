@@ -1,5 +1,6 @@
-import React from "react";
-import TypewriterComponent from "typewriter-effect";
+import React from 'react'
+import TypewriterComponent from 'typewriter-effect'
+
 import {
   LightBlueText,
   LineBreak,
@@ -9,8 +10,8 @@ import {
   PurpleText,
   MutedGreenText,
   DarkBlueText,
-} from "./StyledText";
-import { INonTechJobDescription } from "./types";
+} from './StyledText'
+import { INonTechJobDescription } from './types'
 
 export const JobDescriptionScss = ({
   jobDescription,
@@ -18,7 +19,7 @@ export const JobDescriptionScss = ({
   jobDescription: INonTechJobDescription;
 }) => {
   const { role, companyName, date, location, companyDescription, functions } =
-    jobDescription;
+    jobDescription
 
   const basicInfo: Partial<INonTechJobDescription> = {
     companyName: companyName,
@@ -26,49 +27,49 @@ export const JobDescriptionScss = ({
     role: role,
     location: location,
     companyDescription: companyDescription,
-  };
+  }
 
   /* eslint-disable react/no-unescaped-entities */
 
   const renderBasicInfo = () => {
-    const elementList: JSX.Element[] = [];
+    const elementList: JSX.Element[] = []
     for (const property in basicInfo) {
       elementList.push(
         <div key={property}>
-          <LightBlueText>{property}</LightBlueText>:{" "}
+          <LightBlueText>{property}</LightBlueText>:{' '}
           <StringText>
             "{basicInfo[property as keyof Partial<INonTechJobDescription>]}"
           </StringText>
           ;
         </div>
-      );
+      )
     }
-    return elementList;
-  };
+    return elementList
+  }
 
   const renderJobFunctions = () => {
-    const elementList: JSX.Element[] = [];
+    const elementList: JSX.Element[] = []
     functions.map((item, idx) => {
       elementList.push(
         <div key={item}>
           <YellowText>li:nth-child</YellowText>
-          <DarkBlueText>{"("}</DarkBlueText>
+          <DarkBlueText>(</DarkBlueText>
           <MutedGreenText>{idx + 1}</MutedGreenText>
-          <DarkBlueText>{")"}</DarkBlueText> <DarkBlueText>{"{"}</DarkBlueText>
+          <DarkBlueText>)</DarkBlueText> <DarkBlueText>{'{'}</DarkBlueText>
           <Indent>
             <LightBlueText>task</LightBlueText>:
             <StringText> "{item}"</StringText>;
           </Indent>
-          <DarkBlueText>{"}"}</DarkBlueText>
+          <DarkBlueText>{'}'}</DarkBlueText>
         </div>
-      );
-    });
-    return elementList;
-  };
+      )
+    })
+    return elementList
+  }
 
   return (
     <>
-      <div style={{ height: "18px" }}>
+      <div style={{ height: '18px' }}>
         <TypewriterComponent
           onInit={(typewriter) => {
             typewriter
@@ -76,7 +77,7 @@ export const JobDescriptionScss = ({
                 '<span style="color: #D7BA7D;">.work-experience {</span>'
               )
               .pauseFor(2500)
-              .start();
+              .start()
           }}
         />
       </div>
@@ -84,13 +85,13 @@ export const JobDescriptionScss = ({
         <LineBreak />
         {renderBasicInfo()}
         <LineBreak />
-        {"> "}
-        <YellowText>ul</YellowText> <PurpleText>{"{"}</PurpleText>
+        {'> '}
+        <YellowText>ul</YellowText> <PurpleText>{'{'}</PurpleText>
         <Indent>{renderJobFunctions()}</Indent>
-        <PurpleText>{"}"}</PurpleText>
+        <PurpleText>{'}'}</PurpleText>
       </Indent>
-      <YellowText>{"}"}</YellowText>
+      <YellowText>{'}'}</YellowText>
     </>
-  );
-};
+  )
+}
 /* eslint-enable react/no-unescaped-entities */
