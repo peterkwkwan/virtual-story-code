@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { BaseContentContainer } from "../../shared/styledContainers";
+import React from 'react'
+import styled from 'styled-components'
+
+import { BaseContentContainer } from '../../shared/styledContainers'
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ interface Props {
 
 const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
-`;
+`
 
 const LineNumbers = styled.aside`
   margin-top: 20px;
@@ -32,7 +33,7 @@ const LineNumbers = styled.aside`
       color: ${(props) => props.theme.palette.lineNumberText};
     }
   }
-`;
+`
 
 const Contributors = styled.div`
   height: 20px;
@@ -42,14 +43,14 @@ const Contributors = styled.div`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.palette.contributors};
-`;
+`
 
 export const ExplorerWrapper = ({
   children,
   contributors,
   numberOfLines,
 }: Props) => {
-  const lineNumbers = [...Array(numberOfLines).keys()];
+  const lineNumbers = [...Array(numberOfLines).keys()]
 
   return (
     <StyledContainer>
@@ -60,10 +61,10 @@ export const ExplorerWrapper = ({
           ))}
         </ul>
       </LineNumbers>
-      <div style={{ height: "100%" }}>
+      <div style={{ height: '100%' }}>
         <Contributors>Peter Kwan, {contributors}</Contributors>
         {children}
       </div>
     </StyledContainer>
-  );
-};
+  )
+}
