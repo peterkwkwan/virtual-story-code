@@ -22,7 +22,7 @@ export const BCWGroup = () => {
       "Built from scratch Arkhia.io documentation using Docusaurus; wrote developer and API guides",
     ],
     techStack: [
-      "React v17", "Vite", "React Router v6", "React Query v3", "TypeScript", "JavaScript", "Material UI v5", "Swagger", "Jira", "SourceTree",
+      "React v17", "Stripe.js", "React Router v6", "React Query v3", "TypeScript", "JavaScript", "Material UI v5", "Swagger", "Jira", "SourceTree", "Vite"
     ],
   }
 

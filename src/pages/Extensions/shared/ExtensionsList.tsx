@@ -98,6 +98,14 @@ export const ExtensionsList: Extension[] = [
     type: "UI development tool",
   },
   {
+    name: "Stripe.js",
+    icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
+    url: "",
+    description:
+      "Open-source front-end JavaScript library for building user interfaces based on UI components",
+    type: "Payment Gateway",
+  },
+  {
     name: "Git",
     icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
     url: "",
