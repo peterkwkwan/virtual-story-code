@@ -1,25 +1,27 @@
-import React from "react";
-import { useLastContributed } from "../../hooks/useLastContributed";
-import { EducationDescriptionHTML } from "./shared/EducationDescriptionHTML";
-import { ExplorerWrapper } from "./shared/ExplorerWrapper";
-import { IEducationDescription } from "./shared/types";
+import React from 'react'
+
+import { EducationDescriptionHTML } from './shared/EducationDescriptionHTML'
+import { ExplorerWrapper } from './shared/ExplorerWrapper'
+import { IEducationDescription } from './shared/types'
+
+import { useLastContributed } from '@/hooks/useLastContributed'
 
 export const BurnabyNorth = () => {
-  const date = new Date("2009-06-01");
-  const diff = useLastContributed(date);
-  const contributors = `${diff} | 3 authors (Mom & Dad and 1 other)`;
+  const date = new Date('2009-06-01')
+  const diff = useLastContributed(date)
+  const contributors = `${diff} | 3 authors (Mom & Dad and 1 other)`
 
   const educationDescription: IEducationDescription = {
-    schoolName: "Burnaby North",
-    year: "2009",
-    location: { city: "Vancouver", country: "Canada" },
-    degreeType: "secondary education",
-    degreeName: "High School Diploma",
-  };
+    schoolName: 'Burnaby North',
+    year: '2009',
+    location: { city: 'Vancouver', country: 'Canada' },
+    degreeType: 'secondary education',
+    degreeName: 'High School Diploma',
+  }
 
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={18}>
       <EducationDescriptionHTML educationDescription={educationDescription} />
     </ExplorerWrapper>
-  );
-};
+  )
+}
