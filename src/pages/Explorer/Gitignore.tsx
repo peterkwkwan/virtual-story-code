@@ -1,12 +1,13 @@
-import React from "react";
-import { useLastContributed } from "../../hooks/useLastContributed";
-import { ExplorerWrapper } from "./shared/ExplorerWrapper";
-import { BaseText, CommentGreen, LineBreak } from "./shared/StyledText";
+import React from 'react'
+
+import { useLastContributed } from '../../hooks/useLastContributed'
+import { ExplorerWrapper } from './shared/ExplorerWrapper'
+import { BaseText, CommentGreen, LineBreak } from './shared/StyledText'
 
 export const Gitignore = () => {
-  const date = new Date("1991-12-07");
-  const diff = useLastContributed(date);
-  const contributors = `${diff} | 2 authors (Bad food, Allergies and 1 other)`;
+  const date = new Date('1991-12-07')
+  const diff = useLastContributed(date)
+  const contributors = `${diff} | 2 authors (Bad food, Allergies and 1 other)`
 
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={9}>
@@ -24,5 +25,5 @@ export const Gitignore = () => {
       <br />
       <BaseText>snail_noodles</BaseText>
     </ExplorerWrapper>
-  );
-};
+  )
+}
