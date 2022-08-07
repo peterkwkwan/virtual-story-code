@@ -1,116 +1,117 @@
-import React from "react";
-import styled from "styled-components";
-import { Extension } from "./types";
+import React from 'react'
+import styled from 'styled-components'
+
+import { Extension } from './types'
 
 const ExtensionIcon = styled.img`
   width: 42px;
   height: 42px;
   padding: 10px 14px 10px 0;
-`;
+`
 
 export const ExtensionsList: Extension[] = [
   {
-    name: "React",
+    name: 'React',
     icon: <ExtensionIcon src="../../assets/icons/extensions/react.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Frontend framework",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Frontend framework',
   },
   {
-    name: "React Router",
+    name: 'React Router',
     icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Asynchronous data handling library",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Asynchronous data handling library',
   },
   {
-    name: "React Query",
+    name: 'React Query',
     icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Asynchronous data handling library",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Asynchronous data handling library',
   },
   {
-    name: "JavaScript",
+    name: 'JavaScript',
     icon: <ExtensionIcon src="../../assets/icons/extensions/javascript.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Programming language",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Programming language',
   },
   {
-    name: "TypeScript",
+    name: 'TypeScript',
     icon: <ExtensionIcon src="../../assets/icons/extensions/typescript.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Programming language",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Programming language',
   },
   {
-    name: "HTML",
+    name: 'HTML',
     icon: <ExtensionIcon src="../../assets/icons/extensions/html.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Frontend",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Frontend',
   },
   {
-    name: "CSS",
+    name: 'CSS',
     icon: <ExtensionIcon src="../../assets/icons/extensions/css.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Frontend",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Frontend',
   },
   {
-    name: "styled-components",
+    name: 'styled-components',
     icon: <ExtensionIcon src="../../assets/icons/extensions/styled.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "UI library",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'UI library',
   },
   {
-    name: "Tailwind CSS",
+    name: 'Tailwind CSS',
     icon: <ExtensionIcon src="../../assets/icons/extensions/tailwind.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "UI library",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'UI library',
   },
   {
-    name: "Material UI",
+    name: 'Material UI',
     icon: <ExtensionIcon src="../../assets/icons/extensions/mui.svg" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "UI library",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'UI library',
   },
   {
-    name: "Storybook",
+    name: 'Storybook',
     icon: <ExtensionIcon src="../../assets/icons/extensions/storybook.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "UI development tool",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'UI development tool',
   },
   {
-    name: "Stripe.js",
+    name: 'Stripe.js',
     icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Payment Gateway",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Payment Gateway',
   },
   {
-    name: "Git",
+    name: 'Git',
     icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
-    url: "",
+    url: '',
     description:
-      "Open-source front-end JavaScript library for building user interfaces based on UI components",
-    type: "Source control",
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Source control',
   },
-];
+]
