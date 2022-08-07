@@ -1,8 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { FolderNames } from "./shared/constants";
-import { ExplorerButton } from "../../components/ui/ExplorerButton";
-import { FolderContent } from "./shared/types";
+import React from 'react'
+import styled from 'styled-components'
+
+import { FolderNames } from './shared/constants'
+import { FolderContent } from './shared/types'
+
+import { ExplorerButton } from '@/components/ui/ExplorerButton'
 
 interface FolderProps {
   folder: FolderContent;
@@ -21,7 +23,7 @@ interface StyledFolder {
 const FolderButton = styled.button<StyledFolder>`
   width: 100%;
   background-color: ${(props) =>
-    props.opened ? props.theme.palette.buttonFocus : "inherit"};
+    props.opened ? props.theme.palette.buttonFocus : 'inherit'};
   border: none;
   line-height: 22px;
   white-space: pre;
@@ -35,27 +37,27 @@ const FolderButton = styled.button<StyledFolder>`
   &:before {
     content: url("../../assets/icons/arrow.svg");
     display: inline-block;
-    transform: ${(props) => props.opened && "rotate(90deg)"};
+    transform: ${(props) => props.opened && 'rotate(90deg)'};
     margin-right: 4px;
   }
 
   &:hover {
     background-color: ${(props) => props.theme.palette.buttonFocus};
   }
-`;
+`
 
 interface FolderContents {
   opened: boolean | undefined;
 }
 
 const FolderContents = styled.div<FolderContents>`
-  display: ${(props) => (props.opened ? "block" : "none")};
-`;
+  display: ${(props) => (props.opened ? 'block' : 'none')};
+`
 
 export const Folder = ({ folder, name, onFolderClick }: FolderProps) => {
   const handleClick = () => {
-    onFolderClick(name);
-  };
+    onFolderClick(name)
+  }
 
   return (
     <>
@@ -64,9 +66,9 @@ export const Folder = ({ folder, name, onFolderClick }: FolderProps) => {
       </FolderButton>
       <FolderContents opened={folder.opened}>
         {folder.files?.map((file) => {
-          return <ExplorerButton {...file} key={file.title} />;
+          return <ExplorerButton {...file} key={file.title} />
         })}
       </FolderContents>
     </>
-  );
-};
+  )
+}
