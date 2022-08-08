@@ -54,6 +54,7 @@ const CollapsibleFolder = styled.div<StyledFolder>`
   background-clip: text;
   &::-webkit-scrollbar {
     width: 10px;
+    background-color: ${(props) => (props.theme.palette.dark01)};
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
