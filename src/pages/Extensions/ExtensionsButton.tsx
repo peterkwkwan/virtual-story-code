@@ -5,7 +5,8 @@ import { Extension } from './shared/types'
 
 const Container = styled.div`
   display: flex;
-  margin-left: 16px;
+  padding-left: 16px;
+  background-color: ${props => props.theme.palette.dark01};;
   &:hover {
     cursor: pointer;
     background-color: ${props => props.theme.palette.grey};
