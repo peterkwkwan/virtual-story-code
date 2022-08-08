@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { ExplorerButton } from '../../components/ui/ExplorerButton'
+import { ExplorerButton } from './shared/ExplorerButton'
 import { Folder } from './Folder'
 import { ViewletHeader } from '../../components/ui/ViewletHeader'
 import { PagePaths } from '../shared/routerConfig'

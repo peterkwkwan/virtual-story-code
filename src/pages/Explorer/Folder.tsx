@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { FolderNames } from './shared/constants'
 import { FolderContent } from './shared/types'
 
-import { ExplorerButton } from '@/components/ui/ExplorerButton'
+import { ExplorerButton } from '@/pages/explorer/shared/ExplorerButton'
 
 interface FolderProps {
   folder: FolderContent;
