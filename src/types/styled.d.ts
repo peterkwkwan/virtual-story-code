@@ -30,7 +30,7 @@ declare module "styled-components" {
       lineNumberText: string;
       angleBrackets: string;
 
-      buttonFocus: string;
+      grey: string;
     };
   }
 }

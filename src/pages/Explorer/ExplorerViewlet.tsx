@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { ExplorerButton } from "../../components/ui/ExplorerButton";
-import { Folder } from "./Folder";
-import { ViewletHeader } from "../../components/ui/ViewletHeader";
-import { PagePaths } from "../shared/routerConfig";
-import { ViewletContainer } from "../shared/styledContainers";
-import { FolderContent } from "./shared/types";
-import { FolderNames } from "./shared/constants";
+import React, { useState } from 'react'
+import styled from 'styled-components'
+
+import { ExplorerButton } from '../../components/ui/ExplorerButton'
+import { Folder } from './Folder'
+import { ViewletHeader } from '../../components/ui/ViewletHeader'
+import { PagePaths } from '../shared/routerConfig'
+import { ViewletContainer } from '../shared/styledContainers'
+import { FolderContent } from './shared/types'
+import { FolderNames } from './shared/constants'
 
 type IFolderStructure = Record<FolderNames, FolderContent>;
 
@@ -17,24 +18,24 @@ const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
-      { title: "BCWGroup.tsx", path: PagePaths.BCW_GROUP },
-      { title: "Serai.tsx", path: PagePaths.SERAI },
-      { title: "PAG.tsx", path: PagePaths.PAG },
-      { title: "Manulife.tsx", path: PagePaths.MANULIFE },
-      { title: "Acuris.scss", path: PagePaths.ACURIS },
-      { title: "Coleman.scss", path: PagePaths.COLEMAN },
-      { title: "CathayDragon.test", path: PagePaths.CATHAY },
+      { title: 'BCWGroup.tsx', path: PagePaths.BCW_GROUP },
+      { title: 'Serai.tsx', path: PagePaths.SERAI },
+      { title: 'PAG.tsx', path: PagePaths.PAG },
+      { title: 'Manulife.tsx', path: PagePaths.MANULIFE },
+      { title: 'Acuris.scss', path: PagePaths.ACURIS },
+      { title: 'Coleman.scss', path: PagePaths.COLEMAN },
+      { title: 'CathayDragon.test', path: PagePaths.CATHAY },
     ],
   },
   [FolderNames.EDUCATION]: {
     opened: true,
     files: [
-      { title: "McGill.html", path: PagePaths.MCGILL },
-      { title: "HKU.html", path: PagePaths.HKU },
-      { title: "BurnabyNorth.html", path: PagePaths.BBYNORTH },
+      { title: 'McGill.html', path: PagePaths.MCGILL },
+      { title: 'HKU.html', path: PagePaths.HKU },
+      { title: 'BurnabyNorth.html', path: PagePaths.BBYNORTH },
     ],
   },
-};
+}
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
   width: 100%;
@@ -51,60 +52,60 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   &:before {
     content: url("../../assets/icons/arrow.svg");
     display: inline-block;
-    transform: ${(props) => props.show && "rotate(90deg)"};
+    transform: ${(props) => props.show && 'rotate(90deg)'};
     margin-right: 4px;
   }
-`;
+`
 
 const rootFiles = [
   {
-    title: "README.md",
+    title: 'README.md',
     path: PagePaths.README,
     isRoot: true,
   },
   {
-    title: "package.json",
+    title: 'package.json',
     path: PagePaths.PACKAGE_JSON,
     isRoot: true,
   },
   {
-    title: ".gitignore",
+    title: '.gitignore',
     path: PagePaths.GIT_IGNORE,
     isRoot: true,
   },
-];
+]
 
 export const ExplorerViewlet = () => {
-  const [explorerFolders, setExplorerFolders] = useState(initFolders);
+  const [explorerFolders, setExplorerFolders] = useState(initFolders)
 
   const handleFolderClick = (value: FolderNames) => {
-    const folderToChange = initFolders[value];
+    const folderToChange = initFolders[value]
 
-    folderToChange.opened = !folderToChange.opened;
+    folderToChange.opened = !folderToChange.opened
     const newState = {
       [value]: {
         ...folderToChange,
       },
       ...explorerFolders,
-    };
+    }
 
-    setExplorerFolders(newState);
-  };
+    setExplorerFolders(newState)
+  }
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true)
 
   const handleToggle = () => {
-    setShow((prevState) => !prevState);
-  };
+    setShow((prevState) => !prevState)
+  }
 
   const folders = () => {
-    const result = [];
+    const result = []
     const orderedFolders = Object.keys(explorerFolders)
       .sort()
       .reduce((newObj, key) => {
-        newObj[key as FolderNames] = explorerFolders[key as FolderNames];
-        return newObj;
-      }, initFolders);
+        newObj[key as FolderNames] = explorerFolders[key as FolderNames]
+        return newObj
+      }, initFolders)
 
     for (const key in orderedFolders) {
       result.push(
@@ -114,15 +115,15 @@ export const ExplorerViewlet = () => {
           name={key as FolderNames}
           onFolderClick={handleFolderClick}
         />
-      );
+      )
     }
-    return result;
-  };
+    return result
+  }
 
   return (
     <ViewletContainer>
       <ViewletHeader headerName="explorer" />
-      <StyledHeaderBtn onClick={handleToggle} show={show}>
+      <StyledHeaderBtn show={show} onClick={handleToggle}>
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>
 
@@ -130,10 +131,10 @@ export const ExplorerViewlet = () => {
         <>
           {folders()}
           {rootFiles.map((rootFile) => {
-            return <ExplorerButton key={rootFile.title} {...rootFile} />;
+            return <ExplorerButton key={rootFile.title} {...rootFile} />
           })}
         </>
       )}
     </ViewletContainer>
-  );
-};
+  )
+}

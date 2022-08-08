@@ -14,7 +14,7 @@ const Container = styled.a`
   padding-left: 20px;
   text-decoration: none;
   &:hover {
-    background-color: ${(props) => props.theme.palette.buttonFocus};
+    background-color: ${(props) => props.theme.palette.grey};
   }
 `
 

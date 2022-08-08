@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import styled from "styled-components";
-import { ExplorerContext } from "../../App";
-import { useIcon } from "../../hooks/useIcon";
-import { StyledLink } from "./StyledLink";
+import React, { useContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import styled from 'styled-components'
+
+import { ExplorerContext } from '../../App'
+import { useIcon } from '../../hooks/useIcon'
+import { StyledLink } from './StyledLink'
 
 interface Props {
   title: string;
@@ -17,23 +18,23 @@ const calcPadding = (
   isRoot: boolean | undefined,
   selected: boolean | undefined
 ) => {
-  const selectedPx = selected ? 0 : 1;
-  const rootPx = 13;
-  const nonRootPx = 23;
+  const selectedPx = selected ? 0 : 1
+  const rootPx = 13
+  const nonRootPx = 23
 
-  return `${selectedPx + (isRoot ? rootPx : nonRootPx)}px`;
-};
+  return `${selectedPx + (isRoot ? rootPx : nonRootPx)}px`
+}
 
 const StyledButton = styled.button<Props>`
   width: 100%;
   background-color: ${(props) =>
-    props.selected ? "hsla(215, 78%, 30%, 0.83)" : "inherit"};
+    props.selected ? 'hsla(215, 78%, 30%, 0.83)' : 'inherit'};
   border: ${(props) =>
     props.selected
-      ? "1px solid " + props.theme.palette.selectedBlueBorder
-      : "none"};
+      ? '1px solid ' + props.theme.palette.selectedBlueBorder
+      : 'none'};
   color: inherit;
-  line-height: ${(props) => (props.selected ? "20px" : "22px")};
+  line-height: ${(props) => (props.selected ? '20px' : '22px')};
   white-space: pre;
   font-size: 13px;
   text-align: start;
@@ -44,31 +45,31 @@ const StyledButton = styled.button<Props>`
   align-items: center;
   &:hover {
     background-color: ${(props) =>
-      !props.selected && props.theme.palette.buttonFocus};
+    !props.selected && props.theme.palette.grey};
   }
-`;
+`
 
 export const ExplorerButton = (props: Props) => {
-  const { ...rest } = props;
-  const [selected, setSelected] = useState(false);
-  const { currentFile } = useContext(ExplorerContext);
-  const [, setFile] = currentFile;
+  const { ...rest } = props
+  const [selected, setSelected] = useState(false)
+  const { currentFile } = useContext(ExplorerContext)
+  const [, setFile] = currentFile
 
-  const { pathname } = useLocation();
-  const iconPath = useIcon(rest.title);
+  const { pathname } = useLocation()
+  const iconPath = useIcon(rest.title)
 
   useEffect(() => {
     if (pathname.includes(rest.path)) {
-      setFile({ title: rest.title, path: rest.path });
-      setSelected(true);
+      setFile({ title: rest.title, path: rest.path })
+      setSelected(true)
     } else {
-      setSelected(false);
+      setSelected(false)
     }
-  }, [pathname]);
+  }, [pathname])
 
   const handleClick = () => {
-    setFile({ title: rest.title, path: rest.path });
-  };
+    setFile({ title: rest.title, path: rest.path })
+  }
 
   return (
     <StyledLink path={rest.path}>
@@ -77,5 +78,5 @@ export const ExplorerButton = (props: Props) => {
         {rest.title}
       </StyledButton>
     </StyledLink>
-  );
-};
+  )
+}

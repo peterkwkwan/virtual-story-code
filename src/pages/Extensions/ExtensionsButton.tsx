@@ -6,6 +6,10 @@ import { Extension } from './shared/types'
 const Container = styled.div`
   display: flex;
   margin-left: 16px;
+  &:hover {
+    cursor: pointer;
+    background-color: ${props => props.theme.palette.grey};
+  }
 `
 
 const Content = styled.div`
