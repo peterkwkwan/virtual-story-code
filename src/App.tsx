@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { Content } from './components/Content'
 import { SideNavigation } from './components/side-navigation/SideNavigation'
 import { TopNavigation } from './components/top-navigation/TopNavigation'
+import { LoadingAnimation } from './components/ui/LoadingAnimation'
 import { File } from './pages/explorer/shared/types'
 import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
@@ -34,11 +35,12 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
         <ThemeProvider theme={defaultTheme}>
-          <TopNavigation />
+          <LoadingAnimation/>
+          {/* <TopNavigation />
           <StyledDiv>
             <SideNavigation />
             <Content />
-          </StyledDiv>
+          </StyledDiv> */}
         </ThemeProvider>
       </ExplorerContext.Provider>
     </BrowserRouter>
