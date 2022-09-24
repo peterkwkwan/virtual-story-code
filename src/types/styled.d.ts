@@ -1,8 +1,10 @@
-import "styled-components";
+import 'styled-components'
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     palette: {
+      white: string;
+      
       dark01: string;
       dark02: string;
       dark03: string;

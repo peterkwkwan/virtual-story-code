@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
 const StyledMario = styled.img<{ marioIsJumping: boolean }>`
   @keyframes jump {
@@ -17,11 +17,11 @@ const StyledMario = styled.img<{ marioIsJumping: boolean }>`
   height: 16px;
   margin: 0 16px;
   cursor: pointer;
-  animation: ${(props) => props.marioIsJumping && "jump 1s linear alternate"};
-`;
+  animation: ${(props) => props.marioIsJumping && 'jump 1s linear alternate'};
+`
 
-const marioInitSrc = "../../assets/icons/mario-standing.png";
-const marioJumpingSrc = "../../assets/icons/mario-jumping.png";
+const marioInitSrc = '../../assets/icons/mario-standing.png'
+const marioJumpingSrc = '../../assets/icons/mario-jumping.png'
 
 interface Props {
   handleMarioJump: () => void;
@@ -33,29 +33,32 @@ export const RetroMario = ({
   marioIsJumping,
   marioKartIsRacing,
 }: Props) => {
-  const [marioSrc, setMarioSrc] = useState(marioInitSrc);
+  const [marioSrc, setMarioSrc] = useState(marioInitSrc)
 
-  const handleMouseEnter = () => {
-    if (marioKartIsRacing) return;
+  const marioJump = () => {
+    if (marioKartIsRacing) return
     if (!marioIsJumping) {
-      setMarioSrc(marioJumpingSrc);
-      handleMarioJump();
+      setMarioSrc(marioJumpingSrc)
+      handleMarioJump()
       setTimeout(() => {
-        setMarioSrc(marioInitSrc);
-      }, 1000);
+        setMarioSrc(marioInitSrc)
+      }, 1000)
     }
-  };
+  }
+  const handleMouseEnter = () => {
+    marioJump()
+  }
 
   const handleClick = () => {
-    window.open("https://supermario-game.com/", "_blank");
-  };
+    marioJump()
+  }
 
   return (
     <StyledMario
       src={marioSrc}
+      marioIsJumping={marioIsJumping}
       onMouseOver={handleMouseEnter}
       onClick={handleClick}
-      marioIsJumping={marioIsJumping}
     />
-  );
-};
+  )
+}

@@ -1,16 +1,18 @@
-import React, { useContext, useState } from "react";
-import styled from "styled-components";
-import { ExplorerContext } from "../../App";
-import { ActionButtons } from "./ActionButtons";
-import { MarioKart } from "./MarioKart";
-import { RetroMario } from "./RetroMario";
+import React, { useContext, useState } from 'react'
+import styled from 'styled-components'
+
+import { ExplorerContext } from '../../App'
+import { ActionButtons } from './ActionButtons'
+import { MarioKart } from './MarioKart'
+import { RetroMario } from './RetroMario'
+import { TopNavLink } from './TopNavLink'
 
 const navOptions = [
-  { name: "Home" },
-  { name: "Contact Me" },
-  { name: "Skills" },
-  { name: "Medium" },
-];
+  { name: 'Home', path:  ''},
+  { name: 'Contact Me', path: 'search'},
+  { name: 'Skills', path: 'extensions' },
+  { name: 'Medium', path: ''},
+]
 
 export const StyledList = styled.ul`
   display: flex;
@@ -19,14 +21,7 @@ export const StyledList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  li {
-    margin-right: 16px;
-    align-self: center;
-    :nth-of-type(1) {
-      font-weight: 600;
-    }
-  }
-`;
+`
 const StyledNavigation = styled.div`
   position: relative;
   top: 0;
@@ -36,7 +31,7 @@ const StyledNavigation = styled.div`
   height: 56px;
   font-size: 14px;
   font-family: sans-serif;
-`;
+`
 
 const Box = styled.div<{ gradient?: boolean }>`
   display: flex;
@@ -46,57 +41,55 @@ const Box = styled.div<{ gradient?: boolean }>`
   height: 28px;
   &:nth-of-type(1) {
     background: ${(props) =>
-      props.gradient
-        ? "linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, rgba(226,0,0,1) 100%)"
-        : "linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )"};
-    color: ${(props) =>
-      props.gradient ? props.theme.palette.dark01 : props.theme.palette.text01};
+    props.gradient
+      ? 'linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, rgba(226,0,0,1) 100%)'
+      : 'linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )'};
   }
   &:nth-of-type(2n) {
     background: ${(props) => props.theme.palette.dark04};
     color: ${(props) => props.theme.palette.text01};
   }
-`;
+`
 
 const Title = styled.p`
   position: fixed;
   left: 50%;
   margin: 0;
   font-size: 12;
-`;
+`
 
 const TopNavigation = () => {
-  const [gradient, setGradient] = useState(false);
-  const [marioIsJumping, setMarioIsJumping] = useState(false);
-  const [marioKartIsRacing, setMarioKartIsRacing] = useState(false);
-  const { currentFile } = useContext(ExplorerContext);
-  const [file] = currentFile;
+  const [gradient, setGradient] = useState(false)
+  const [marioIsJumping, setMarioIsJumping] = useState(false)
+  const [marioKartIsRacing, setMarioKartIsRacing] = useState(false)
+  const { currentFile } = useContext(ExplorerContext)
+  const [file] = currentFile
   const handleMarioJump = () => {
     if (!marioIsJumping) {
-      setMarioIsJumping(true);
+      setMarioIsJumping(true)
       setTimeout(() => {
-        setGradient((prevState) => !prevState);
-      }, 500);
+        setGradient((prevState) => !prevState)
+      }, 500)
       setTimeout(() => {
-        setMarioIsJumping(false);
-      }, 1000);
+        setMarioIsJumping(false)
+      }, 1000)
     }
-  };
+  }
 
   const handleActionClick = () => {
-    setMarioKartIsRacing(true);
+    setMarioKartIsRacing(true)
     setTimeout(() => {
-      setMarioKartIsRacing(false);
-    }, 17000);
-  };
+      setMarioKartIsRacing(false)
+    }, 17000)
+  }
 
   const renderCurrentFile = () => {
-    return file.title && `${file.title} —`;
-  };
+    return file.title && `${file.title} —`
+  }
 
   const handleZeldaClick = () => {
-    window.open("https://en.wikipedia.org/wiki/The_Legend_of_Zelda", "_blank");
-  };
+    window.open('https://en.wikipedia.org/wiki/The_Legend_of_Zelda', '_blank')
+  }
 
   return (
     <StyledNavigation>
@@ -107,8 +100,8 @@ const TopNavigation = () => {
             marioIsJumping={marioIsJumping}
             marioKartIsRacing={marioKartIsRacing}
           />
-          {navOptions.map((option) => (
-            <li key={option.name}>{option.name}</li>
+          {navOptions.map(({name, path}) => (
+            <TopNavLink key={name} name={name} gradient={gradient} path={path}/>
           ))}
         </StyledList>
       </Box>
@@ -122,13 +115,13 @@ const TopNavigation = () => {
 
         <img
           height="32"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
           src="../../assets/icons/link.png"
           onClick={handleZeldaClick}
         />
       </Box>
     </StyledNavigation>
-  );
-};
+  )
+}
 
-export { TopNavigation };
+export { TopNavigation }
