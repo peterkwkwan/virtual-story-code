@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import { AnimatedButton } from './AnimatedButton'
+import Logo from './Logo'
 
 const Container = styled.div`
   background-color: #1e1e1e;
@@ -13,7 +14,7 @@ const Container = styled.div`
   align-items: center;
   color: ${(props) => props.theme.palette.text01};
 `
-const LogoContainer = styled.div`
+const LogoContainer = styled.div<{isHoveringButton: boolean}>`
   position: relative;
   display: flex;
   width: 400px;
@@ -21,7 +22,7 @@ const LogoContainer = styled.div`
   margin-bottom: 0;
   overflow: hidden;
   ::after {
-    border-bottom: 1px solid ${props => props.theme.palette.text01};
+    border-bottom: ${(props) => (props.isHoveringButton ? '4px solid #289BE9' : `2px solid ${props.theme.palette.text01}`)};
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -43,11 +44,7 @@ const LogoContainer = styled.div`
   }
 `
 
-const StyledImg = styled.img`
-    flex-grow: 1;
-    object-fit: contain;
-    padding-bottom: 16px;
-`
+
 
 const AnimatedLogo = styled.div`
   animation: elevate 1s ease;
@@ -102,13 +99,13 @@ const Initializing = styled.span<{ animationDelay: string }>`
   } ;
 `
 
-const loginMessages = [
+const loadingTips = [
   'discovering new ways to make you wait',
   'kindly wait while I finish a cup of coffee',
-  'currently busy taking the hobbits to isengard',
+  'busy taking the hobbits to isengard',
   'tip: reading loading screens tips make you 10% smarter',
   'warping you to the death star',
-  "if javascript is so good, why isn't there javascript 2...?",
+  "if javascript is so good, why isn't there javascript 2 . . . ?",
   'did you know? learning java is the leading cause of depression in Canada',
   'tip: for faster PR reviews, shrink your commits by writing all your code on one line',
   'if every developer wrote good documentation, there would be world peace',
@@ -140,27 +137,36 @@ interface Props {
 
 export const LoadingAnimation = () => {
   const [loading, setLoading] = useState(true)
-
+  const [isHoveringButton, setIsHoveringButton] = useState(false)
+    
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const loadingTimer = setTimeout(() => {
       setLoading(false)
     }, 4000)
-    return () => clearTimeout(timer)
+    return () => clearTimeout(loadingTimer)
   }, [])
 
   const animatedEllipsis = ['0s', '0.1s', '0.2s']
 
   const message = useMemo(() => {
-    const loginMessagesLength = loginMessages.length
-    const index = Math.floor(Math.random() * loginMessagesLength)
-    return loginMessages[index]
+    const loadingTipsLength = loadingTips.length
+    const index = Math.floor(Math.random() * loadingTipsLength)
+    return loadingTips[index]
   }, [])
+
+
+  const handleMouseEnterButton = () => {
+    setIsHoveringButton(true)
+  }
+  const handleMouseLeaveButton = () => {
+    setIsHoveringButton(false)
+  }
 
   return (
     <Container>
-      <LogoContainer>
+      <LogoContainer isHoveringButton={isHoveringButton}>
         <AnimatedLogo>
-          <StyledImg src="../../assets/images/VSCode.png" alt="Arkhia" height={100}/>
+          <Logo/>
         </AnimatedLogo>
       </LogoContainer>
       <div style={{ marginBottom: 16}}>
@@ -177,9 +183,9 @@ export const LoadingAnimation = () => {
               <Initializing key={delay} animationDelay={delay}>
               .
               </Initializing>
-            ))
+            )) 
             :
-            <AnimatedButton title="LAUNCH"/>}
+            <AnimatedButton title="ENTER" onMouseEnter={handleMouseEnterButton} onMouseLeave={handleMouseLeaveButton}/>}
 
         </div>
       </div>

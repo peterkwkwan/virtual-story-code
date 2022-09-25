@@ -11,8 +11,9 @@ const StyledButton = styled.button`
   --span-color: #289BE9;
   --hover-color: #289BE9;
   color: ${(props) => props.theme.palette.text04};
-
+  font-family: League Spartan;
   font-weight: 600;
+  letter-spacing: 2px;
   font-size: 20px;
   cursor: pointer;
   background: var(--background-color);
@@ -83,11 +84,22 @@ const StyledButton = styled.button`
 `
 interface Props {
   title: string
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }
 
-export const AnimatedButton = ({title}: Props) => {
+export const AnimatedButton = ({title, onMouseEnter, onMouseLeave}: Props) => {
+
+  const onMouseEnterHandler = () => {
+    onMouseEnter && onMouseEnter()
+  }
+
+  const onMouseLeaveHandler = () => {
+    onMouseLeave && onMouseLeave()
+  }
+
   return (
-    <StyledButton>
+    <StyledButton onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>

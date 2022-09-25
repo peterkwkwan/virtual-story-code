@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -13,11 +13,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'SF-Pro';
     src: url(/assets/fonts/SF-Pro.ttf); 
   }
+  @font-face {
+  font-family: 'League Spartan';
+  font-weight: 100 900;
+  src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf)}
+
+
   body {
     font-family: Menlo, Monaco, "Courier New", monospace;
     padding: 0;
     margin: 0;
   }
 
-`;
-export default GlobalStyle;
+`
+export default GlobalStyle
