@@ -3,9 +3,18 @@ import styled from 'styled-components'
 import TypewriterComponent from 'typewriter-effect'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
+
 import { useLastContributed } from '../../hooks/useLastContributed'
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
 import { DarkBlueText, LineBreak } from './shared/StyledText'
+
+import layer1 from '!/assets/images/parallax/layer_01.png'
+import layer2 from '!/assets/images/parallax/layer_02.png'
+import layer3 from '!/assets/images/parallax/layer_03.png'
+import layer4 from '!/assets/images/parallax/layer_04.png'
+import layer5 from '!/assets/images/parallax/layer_05.png'
+import layer6 from '!/assets/images/parallax/layer_06.png'
+import layer7 from '!/assets/images/parallax/layer_07.png'
 
 export const Readme = () => {
   const date = new Date('2019-05-01')
@@ -19,16 +28,66 @@ export const Readme = () => {
       <ExplorerWrapper contributors={contributors} numberOfLines={27}>
         <DarkBlueText>## virtual story code</DarkBlueText>
         <LineBreak />
-        <Parallax pages={1.5} style={{ position: 'relative', top: '0', left: '0', width: '100%', height: '100%' }}>
+        <Parallax pages={2} style={{ position: 'relative', top: '0', left: '0',}}>
+         
           <ParallaxLayer
             offset={0}
-            speed={2.5}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            speed={1.4}
+            factor={1.2}
+            style={{ backgroundImage: `url(${layer7})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
-            <p>Scroll down</p>
           </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1.3}
+            factor={1.2}
+            style={{ backgroundImage: `url(${layer6})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1.3}
+            factor={1.2}
+            style={{   backgroundImage: `url(${layer5})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1.2}
+            factor={1.2}
+            style={{  zIndex: 2, backgroundImage: `url(${layer4})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1.2}
+            factor={1.2}
+            style={{  zIndex: 3,  backgroundImage: `url(${layer3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1}
+            factor={1.2}
+            style={{ zIndex: 4, backgroundImage: `url(${layer2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={1}
+            factor={1.2}
+            style={{ zIndex: 5, backgroundImage: `url(${layer1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+          </ParallaxLayer>
+    
+       
 
-          <ParallaxLayer offset={0.5} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
+          <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
 
           <ParallaxLayer
             offset={1}
