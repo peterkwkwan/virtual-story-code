@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
+import './styles/main.css'
 
 import { Content } from './components/Content'
 import { SideNavigation } from './components/side-navigation/SideNavigation'
