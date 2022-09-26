@@ -84,11 +84,12 @@ const StyledButton = styled.button`
 `
 interface Props {
   title: string
+  onClick: () => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }
 
-export const AnimatedButton = ({title, onMouseEnter, onMouseLeave}: Props) => {
+export const AnimatedButton = ({title, onClick, onMouseEnter, onMouseLeave}: Props) => {
 
   const onMouseEnterHandler = () => {
     onMouseEnter && onMouseEnter()
@@ -99,7 +100,7 @@ export const AnimatedButton = ({title, onMouseEnter, onMouseLeave}: Props) => {
   }
 
   return (
-    <StyledButton onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+    <StyledButton onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler} onClick={onClick}>
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>
