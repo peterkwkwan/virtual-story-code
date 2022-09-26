@@ -16,6 +16,11 @@ const Container = styled.div`
 `
 
 const FadeInTypography = styled.p`
+font-family: League Spartan;
+text-transform: lowercase;
+text-align: center;
+margin: 1rem;
+font-size: 1.1rem;
   animation: fadeIn 1s linear;
   @keyframes fadeIn {
     0% {

@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   font-size: 20px;
   cursor: pointer;
   background: var(--background-color);
-  padding: 0.6em 2em;
+  padding: 0.87rem 2rem;
   border: 0;
   position: relative;
   isolation: isolate;
