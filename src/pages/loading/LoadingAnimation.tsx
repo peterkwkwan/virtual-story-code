@@ -138,7 +138,7 @@ export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
     return loadingTips[index]
   }, [])
 
-  const handleMouseEnterButton = () => {
+  const handleMouseOverButton = () => {
     setIsHoveringButton(true)
   }
   const handleMouseLeaveButton = () => {
@@ -167,7 +167,7 @@ export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
               <AnimatedButton
                 title="ENTER" 
                 onClick={onEnterClick}
-                onMouseEnter={handleMouseEnterButton}
+                onMouseOver={handleMouseOverButton}
                 onMouseLeave={handleMouseLeaveButton}
               />
             )}

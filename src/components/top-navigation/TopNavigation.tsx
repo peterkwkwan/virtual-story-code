@@ -52,7 +52,7 @@ const Box = styled.div<{ gradient?: boolean }>`
 `
 
 const Title = styled.p`
-  position: fixed;
+  position: 'fixed';
   left: 50%;
   margin: 0;
   font-size: 12;

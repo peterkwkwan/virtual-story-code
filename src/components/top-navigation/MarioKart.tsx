@@ -1,16 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 interface Props {
   marioKartIsRacing: boolean;
 }
 
 const Container = styled.div<{ marioKartIsRacing: boolean }>`
-  position: relative;
-  display: ${(props) => (props.marioKartIsRacing ? "block" : "none")};
+  position: absolute;
+  display: ${(props) => (props.marioKartIsRacing ? 'block' : 'none')};
   align-items: flex-end;
   width: calc(100% - 124px);
-`;
+  left: 68px;
+`
 
 const Sprite = styled.img`
   @keyframes race {
@@ -32,7 +33,7 @@ const Sprite = styled.img`
   height: 24px;
   animation: race 15s ease-in 3s;
   position: relative;
-`;
+`
 
 const Pipe = styled.img`
   @keyframes pipeGrow {
@@ -56,21 +57,21 @@ const Pipe = styled.img`
   width: 100px;
   position: absolute;
   right: 0;
-  top: -8px;
+  top: -6px;
   animation: pipeGrow 2s linear, pipeShrink 2s linear 15s;
-`;
+`
 
 export const MarioKart = ({ marioKartIsRacing }: Props) => {
-  const MKRacers = ["bowser", "mario", "toad", "yoshi"];
+  const MKRacers = ['bowser', 'mario', 'toad', 'yoshi']
 
   return (
     <Container marioKartIsRacing={marioKartIsRacing}>
       {MKRacers.map((racer) => {
         return (
           <Sprite key={racer} src={`../../assets/icons/${racer}-mk.png`} />
-        );
+        )
       })}
       <Pipe src="../../assets/icons/mario-pipe.png" />
     </Container>
-  );
-};
+  )
+}
