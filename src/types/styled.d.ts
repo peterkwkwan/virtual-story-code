@@ -4,6 +4,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     palette: {
       white: string;
+      vsCodeBlue: string;
       
       dark01: string;
       dark02: string;

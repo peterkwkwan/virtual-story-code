@@ -3,6 +3,7 @@ import { DefaultTheme } from 'styled-components'
 export const defaultTheme: DefaultTheme = {
   palette: {
     white: '#fff',
+    vsCodeBlue: '#289BE9',
     
     dark01: '#1e1e1e',
     dark02: 'rgb(51, 51, 51)',

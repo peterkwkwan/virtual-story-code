@@ -15,3 +15,7 @@
   font-weight: 100 900;
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
 }
+@font-face {
+  font-family: "Mr Dafoe";
+  src: url(/assets/fonts/MrDafoe-Regular.ttf);
+}
