@@ -14,54 +14,6 @@ const Container = styled.div`
   align-items: center;
   color: ${(props) => props.theme.palette.text01};
 `
-const LogoContainer = styled.div<{isHoveringButton: boolean}>`
-  position: relative;
-  display: flex;
-  width: 400px;
-  height: 100px;
-  margin-bottom: 0;
-  overflow: hidden;
-  ::after {
-    border-bottom: ${(props) => (props.isHoveringButton ? '4px solid #289BE9' : `2px solid ${props.theme.palette.text01}`)};
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0%;
-    content: "";
-    transition: all 1s ease;
-    animation: growBorder 1s ease;
-    animation-fill-mode: forwards;
-  }
-  @keyframes growBorder {
-    0% {
-      width: 0%;
-      margin-left: 0%;
-    }
-    100% {
-      width: 100%;
-      margin-left: -50%;
-    }
-  }
-`
-
-
-
-const AnimatedLogo = styled.div`
-  animation: elevate 1s ease;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  @keyframes elevate {
-    0% {
-      transform: translateY(100px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-`
 
 const FadeInTypography = styled.p`
   animation: fadeIn 1s linear;
@@ -128,12 +80,7 @@ const loadingTips = [
   'refresh this page for more terrible jokes / memes',
   'tell me where is Obi-Wan, for i much desire to speak with him',
   "i don't like vim. it's rough, coarse and I can't seem to exit",
-
 ]
-
-interface Props {
-  isSignedIn: boolean;
-}
 
 export const LoadingAnimation = () => {
   const [loading, setLoading] = useState(true)
@@ -154,7 +101,6 @@ export const LoadingAnimation = () => {
     return loadingTips[index]
   }, [])
 
-
   const handleMouseEnterButton = () => {
     setIsHoveringButton(true)
   }
@@ -164,11 +110,7 @@ export const LoadingAnimation = () => {
 
   return (
     <Container>
-      <LogoContainer isHoveringButton={isHoveringButton}>
-        <AnimatedLogo>
-          <Logo/>
-        </AnimatedLogo>
-      </LogoContainer>
+      <Logo isHoveringButton={isHoveringButton}/>
       <div style={{ marginBottom: 16}}>
         <FadeInTypography>{message}</FadeInTypography>
         <div
