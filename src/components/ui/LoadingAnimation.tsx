@@ -133,7 +133,6 @@ export const LoadingAnimation = () => {
             )) 
             :
             <AnimatedButton title="ENTER" onMouseEnter={handleMouseEnterButton} onMouseLeave={handleMouseLeaveButton}/>}
-
         </div>
       </div>
     </Container>
