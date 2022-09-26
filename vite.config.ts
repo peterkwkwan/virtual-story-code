@@ -8,6 +8,9 @@ import checker from 'vite-plugin-checker'
 export default defineConfig({
   plugins: [react(), checker({ typescript: true})],
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '!', replacement: path.resolve(__dirname, 'public') },
+    ],
   },
 })

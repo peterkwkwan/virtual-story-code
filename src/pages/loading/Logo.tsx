@@ -11,6 +11,8 @@ const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
   font-family: League Spartan;
   margin-bottom: 0;
   overflow: hidden;
+  transition: all 1s ease;
+  animation: fadeInFast 1s ease;
   ::after {
     border-bottom: ${(props) =>
     props.isHoveringButton
@@ -26,6 +28,20 @@ const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
     animation: fadeIn 1s ease;
     margin-left: ${(props) => (props.isHoveringButton ? '-50%' : 'unset')};
     animation-fill-mode: forwards;
+  }
+  @keyframes fadeInFast {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    75% {
+      opacity: 1;
+    }
   }
   @keyframes fadeIn {
     0% {

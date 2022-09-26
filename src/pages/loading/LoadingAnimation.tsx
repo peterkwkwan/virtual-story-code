@@ -1,18 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import { AnimatedButton } from './AnimatedButton'
+import { AnimatedButton } from '../../components/ui/AnimatedButton'
+import { Footer } from './Footer'
 import Logo from './Logo'
 
 const Container = styled.div`
   background-color: #1e1e1e;
   display: flex;
+  max-height: 100vh;
   height: 100vh;
   width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: ${(props) => props.theme.palette.text01};
+  color: ${(props) => props.theme.palette.white};
 `
 
 const FadeInTypography = styled.p`
@@ -66,13 +68,13 @@ const loadingTips = [
   'did you know? learning java is the leading cause of depression in Canada',
   'tip: for faster PR reviews, shrink your commits by writing all your code on one line',
   'if every developer wrote good documentation, there would be world peace',
-  '9/10 professional NBA players attribute their success to stack overflow',
+  '9/10 dentists attribute their success to stack overflow',
   'asking a backend developer to write CSS is the primary cause of global warming',
   'tip: instead of paying for hosting services, use the free one called localhost',
   "what is a jedi master's favorite git command? git push --force",
   '10 hours of debugging can save you 10 minutes of reading documentation',
   "becoming a software engineer increases your chances of being asked to fix your grandma's printer by 200%",
-  'still trying to find out who is json',
+  'still trying to figure out who is json',
   'UNLIMITED POWER!!!',
   'Anakin Skywalker would have been granted a seat on the Jedi Council if he simply subscribed to Algoexpert',
   'flexing the boxes',
@@ -135,6 +137,7 @@ export const LoadingAnimation = () => {
             <AnimatedButton title="ENTER" onMouseEnter={handleMouseEnterButton} onMouseLeave={handleMouseLeaveButton}/>}
         </div>
       </div>
+      <Footer/>
     </Container>
   )
 }
