@@ -11,6 +11,12 @@ interface Props {
 
 const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
+  width: 100%;
+`
+
+const FileContents = styled.div`
+   height: 100%;
+    width: 100%;
 `
 
 const LineNumbers = styled.aside`
@@ -61,10 +67,10 @@ export const ExplorerWrapper = ({
           ))}
         </ul>
       </LineNumbers>
-      <div style={{ height: '100%' }}>
+      <FileContents>
         <Contributors>Peter Kwan, {contributors}</Contributors>
         {children}
-      </div>
+      </FileContents>
     </StyledContainer>
   )
 }

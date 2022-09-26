@@ -1,35 +1,35 @@
-import { Acuris } from "../explorer/Acuris";
-import { BurnabyNorth } from "../explorer/BurnabyNorth";
-import { CathayDragon } from "../explorer/CathayDragon";
-import { Coleman } from "../explorer/Coleman";
-import { Gitignore } from "../explorer/Gitignore";
-import { HKU } from "../explorer/HKU";
-import { Manulife } from "../explorer/Manulife";
-import { McGill } from "../explorer/McGill";
-import { PackageJson } from "../explorer/PackageJson";
-import { Readme } from "../explorer/Readme";
-import { Serai } from "../explorer/Serai";
-import { Pag } from "../explorer/Pag";
-import { ExtensionsContent } from "../extensions/ExtensionsContent";
-import { SearchContent } from "../search/SearchContent";
-import { BCWGroup } from "../explorer/BCWGroup";
+import { Acuris } from '../explorer/Acuris'
+import { BurnabyNorth } from '../explorer/BurnabyNorth'
+import { CathayDragon } from '../explorer/CathayDragon'
+import { Coleman } from '../explorer/Coleman'
+import { Gitignore } from '../explorer/Gitignore'
+import { HKU } from '../explorer/HKU'
+import { Manulife } from '../explorer/Manulife'
+import { McGill } from '../explorer/McGill'
+import { PackageJson } from '../explorer/PackageJson'
+import { Readme } from '../explorer/Readme'
+import { Serai } from '../explorer/Serai'
+import { Pag } from '../explorer/Pag'
+import { ExtensionsContent } from '../extensions/ExtensionsContent'
+import { SearchContent } from '../search/SearchContent'
+import { BCWGroup } from '../explorer/BCWGroup'
 
 export enum PagePaths {
-  BCW_GROUP = "explorer/bcw",
-  SERAI = "explorer/serai",
-  PAG = "explorer/pag",
-  MANULIFE = "explorer/manulife",
-  ACURIS = "explorer/acuris",
-  COLEMAN = "explorer/coleman",
-  CATHAY = "explorer/cathay",
-  MCGILL = "explorer/mcgill",
-  HKU = "explorer/hku",
-  BBYNORTH = "explorer/bbynorth",
-  PACKAGE_JSON = "explorer/package_json",
-  GIT_IGNORE = "explorer/gitignore",
-  README = "explorer/readme",
-  SEARCH = "search",
-  EXTENSIONS = "extensions",
+  BCW_GROUP = 'explorer/bcw',
+  SERAI = 'explorer/serai',
+  PAG = 'explorer/pag',
+  MANULIFE = 'explorer/manulife',
+  ACURIS = 'explorer/acuris',
+  COLEMAN = 'explorer/coleman',
+  CATHAY = 'explorer/cathay',
+  MCGILL = 'explorer/mcgill',
+  HKU = 'explorer/hku',
+  BBYNORTH = 'explorer/bbynorth',
+  PACKAGE_JSON = 'explorer/package_json',
+  GIT_IGNORE = 'explorer/gitignore',
+  README = 'explorer/readme',
+  SEARCH = 'search',
+  EXTENSIONS = 'extensions',
 }
 
 interface RouterConfig {
@@ -97,4 +97,4 @@ export const routerConfig: RouterConfig[] = [
     path: PagePaths.EXTENSIONS,
     component: ExtensionsContent,
   },
-];
+]

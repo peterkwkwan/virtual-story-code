@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import TypewriterComponent from 'typewriter-effect'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import { useLastContributed } from '../../hooks/useLastContributed'
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
@@ -18,8 +19,32 @@ export const Readme = () => {
       <ExplorerWrapper contributors={contributors} numberOfLines={27}>
         <DarkBlueText>## virtual story code</DarkBlueText>
         <LineBreak />
+        <Parallax pages={1.5} style={{ position: 'relative', top: '0', left: '0', width: '100%', height: '100%' }}>
+          <ParallaxLayer
+            offset={0}
+            speed={2.5}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          >
+            <p>Scroll down</p>
+          </ParallaxLayer>
 
-        <TypewriterComponent
+          <ParallaxLayer offset={0.5} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
+
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              color: 'white',
+            }}
+          >
+            <p>Scroll up</p>
+          </ParallaxLayer>
+        </Parallax>
+
+        {/* <TypewriterComponent
           onInit={(typewriter) => {
             typewriter
               .changeDelay(35)
@@ -44,7 +69,7 @@ export const Readme = () => {
               )
               .start()
           }}
-        />
+        /> */}
       </ExplorerWrapper>
     </>
   )

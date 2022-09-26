@@ -49,7 +49,7 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
         <ThemeProvider theme={defaultTheme}>
-          <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/>
+          {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
           <MainContainer>
             <TopNavigation />
             <StyledDiv>
