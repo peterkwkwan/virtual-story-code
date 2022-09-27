@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
 
@@ -56,28 +56,31 @@ const ImgContainer = styled.div`
 const ZeldaImg = styled.img`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%,rgba(0, 0, 0, 0));
-    transform: scale(1.2);
+  transform: scale(1.2);
+  object-fit: cover;
 `
 
 interface Props {
   showLoadingPage: boolean;
 }
 
-export const ZeldaParallax = ({ showLoadingPage }: Props) => {
+const ZeldaParallax = ({ showLoadingPage }: Props) => {
   const [parallaxScene, setParallaxScene] = useState<Parallax>()
 
   useEffect(() => {
-    const sceneNode = document.getElementById('zeldaParallax')
-
-    if (sceneNode) {
-      setParallaxScene(new Parallax(sceneNode))
+    if(!parallaxScene){
+      const sceneNode = document.getElementById('zeldaParallax')
+  
+      if (sceneNode) {
+        setParallaxScene(new Parallax(sceneNode))
+      }
     }
 
     return (): void => {
       parallaxScene?.disable()
     }
   }, [])
+  
   return (
     <Container showLoadingPage={showLoadingPage}>
       <ParallaxContainer id="zeldaParallax">
@@ -106,3 +109,5 @@ export const ZeldaParallax = ({ showLoadingPage }: Props) => {
     </Container>
   )
 }
+
+export default memo(ZeldaParallax)

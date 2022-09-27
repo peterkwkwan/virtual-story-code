@@ -9,7 +9,7 @@ const Container = styled.div<{showLoadingPage: boolean}>`
   position: absolute;
   top: 0;
   z-index: 2;
-  background-color: transparent;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%,rgba(0, 0, 0, 0));
   display: flex;
   max-height: 100vh;
   height: 100vh;
@@ -88,7 +88,7 @@ const loadingTips = [
   'tip: for faster PR reviews, shrink your commits by writing all your code on one line',
   '"Googling stuff does not make you a doctor." Programmers: 😐',
   '9/10 dentists attribute their success to stack overflow',
-  'STEP 1: Create technical debt. STEP 2: Leave company. STEP 3: Return as an expensive consultant. STEP 4: Profit $$$',
+  'creating technical debt is the fastest path to job security',
   'asking a backend developer to write CSS is the primary cause of global warming',
   'tip: instead of paying for hosting services, use the free one called localhost',
   "what is a jedi master's favorite git command? git push --force",
@@ -159,7 +159,7 @@ export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
         >
           {loading ?
             animatedEllipsis.map((delay) => (
-              <Initializing key={delay} animationDelay={delay}>
+              <Initializing key={delay} animationDelay={delay} >
               .
               </Initializing>
             )) 

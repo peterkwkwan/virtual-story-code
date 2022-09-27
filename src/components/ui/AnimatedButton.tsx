@@ -9,7 +9,7 @@ const BtnSpan = styled.span`
 const StyledButton = styled.button`
   --background-color: ${(props) => props.theme.palette.dark02};
   --span-color: ${(props) => props.theme.palette.vsCodeBlue};
-  --hover-color: ${(props) => props.theme.palette.vsCodeBlue};
+  --hover-color: ${(props) => props.theme.palette.white};
   color: ${(props) => props.theme.palette.text04};
   font-family: League Spartan;
   font-weight: 600;
