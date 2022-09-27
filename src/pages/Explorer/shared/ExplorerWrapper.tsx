@@ -7,6 +7,7 @@ interface Props {
   children: React.ReactNode;
   contributors: React.ReactNode;
   numberOfLines: number;
+  emptyContainer?: boolean
 }
 
 const StyledContainer = styled(BaseContentContainer)`
@@ -55,22 +56,31 @@ export const ExplorerWrapper = ({
   children,
   contributors,
   numberOfLines,
+  emptyContainer
 }: Props) => {
   const lineNumbers = [...Array(numberOfLines).keys()]
 
   return (
     <StyledContainer>
-      <LineNumbers>
-        <ul>
-          {lineNumbers.map((number) => (
-            <li key={number}>{number}</li>
-          ))}
-        </ul>
-      </LineNumbers>
-      <FileContents>
-        <Contributors>Peter Kwan, {contributors}</Contributors>
-        {children}
-      </FileContents>
+      {emptyContainer ? (
+        <FileContents>
+          {children}
+        </FileContents>
+      ) : (
+        <>
+          <LineNumbers>
+            <ul>
+              {lineNumbers.map((number) => (
+                <li key={number}>{number}</li>
+              ))}
+            </ul>
+          </LineNumbers>
+          <FileContents>
+            <Contributors>Peter Kwan, {contributors}</Contributors>
+            {children}
+          </FileContents>
+        </>
+      )}
     </StyledContainer>
   )
 }

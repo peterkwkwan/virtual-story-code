@@ -8,9 +8,8 @@ import Logo from './Logo'
 const Container = styled.div<{showLoadingPage: boolean}>`
   position: absolute;
   top: 0;
-  z-index: 1;
-  background-color: ${props => props.theme.palette.dark01};
-  /* display: ${props => props.showLoadingPage ? 'flex' : 'none'}; */
+  z-index: 2;
+  background-color: transparent;
   display: flex;
   max-height: 100vh;
   height: 100vh;
@@ -122,6 +121,7 @@ interface Props {
 export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
   const [loading, setLoading] = useState(true)
   const [isHoveringButton, setIsHoveringButton] = useState(false)
+
     
   useEffect(() => {
     const loadingTimer = setTimeout(() => {

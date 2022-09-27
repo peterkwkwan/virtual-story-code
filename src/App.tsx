@@ -11,6 +11,7 @@ import { File } from './pages/explorer/shared/types'
 import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
 import { defaultTheme } from './theme/theme'
+import { ZeldaParallax } from './pages/loading/ZeldaParallax'
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
@@ -49,7 +50,8 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
         <ThemeProvider theme={defaultTheme}>
-          {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
+          <ZeldaParallax showLoadingPage={showLoadingPage}/>
+          <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/>
           <MainContainer>
             <TopNavigation />
             <StyledDiv>
