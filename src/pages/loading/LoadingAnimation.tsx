@@ -33,7 +33,7 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
       transform: scale(0.2, 0.002);
       opacity: 0;
       z-index: -1;
-      display: 'none'
+      display: "none";
     }
   }
 `
