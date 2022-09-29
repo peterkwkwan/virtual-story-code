@@ -5,11 +5,11 @@ import { LoadingButton } from './LoadingButton'
 import { Footer } from './Footer'
 import Logo from './Logo'
 
-const Container = styled.div<{showLoadingPage: boolean}>`
+const Container = styled.div<{ showLoadingPage: boolean }>`
   position: absolute;
   top: 0;
   z-index: 2;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%,rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0));
   display: flex;
   max-height: 100vh;
   height: 100vh;
