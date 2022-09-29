@@ -66,12 +66,14 @@ const EllipsisContainer = styled.div`
 `
 
 const Initializing = styled.span<{ animationDelay: string }>`
+  width: 4px;
+  background: ${(props) => props.theme.palette.white};
   opacity: 0;
   font-size: 1.5em;
   display: inline;
   position: relative;
-  height: 46.5px;
-  line-height: 8px;
+  height: 4px;
+  margin: 0 4px;
   animation: dot 1.3s infinite;
   animation-delay: ${(props) => props.animationDelay};
   @keyframes dot {
@@ -121,18 +123,17 @@ const loadingTips = [
   'dev horror story #2: I was once asked to center a div',
   'dev horror story #3: git commit -m "fix: fixes"',
   'dev horror story #4: i once saw a stack overflow question with the only answer being: "nvm, figured it out" without providing a solution',
-  'if pokemon were data types, charmander would evolve into stringmander'
+  'if pokemon were data types, charmander would evolve into stringmander',
 ]
 
 interface Props {
-  showLoadingPage: boolean
-  onEnterClick: () => void
+  showLoadingPage: boolean;
+  onEnterClick: () => void;
 }
-export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
+export const LoadingAnimation = ({ showLoadingPage, onEnterClick }: Props) => {
   const [loading, setLoading] = useState(true)
   const [isHoveringButton, setIsHoveringButton] = useState(false)
 
-    
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
       setLoading(false)
@@ -157,8 +158,8 @@ export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
 
   return (
     <Container showLoadingPage={showLoadingPage}>
-      <Logo isHoveringButton={isHoveringButton}/>
-      <div style={{ marginBottom: 16}}>
+      <Logo isHoveringButton={isHoveringButton} />
+      <div style={{ marginBottom: 16 }}>
         <FadeInTypography>{message}</FadeInTypography>
         <div
           style={{
@@ -167,23 +168,24 @@ export const LoadingAnimation = ({showLoadingPage, onEnterClick}: Props) => {
             justifyContent: 'center',
           }}
         >
-          {loading ?
-            animatedEllipsis.map((delay) => (
-              <Initializing key={delay} animationDelay={delay} >
-              .
-              </Initializing>
-            )) 
-            : (
-              <AnimatedButton
-                title="ENTER" 
+          <EllipsisContainer>
+            {loading ? (
+              animatedEllipsis.map((delay) => (
+                <Initializing key={delay} animationDelay={delay} />
+              ))
+            ) : (
+              <LoadingButton
+                title="ENTER"
                 onClick={onEnterClick}
                 onMouseOver={handleMouseOverButton}
                 onMouseLeave={handleMouseLeaveButton}
               />
             )}
+          </EllipsisContainer>
+
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Container>
   )
 }
