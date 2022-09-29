@@ -56,6 +56,15 @@ const FadeInTypography = styled.p`
     }
   }
 `
+
+const EllipsisContainer = styled.div`
+  height: 46px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const Initializing = styled.span<{ animationDelay: string }>`
   opacity: 0;
   font-size: 1.5em;
