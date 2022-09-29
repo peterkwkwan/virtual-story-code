@@ -39,10 +39,10 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
 `
 
 const FadeInTypography = styled.p`
-font-family: League Spartan;
-text-align: center;
-margin: 1rem;
-font-size: 1.1rem;
+  font-family: League Spartan;
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.1rem;
   animation: fadeIn 1s linear;
   @keyframes fadeIn {
     0% {
