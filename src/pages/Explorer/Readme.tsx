@@ -21,10 +21,10 @@ export const Readme = () => {
       <ExplorerWrapper emptyContainer contributors={contributors} numberOfLines={27}>
         <DarkBlueText>## virtual story code</DarkBlueText>
         <LineBreak />
-        <ParallaxSpring pages={2} style={{ position: 'relative', top: '0', left: '0',}}>
+        <ParallaxSpring pages={3} style={{ position: 'relative', top: '0', left: '0',}}>
           <ParallaxLayer
             offset={0}
-            speed={1}
+            speed={0.5}
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -41,12 +41,13 @@ export const Readme = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              backgroundColor: 'white'
             }}
           >
           
           </ParallaxLayer>
       
-          <ParallaxLayer offset={2} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
+          <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#ff6d6d' }} />
 
         </ParallaxSpring>
         {/* <TypewriterComponent
