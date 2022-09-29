@@ -16,8 +16,8 @@ const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
   ::after {
     border-bottom: ${(props) =>
     props.isHoveringButton
-      ? `4px solid ${props.theme.palette.vsCodeBlue}`
-      : `4px solid ${props.theme.palette.text01}`};
+      ? `4px solid ${neonPink}`
+      : `4px solid ${props.theme.palette.white}`};
     position: absolute;
     left: 50%;
     bottom: 0;
