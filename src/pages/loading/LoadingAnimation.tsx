@@ -18,10 +18,11 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.palette.white};
-  animation:  ${props => !props.showLoadingPage && 'switchPage 3s forwards'};
-  -webkit-animation: ${props => !props.showLoadingPage && 'switchPage 3s forwards'};
+  animation: ${(props) => !props.showLoadingPage && 'switchPage 3s forwards'};
+  -webkit-animation: ${(props) =>
+    !props.showLoadingPage && 'switchPage 3s forwards'};
   @keyframes switchPage {
-    10%{
+    10% {
       transform: scale(1, 0.005);
       opacity: 1;
     }
