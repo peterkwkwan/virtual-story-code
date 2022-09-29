@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import { AnimatedButton } from '../../components/ui/AnimatedButton'
+import { LoadingButton } from './LoadingButton'
 import { Footer } from './Footer'
 import Logo from './Logo'
 
