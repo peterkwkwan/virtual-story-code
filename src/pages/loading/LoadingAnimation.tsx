@@ -119,11 +119,10 @@ const loadingTips = [
   'refresh this page for more terrible jokes / memes',
   'tell me where is Obi-Wan, for i much desire to speak with him',
   "i don't like vim. it's rough, coarse and I can't seem to exit",
-  'dev horror story #1: 3 billion+ devices still run java',
-  'dev horror story #2: I was once asked to center a div',
-  'dev horror story #3: git commit -m "fix: fixes"',
-  'dev horror story #4: i once saw a stack overflow question with the only answer being: "nvm, figured it out" without providing a solution',
+  'dev horror story #1: I was once asked to center a div',
   'if pokemon were data types, charmander would evolve into stringmander',
+  'speed up loading times by downloading more RAM',
+  'did you know? RGB accessories and coding efficiency are directly correlated?',
 ]
 
 interface Props {
