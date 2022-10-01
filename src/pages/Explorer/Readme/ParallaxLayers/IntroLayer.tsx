@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -6,15 +6,15 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-position: relative;
+  position: relative;
 `
 const Intro = styled.div`
-position: relative;
+  position: relative;
   display: flex;
-  z-index: 1;
-  background: ${props => props.theme.palette.dark01};
+  padding: 0.3rem;
+  padding-top: 15%;
+  background: ${(props) => props.theme.palette.dark01};
 `
 const Hello = styled.h2`
   writing-mode: vertical-rl;
@@ -44,7 +44,7 @@ const PeterKwan = styled.h1`
 `
 
 const ScrollPrompt = styled.div`
-bottom: 10%;
+  bottom: 10%;
   position: absolute;
   width: 30px;
   height: 30px;
@@ -68,7 +68,7 @@ bottom: 10%;
       opacity: 0;
     }
     50% {
-        opacity: 1;
+      opacity: 1;
     }
     100% {
       opacity: 0;
@@ -91,7 +91,6 @@ export const IntroLayer = () => {
           <PeterKwan>Kwan</PeterKwan>
         </div>
       </Intro>
-
       <ScrollPrompt />
     </Container>
   )

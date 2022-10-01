@@ -35,28 +35,38 @@ export const Readme = () => {
             sticky={{start: 0, end: 4}}
             style={{
               color: 'white',
+              zIndex: 10
             }}
           >
             <IntroLayer/>
           </ParallaxLayer>
           <ParallaxLayer
             offset={1}
-            speed={3}
+            speed={1}
             sticky={{start: 1, end: 2}}
+            style={{
+              zIndex: 1
+            }}
           >
             <Identity identity='Developer'/>
           </ParallaxLayer>
           <ParallaxLayer
             offset={2}
-            speed={3}
+            speed={1}
             sticky={{start: 2, end: 3}}
+            style={{
+              zIndex: 1
+            }}
           >
             <Identity identity='Tech enthusiast'/>
           </ParallaxLayer>
           <ParallaxLayer
             offset={3}
-            speed={3}
-            sticky={{start: 3, end: 4}}
+            speed={1}
+            sticky={{start: 3, end: 3.7}}
+            style={{
+              zIndex: 1
+            }}
           >
             <Identity identity='Father'/>
           </ParallaxLayer>

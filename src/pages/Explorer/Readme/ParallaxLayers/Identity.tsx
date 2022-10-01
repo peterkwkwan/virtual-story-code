@@ -13,12 +13,16 @@ const Container = styled.div`
 const Header = styled.h3`
     position: absolute;
     bottom: 20%;
+    text-transform: uppercase;
+    font-family: "League Spartan";
+    font-size: 2rem;
+    font-weight: 200;
 `
 export const Identity = ({identity} : {identity: string}) => {
   return (
     <Container>
       <Header>
-        {identity}
+        - {identity} -
       </Header>
     </Container>
   )
