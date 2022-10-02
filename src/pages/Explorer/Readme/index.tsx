@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import TypewriterComponent from 'typewriter-effect'
 import {
   Parallax as ParallaxSpring,
   ParallaxLayer,
@@ -10,13 +9,17 @@ import { useLastContributed } from '../../../hooks/useLastContributed'
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 import { IntroLayer } from './ParallaxLayers/IntroLayer'
 import { Identity } from './ParallaxLayers/Identity'
+import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
+import { Description } from './ParallaxLayers/Description'
+
+const TimelineParallaxLayer = styled(ParallaxLayer)`
+   background-color: ${props => props.theme.palette.timelineBackgroundColor};
+`
 
 export const Readme = () => {
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
-
-  const yearsOnly = diff.slice(0, 1)
 
   return (
     <>
@@ -26,12 +29,12 @@ export const Readme = () => {
         numberOfLines={27}
       >
         <ParallaxSpring
-          pages={6}
+          pages={9}
           style={{ position: 'relative',  top: '0', left: '0' }}
         >
           <ParallaxLayer
             offset={0}
-            speed={0}
+            speed={0.5}
             sticky={{start: 0, end: 4}}
             style={{
               color: 'white',
@@ -78,42 +81,24 @@ export const Readme = () => {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: 'white',
-            }}
-          >
-          </ParallaxLayer>
+              clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0 100%)'
 
-          <ParallaxLayer
-            offset={5}
-            speed={1}
-            style={{ backgroundColor: '#ff6d6d' }}
+            }}
           />
+          <TimelineParallaxLayer
+            offset={5}
+            speed={0}
+          >
+            <Description />
+          </TimelineParallaxLayer>
+          <TimelineParallaxLayer
+            offset={6}
+            speed={0}
+            sticky={{start: 6, end: 8}}
+          >
+            <TimelineBackbone/>
+          </TimelineParallaxLayer>
         </ParallaxSpring>
-        {/* <TypewriterComponent
-          onInit={(typewriter) => {
-            typewriter
-              .changeDelay(35)
-              .typeString(
-                'Hello! My name is <span style="color: #4ec9b0;"><strong>Peter Kwan</strong></span>.<br/><br/>'
-              )
-              .pauseFor(400)
-              .typeString(
-                'This is my <span style="color: #c586c0;">Virtual Story Code</span> (a.k.a. personal website).<br/><br/>'
-              )
-              .pauseFor(400)
-              .typeString(
-                'Inspired by Microsoft\'s <span style="color: #569cd6;">Visual Studio Code</span>, I created this project to showcase my creativity and portfolio.<br/><br/>'
-              )
-              .pauseFor(400)
-              .typeString(
-                `I'm a self-taught developer, with over ${yearsOnly} years of experience in frontend development.<br/><br/>`
-              )
-              .pauseFor(400)
-              .typeString(
-                'I hope this inspires you to create something <span style="color: #ffd700;">AWESOME</span> today!'
-              )
-              .start()
-          }}
-        /> */}
       </ExplorerWrapper>
     </>
   )

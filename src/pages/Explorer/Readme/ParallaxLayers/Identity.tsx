@@ -17,7 +17,9 @@ const Header = styled.h3`
     font-family: "League Spartan";
     font-size: 2rem;
     font-weight: 200;
+    color: white;
 `
+
 export const Identity = ({identity} : {identity: string}) => {
   return (
     <Container>

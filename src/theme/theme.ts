@@ -4,6 +4,7 @@ export const defaultTheme: DefaultTheme = {
   palette: {
     white: '#fff',
     vsCodeBlue: '#1F97E8',
+    timelineBackgroundColor: '#ff6d6d',
     
     dark01: '#1e1e1e',
     dark02: 'rgb(51, 51, 51)',

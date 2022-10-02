@@ -50,8 +50,8 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
         <ThemeProvider theme={defaultTheme}>
-          <ZeldaParallax showLoadingPage={showLoadingPage}/>
-          <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/>
+          {/* <ZeldaParallax showLoadingPage={showLoadingPage}/> */}
+          {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
           <MainContainer>
             <TopNavigation />
             <StyledDiv>
