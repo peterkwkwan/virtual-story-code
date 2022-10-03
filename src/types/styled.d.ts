@@ -5,7 +5,8 @@ declare module 'styled-components' {
     palette: {
       white: string;
       vsCodeBlue: string;
-      rosyPink: string;
+      deepPink: string;
+      brightPink: string;
       persianGreen: string;
 
       dark01: string;

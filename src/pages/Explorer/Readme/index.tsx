@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import {
   Parallax as ParallaxSpring,
   ParallaxLayer,
@@ -20,10 +20,11 @@ const DescriptionParallaxLayer = styled(ParallaxLayer)`
 `
 
 const TimelineParallaxLayer = styled(ParallaxLayer)`
-   background-color: ${props => props.theme.palette.rosyPink};
+   background-color: ${props => props.theme.palette.deepPink};
 `
 
 export const Readme = () => {
+  const theme = useTheme()
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
@@ -93,7 +94,7 @@ export const Readme = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: 'pink',
+              backgroundColor: theme.palette.blueText,
               clipPath: 'polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%)'
     
 
