@@ -7,10 +7,12 @@ import { MarioKart } from './MarioKart'
 import { RetroMario } from './RetroMario'
 import { TopNavLink } from './TopNavLink'
 
+import { PagePaths } from '@/pages/shared/routerConfig'
+
 const navOptions = [
-  { name: 'Home', path:  Page},
-  { name: 'Contact Me', path: 'search'},
-  { name: 'Skills', path: 'extensions' },
+  { name: 'Home', path:  PagePaths.HOME},
+  { name: 'Contact Me', path: PagePaths.SEARCH},
+  { name: 'Skills', path: PagePaths.EXTENSIONS },
   { name: 'Medium', path: ''},
 ]
 
