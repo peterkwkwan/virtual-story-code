@@ -9,7 +9,7 @@ export const Content = () => {
       {routerConfig.map((route) => (
         <Route key={route.path} path={route.path} element={route.component()} />
       ))}
-      <Route path="*" element={<Navigate replace to="explorer/readme" />} />
+      <Route path="*" element={<Navigate replace to="explorer" />} />
     </Routes>
   )
 }

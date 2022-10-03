@@ -17,7 +17,7 @@ interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
 }
 
-const initFile: File = { title: 'README.md', path: PagePaths.README }
+const initFile: File = { title: '', path: PagePaths.HOME }
 
 const MainContainer = styled.div`
   height: 100vh;

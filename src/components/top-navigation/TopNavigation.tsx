@@ -8,7 +8,7 @@ import { RetroMario } from './RetroMario'
 import { TopNavLink } from './TopNavLink'
 
 const navOptions = [
-  { name: 'Home', path:  ''},
+  { name: 'Home', path:  Page},
   { name: 'Contact Me', path: 'search'},
   { name: 'Skills', path: 'extensions' },
   { name: 'Medium', path: ''},

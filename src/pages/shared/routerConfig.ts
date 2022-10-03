@@ -16,7 +16,7 @@ import { Readme } from '../explorer/Readme'
 import { Home } from '../explorer/Home'
 
 export enum PagePaths {
-  HOME = '',
+  HOME = 'explorer',
   BCW_GROUP = 'explorer/bcw',
   SERAI = 'explorer/serai',
   PAG = 'explorer/pag',
