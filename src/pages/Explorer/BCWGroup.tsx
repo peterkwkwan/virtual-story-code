@@ -29,7 +29,7 @@ export const BCWGroup = () => {
   }
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={46}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={37}>
       <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   )
