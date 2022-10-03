@@ -15,6 +15,7 @@ import { SearchContent } from '../search/SearchContent'
 import { BCWGroup } from '../explorer/BCWGroup'
 
 export enum PagePaths {
+  HOME = '',
   BCW_GROUP = 'explorer/bcw',
   SERAI = 'explorer/serai',
   PAG = 'explorer/pag',
