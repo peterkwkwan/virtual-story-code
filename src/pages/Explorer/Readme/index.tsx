@@ -12,8 +12,13 @@ import { Identity } from './ParallaxLayers/Identity'
 import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
 import { Description } from './ParallaxLayers/Description'
 
+const DescriptionParallaxLayer = styled(ParallaxLayer)`
+  background-color: ${props => props.theme.palette.persianGreen};
+  clip-path: polygon(0% 7%, 100% 0%, 82% 69%, 18% 68%, 14% 76.3%, 14% 68%, 4% 68%);
+`
+
 const TimelineParallaxLayer = styled(ParallaxLayer)`
-   background-color: ${props => props.theme.palette.timelineBackgroundColor};
+   background-color: ${props => props.theme.palette.rosyPink};
 `
 
 export const Readme = () => {
@@ -81,16 +86,28 @@ export const Readme = () => {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: 'white',
-              clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0 100%)'
+              clipPath: 'polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%)'
+    
 
             }}
           />
-          <TimelineParallaxLayer
+          <ParallaxLayer
             offset={5}
-            speed={0}
+            speed={1}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'white',
+              clipPath: 'polygon(0% 33.3%, 100% 0%, 100% 33.3%, 0% 66.67%)'
+            }}
+          />
+          <DescriptionParallaxLayer
+            offset={5}
+            speed={0.2}
           >
             <Description />
-          </TimelineParallaxLayer>
+          </DescriptionParallaxLayer>
           <TimelineParallaxLayer
             offset={6}
             speed={0}
