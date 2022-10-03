@@ -23,7 +23,7 @@ const TimelineParallaxLayer = styled(ParallaxLayer)`
    background-color: ${props => props.theme.palette.deepPink};
 `
 
-export const Readme = () => {
+export const Home = () => {
   const theme = useTheme()
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)

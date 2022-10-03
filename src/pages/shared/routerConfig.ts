@@ -7,12 +7,13 @@ import { HKU } from '../explorer/HKU'
 import { Manulife } from '../explorer/Manulife'
 import { McGill } from '../explorer/McGill'
 import { PackageJson } from '../explorer/PackageJson'
-import { Readme } from '../explorer/Readme'
 import { Serai } from '../explorer/Serai'
 import { Pag } from '../explorer/Pag'
 import { ExtensionsContent } from '../extensions/ExtensionsContent'
 import { SearchContent } from '../search/SearchContent'
 import { BCWGroup } from '../explorer/BCWGroup'
+import { Readme } from '../explorer/Readme'
+import { Home } from '../explorer/Home'
 
 export enum PagePaths {
   HOME = '',
@@ -38,6 +39,9 @@ interface RouterConfig {
   component: () => JSX.Element;
 }
 export const routerConfig: RouterConfig[] = [
+  { 
+    path: PagePaths.HOME,
+    component: Home},
   {
     path: PagePaths.BCW_GROUP,
     component: BCWGroup,
