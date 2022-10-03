@@ -11,6 +11,8 @@ import { IntroLayer } from './ParallaxLayers/IntroLayer'
 import { Identity } from './ParallaxLayers/Identity'
 import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
 import { Description } from './ParallaxLayers/Description'
+import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
+
 
 const DescriptionParallaxLayer = styled(ParallaxLayer)`
   background-color: ${props => props.theme.palette.persianGreen};
@@ -37,6 +39,12 @@ export const Readme = () => {
           pages={9}
           style={{ position: 'relative',  top: '0', left: '0' }}
         >
+          <ParallaxLayer
+            offset={0}
+            speed={1}
+          >
+            <ParallaxStars/>
+          </ParallaxLayer>
           <ParallaxLayer
             offset={0}
             speed={0.5}
@@ -85,7 +93,7 @@ export const Readme = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: 'white',
+              backgroundColor: 'pink',
               clipPath: 'polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%)'
     
 

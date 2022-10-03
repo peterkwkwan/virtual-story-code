@@ -6,15 +6,13 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
 `
 const Intro = styled.div`
   position: relative;
   display: flex;
-  padding: 0.3rem;
-  padding-top: 15%;
-  background: ${(props) => props.theme.palette.dark01};
 `
 const Hello = styled.h2`
   writing-mode: vertical-rl;

@@ -7,7 +7,7 @@ declare module 'styled-components' {
       vsCodeBlue: string;
       rosyPink: string;
       persianGreen: string;
-      
+
       dark01: string;
       dark02: string;
       dark03: string;
