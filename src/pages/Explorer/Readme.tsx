@@ -10,7 +10,7 @@ export const Readme = () => {
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={46}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={16}>
         This is Readme
     </ExplorerWrapper>
   )
