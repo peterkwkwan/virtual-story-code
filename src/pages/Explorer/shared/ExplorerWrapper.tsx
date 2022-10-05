@@ -59,6 +59,7 @@ export const ExplorerWrapper = ({
   emptyContainer
 }: Props) => {
   const lineNumbers = [...Array(numberOfLines).keys()]
+  lineNumbers.shift()
 
   return (
     <StyledContainer>
