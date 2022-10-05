@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledHeader = styled.div`
   height: 35px;
   padding-left: 20px;
   display: flex;
   align-items: center;
-`;
+`
 
 const Title = styled.h6`
   margin: 0;
@@ -18,11 +18,11 @@ const Title = styled.h6`
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: SF-Pro, sans-serif;
-`;
+`
 export const ViewletHeader = ({ headerName }: { headerName: string }) => {
   return (
     <StyledHeader>
       <Title>{headerName}</Title>
     </StyledHeader>
-  );
-};
+  )
+}

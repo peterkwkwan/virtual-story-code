@@ -37,11 +37,13 @@ export enum PagePaths {
 interface RouterConfig {
   path: string;
   component: () => JSX.Element;
+  noFileTab?: boolean;
 }
 export const routerConfig: RouterConfig[] = [
   { 
     path: PagePaths.HOME,
-    component: Home},
+    component: Home
+  },
   {
     path: PagePaths.BCW_GROUP,
     component: BCWGroup,
@@ -97,6 +99,7 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.SEARCH,
     component: SearchContent,
+    noFileTab: true
   },
   {
     path: PagePaths.EXTENSIONS,
