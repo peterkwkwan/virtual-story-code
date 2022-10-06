@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 interface Props {
   title: string;
@@ -14,7 +14,7 @@ const Image = styled.img<ImgProps>`
   display: block;
   border-radius: 50%;
   border: 5px solid #5d00ff;
-`;
+`
 
 export const Avatar = ({ title, isHovering }: Props) => {
   return (
@@ -22,5 +22,5 @@ export const Avatar = ({ title, isHovering }: Props) => {
       isHovering={isHovering}
       src={`../../../public/assets/images/search/${title.toLowerCase()}.png`}
     />
-  );
-};
+  )
+}
