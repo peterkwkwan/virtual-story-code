@@ -102,13 +102,13 @@ export const Home = () => {
           />
           <ParallaxLayer
             offset={5}
-            speed={1}
+            speed={0.5}
             style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: 'white',
-              clipPath: 'polygon(0% 33.3%, 100% 0%, 100% 33.3%, 0% 66.67%)'
+              clipPath: 'polygon(0% 0%, 100% 15%, 100% 60%, 0% 30%)'
             }}
           />
           <DescriptionParallaxLayer
