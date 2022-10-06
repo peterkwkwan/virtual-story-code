@@ -1,17 +1,18 @@
-import React from "react";
-import styled, { css, keyframes } from "styled-components";
-import { StyledList } from "./TopNavigation";
+import React from 'react'
+import styled, { css, keyframes } from 'styled-components'
+
+import { StyledList } from './TopNavigation'
 
 enum Actions {
-  CLOSE = "close",
-  MINIMIZE = "minimize",
-  EXPAND = "expand",
+  CLOSE = 'close',
+  MINIMIZE = 'minimize',
+  EXPAND = 'expand',
 }
 
 enum TrafficLightColors {
-  RED = "#f55549",
-  YELLOW = "#f5c11b",
-  GREEN = "#51d66a",
+  RED = '#f55549',
+  YELLOW = '#f5c11b',
+  GREEN = '#51d66a',
 }
 
 const ActionBtnContainer = styled.div`
@@ -60,7 +61,7 @@ const ActionBtnContainer = styled.div`
       transform: rotate(0.4turn);
     }
   }
-`;
+`
 
 const trafficLightAnimation = (actionType: Actions) => keyframes`
   0% {
@@ -68,28 +69,28 @@ const trafficLightAnimation = (actionType: Actions) => keyframes`
   }
   33% {
     background-color: ${
-      actionType === Actions.CLOSE ? TrafficLightColors.RED : "#1e1e1e"
-    };
+  actionType === Actions.CLOSE ? TrafficLightColors.RED : '#1e1e1e'
+};
   }
   66% {
     background-color: ${
-      actionType === Actions.MINIMIZE ? TrafficLightColors.YELLOW : "#1e1e1e"
-    };
+  actionType === Actions.MINIMIZE ? TrafficLightColors.YELLOW : '#1e1e1e'
+};
   }
   100% {
     background-color: ${
-      actionType === Actions.EXPAND ? TrafficLightColors.GREEN : "#1e1e1e"
-    };
+  actionType === Actions.EXPAND ? TrafficLightColors.GREEN : '#1e1e1e'
+};
   }
 
-`;
+`
 
 const animationRule = (actionType: Actions) => {
   return css(
-    ["", " 3s steps(1, start)"] as any as TemplateStringsArray,
+    ['', ' 3s steps(1, start)'] as any as TemplateStringsArray,
     trafficLightAnimation(actionType)
-  );
-};
+  )
+}
 
 const StyledActionBtn = styled.span<{
   marioKartIsRacing: boolean;
@@ -105,13 +106,13 @@ const StyledActionBtn = styled.span<{
   cursor: pointer;
   background-color: ${(props) => props.btnColor};
   animation: ${(props) => props.marioKartIsRacing && animationRule(props.name)};
-`;
+`
 
 const actionsBtns = [
   { name: Actions.CLOSE, btnColor: TrafficLightColors.RED },
   { name: Actions.MINIMIZE, btnColor: TrafficLightColors.YELLOW },
   { name: Actions.EXPAND, btnColor: TrafficLightColors.GREEN },
-];
+]
 
 interface Props {
   handleActionClick: () => void;
@@ -128,13 +129,13 @@ export const ActionButtons = ({
         {actionsBtns.map((btn) => (
           <StyledActionBtn
             key={btn.name}
-            onClick={handleActionClick}
             marioKartIsRacing={marioKartIsRacing}
             name={btn.name}
             btnColor={btn.btnColor}
+            onClick={handleActionClick}
           />
         ))}
       </ActionBtnContainer>
     </StyledList>
-  );
-};
+  )
+}
