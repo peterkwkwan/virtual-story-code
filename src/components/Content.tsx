@@ -1,27 +1,14 @@
-import path from 'path'
-
 import React from 'react'
-import { Routes, Route, Navigate, Link } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { routerConfig } from '../pages/shared/routerConfig'
-import { StyledLink } from './ui/StyledLink'
+import { RouteTab } from './ui/RouteTab'
 
 const Container = styled.div`
   height: calc(100% - 38px);
   width: 100%;
   display: block;  
-`
-
-const RouteTab = styled.div`
-  height: 38px;
-  width: 100%;
-  color: white;
-  font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 13px;
-  line-height: 35px;
-  text-overflow: ellipsis;
-  text-decoration: none;
 `
 
 export const Content = () => {
@@ -36,11 +23,7 @@ export const Content = () => {
               route.component()
               : (
                 <Container>
-                  <RouteTab>
-                    <RouteTab>
-                      {route.path}
-                    </RouteTab>
-                  </RouteTab>
+                  <RouteTab path={route.path}/>
                   {route.component()}
                 </Container>
               )
