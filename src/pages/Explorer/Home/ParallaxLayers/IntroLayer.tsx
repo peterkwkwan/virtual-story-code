@@ -34,7 +34,7 @@ const There = styled.h2`
   margin: 0;
 `
 
-const PeterKwan = styled.h1`
+const Name = styled.h1`
   font-size: 8rem;
   margin: 0;
   text-transform: uppercase;
@@ -85,8 +85,8 @@ export const IntroLayer = () => {
             <There>there</There>
             <h1 style={{ marginLeft: '1rem' }}>I&apos;m</h1>
           </div>
-          <PeterKwan>Peter</PeterKwan>
-          <PeterKwan>Kwan</PeterKwan>
+          <Name>Peter</Name>
+          <Name>Kwan</Name>
         </div>
       </Intro>
       <ScrollPrompt />
