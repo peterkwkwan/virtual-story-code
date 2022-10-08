@@ -34,72 +34,100 @@ export enum PagePaths {
   EXTENSIONS = 'extensions',
 }
 
+export enum PageNames {
+  BCW_GROUP = 'BCWGroup.tsx',
+  SERAI = 'Serai.tsx',
+  PAG = 'PAG.tsx',
+  MANULIFE = 'Manulife.tsx',
+  ACURIS = 'Acuris.scss',
+  COLEMAN = 'Coleman.scss',
+  CATHAY = 'CathayDragon.test',
+  MCGILL = 'McGill.html',
+  HKU = 'HKU.html',
+  BBYNORTH = 'BurnabyNorth.html',
+  README = 'README.md',
+  PACKAGE_JSON = 'package.json',
+  GIT_IGNORE = '.gitignore'
+}
+
 interface RouterConfig {
-  path: string;
+  path: PagePaths;
   component: () => JSX.Element;
-  noFileTab?: boolean;
+  fileName?: PageNames;
 }
 export const routerConfig: RouterConfig[] = [
   { 
     path: PagePaths.HOME,
-    component: Home
+    component: Home,
   },
   {
     path: PagePaths.BCW_GROUP,
     component: BCWGroup,
+    fileName: PageNames.BCW_GROUP
   },
   {
     path: PagePaths.SERAI,
     component: Serai,
+    fileName: PageNames.SERAI
   },
   {
     path: PagePaths.PAG,
     component: Pag,
+    fileName: PageNames.PAG
   },
   {
     path: PagePaths.MANULIFE,
     component: Manulife,
+    fileName: PageNames.MANULIFE
   },
   {
     path: PagePaths.ACURIS,
     component: Acuris,
+    fileName: PageNames.ACURIS
   },
   {
     path: PagePaths.COLEMAN,
     component: Coleman,
+    fileName: PageNames.COLEMAN
   },
   {
     path: PagePaths.CATHAY,
     component: CathayDragon,
+    fileName: PageNames.CATHAY
   },
   {
     path: PagePaths.MCGILL,
     component: McGill,
+    fileName: PageNames.MCGILL
   },
   {
     path: PagePaths.HKU,
     component: HKU,
+    fileName: PageNames.HKU
   },
   {
     path: PagePaths.BBYNORTH,
     component: BurnabyNorth,
+    fileName: PageNames.BBYNORTH
   },
   {
     path: PagePaths.PACKAGE_JSON,
     component: PackageJson,
+    fileName: PageNames.PACKAGE_JSON
   },
   {
     path: PagePaths.GIT_IGNORE,
     component: Gitignore,
+    fileName: PageNames.GIT_IGNORE
   },
   {
     path: PagePaths.README,
     component: Readme,
+    fileName: PageNames.README
   },
   {
     path: PagePaths.SEARCH,
     component: SearchContent,
-    noFileTab: true
   },
   {
     path: PagePaths.EXTENSIONS,
