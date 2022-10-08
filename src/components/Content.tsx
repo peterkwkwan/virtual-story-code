@@ -19,11 +19,11 @@ export const Content = () => {
           key={route.path}
           path={route.path}
           element={(
-            route.noFileTab ? 
+            route.fileName === undefined ? 
               route.component()
               : (
                 <Container>
-                  <RouteTab path={route.path}/>
+                  <RouteTab name={route.fileName}/>
                   {route.component()}
                 </Container>
               )
