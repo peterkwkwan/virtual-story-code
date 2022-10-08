@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { ExplorerButton } from './shared/ExplorerButton'
 import { Folder } from './Folder'
 import { ViewletHeader } from '../../components/ui/ViewletHeader'
-import { PagePaths } from '../shared/routerConfig'
+import { PageNames, PagePaths } from '../shared/routerConfig'
 import { ViewletContainer } from '../shared/styledContainers'
 import { FolderContent } from './shared/types'
 import { FolderNames } from './shared/constants'
@@ -18,21 +18,21 @@ const initFolders: IFolderStructure = {
   [FolderNames.CAREER]: {
     opened: true,
     files: [
-      { title: 'BCWGroup.tsx', path: PagePaths.BCW_GROUP },
-      { title: 'Serai.tsx', path: PagePaths.SERAI },
-      { title: 'PAG.tsx', path: PagePaths.PAG },
-      { title: 'Manulife.tsx', path: PagePaths.MANULIFE },
-      { title: 'Acuris.scss', path: PagePaths.ACURIS },
-      { title: 'Coleman.scss', path: PagePaths.COLEMAN },
-      { title: 'CathayDragon.test', path: PagePaths.CATHAY },
+      { title: PageNames.BCW_GROUP, path: PagePaths.BCW_GROUP },
+      { title: PageNames.SERAI, path: PagePaths.SERAI },
+      { title: PageNames.PAG, path: PagePaths.PAG },
+      { title: PageNames.MANULIFE, path: PagePaths.MANULIFE },
+      { title: PageNames.ACURIS, path: PagePaths.ACURIS },
+      { title: PageNames.COLEMAN, path: PagePaths.COLEMAN },
+      { title: PageNames.CATHAY, path: PagePaths.CATHAY },
     ],
   },
   [FolderNames.EDUCATION]: {
     opened: true,
     files: [
-      { title: 'McGill.html', path: PagePaths.MCGILL },
-      { title: 'HKU.html', path: PagePaths.HKU },
-      { title: 'BurnabyNorth.html', path: PagePaths.BBYNORTH },
+      { title: PageNames.MCGILL, path: PagePaths.MCGILL },
+      { title: PageNames.HKU, path: PagePaths.HKU },
+      { title: PageNames.BBYNORTH, path: PagePaths.BBYNORTH },
     ],
   },
 }
@@ -59,17 +59,17 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
 
 const rootFiles = [
   {
-    title: 'README.md',
+    title: PageNames.README,
     path: PagePaths.README,
     isRoot: true,
   },
   {
-    title: 'package.json',
+    title: PageNames.PACKAGE_JSON,
     path: PagePaths.PACKAGE_JSON,
     isRoot: true,
   },
   {
-    title: '.gitignore',
+    title: PageNames.GIT_IGNORE,
     path: PagePaths.GIT_IGNORE,
     isRoot: true,
   },
