@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { PageNames } from '@/pages/shared/routerConfig'
+
 const Container = styled.div`
   height: 38px;
   width: 100%;
@@ -13,11 +15,11 @@ const Container = styled.div`
 `
 
 interface Props {
-  path: string
+  name: PageNames
 }
 
-export const RouteTab = ({path} : Props) => {
+export const RouteTab = ({name} : Props) => {
   return (
-    <Container>{path}</Container>
+    <Container>{name}</Container>
   )
 }
