@@ -21,13 +21,12 @@ const ActionBtnContainer = styled.div`
     color: #3b3b3b;
     position: relative;
   }
-
   &:hover {
     span:nth-of-type(1):after {
       content: "\\00d7";
-      font-size: 11px;
-      left: 2.5px;
-      top: -4px;
+      font-size: 13px;
+      left: 2px;
+      top: -3px;
     }
     span:nth-of-type(2):after {
       display: block;
@@ -39,26 +38,20 @@ const ActionBtnContainer = styled.div`
       background-color: #5e5e5e;
     }
     span:nth-of-type(3):before {
-      content: "\\25E2";
-      border-color: transparent transparent #5e5e5e transparent;
-      border-style: solid;
-      border-width: 0px 3px 3px;
-      top: -8px;
-      left: 1.5px;
+      content: "\\25E4";
+      font-size: 4px;
+      top: -6.5px;
+      left: 3.5px;
       position: relative;
-      display: inline-block;
-      transform: rotate(0.9turn);
+      color: #5e5e5e;
     }
     span:nth-of-type(3):after {
-      content: "\\25E4";
-      border-color: transparent transparent #5e5e5e transparent;
-      border-style: solid;
-      border-width: 0px 3px 3px;
-      top: -4px;
-      left: -1.5px;
+      content: "\\25E2";
+      font-size: 4px;
+      top: -4.5px;
+      left: 1px;
       position: relative;
-      display: inline-block;
-      transform: rotate(0.4turn);
+      color: #5e5e5e;
     }
   }
 `
