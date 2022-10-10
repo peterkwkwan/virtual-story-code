@@ -24,9 +24,9 @@ const ActionBtnContainer = styled.div`
 
   &:hover {
     span:nth-of-type(1):after {
-      content: "x";
+      content: "\\00d7";
       font-size: 11px;
-      left: 3px;
+      left: 2.5px;
       top: -4px;
     }
     span:nth-of-type(2):after {
@@ -39,22 +39,22 @@ const ActionBtnContainer = styled.div`
       background-color: #5e5e5e;
     }
     span:nth-of-type(3):before {
-      content: "";
+      content: "\\25E2";
       border-color: transparent transparent #5e5e5e transparent;
       border-style: solid;
       border-width: 0px 3px 3px;
-      top: -7.5px;
+      top: -8px;
       left: 1.5px;
       position: relative;
       display: inline-block;
       transform: rotate(0.9turn);
     }
     span:nth-of-type(3):after {
-      content: "";
+      content: "\\25E4";
       border-color: transparent transparent #5e5e5e transparent;
       border-style: solid;
       border-width: 0px 3px 3px;
-      top: -2.5px;
+      top: -4px;
       left: -1.5px;
       position: relative;
       display: inline-block;
