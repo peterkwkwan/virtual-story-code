@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const Header = styled.h3`
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     text-transform: uppercase;
     font-family: "League Spartan";
     font-size: 2rem;

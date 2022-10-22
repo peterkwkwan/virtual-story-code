@@ -42,7 +42,7 @@ const Name = styled.h1`
 `
 
 const ScrollPrompt = styled.div`
-  bottom: 10%;
+  bottom: 5%;
   position: absolute;
   width: 30px;
   height: 30px;
