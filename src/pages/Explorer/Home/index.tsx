@@ -17,8 +17,6 @@ import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
 const DescriptionParallaxLayer = styled(ParallaxLayer)`
   background-color: ${props => props.theme.palette.persianGreen};
   clip-path: polygon(0% 7%, 100% 0%, 82% 69%, 18% 68%, 14% 76.3%, 14% 68%, 4% 68%);
-  display: flex;
-  justify-content: center;
 `
 
 const TimelineParallaxLayer = styled(ParallaxLayer)`
