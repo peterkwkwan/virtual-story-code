@@ -16,22 +16,10 @@ margin-top: 5%;
 const InnerBorder = styled.div`
   height: 85%;
   width: 95%;
-  border-left: 1px solid white;  
-  border-right: 1px solid white;
-  border-radius: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  &:before {
-    content: 'Peter';
-    font-size: 2rem;
-    margin-right: 4px;
-    position: absolute;
-    top: 6%;
-    left: 18%;
-    color: ${(props) => props.theme.palette.white};
-  }
-`
+`;
 
 const DescriptionText = styled.h6`
   color: ${(props) => props.theme.palette.white};
