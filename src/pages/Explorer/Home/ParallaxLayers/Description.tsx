@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+position: relative;
 margin-left: 5%;
 margin-top: 5%;
   border-radius: 30rem;
@@ -17,8 +18,20 @@ margin-top: 5%;
     font-size: 2rem;
     margin-right: 4px;
     position: absolute;
-    top: 6%;
+    top: -5%;
     left: 18%;
+    color: ${(props) => props.theme.palette.white};
+  }
+  &:after{
+    content: 'A';
+    font-size: 2rem;
+    margin-right: 4px;
+    position: absolute;
+    bottom: -5%;
+    left: 47%;
+    border: 1px solid ${(props) => props.theme.palette.white};
+    border-radius: 50px;
+    padding: 1rem;
     color: ${(props) => props.theme.palette.white};
   }
 `
