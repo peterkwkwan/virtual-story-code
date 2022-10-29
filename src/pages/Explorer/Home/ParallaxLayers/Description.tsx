@@ -22,17 +22,23 @@ margin-top: 5%;
     left: 18%;
     color: ${(props) => props.theme.palette.white};
   }
-  &:after{
-    content: 'A';
+  &:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "A";
     font-size: 2rem;
-    margin-right: 4px;
+    color: ${(props) => props.theme.palette.dark02};
+    border-radius: 50px;
+    border: 1px solid ${(props) => props.theme.palette.white};
+    background-color: ${(props) => props.theme.palette.white};
+    box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
+    height: 40px;
+    width: 40px;
+    padding: 8px;
     position: absolute;
     bottom: -5%;
     left: 47%;
-    border: 1px solid ${(props) => props.theme.palette.white};
-    border-radius: 50px;
-    padding: 1rem;
-    color: ${(props) => props.theme.palette.white};
   }
 `
 
