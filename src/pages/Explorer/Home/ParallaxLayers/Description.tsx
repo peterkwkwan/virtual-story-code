@@ -13,6 +13,7 @@ margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
   &:before {
     content: 'Peter';
     font-size: 2rem;
@@ -39,8 +40,13 @@ margin-top: 5%;
     position: absolute;
     bottom: -5%;
     left: 47%;
+    pointer-events: all;
   }
-`
+  &:hover {
+    &:after {
+      box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
+    }
+  }
 
 const InnerBorder = styled.div`
   height: 85%;
