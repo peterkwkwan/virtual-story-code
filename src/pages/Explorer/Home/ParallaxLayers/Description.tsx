@@ -47,6 +47,7 @@ margin-top: 5%;
       box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
     }
   }
+`
 
 const InnerBorder = styled.div`
   height: 85%;
