@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -23,34 +23,10 @@ margin-top: 5%;
     left: 18%;
     color: ${(props) => props.theme.palette.white};
   }
-  &:after {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    content: "A";
-    font-size: 2rem;
-    color: ${(props) => props.theme.palette.dark02};
-    border-radius: 50px;
-    border: 1px solid ${(props) => props.theme.palette.white};
-    background-color: ${(props) => props.theme.palette.white};
-    box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
-    height: 40px;
-    width: 40px;
-    padding: 8px;
-    position: absolute;
-    bottom: -5%;
-    left: 47%;
-    pointer-events: all;
-  }
-  &:hover {
-    &:after {
-      box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
-    }
-  }
 `
 
 const InnerBorder = styled.div`
-  height: 85%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -60,11 +36,11 @@ const InnerBorder = styled.div`
     background: url("../../assets/images/speech-bubble-border.png");
     background-position: center;
     height: 50%;
-    width: 5%;
+    width: 15%;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    left: -2%;
+    left: 1%;
   }
   &:after {
     content: '';
@@ -72,25 +48,73 @@ const InnerBorder = styled.div`
     background-position: center;
     transform: rotate(180deg);
     height: 50%;
-    width: 5%;
+    width: 15%;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    right: -2%;
+    right: 1%;
   }
+`
+
+const DescriptionContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
 `
 
 const DescriptionText = styled.h6`
   color: ${(props) => props.theme.palette.white};
   font-size: 2.5rem;
   text-align: left;
-  width: 85%;
+  margin: 0;
 `
+
+const Button = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: ${(props) => props.theme.palette.dark02};
+    border-radius: 50px;
+    border: 1px solid ${(props) => props.theme.palette.grey};
+    background-color: ${(props) => props.theme.palette.white};
+    box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    position: absolute;
+    bottom: -12%;
+    pointer-events: all;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
+  }
+`
+
+const DescriptionString = [
+  'I\'m a software developer with a keen passion for aesthetics!',
+  'I come from a non-tech background and taught myself programming.'
+]
+
 export const Description = () => {
+  const [currentStringIndex, setCurrentStringIndex] = useState(0)
+
+  const handleClick = () => {
+    if(currentStringIndex < DescriptionString.length - 1){
+      setCurrentStringIndex(prev => prev + 1)
+    }
+  }
+
   return (
     <Container>
       <InnerBorder>
-        <DescriptionText>I&apos;m a software developer with a keen passion for aesthetics!</DescriptionText>
+        <DescriptionContainer>
+          <DescriptionText>{DescriptionString[currentStringIndex]}</DescriptionText>
+          <Button onClick={handleClick}>A</Button>
+        </DescriptionContainer>
       </InnerBorder>
     </Container>
   )
