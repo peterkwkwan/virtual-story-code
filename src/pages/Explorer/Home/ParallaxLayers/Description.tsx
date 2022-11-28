@@ -1,11 +1,12 @@
-
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { TypewriterWrapper } from './TypewriterWrapper'
+
 const Container = styled.div`
-position: relative;
-margin-left: 5%;
-margin-top: 5%;
+  position: relative;
+  margin-left: 5%;
+  margin-top: 5%;
   border-radius: 30rem;
   background-color: rgba(0, 0, 0, 0.5);
   height: 35%;
@@ -15,7 +16,7 @@ margin-top: 5%;
   align-items: center;
   pointer-events: none;
   &:before {
-    content: 'Peter';
+    content: "Peter";
     font-size: 2rem;
     margin-right: 4px;
     position: absolute;
@@ -32,7 +33,7 @@ const InnerBorder = styled.div`
   justify-content: center;
   align-items: center;
   &:before {
-    content: '';
+    content: "";
     background: url("../../assets/images/speech-bubble-border.png");
     background-position: center;
     height: 50%;
@@ -43,7 +44,7 @@ const InnerBorder = styled.div`
     left: 1%;
   }
   &:after {
-    content: '';
+    content: "";
     background: url("../../assets/images/speech-bubble-border.png");
     background-position: center;
     transform: rotate(180deg);
@@ -57,54 +58,47 @@ const InnerBorder = styled.div`
 `
 
 const DescriptionContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100%;
-width: 100%;
-`
-
-const DescriptionText = styled.h6`
-  color: ${(props) => props.theme.palette.white};
-  font-size: 2.5rem;
-  text-align: left;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 `
 
 const Button = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: ${(props) => props.theme.palette.dark02};
-    border-radius: 50px;
-    border: 1px solid ${(props) => props.theme.palette.grey};
-    background-color: ${(props) => props.theme.palette.white};
-    box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
-    height: 40px;
-    width: 40px;
-    padding: 8px;
-    position: absolute;
-    bottom: -12%;
-    pointer-events: all;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: ${(props) => props.theme.palette.dark02};
+  border-radius: 50px;
+  border: 1px solid ${(props) => props.theme.palette.grey};
+  background-color: ${(props) => props.theme.palette.white};
+  box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  position: absolute;
+  bottom: -12%;
+  pointer-events: all;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
   }
 `
 
-const DescriptionString = [
-  'I\'m a software developer with a keen passion for aesthetics!',
-  'I come from a non-tech background and taught myself programming.'
+const TypewriterStringToRender = [
+  'Hi! Click the button below!',
+  "I'm Peter, and I ",
 ]
 
 export const Description = () => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
 
   const handleClick = () => {
-    if(currentStringIndex < DescriptionString.length - 1){
-      setCurrentStringIndex(prev => prev + 1)
+    if (currentStringIndex < TypewriterStringToRender.length - 1) {
+      setCurrentStringIndex((prev) => prev + 1)
     }
   }
 
@@ -112,11 +106,12 @@ export const Description = () => {
     <Container>
       <InnerBorder>
         <DescriptionContainer>
-          <DescriptionText>{DescriptionString[currentStringIndex]}</DescriptionText>
+          <TypewriterWrapper
+            text={TypewriterStringToRender[currentStringIndex]}
+          />
           <Button onClick={handleClick}>A</Button>
         </DescriptionContainer>
       </InnerBorder>
     </Container>
   )
 }
-
