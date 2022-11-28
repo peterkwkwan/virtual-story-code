@@ -66,7 +66,36 @@ const DescriptionContainer = styled.div`
   width: 100%;
 `
 
-const Button = styled.div`
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: -12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const ClickMe = styled.p`
+  position: absolute;
+  top: -22px;
+  right: -25px;
+  color: ${(props) => props.theme.palette.white};
+  font-size: 0.75rem;
+  transform: rotate(25deg);
+  animation: fadeIn 1s alternate infinite;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
+
+const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,9 +107,7 @@ const Button = styled.div`
   box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
   height: 40px;
   width: 40px;
-  padding: 8px;
-  position: absolute;
-  bottom: -12%;
+  padding: 28px;
   pointer-events: all;
   cursor: pointer;
   &:hover {
@@ -89,17 +116,28 @@ const Button = styled.div`
 `
 
 const TypewriterStringToRender = [
-  'Hi! Click the button below!',
-  "I'm Peter, and I ",
+  'Hi, click the button below!',
+  "I'm Peter, a developer with a keen passion for <i>aesthetics</i> ✨",
+  'I enjoy mentoring junior developers and empowering my team',
+  'My other passions include video games, reading and cooking 🍳'
 ]
 
 export const Description = () => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
+  const [showClickMe, setShowClickMe] = useState(true)
 
   const handleClick = () => {
     if (currentStringIndex < TypewriterStringToRender.length - 1) {
       setCurrentStringIndex((prev) => prev + 1)
     }
+  }
+
+  const handleHideClickMe = () => {
+    setShowClickMe(false)
+  }
+
+  const handleShowClickMe = () => {
+    setShowClickMe(true)
   }
 
   return (
@@ -108,8 +146,13 @@ export const Description = () => {
         <DescriptionContainer>
           <TypewriterWrapper
             text={TypewriterStringToRender[currentStringIndex]}
+            handleHideClickMe={handleHideClickMe}
+            handleShowClickMe={handleShowClickMe}
           />
-          <Button onClick={handleClick}>A</Button>
+          <ButtonContainer>
+            {showClickMe && <ClickMe>Click!</ClickMe>}
+            <Button onClick={handleClick}>A</Button>
+          </ButtonContainer>
         </DescriptionContainer>
       </InnerBorder>
     </Container>
