@@ -37,7 +37,7 @@ export const Home = () => {
         numberOfLines={27}
       >
         <ParallaxSpring
-          pages={9}
+          pages={10}
           style={{ position: 'relative',  top: '0', left: '0' }}
         >
           <ParallaxLayer
@@ -111,16 +111,30 @@ export const Home = () => {
               clipPath: 'polygon(0% 0%, 100% 15%, 100% 60%, 0% 30%)'
             }}
           />
+
           <DescriptionParallaxLayer
             offset={5}
             speed={0.2}
+            sticky={{start: 5, end: 6}}
           >
             <Description />
           </DescriptionParallaxLayer>
+          <ParallaxLayer
+            offset={7}
+            speed={1.5}
+            sticky={{start: 7, end: 8.5}}
+            style={{ 
+              backgroundColor: theme.palette.mutedGreenText,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center', }}
+          >
+            <p style={{fontSize: '2rem', color: theme.palette.white}}>My Career (so far)</p>
+          </ParallaxLayer>
           <TimelineParallaxLayer
-            offset={6}
+            offset={8.5}
             speed={0}
-            sticky={{start: 6, end: 8}}
+            sticky={{start: 8.5, end: 10}}
           >
             <TimelineBackbone/>
           </TimelineParallaxLayer>

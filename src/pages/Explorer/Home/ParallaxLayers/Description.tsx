@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { TypewriterWrapper } from './TypewriterWrapper'
 
 const Container = styled.div`
-  position: relative;
+  position: absolute;
   margin-left: 5%;
   margin-top: 5%;
   border-radius: 30rem;
