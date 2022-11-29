@@ -127,9 +127,10 @@ const TypewriterStringToRender = [
 export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void}) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
+  const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
 
   const handleClick = () => {
-    if (currentStringIndex < TypewriterStringToRender.length - 1) {
+    if (textAvailable) {
       setCurrentStringIndex((prev) => prev + 1)
     } else {
       scrollToCallback()
@@ -156,7 +157,7 @@ export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void})
           />
           <ButtonContainer>
             {showClickMe && <ClickMe>Click!</ClickMe>}
-            <Button onClick={handleClick}>A</Button>
+            <Button onClick={handleClick}>{textAvailable ? 'A':'B'}</Button>
           </ButtonContainer>
         </SpeechBubbleTextContainer>
       </InnerBorder>
