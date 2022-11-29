@@ -157,7 +157,7 @@ export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void})
           />
           <ButtonContainer>
             {showClickMe && <ClickMe>Click!</ClickMe>}
-            <Button onClick={handleClick}>{textAvailable ? 'A':'B'}</Button>
+            <Button onClick={handleClick}>{textAvailable ? 'A': '\u2713'}</Button>
           </ButtonContainer>
         </SpeechBubbleTextContainer>
       </InnerBorder>
