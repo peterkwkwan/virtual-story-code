@@ -122,13 +122,15 @@ const TypewriterStringToRender = [
   'My other passions include video games, reading and cooking 🍳'
 ]
 
-export const Description = () => {
+export const Description = ({scrollToCallback}: {scrollToCallback: () => void}) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
 
   const handleClick = () => {
     if (currentStringIndex < TypewriterStringToRender.length - 1) {
       setCurrentStringIndex((prev) => prev + 1)
+    } else {
+      scrollToCallback()
     }
   }
 

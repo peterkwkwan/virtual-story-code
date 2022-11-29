@@ -117,12 +117,11 @@ const loadingTips = [
   'hello there! . . . general kenobi!',
   "it's over, Anakin! I have LeetCode Premium!",
   'refresh this page for more terrible jokes / memes',
-  'tell me where is Obi-Wan, for i much desire to speak with him',
   "i don't like vim. it's rough, coarse and I can't seem to exit",
   'dev horror story #1: I was once asked to center a div',
   'if pokemon were data types, charmander would evolve into stringmander',
   'speed up loading times by downloading more RAM',
-  'did you know? RGB accessories and coding efficiency are directly correlated?',
+  'installing RGB accessories increases your coding efficiency by 43%',
 ]
 
 interface Props {

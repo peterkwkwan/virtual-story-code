@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
 `
-const Intro = styled.div`
+const NameContainer = styled.div`
   position: relative;
   display: flex;
 `
@@ -75,10 +75,10 @@ const ScrollPrompt = styled.div`
   }
 `
 
-export const IntroLayer = () => {
+export const Intro = () => {
   return (
     <Container>
-      <Intro>
+      <NameContainer>
         <Hello>Hello</Hello>
         <div style={{ marginLeft: '0.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -88,7 +88,7 @@ export const IntroLayer = () => {
           <Name>Peter</Name>
           <Name>Kwan</Name>
         </div>
-      </Intro>
+      </NameContainer>
       <ScrollPrompt />
     </Container>
   )

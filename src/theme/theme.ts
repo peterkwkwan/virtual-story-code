@@ -7,6 +7,7 @@ export const defaultTheme: DefaultTheme = {
     deepPink: '#ff6d6d',
     brightPink: '#ef9ba9',
     persianGreen: '#00a693',
+    darkOrange: '#ff8c00',
     
     dark01: '#1e1e1e',
     dark02: 'rgb(51, 51, 51)',

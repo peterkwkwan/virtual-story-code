@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled, { useTheme } from 'styled-components'
 import {
   Parallax as ParallaxSpring,
   ParallaxLayer,
+  IParallax
 } from '@react-spring/parallax'
 
 import { useLastContributed } from '../../../hooks/useLastContributed'
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
-import { IntroLayer } from './ParallaxLayers/IntroLayer'
+import { Intro } from './ParallaxLayers/Intro'
 import { Identity } from './ParallaxLayers/Identity'
 import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
 import { Description } from './ParallaxLayers/Description'
@@ -29,6 +30,15 @@ export const Home = () => {
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
+  const parallax = useRef<IParallax>(null)
+  const myCareerPage = 7
+
+  const handleScrollToCallback = () => {
+    if (parallax.current) {
+      parallax.current.scrollTo(myCareerPage)
+    }
+  }
+
   return (
     <>
       <ExplorerWrapper
@@ -37,6 +47,7 @@ export const Home = () => {
         numberOfLines={27}
       >
         <ParallaxSpring
+          ref={parallax}
           pages={10}
           style={{ position: 'relative',  top: '0', left: '0' }}
         >
@@ -55,7 +66,7 @@ export const Home = () => {
               zIndex: 10
             }}
           >
-            <IntroLayer/>
+            <Intro/>
           </ParallaxLayer>
           <ParallaxLayer
             offset={1}
@@ -117,14 +128,14 @@ export const Home = () => {
             speed={0.2}
             sticky={{start: 5, end: 6}}
           >
-            <Description />
+            <Description scrollToCallback={handleScrollToCallback}/>
           </DescriptionParallaxLayer>
           <ParallaxLayer
-            offset={7}
+            offset={myCareerPage}
             speed={1.5}
             sticky={{start: 7, end: 8.5}}
             style={{ 
-              backgroundColor: theme.palette.mutedGreenText,
+              backgroundColor: theme.palette.darkOrange,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center', }}
