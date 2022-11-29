@@ -71,6 +71,17 @@ export const Home = () => {
           <ParallaxLayer
             offset={1}
             speed={1}
+            sticky={{start: 1, end: 4}}
+            style={{
+              color: 'white',
+              zIndex: 2,
+              backgroundColor: theme.palette.darkOrange,
+              clipPath: 'polygon(0% 0%, 100% 0%, 50% 80%)'
+            }}
+          />
+          <ParallaxLayer
+            offset={1}
+            speed={1}
             sticky={{start: 1, end: 2}}
             style={{
               zIndex: 1
@@ -100,29 +111,15 @@ export const Home = () => {
           </ParallaxLayer>
           <ParallaxLayer
             offset={4}
-            speed={1}
+            speed={0.1}
             style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: theme.palette.blueText,
+              backgroundColor: theme.palette.vsCodeBlue,
               clipPath: 'polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%)'
-    
-
             }}
           />
-          <ParallaxLayer
-            offset={5}
-            speed={0.5}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'white',
-              clipPath: 'polygon(0% 0%, 100% 15%, 100% 60%, 0% 30%)'
-            }}
-          />
-
           <SpeechBubbleParallaxLayer
             offset={5}
             speed={0.2}
