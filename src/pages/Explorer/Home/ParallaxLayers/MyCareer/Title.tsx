@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   font-family: "League Spartan";
   color: ${(props) => props.theme.palette.white};
   text-transform: uppercase;
