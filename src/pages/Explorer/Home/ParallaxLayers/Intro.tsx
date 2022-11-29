@@ -26,7 +26,6 @@ const Hello = styled.h2`
 
 const There = styled.h2`
   font-family: "League Spartan";
-
   position: relative;
   font-size: 6rem;
   font-weight: 200;

@@ -22,7 +22,7 @@ export const TypewriterWrapper = ({text, handleHideClickMe, handleShowClickMe} :
     <DescriptionText key={text}>
       <Typewriter
         options={{
-          delay: 70,
+          delay: 50,
           cursor: ''
         }}
         onInit={(typewriter) => {

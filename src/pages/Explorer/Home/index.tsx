@@ -13,6 +13,7 @@ import { Identity } from './ParallaxLayers/Identity'
 import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
 import { SpeechBubble } from './ParallaxLayers/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
+import { Title } from './ParallaxLayers/MyCareer/Title'
 
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
@@ -137,7 +138,7 @@ export const Home = () => {
               justifyContent: 'center',
               alignItems: 'center', }}
           >
-            <p style={{fontSize: '2rem', color: theme.palette.white}}>My Career (so far)</p>
+            <Title/>
           </ParallaxLayer>
           <TimelineParallaxLayer
             offset={8.5}
