@@ -11,11 +11,11 @@ import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 import { Intro } from './ParallaxLayers/Intro'
 import { Identity } from './ParallaxLayers/Identity'
 import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
-import { Description } from './ParallaxLayers/Description'
+import { SpeechBubble } from './ParallaxLayers/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
 
 
-const DescriptionParallaxLayer = styled(ParallaxLayer)`
+const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   background-color: ${props => props.theme.palette.persianGreen};
   clip-path: polygon(0% 7%, 100% 0%, 82% 48%, 18% 48%, 14% 56.3%, 14% 48%, 4% 48%);
 `
@@ -123,13 +123,13 @@ export const Home = () => {
             }}
           />
 
-          <DescriptionParallaxLayer
+          <SpeechBubbleParallaxLayer
             offset={5}
             speed={0.2}
             sticky={{start: 5, end: 6}}
           >
-            <Description scrollToCallback={handleScrollToCallback}/>
-          </DescriptionParallaxLayer>
+            <SpeechBubble scrollToCallback={handleScrollToCallback}/>
+          </SpeechBubbleParallaxLayer>
           <ParallaxLayer
             offset={myCareerPage}
             speed={1.5}

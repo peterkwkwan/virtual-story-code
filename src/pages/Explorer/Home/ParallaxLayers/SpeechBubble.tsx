@@ -15,15 +15,17 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  &:before {
-    content: "Peter";
+`
+
+const NameTag = styled.p`
     font-size: 2rem;
-    margin-right: 4px;
     position: absolute;
+    margin: 0;
     top: -5%;
     left: 18%;
     color: ${(props) => props.theme.palette.white};
-  }
+    text-shadow: 2px 2px 4px ${(props) => props.theme.palette.dark02};
+    font-style: italic;
 `
 
 const InnerBorder = styled.div`
@@ -57,7 +59,7 @@ const InnerBorder = styled.div`
   }
 `
 
-const DescriptionContainer = styled.div`
+const SpeechBubbleTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +124,7 @@ const TypewriterStringToRender = [
   'My other passions include video games, reading and cooking 🍳'
 ]
 
-export const Description = ({scrollToCallback}: {scrollToCallback: () => void}) => {
+export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void}) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
 
@@ -144,8 +146,9 @@ export const Description = ({scrollToCallback}: {scrollToCallback: () => void}) 
 
   return (
     <Container>
+      <NameTag>Peter</NameTag>
       <InnerBorder>
-        <DescriptionContainer>
+        <SpeechBubbleTextContainer>
           <TypewriterWrapper
             text={TypewriterStringToRender[currentStringIndex]}
             handleHideClickMe={handleHideClickMe}
@@ -155,7 +158,7 @@ export const Description = ({scrollToCallback}: {scrollToCallback: () => void}) 
             {showClickMe && <ClickMe>Click!</ClickMe>}
             <Button onClick={handleClick}>A</Button>
           </ButtonContainer>
-        </DescriptionContainer>
+        </SpeechBubbleTextContainer>
       </InnerBorder>
     </Container>
   )
