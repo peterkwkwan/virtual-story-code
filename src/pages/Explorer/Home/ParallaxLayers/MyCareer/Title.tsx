@@ -27,7 +27,7 @@ export const Title = () => {
   return (
     <Container>
       <Header>My Career</Header>
-      <Subtitle>so far</Subtitle>
+      <Subtitle>(so far)</Subtitle>
     </Container>
   )
 }
