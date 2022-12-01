@@ -22,8 +22,8 @@ export const Readme = () => {
       Project tech stack:
       <LineBreak/>
       <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
-      <DarkBlueText>2. </DarkBlueText>[<StringText>styled-components</StringText>](https://styled-components.com/) - for Über fast local hosting & bundling speeds
-      <DarkBlueText>3. </DarkBlueText>[<StringText>React Router</StringText>](https://reactrouter.com/) - for Über fast local hosting & bundling speeds
+      <DarkBlueText>2. </DarkBlueText>[<StringText>styled-components</StringText>](https://styled-components.com/) - CSS in JS, global theming, and conditional styling ;)
+      <DarkBlueText>3. </DarkBlueText>[<StringText>React Router</StringText>](https://reactrouter.com/) - native-like site navigation
     </ExplorerWrapper>
   )
 }
