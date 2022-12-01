@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
 import { BaseText, DarkBlueText, LineBreak, StringText } from './shared/StyledText'
@@ -8,6 +9,11 @@ import { useLastContributed } from '@/hooks/useLastContributed'
 
 const BlockBaseText = styled(BaseText)`
   display: block;
+`
+
+const ExternalLink = styled.a`
+  text-decoration: none ;
+  color: inherit;
 `
 
 const IntroLines = [
@@ -40,14 +46,15 @@ export const Readme = () => {
       <LineBreak/>
       {RenderIntroLines()}
       <BlockBaseText>
-        <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
+        <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](<ExternalLink target="_blank" rel="noopener" href='https://vitejs.dev/'>https://vitejs.dev/</ExternalLink>) - for Über fast local hosting & bundling speeds
       </BlockBaseText>
       <BlockBaseText>
-        <DarkBlueText>2. </DarkBlueText>[<StringText>styled-components</StringText>](https://styled-components.com/) - CSS in JS, global theming, and conditional styling ;&#41;
+        <DarkBlueText>2. </DarkBlueText>[<StringText>styled-components</StringText>](<ExternalLink target="_blank" rel="noopener" href="https://styled-components.com/">https://styled-components.com/</ExternalLink>) - CSS in JS, global theming, and conditional styling ;&#41;
       </BlockBaseText>
       <BlockBaseText>
-        <DarkBlueText>3. </DarkBlueText>[<StringText>React Router</StringText>](https://reactrouter.com/) - native-like site navigation
+        <DarkBlueText>3. </DarkBlueText>[<StringText>React Router</StringText>](<ExternalLink target="_blank" rel="noopener" href="https://reactrouter.com/" >https://reactrouter.com/</ExternalLink>) - native-like site navigation
       </BlockBaseText>
+
     </ExplorerWrapper>
   )
 }
