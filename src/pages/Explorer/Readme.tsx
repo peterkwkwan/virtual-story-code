@@ -12,7 +12,7 @@ const BlockBaseText = styled(BaseText)`
 `
 
 const ExternalLink = styled.a`
-  text-decoration: none ;
+  text-decoration: underline;
   color: inherit;
 `
 
