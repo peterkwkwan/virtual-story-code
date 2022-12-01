@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
-import { DarkBlueText, LineBreak } from './shared/StyledText'
+import { DarkBlueText, LineBreak, StringText } from './shared/StyledText'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 
@@ -20,6 +20,8 @@ export const Readme = () => {
       journey started 2017 December
       <LineBreak/>
       Project tech stack:
+      <LineBreak/>
+      <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
     </ExplorerWrapper>
   )
 }
