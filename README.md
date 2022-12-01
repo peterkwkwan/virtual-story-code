@@ -4,7 +4,7 @@ this is my virtual story
 
 journey started 2017 December
 
-Tech stack:
+Project tech stack:
 
 1. [ViteJS](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
 2. [styled-components](https://styled-components.com/) - CSS in JS, global theming, and conditional styling ;)

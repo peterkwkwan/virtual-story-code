@@ -1,6 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
+import { DarkBlueText, LineBreak } from './shared/StyledText'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 
@@ -11,7 +13,13 @@ export const Readme = () => {
 
   return (
     <ExplorerWrapper contributors={contributors} numberOfLines={17}>
-        This is Readme
+      <DarkBlueText>## virtual story code</DarkBlueText>
+      <LineBreak/>
+      this is my virtual story
+      <LineBreak/>
+      journey started 2017 December
+      <LineBreak/>
+      Project tech stack:
     </ExplorerWrapper>
   )
 }
