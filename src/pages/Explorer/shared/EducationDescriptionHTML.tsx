@@ -1,5 +1,6 @@
-import React from "react";
-import TypewriterComponent from "typewriter-effect";
+import React from 'react'
+import TypewriterComponent from 'typewriter-effect'
+
 import {
   AngleBrackets,
   BaseText,
@@ -8,8 +9,8 @@ import {
   LightBlueText,
   LineBreak,
   StringText,
-} from "./StyledText";
-import { IEducationDescription } from "./types";
+} from './StyledText'
+import { IEducationDescription } from './types'
 
 interface Props {
   educationDescription: IEducationDescription;
@@ -31,7 +32,7 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
   }) => {
     return (
       <>
-        <AngleBrackets>{"<"}</AngleBrackets>
+        <AngleBrackets>{'<'}</AngleBrackets>
         <BlueText>{text}</BlueText>
         {attributes &&
           attributes.map((attribute, index) => (
@@ -40,31 +41,31 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
               <StringText>"{attribute.value}"</StringText>
             </React.Fragment>
           ))}
-        <AngleBrackets>{">"}</AngleBrackets>
+        <AngleBrackets>{'>'}</AngleBrackets>
       </>
-    );
-  };
+    )
+  }
   const ClosingBrackets = ({ text }: { text: string }) => {
     return (
       <>
-        <AngleBrackets>{"</"}</AngleBrackets>
+        <AngleBrackets>{'</'}</AngleBrackets>
         <BlueText>{text}</BlueText>
-        <AngleBrackets>{">"}</AngleBrackets>
+        <AngleBrackets>{'>'}</AngleBrackets>
       </>
-    );
-  };
+    )
+  }
 
-  const typeWriterString = `<span style="color: #808080;"><<span style="color: #4fc1ff">meta </span><span style="color: #9cdcfe">description</span>=<span style="color: #ce9178">"education"</span>></span>`;
+  const typeWriterString = '<span style="color: #808080;"><<span style="color: #4fc1ff">meta </span><span style="color: #9cdcfe">description</span>=<span style="color: #ce9178">"education"</span>></span>'
   return (
     <>
-      <AngleBrackets>{"<!"}</AngleBrackets>
+      <AngleBrackets>{'<!'}</AngleBrackets>
       <BlueText>DOCTYPE</BlueText>
       <LightBlueText> html</LightBlueText>
-      <AngleBrackets>{">"}</AngleBrackets>
+      <AngleBrackets>{'>'}</AngleBrackets>
       <br />
       <OpeningBrackets
         text="html"
-        attributes={[{ name: "lang", value: "en" }]}
+        attributes={[{ name: 'lang', value: 'en' }]}
       />
       <br />
       <OpeningBrackets text="head" />
@@ -74,26 +75,26 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
           attributes={[{ name: "charset", value: "UTF-8" }]}
         /> */}
 
-        <div style={{ height: "18px" }}>
+        <div style={{ height: '18px' }}>
           <TypewriterComponent
             onInit={(typewriter) => {
-              typewriter.typeString(typeWriterString).pauseFor(2500).start();
+              typewriter.typeString(typeWriterString).pauseFor(2500).start()
             }}
           />
         </div>
         <OpeningBrackets
           text="meta"
           attributes={[
-            { name: "name", value: "degree" },
-            { name: "content", value: educationDescription.degreeType },
+            { name: 'name', value: 'degree' },
+            { name: 'content', value: educationDescription.degreeType },
           ]}
         />
         <br />
         <OpeningBrackets
           text="meta"
           attributes={[
-            { name: "name", value: "year" },
-            { name: "content", value: educationDescription.year },
+            { name: 'name', value: 'year' },
+            { name: 'content', value: educationDescription.year },
           ]}
         />
         <br />
@@ -104,8 +105,8 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
         <OpeningBrackets
           text="link"
           attributes={[
-            { name: "rel", value: educationDescription.location.city },
-            { name: "href", value: educationDescription.location.country },
+            { name: 'rel', value: educationDescription.location.city },
+            { name: 'href', value: educationDescription.location.country },
           ]}
         />
       </Indent>
@@ -134,6 +135,6 @@ export const EducationDescriptionHTML = ({ educationDescription }: Props) => {
       </Indent>
       <ClosingBrackets text="body" />
     </>
-  );
-};
+  )
+}
 /* eslint-enable react/no-unescaped-entities */
