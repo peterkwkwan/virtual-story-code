@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ExplorerWrapper } from './shared/ExplorerWrapper'
-import { DarkBlueText, Indent, LineBreak, StringText } from './shared/StyledText'
+import { BaseText, DarkBlueText, LineBreak, StringText } from './shared/StyledText'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 
@@ -21,9 +21,9 @@ export const Readme = () => {
       <LineBreak/>
       Project tech stack:
       <LineBreak/>
-      <div>
+      <BaseText>
         <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
-      </div>
+      </BaseText>
       <div>
         <DarkBlueText>2. </DarkBlueText>[<StringText>styled-components</StringText>](https://styled-components.com/) - CSS in JS, global theming, and conditional styling ;&#41;
       </div>
