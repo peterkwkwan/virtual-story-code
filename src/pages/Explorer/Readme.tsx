@@ -10,6 +10,25 @@ const BlockBaseText = styled(BaseText)`
   display: block;
 `
 
+const IntroLines = [
+  'this is my virtual story',
+  'journey started 2017 December',
+  'Project tech stack:'
+]
+
+const RenderIntroLines = () => (
+  IntroLines.map(line => {
+    return (
+      <>
+        <BlockBaseText>
+          {line}
+        </BlockBaseText>
+        <LineBreak/>
+      </>
+    )
+  })
+)
+
 export const Readme = () => {
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
@@ -19,18 +38,7 @@ export const Readme = () => {
     <ExplorerWrapper contributors={contributors} numberOfLines={13}>
       <DarkBlueText>## virtual story code</DarkBlueText>
       <LineBreak/>
-      <BlockBaseText>
-      this is my virtual story
-      </BlockBaseText>
-      <LineBreak/>
-      <BlockBaseText>
-      journey started 2017 December
-      </BlockBaseText>
-      <LineBreak/>
-      <BlockBaseText>
-      Project tech stack:
-      </BlockBaseText>
-      <LineBreak/>
+      {RenderIntroLines()}
       <BlockBaseText>
         <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
       </BlockBaseText>
