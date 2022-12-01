@@ -29,12 +29,12 @@ const Label = styled.p`
 
 const Cross = styled.div`
   margin-left: 4px;
-  padding: 2px;
   height: 18px;
   width: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
   :hover{
     background: ${props => props.theme.palette.dark02};
     cursor: pointer;
