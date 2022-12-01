@@ -35,16 +35,12 @@ const Cross = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  font-size: 18px;
+  font-weight: 200;
   :hover{
     background: ${props => props.theme.palette.dark02};
     cursor: pointer;
-    
   }
-  ::after{
-    font-size: 18px;
-    font-weight: 200;
-      content: "\\00d7";
-    }
 `
 
 interface Props {
@@ -56,7 +52,7 @@ export const RouteTab = ({ name }: Props) => {
     <Container>
       <Tab>
         <Label>{name}</Label>
-        <Cross/>
+        <Cross>&times;</Cross>
       </Tab>
     </Container>
   )
