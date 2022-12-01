@@ -22,6 +22,8 @@ export const Readme = () => {
       Project tech stack:
       <LineBreak/>
       <DarkBlueText>1. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
+      <DarkBlueText>2. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
+      <DarkBlueText>3. </DarkBlueText>[<StringText>Vite</StringText>](https://vitejs.dev/) - for Über fast local hosting & bundling speeds
     </ExplorerWrapper>
   )
 }
