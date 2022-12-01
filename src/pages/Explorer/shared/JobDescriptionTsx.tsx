@@ -66,7 +66,6 @@ export const JobDescriptionTsx = ({
         <Indent>
           {isCurrentRole && (
             <>
-              {/* <Indent> */}
               <DarkBlueText>const</DarkBlueText> <PurpleText>[</PurpleText>
               <BlueText>isCurrentRole</BlueText>
               <PurpleText>]</PurpleText> = <GreenText>React</GreenText>.
@@ -74,11 +73,9 @@ export const JobDescriptionTsx = ({
               <PurpleText>(</PurpleText>
               <BlueText>true</BlueText>
               <PurpleText>)</PurpleText>
-              {/* </Indent> */}
             </>
           )}
           <LineBreak />
-          {/* <Indent> */}
           <DarkBlueText>const </DarkBlueText>
           <BlueText>job </BlueText>= <DarkBlueText>new </DarkBlueText>
           <GreenText>Job</GreenText>
@@ -86,7 +83,6 @@ export const JobDescriptionTsx = ({
           <StringText>"{companyName}"</StringText>
           <PurpleText>)</PurpleText>
           <LineBreak />
-          {/* </Indent> */}
           {renderBasicInfo()}
           {functions.map((task, idx) => {
             return (
