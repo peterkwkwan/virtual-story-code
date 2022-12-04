@@ -10,26 +10,27 @@ const Container = styled.div`
   color: ${(props) => props.theme.palette.white};
   text-transform: uppercase;
   position: relative;
-  padding: 20px;
+  padding: 12px;
   border: 5px solid ${(props) => props.theme.palette.white};
-  &::before, &::after {
-    content: '';
+  &::before,
+  &::after {
+    content: "";
     display: block;
     position: absolute;
     background: ${(props) => props.theme.palette.darkOrange};
   }
   &::before {
-    top: -1rem;
+    top: 5rem;
     bottom: -1rem;
-    left: 1rem;
+    left: -3rem;
     right: 1rem;
   }
-  
-  &::after{
-    left: -1rem;
-    right: -1rem;
-    top: 1rem;
-    bottom: 1rem;
+
+  &::after {
+    left: 1rem;
+    right: -3rem;
+    top: -1rem;
+    bottom: 5rem;
   }
 `
 
@@ -38,7 +39,7 @@ const Header = styled.h3`
   font-size: 7rem;
   margin: 0;
   z-index: 10;
-  `
+`
 
 const Subtitle = styled.h6`
   font-weight: 200;

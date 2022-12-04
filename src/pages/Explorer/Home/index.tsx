@@ -118,7 +118,18 @@ export const Home = () => {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: theme.palette.vsCodeBlue,
-              clipPath: 'polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%)'
+              clipPath: 'polygon(0% 0%, 50% 100%, 50% 0%)'
+            }}
+          />
+          <ParallaxLayer
+            offset={4}
+            speed={0.1}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: theme.palette.dark02,
+              clipPath: 'polygon(50% 0%, 50% 100%, 100% 0%)'
             }}
           />
           <SpeechBubbleParallaxLayer
