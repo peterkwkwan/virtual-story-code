@@ -80,10 +80,12 @@ const TopNavigation = () => {
   }
 
   const handleActionClick = () => {
-    setMarioKartIsRacing(true)
-    setTimeout(() => {
-      setMarioKartIsRacing(false)
-    }, 17000)
+    if(!marioKartIsRacing){
+      setMarioKartIsRacing(true)
+      setTimeout(() => {
+        setMarioKartIsRacing(false)
+      }, 17000)
+    }
   }
 
   const renderCurrentFile = () => {

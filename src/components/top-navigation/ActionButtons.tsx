@@ -26,7 +26,7 @@ const ActionBtnContainer = styled.div`
       content: "\\00d7";
       font-size: 13px;
       left: 2px;
-      top: -3px;
+      top: -3.5px;
     }
     span:nth-of-type(2):after {
       display: block;
