@@ -41,7 +41,7 @@ export const Readme = () => {
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={13}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={15}>
       <DarkBlueText>## virtual story code</DarkBlueText>
       <LineBreak/>
       {RenderIntroLines()}
@@ -54,7 +54,8 @@ export const Readme = () => {
       <BlockBaseText>
         <DarkBlueText>3. </DarkBlueText>[<StringText>React Router</StringText>](<ExternalLink target="_blank" rel="noopener" href="https://reactrouter.com/" >https://reactrouter.com/</ExternalLink>) - native-like site navigation
       </BlockBaseText>
-
+      <LineBreak/>
+      <BlockBaseText>copyright © 2022 [peterkwkwan](<ExternalLink target="_blank" rel="noopener" href="https://github.com/peterkwkwan" >https://github.com/peterkwkwan</ExternalLink>)</BlockBaseText>
     </ExplorerWrapper>
   )
 }
