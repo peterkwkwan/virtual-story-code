@@ -23,6 +23,7 @@ export const StyledList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  height: 100%;
 `
 const StyledNavigation = styled.div`
   position: relative;
