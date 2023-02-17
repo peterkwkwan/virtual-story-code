@@ -3,7 +3,7 @@ import styled, { useTheme } from 'styled-components'
 import {
   Parallax as ParallaxSpring,
   ParallaxLayer,
-  IParallax
+  IParallax,
 } from '@react-spring/parallax'
 
 import { useLastContributed } from '../../../hooks/useLastContributed'
@@ -15,14 +15,17 @@ import { SpeechBubble } from './ParallaxLayers/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 
-
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
-  background-color: ${props => props.theme.palette.persianGreen};
-  clip-path: polygon(0% 7%, 100% 0%, 82% 48%, 18% 48%, 14% 56.3%, 14% 48%, 4% 48%);
-`
-
-const TimelineParallaxLayer = styled(ParallaxLayer)`
-   background-color: ${props => props.theme.palette.deepPink};
+  background-color: ${(props) => props.theme.palette.persianGreen};
+  clip-path: polygon(
+    0% 5%,
+    100% 0%,
+    82% 48%,
+    18% 48%,
+    14% 56.3%,
+    14% 48%,
+    4% 48%
+  );
 `
 
 export const Home = () => {
@@ -50,65 +53,62 @@ export const Home = () => {
         <ParallaxSpring
           ref={parallax}
           pages={10}
-          style={{ position: 'relative',  top: '0', left: '0' }}
+          style={{ position: 'relative', top: '0', left: '0' }}
         >
-          <ParallaxLayer
-            offset={0}
-            speed={1}
-          >
-            <ParallaxStars/>
+          <ParallaxLayer offset={0} speed={1}>
+            <ParallaxStars />
           </ParallaxLayer>
           <ParallaxLayer
             offset={0}
             speed={0.5}
-            sticky={{start: 0, end: 4}}
+            sticky={{ start: 0, end: 4 }}
             style={{
               color: 'white',
-              zIndex: 10
+              zIndex: 10,
             }}
           >
-            <Intro/>
+            <Intro />
           </ParallaxLayer>
           <ParallaxLayer
             offset={1}
             speed={1}
-            sticky={{start: 1, end: 4}}
+            sticky={{ start: 1, end: 4 }}
             style={{
               color: 'white',
               zIndex: 2,
               backgroundColor: theme.palette.darkOrange,
-              clipPath: 'polygon(0% 0%, 100% 0%, 50% 80%)'
+              clipPath: 'polygon(0% 0%, 100% 0%, 50% 80%)',
             }}
           />
           <ParallaxLayer
             offset={1}
             speed={1}
-            sticky={{start: 1, end: 2}}
+            sticky={{ start: 1, end: 2 }}
             style={{
-              zIndex: 1
+              zIndex: 1,
             }}
           >
-            <Identity identity='Developer'/>
+            <Identity identity="eat" />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2}
             speed={1}
-            sticky={{start: 2, end: 3}}
+            sticky={{ start: 2, end: 3 }}
             style={{
-              zIndex: 1
+              zIndex: 1,
             }}
           >
-            <Identity identity='Tech enthusiast'/>
+            <Identity identity="sleep" />
           </ParallaxLayer>
           <ParallaxLayer
             offset={3}
             speed={1}
-            sticky={{start: 3, end: 3.7}}
+            sticky={{ start: 3, end: 3.7 }}
             style={{
-              zIndex: 1
+              zIndex: 1,
             }}
           >
-            <Identity identity='Father'/>
+            <Identity identity="code" />
           </ParallaxLayer>
           <ParallaxLayer
             offset={4}
@@ -118,7 +118,7 @@ export const Home = () => {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: theme.palette.vsCodeBlue,
-              clipPath: 'polygon(0% 0%, 50% 100%, 50% 0%)'
+              clipPath: 'polygon(0% 0%, 50% 100%, 50% 0%)',
             }}
           />
           <ParallaxLayer
@@ -129,35 +129,32 @@ export const Home = () => {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: theme.palette.dark02,
-              clipPath: 'polygon(50% 0%, 50% 100%, 100% 0%)'
+              clipPath: 'polygon(50% 0%, 50% 100%, 100% 0%)',
             }}
           />
           <SpeechBubbleParallaxLayer
             offset={5}
             speed={0.2}
-            sticky={{start: 5, end: 6}}
+            sticky={{ start: 5, end: 6 }}
           >
-            <SpeechBubble scrollToCallback={handleScrollToCallback}/>
+            <SpeechBubble scrollToCallback={handleScrollToCallback} />
           </SpeechBubbleParallaxLayer>
           <ParallaxLayer
             offset={myCareerPage}
-            speed={1.5}
-            sticky={{start: 7, end: 8.5}}
-            style={{ 
+            speed={0.1}
+            sticky={{ start: 7, end: 7.5 }}
+            style={{
               backgroundColor: theme.palette.darkOrange,
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center', }}
+              alignItems: 'center',
+            }}
           >
-            <Title/>
+            <Title />
           </ParallaxLayer>
-          <TimelineParallaxLayer
-            offset={8.5}
-            speed={0}
-            sticky={{start: 8.5, end: 10}}
-          >
-            <TimelineBackbone/>
-          </TimelineParallaxLayer>
+          <ParallaxLayer offset={8} sticky={{ start: 8, end: 10 }}>
+            <TimelineBackbone />
+          </ParallaxLayer>
         </ParallaxSpring>
       </ExplorerWrapper>
     </>
