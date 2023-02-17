@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  title: string;
-  isHovering: boolean;
+  title: string
+  isHovering: boolean
 }
 
 interface ImgProps {
-  isHovering: boolean;
+  isHovering: boolean
 }
 
 const Image = styled.img<ImgProps>`
@@ -20,7 +20,7 @@ export const Avatar = ({ title, isHovering }: Props) => {
   return (
     <Image
       isHovering={isHovering}
-      src={`../../../public/assets/images/search/${title.toLowerCase()}.png`}
+      src={`/assets/images/search/${title.toLowerCase()}.png`}
     />
   )
 }
