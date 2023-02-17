@@ -2,13 +2,13 @@ import React, { memo, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
 
-import layer1 from '!/assets/images/parallax/layer_01.png'
-import layer2 from '!/assets/images/parallax/layer_02.png'
-import layer3 from '!/assets/images/parallax/layer_03.png'
-import layer4 from '!/assets/images/parallax/layer_04.png'
-import layer5 from '!/assets/images/parallax/layer_05.png'
-import layer6 from '!/assets/images/parallax/layer_06.png'
-import layer7 from '!/assets/images/parallax/layer_07.png'
+import layer1 from '/assets/images/parallax/layer_01.png'
+import layer2 from '/assets/images/parallax/layer_02.png'
+import layer3 from '/assets/images/parallax/layer_03.png'
+import layer4 from '/assets/images/parallax/layer_04.png'
+import layer5 from '/assets/images/parallax/layer_05.png'
+import layer6 from '/assets/images/parallax/layer_06.png'
+import layer7 from '/assets/images/parallax/layer_07.png'
 
 const Container = styled.div<{ showLoadingPage: boolean }>`
   position: absolute;
@@ -37,7 +37,7 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
       transform: scale(0.2, 0.002);
       opacity: 0;
       z-index: -1;
-      display: "none";
+      display: 'none';
     }
   }
 `
@@ -61,16 +61,16 @@ const ZeldaImg = styled.img`
 `
 
 interface Props {
-  showLoadingPage: boolean;
+  showLoadingPage: boolean
 }
 
 const ZeldaParallax = ({ showLoadingPage }: Props) => {
   const [parallaxScene, setParallaxScene] = useState<Parallax>()
 
   useEffect(() => {
-    if(!parallaxScene){
+    if (!parallaxScene) {
       const sceneNode = document.getElementById('zeldaParallax')
-  
+
       if (sceneNode) {
         setParallaxScene(new Parallax(sceneNode))
       }
@@ -80,7 +80,7 @@ const ZeldaParallax = ({ showLoadingPage }: Props) => {
       parallaxScene?.disable()
     }
   }, [])
-  
+
   return (
     <Container showLoadingPage={showLoadingPage}>
       <ParallaxContainer id="zeldaParallax">
