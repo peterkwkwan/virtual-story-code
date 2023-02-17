@@ -10,10 +10,10 @@ import { TopNavLink } from './TopNavLink'
 import { PagePaths } from '@/pages/shared/routerConfig'
 
 const navOptions = [
-  { name: 'Home', path:  PagePaths.HOME},
-  { name: 'Contact Me', path: PagePaths.SEARCH},
+  { name: 'Home', path: PagePaths.HOME },
+  { name: 'Contact Me', path: PagePaths.SEARCH },
   { name: 'Skills', path: PagePaths.EXTENSIONS },
-  { name: 'Medium', path: ''},
+  { name: 'Medium', path: '' },
 ]
 
 export const StyledList = styled.ul`
@@ -44,9 +44,9 @@ const Box = styled.div<{ gradient?: boolean }>`
   height: 28px;
   &:nth-of-type(1) {
     background: ${(props) =>
-    props.gradient
-      ? 'linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, rgba(226,0,0,1) 100%)'
-      : 'linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )'};
+      props.gradient
+        ? 'linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, rgba(226,0,0,1) 100%)'
+        : 'linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )'};
   }
   &:nth-of-type(2n) {
     background: ${(props) => props.theme.palette.dark04};
@@ -80,7 +80,7 @@ const TopNavigation = () => {
   }
 
   const handleActionClick = () => {
-    if(!marioKartIsRacing){
+    if (!marioKartIsRacing) {
       setMarioKartIsRacing(true)
       setTimeout(() => {
         setMarioKartIsRacing(false)
@@ -105,8 +105,13 @@ const TopNavigation = () => {
             marioIsJumping={marioIsJumping}
             marioKartIsRacing={marioKartIsRacing}
           />
-          {navOptions.map(({name, path}) => (
-            <TopNavLink key={name} name={name} gradient={gradient} path={path}/>
+          {navOptions.map(({ name, path }) => (
+            <TopNavLink
+              key={name}
+              name={name}
+              gradient={gradient}
+              path={path}
+            />
           ))}
         </StyledList>
       </Box>
@@ -121,7 +126,7 @@ const TopNavigation = () => {
         <img
           height="32"
           style={{ cursor: 'pointer' }}
-          src="../../assets/icons/link.png"
+          src="/assets/icons/link.png"
           onClick={handleZeldaClick}
         />
       </Box>

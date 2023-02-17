@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  marioKartIsRacing: boolean;
+  marioKartIsRacing: boolean
 }
 
 const Container = styled.div<{ marioKartIsRacing: boolean }>`
@@ -67,11 +67,9 @@ export const MarioKart = ({ marioKartIsRacing }: Props) => {
   return (
     <Container marioKartIsRacing={marioKartIsRacing}>
       {MKRacers.map((racer) => {
-        return (
-          <Sprite key={racer} src={`../../assets/icons/${racer}-mk.png`} />
-        )
+        return <Sprite key={racer} src={`/assets/icons/${racer}-mk.png`} />
       })}
-      <Pipe src="../../assets/icons/mario-pipe.png" />
+      <Pipe src="/assets/icons/mario-pipe.png" />
     </Container>
   )
 }

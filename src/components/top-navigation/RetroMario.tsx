@@ -20,13 +20,13 @@ const StyledMario = styled.img<{ marioIsJumping: boolean }>`
   animation: ${(props) => props.marioIsJumping && 'jump 1s linear alternate'};
 `
 
-const marioInitSrc = '../../assets/icons/mario-standing.png'
-const marioJumpingSrc = '../../assets/icons/mario-jumping.png'
+const marioInitSrc = '/assets/icons/mario-standing.png'
+const marioJumpingSrc = '/assets/icons/mario-jumping.png'
 
 interface Props {
-  handleMarioJump: () => void;
-  marioIsJumping: boolean;
-  marioKartIsRacing: boolean;
+  handleMarioJump: () => void
+  marioIsJumping: boolean
+  marioKartIsRacing: boolean
 }
 export const RetroMario = ({
   handleMarioJump,
