@@ -7,17 +7,17 @@ import { FolderContent } from './shared/types'
 import { ExplorerButton } from '@/pages/explorer/shared/ExplorerButton'
 
 interface FolderProps {
-  folder: FolderContent;
-  name: FolderNames;
-  onFolderClick: (value: FolderNames) => void;
+  folder: FolderContent
+  name: FolderNames
+  onFolderClick: (value: FolderNames) => void
 }
 
 interface StyledFolder {
-  opened: boolean;
-  title?: string;
-  icon?: unknown;
-  url?: string;
-  children?: React.ReactNode;
+  opened: boolean
+  title?: string
+  icon?: unknown
+  url?: string
+  children?: React.ReactNode
 }
 
 const FolderButton = styled.button<StyledFolder>`
@@ -35,7 +35,7 @@ const FolderButton = styled.button<StyledFolder>`
   cursor: pointer;
   padding-left: 16px;
   &:before {
-    content: url("../../assets/icons/arrow.svg");
+    content: url('/assets/icons/arrow.svg');
     display: inline-block;
     transform: ${(props) => props.opened && 'rotate(90deg)'};
     margin-right: 4px;
@@ -47,7 +47,7 @@ const FolderButton = styled.button<StyledFolder>`
 `
 
 interface FolderContents {
-  opened: boolean | undefined;
+  opened: boolean | undefined
 }
 
 const FolderContents = styled.div<FolderContents>`

@@ -9,7 +9,7 @@ import { ViewletContainer } from '../shared/styledContainers'
 import { FolderContent } from './shared/types'
 import { FolderNames } from './shared/constants'
 
-type IFolderStructure = Record<FolderNames, FolderContent>;
+type IFolderStructure = Record<FolderNames, FolderContent>
 
 const initFolders: IFolderStructure = {
   [FolderNames.NODE_MODULES]: {
@@ -50,7 +50,7 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   cursor: pointer;
   background-color: ${(props) => props.theme.palette.dark03};
   &:before {
-    content: url("../../assets/icons/arrow.svg");
+    content: url('/assets/icons/arrow.svg');
     display: inline-block;
     transform: ${(props) => props.show && 'rotate(90deg)'};
     margin-right: 4px;
