@@ -12,7 +12,7 @@ const ExtensionIcon = styled.img`
 export const ExtensionsList: Extension[] = [
   {
     name: 'React',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/react.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/react.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -20,7 +20,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'React Router',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -28,7 +28,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'React Query',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/query.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -36,7 +36,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'JavaScript',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/javascript.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/javascript.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -44,7 +44,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'TypeScript',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/typescript.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/typescript.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -52,7 +52,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'HTML',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/html.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/html.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -60,7 +60,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'CSS',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/css.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/css.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -68,7 +68,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'styled-components',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/styled.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/styled.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -76,7 +76,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Tailwind CSS',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/tailwind.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/tailwind.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -84,7 +84,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Material UI',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/mui.svg" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/mui.svg" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -92,7 +92,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Storybook',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/storybook.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/storybook.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -100,7 +100,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Stripe.js',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -108,7 +108,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Git',
-    icon: <ExtensionIcon src="../../assets/icons/extensions/git.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
     url: '',
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',

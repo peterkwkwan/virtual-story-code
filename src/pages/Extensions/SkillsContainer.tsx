@@ -5,13 +5,12 @@ import { ExtensionsButton } from './ExtensionsButton'
 import { ExtensionsList } from './shared/ExtensionsList'
 
 interface FolderButton {
-  opened: boolean;
-
+  opened: boolean
 }
 
 interface StyledFolder {
-  opened: boolean;
-  isHovering: boolean;
+  opened: boolean
+  isHovering: boolean
 }
 
 const Container = styled.div`
@@ -34,7 +33,7 @@ const FolderButton = styled.button<FolderButton>`
   color: inherit;
   cursor: pointer;
   &:before {
-    content: url("../../assets/icons/arrow.svg");
+    content: url('/assets/icons/arrow.svg');
     display: inline-block;
     transform: ${(props) => props.opened && 'rotate(90deg)'};
     margin: 0 5px;
@@ -49,12 +48,13 @@ const CollapsibleFolder = styled.div<StyledFolder>`
   visibility: ${(props) => (props.opened ? 'visible' : 'hidden')};
   height: calc(100% - 22px);
   overflow: auto;
-  transition: background-color .5s;
-  background-color: ${(props) => (props.isHovering ? 'rgba(121, 121, 121, 0.4)' : props.theme.palette.dark01)};
+  transition: background-color 0.5s;
+  background-color: ${(props) =>
+    props.isHovering ? 'rgba(121, 121, 121, 0.4)' : props.theme.palette.dark01};
   background-clip: text;
   &::-webkit-scrollbar {
     width: 10px;
-    background-color: ${(props) => (props.theme.palette.dark01)};
+    background-color: ${(props) => props.theme.palette.dark01};
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
@@ -67,7 +67,6 @@ const CollapsibleFolder = styled.div<StyledFolder>`
   &::-webkit-scrollbar-thumb:active {
     background-color: rgba(191, 191, 191, 0.4);
   }
-
 `
 
 export const SkillsContainer = () => {
@@ -89,7 +88,12 @@ export const SkillsContainer = () => {
       <FolderButton opened={opened} onClick={handleFolderClick}>
         INSTALLED
       </FolderButton>
-      <CollapsibleFolder opened={opened} isHovering={hovering} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <CollapsibleFolder
+        opened={opened}
+        isHovering={hovering}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {ExtensionsList.map((extension) => (
           <ExtensionsButton key={extension.name} {...extension} />
         ))}
