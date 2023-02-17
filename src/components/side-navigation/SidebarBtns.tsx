@@ -37,22 +37,22 @@ const SidebarButtons = styled.button<{ selected: boolean }>`
 const buttons = [
   {
     title: SidebarOptions.EXPLORER,
-    src: '../../assets/icons/sidebar/explorer-btn.svg',
+    src: '/assets/icons/sidebar/explorer-btn.svg',
     path: 'explorer',
   },
   {
     title: SidebarOptions.SEARCH,
-    src: '../../assets/icons/sidebar/search-btn.svg',
+    src: '/assets/icons/sidebar/search-btn.svg',
     path: 'search',
   },
   {
     title: SidebarOptions.GIT,
-    src: '../../assets/icons/sidebar/git-btn.svg',
+    src: '/assets/icons/sidebar/git-btn.svg',
     path: 'git',
   },
   {
     title: SidebarOptions.EXTENSIONS,
-    src: '../../assets/icons/sidebar/extensions-btn.svg',
+    src: '/assets/icons/sidebar/extensions-btn.svg',
     path: 'extensions',
   },
 ]

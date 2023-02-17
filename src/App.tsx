@@ -14,7 +14,7 @@ import { defaultTheme } from './theme/theme'
 import ZeldaParallax from './pages/loading/ZeldaParallax'
 
 interface ExplorerContextProp {
-  currentFile: [File, React.Dispatch<React.SetStateAction<File>>];
+  currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
 }
 
 const initFile: File = { title: '', path: PagePaths.HOME }
@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
   display: flex;
   height: calc(100vh - 56px);
   width: 100%;
-  background-color: ${props => props.theme.palette.dark01};
+  background-color: ${(props) => props.theme.palette.dark01};
 `
 
 export const ExplorerContext = React.createContext<ExplorerContextProp>({
