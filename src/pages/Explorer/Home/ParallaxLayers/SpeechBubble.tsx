@@ -18,14 +18,14 @@ const Container = styled.div`
 `
 
 const NameTag = styled.p`
-    font-size: 2rem;
-    position: absolute;
-    margin: 0;
-    top: -5%;
-    left: 18%;
-    color: ${(props) => props.theme.palette.white};
-    text-shadow: 2px 2px 4px ${(props) => props.theme.palette.dark02};
-    font-style: italic;
+  font-size: 2rem;
+  position: absolute;
+  margin: 0;
+  top: -5%;
+  left: 18%;
+  color: ${(props) => props.theme.palette.white};
+  text-shadow: 2px 2px 4px ${(props) => props.theme.palette.dark02};
+  font-style: italic;
 `
 
 const InnerBorder = styled.div`
@@ -35,8 +35,8 @@ const InnerBorder = styled.div`
   justify-content: center;
   align-items: center;
   &:before {
-    content: "";
-    background: url("../../assets/images/speech-bubble-border.png");
+    content: '';
+    background: url('/assets/images/speech-bubble-border.png');
     background-position: center;
     height: 50%;
     width: 15%;
@@ -46,8 +46,8 @@ const InnerBorder = styled.div`
     left: 1%;
   }
   &:after {
-    content: "";
-    background: url("../../assets/images/speech-bubble-border.png");
+    content: '';
+    background: url('/assets/images/speech-bubble-border.png');
     background-position: center;
     transform: rotate(180deg);
     height: 50%;
@@ -60,6 +60,7 @@ const InnerBorder = styled.div`
 `
 
 const SpeechBubbleTextContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,10 +122,14 @@ const TypewriterStringToRender = [
   'Hi, click the button below!',
   "I'm Peter, a developer with a keen passion for <i>aesthetics</i> ✨",
   'I enjoy mentoring junior developers and empowering my team',
-  'My other passions include video games, reading and cooking 🍳'
+  'My other passions include video games, reading and cooking',
 ]
 
-export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void}) => {
+export const SpeechBubble = ({
+  scrollToCallback,
+}: {
+  scrollToCallback: () => void
+}) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
   const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
@@ -157,7 +162,9 @@ export const SpeechBubble = ({scrollToCallback}: {scrollToCallback: () => void})
           />
           <ButtonContainer>
             {showClickMe && <ClickMe>Click!</ClickMe>}
-            <Button onClick={handleClick}>{textAvailable ? 'A': '\u2713'}</Button>
+            <Button onClick={handleClick}>
+              {textAvailable ? 'A' : '\u2713'}
+            </Button>
           </ButtonContainer>
         </SpeechBubbleTextContainer>
       </InnerBorder>

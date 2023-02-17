@@ -2,7 +2,6 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 import styled from 'styled-components'
 
-
 const DescriptionText = styled.h6`
   color: ${(props) => props.theme.palette.white};
   font-size: 2.5rem;
@@ -16,14 +15,17 @@ interface Props {
   handleShowClickMe: () => void
 }
 
-export const TypewriterWrapper = ({text, handleHideClickMe, handleShowClickMe} : Props) => {
-
+export const TypewriterWrapper = ({
+  text,
+  handleHideClickMe,
+  handleShowClickMe,
+}: Props) => {
   return (
     <DescriptionText key={text}>
       <Typewriter
         options={{
           delay: 50,
-          cursor: ''
+          cursor: '',
         }}
         onInit={(typewriter) => {
           typewriter
