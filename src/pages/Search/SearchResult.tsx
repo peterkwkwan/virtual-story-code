@@ -24,7 +24,7 @@ enum Results {
 }
 
 const getIconPath = (title: Results) => {
-  return `../../../public/assets/icons/search/${title}.svg`
+  return `/assets/icons/search/${title}.svg`
 }
 
 const results = [

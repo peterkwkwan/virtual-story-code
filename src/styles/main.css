@@ -1,21 +1,21 @@
 @font-face {
-  font-family: "Consola";
+  font-family: 'Consola';
   src: url(/assets/fonts/CONSOLA.TTF);
 }
 @font-face {
-  font-family: "Menlo";
+  font-family: 'Menlo';
   src: url(/assets/fonts/Menlo.ttf);
 }
 @font-face {
-  font-family: "SF-Pro";
+  font-family: 'SF-Pro';
   src: url(/assets/fonts/SF-Pro.ttf);
 }
 @font-face {
-  font-family: "League Spartan";
+  font-family: 'League Spartan';
   font-weight: 100 900;
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
 }
 @font-face {
-  font-family: "Mr Dafoe";
+  font-family: 'Mr Dafoe';
   src: url(/assets/fonts/MrDafoe-Regular.ttf);
 }
