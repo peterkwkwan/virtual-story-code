@@ -6,7 +6,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  font-family: "League Spartan";
+  font-family: 'League Spartan';
   color: ${(props) => props.theme.palette.white};
   text-transform: uppercase;
   position: relative;
@@ -14,7 +14,7 @@ const Container = styled.div`
   border: 5px solid ${(props) => props.theme.palette.white};
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     background: ${(props) => props.theme.palette.darkOrange};
