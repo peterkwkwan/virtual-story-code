@@ -4,14 +4,14 @@ import styled from 'styled-components'
 
 import { ExplorerContext } from '../../../App'
 import { useIcon } from '../../../hooks/useIcon'
-import { StyledLink } from '../../../components/ui/StyledLink'
+import { StyledLink } from '../../../components/elements/StyledLink'
 
 interface Props {
-  title: string;
-  path: string;
-  selected?: boolean;
-  icon?: unknown;
-  isRoot?: boolean;
+  title: string
+  path: string
+  selected?: boolean
+  icon?: unknown
+  isRoot?: boolean
 }
 
 const calcPadding = (
@@ -44,8 +44,7 @@ const StyledButton = styled.button<Props>`
   display: flex;
   align-items: center;
   &:hover {
-    background-color: ${(props) =>
-    !props.selected && props.theme.palette.grey};
+    background-color: ${(props) => !props.selected && props.theme.palette.grey};
   }
 `
 

@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { routerConfig } from '../pages/shared/routerConfig'
-import { RouteTab } from './ui/RouteTab'
+import { RouteTab } from './elements/RouteTab'
 
 const Container = styled.div`
   height: calc(100% - 38px);
   width: 100%;
-  display: block;  
+  display: block;
 `
 
 export const Content = () => {
@@ -18,17 +18,16 @@ export const Content = () => {
         <Route
           key={route.path}
           path={route.path}
-          element={(
-            route.fileName === undefined ? 
+          element={
+            route.fileName === undefined ? (
               route.component()
-              : (
-                <Container>
-                  <RouteTab name={route.fileName}/>
-                  {route.component()}
-                </Container>
-              )
-            
-          )}
+            ) : (
+              <Container>
+                <RouteTab name={route.fileName} />
+                {route.component()}
+              </Container>
+            )
+          }
         />
       ))}
       <Route path="*" element={<Navigate replace to="explorer" />} />

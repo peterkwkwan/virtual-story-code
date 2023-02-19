@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { StyledLink } from '../ui/StyledLink'
+import { StyledLink } from '../elements/StyledLink'
 
 enum SidebarOptions {
   EXPLORER = 'Explorer',

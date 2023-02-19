@@ -1,8 +1,7 @@
-
 import { ViewletContainer } from '../shared/styledContainers'
 import { SearchContainer } from './SearchContainer'
 
-import { ViewletHeader } from '@/components/ui/ViewletHeader'
+import { ViewletHeader } from '@/components/elements/ViewletHeader'
 
 export const SearchViewlet = () => {
   return (

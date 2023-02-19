@@ -8,12 +8,13 @@ import {
 
 import { useLastContributed } from '../../../hooks/useLastContributed'
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
-import { Intro } from './ParallaxLayers/Intro'
-import { Identity } from './ParallaxLayers/Identity'
-import { TimelineBackbone } from './ParallaxLayers/TimelineBackbone'
-import { SpeechBubble } from './ParallaxLayers/SpeechBubble'
-import { ParallaxStars } from './ParallaxLayers/ParallaxStars'
+import { Intro } from './ParallaxLayers/Intro/Intro'
+import { Identity } from './ParallaxLayers/Intro/Identity'
+import { TimelineBackbone } from './ParallaxLayers/Timeline/TimelineBackbone'
+import { SpeechBubble } from './ParallaxLayers/SpeechBubble/SpeechBubble'
+import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
+import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.persianGreen};
@@ -146,11 +147,13 @@ export const Home = () => {
             style={{
               backgroundColor: theme.palette.darkOrange,
               display: 'flex',
+              flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
             <Title />
+            <ScrollPrompt />
           </ParallaxLayer>
           <ParallaxLayer offset={8} sticky={{ start: 8, end: 10 }}>
             <TimelineBackbone />

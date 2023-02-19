@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { ExplorerButton } from './shared/ExplorerButton'
 import { Folder } from './Folder'
-import { ViewletHeader } from '../../components/ui/ViewletHeader'
+import { ViewletHeader } from '../../components/elements/ViewletHeader'
 import { PageNames, PagePaths } from '../shared/routerConfig'
 import { ViewletContainer } from '../shared/styledContainers'
 import { FolderContent } from './shared/types'
