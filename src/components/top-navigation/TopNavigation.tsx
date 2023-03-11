@@ -25,7 +25,7 @@ export const StyledList = styled.ul`
   padding: 0;
   height: 100%;
 `
-const StyledNavigation = styled.div`
+const StyledNavigation = styled.nav`
   position: relative;
   top: 0;
   left: 0;

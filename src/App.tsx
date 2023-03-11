@@ -26,7 +26,7 @@ const MainContainer = styled.div`
   top: 0;
   z-index: 0;
 `
-const StyledDiv = styled.div`
+const Aside = styled.aside`
   display: flex;
   height: calc(100vh - 56px);
   width: 100%;
@@ -54,10 +54,10 @@ function App() {
           {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
           <MainContainer>
             <TopNavigation />
-            <StyledDiv>
+            <Aside>
               <SideNavigation />
               <Content />
-            </StyledDiv>
+            </Aside>
           </MainContainer>
         </ThemeProvider>
       </ExplorerContext.Provider>
