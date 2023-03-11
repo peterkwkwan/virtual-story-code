@@ -26,8 +26,8 @@ const NameContainer = styled.div`
     left: -0.5rem;
     height: 80%;
     width: 5%;
-    border-top: 5px solid ${(props) => props.theme.palette.white};
-    border-left: 5px solid ${(props) => props.theme.palette.white};
+    border-top: 5px solid ${(props) => props.theme.palette.darkOrange};
+    border-left: 5px solid ${(props) => props.theme.palette.darkOrange};
   }
 
   &::after {

@@ -6,7 +6,6 @@ import {
   IParallax,
 } from '@react-spring/parallax'
 
-import { useLastContributed } from '../../../hooks/useLastContributed'
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 import { Intro } from './ParallaxLayers/Intro/Intro'
 import { Identity } from './ParallaxLayers/Intro/Identity'
@@ -15,6 +14,8 @@ import { SpeechBubble } from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
+
+import { useLastContributed } from '@/hooks/useLastContributed'
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.persianGreen};
