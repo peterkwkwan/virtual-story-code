@@ -15,8 +15,36 @@ const Container = styled.div`
 const NameContainer = styled.div`
   position: relative;
   display: flex;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  &::before {
+    top: -1rem;
+    left: -0.5rem;
+    height: 80%;
+    width: 5%;
+    border-top: 5px solid ${(props) => props.theme.palette.white};
+    border-left: 5px solid ${(props) => props.theme.palette.white};
+  }
+
+  &::after {
+    bottom: 0;
+    right: -1rem;
+    height: 80%;
+    width: 5%;
+    border-bottom: 5px solid ${(props) => props.theme.palette.white};
+    border-right: 5px solid ${(props) => props.theme.palette.white};
+  }
 `
-const Hello = styled.h2`
+
+const HeaderText = styled.div`
+  position: relative;
+`
+
+const Hello = styled(HeaderText)`
   writing-mode: vertical-rl;
   text-transform: uppercase;
   font-size: 6rem;
@@ -26,16 +54,15 @@ const Hello = styled.h2`
   font-family: 'League Spartan';
 `
 
-const There = styled.h2`
+const There = styled(HeaderText)`
   font-family: 'League Spartan';
-  position: relative;
   font-size: 6rem;
   font-weight: 200;
   text-transform: uppercase;
   margin: 0;
 `
 
-const Name = styled.h1`
+const Name = styled(HeaderText)`
   font-size: 8rem;
   margin: 0;
   text-transform: uppercase;
@@ -48,9 +75,21 @@ export const Intro = () => {
       <NameContainer>
         <Hello>Hello</Hello>
         <div style={{ marginLeft: '0.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
             <There>there</There>
-            <h1 style={{ marginLeft: '1rem' }}>I&apos;m</h1>
+            <HeaderText
+              style={{
+                marginLeft: '1rem',
+                fontSize: '2rem',
+              }}
+            >
+              I&apos;m
+            </HeaderText>
           </div>
           <Name>Peter</Name>
           <Name>Kwan</Name>
