@@ -10,4 +10,4 @@ Project tech stack:
 2. [styled-components](https://styled-components.com/) - CSS in JS, global theming, and conditional styling ;)
 3. [React Router](https://reactrouter.com/) - native-like site navigation
 
-copyright © 2022 [peterkwkwan](https://github.com/peterkwkwan)
+copyright © 2023 [peterkwkwan](https://github.com/peterkwkwan)
