@@ -16,6 +16,7 @@ import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
 import { OrangeTriangle } from './ParallaxLayers/Intro/OrangeTriangle'
+import { Eat } from './ParallaxLayers/Intro/Eat'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
@@ -91,7 +92,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity={IDENTITY.EAT} />
+            <Eat />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2}
