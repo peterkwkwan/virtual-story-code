@@ -1,13 +1,19 @@
 import { useRef, useEffect } from 'react'
 
-import { useStore } from './useStore'
+import { useStore, VisibilityState } from './useStore'
 
-type UseIntersectionObserver = () => [boolean, React.RefObject<Element>]
+import { IDENTITY } from '@/pages/explorer/Home/ParallaxLayers/shared/constants'
 
-const useIntersectionObserver: UseIntersectionObserver = () => {
-  const [isVisible, setIsVisible] = useStore((state) => [
-    state.isVisible,
-    state.setIsVisible,
+type ObserverTagKey = IDENTITY.EAT
+
+type UseIntersectionObserver = (
+  key: ObserverTagKey
+) => [VisibilityState, React.RefObject<Element>]
+
+const useIntersectionObserver: UseIntersectionObserver = (key) => {
+  const [visibility, setVisibility] = useStore((state) => [
+    state.visibility,
+    state.setVisibility,
   ])
 
   const targetRef = useRef<Element>(null)
@@ -15,7 +21,7 @@ const useIntersectionObserver: UseIntersectionObserver = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting)
+        setVisibility({ [key]: entry.isIntersecting })
       },
       { threshold: 0.5 }
     )
@@ -29,7 +35,7 @@ const useIntersectionObserver: UseIntersectionObserver = () => {
     }
   }, [targetRef])
 
-  return [isVisible, targetRef]
+  return [visibility, targetRef]
 }
 
 export { useIntersectionObserver }
