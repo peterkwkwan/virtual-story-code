@@ -1,8 +1,9 @@
 import React, { RefObject } from 'react'
 import styled from 'styled-components'
 
+import { IDENTITY } from '../shared/constants'
+
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
-import { useStore } from '@/hooks/useStore'
 
 const Container = styled.div`
   display: flex;
@@ -24,13 +25,13 @@ const Header = styled.h3`
 `
 
 export const Identity = ({ identity }: { identity: string }) => {
-  const [, targetRef] = useIntersectionObserver()
+  const [, targetRef] = useIntersectionObserver(IDENTITY.EAT)
 
   const headRef = targetRef as RefObject<HTMLHeadingElement>
 
   return (
     <Container>
-      {identity === 'code' ? (
+      {identity === IDENTITY.EAT ? (
         <Header ref={headRef}>- {identity} -</Header>
       ) : (
         <Header>- {identity} -</Header>
