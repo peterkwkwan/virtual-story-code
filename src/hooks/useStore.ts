@@ -1,14 +1,17 @@
 import { create } from 'zustand'
 
+export type VisibilityState = { [key: string]: boolean }
+
 type State = {
-  isVisible: boolean
+  visibility: VisibilityState
 }
 
 type Action = {
-  setIsVisible: (isVisible: State['isVisible']) => void
+  setVisibility: (visibility: State['visibility']) => void
 }
 
 export const useStore = create<State & Action>((set) => ({
-  isVisible: false,
-  setIsVisible: (isVisible) => set(() => ({ isVisible: isVisible })),
+  visibility: {},
+  setVisibility: (visibility) =>
+    set((state) => ({ visibility: { ...state.visibility, ...visibility } })),
 }))
