@@ -14,8 +14,11 @@ import { SpeechBubble } from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
+import { IDENTITY } from './ParallaxLayers/shared/constants'
+import { OrangeTriangle } from './ParallaxLayers/Intro/OrangeTriangle'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
+import { useStore } from '@/hooks/useStore'
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.persianGreen};
@@ -35,6 +38,9 @@ export const Home = () => {
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
+
+  const visibility = useStore((state) => state.visibility)
+  const isVisible = visibility[IDENTITY.EAT]
 
   const parallax = useRef<IParallax>(null)
   const myCareerPage = 7
@@ -71,16 +77,11 @@ export const Home = () => {
           >
             <Intro />
           </ParallaxLayer>
-          <ParallaxLayer
+          <OrangeTriangle
             offset={1}
             speed={1}
             sticky={{ start: 1, end: 4 }}
-            style={{
-              color: 'white',
-              zIndex: 2,
-              backgroundColor: theme.palette.darkOrange,
-              clipPath: 'polygon(0% 0%, 100% 0%, 50% 80%)',
-            }}
+            isVisible={isVisible}
           />
           <ParallaxLayer
             offset={1}
@@ -90,7 +91,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity="eat" />
+            <Identity identity={IDENTITY.EAT} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2}
@@ -100,7 +101,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity="sleep" />
+            <Identity identity={IDENTITY.SLEEP} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={3}
@@ -110,7 +111,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity="code" />
+            <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={4}
