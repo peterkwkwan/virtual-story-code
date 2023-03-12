@@ -2,6 +2,7 @@ import React, { RefObject } from 'react'
 import styled from 'styled-components'
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useStore } from '@/hooks/useStore'
 
 const Container = styled.div`
   display: flex;
@@ -23,9 +24,7 @@ const Header = styled.h3`
 `
 
 export const Identity = ({ identity }: { identity: string }) => {
-  const [, targetRef] = useIntersectionObserver({
-    threshold: 0.5,
-  })
+  const [, targetRef] = useIntersectionObserver()
 
   const headRef = targetRef as RefObject<HTMLHeadingElement>
 
