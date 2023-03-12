@@ -1,17 +1,24 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
-type UseIntersectionObserver = (
-  options: IntersectionObserverInit
-) => [boolean, React.RefObject<Element>]
+import { useStore } from './useStore'
 
-const useIntersectionObserver: UseIntersectionObserver = (options) => {
-  const [isVisible, setIsVisible] = useState(false)
+type UseIntersectionObserver = () => [boolean, React.RefObject<Element>]
+
+const useIntersectionObserver: UseIntersectionObserver = () => {
+  const [isVisible, setIsVisible] = useStore((state) => [
+    state.isVisible,
+    state.setIsVisible,
+  ])
+
   const targetRef = useRef<Element>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting)
-    }, options)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.5 }
+    )
 
     if (targetRef.current) {
       observer.observe(targetRef.current)
@@ -20,7 +27,7 @@ const useIntersectionObserver: UseIntersectionObserver = (options) => {
     return () => {
       observer.disconnect()
     }
-  }, [options])
+  }, [targetRef])
 
   return [isVisible, targetRef]
 }
