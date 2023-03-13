@@ -16,9 +16,6 @@ import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
 import { WorldPlanet } from './ParallaxLayers/Intro/WorldPlanet'
-import { Eat } from './ParallaxLayers/Intro/Eat'
-import { Triangle } from './ParallaxLayers/Intro/Triangle'
-import { Code } from './ParallaxLayers/Intro/Code'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
@@ -86,28 +83,22 @@ export const Home = () => {
           <WorldPlanet
             offset={0.5}
             sticky={{ start: 0.5, end: 2 }}
-            eatIsVisible={eatIsVisible}
-          />
-          <Triangle
-            offset={1}
-            speed={1}
-            sticky={{ start: 1, end: 4 }}
             show={codeIsVisible || eatIsVisible}
           />
           <ParallaxLayer
             offset={1}
             speed={1}
-            sticky={{ start: 1, end: 2.5 }}
+            sticky={{ start: 1, end: 2.45 }}
             style={{
               zIndex: 1,
             }}
           >
-            <Eat />
+            <Identity identity={IDENTITY.EAT} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2.5}
             speed={1}
-            sticky={{ start: 2.5, end: 3.5 }}
+            sticky={{ start: 2.5, end: 3.45 }}
             style={{
               zIndex: 1,
             }}
@@ -122,7 +113,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Code />
+            <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={4}

@@ -4,10 +4,8 @@ import { useStore, VisibilityState } from './useStore'
 
 import { IDENTITY } from '@/pages/explorer/Home/ParallaxLayers/shared/constants'
 
-type ObserverTagKey = IDENTITY.EAT | IDENTITY.CODE
-
 type UseIntersectionObserver = (
-  key: ObserverTagKey
+  key: IDENTITY
 ) => [VisibilityState, React.RefObject<Element>]
 
 const useIntersectionObserver: UseIntersectionObserver = (key) => {

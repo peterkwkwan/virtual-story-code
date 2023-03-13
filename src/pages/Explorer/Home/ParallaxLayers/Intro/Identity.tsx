@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { RefObject } from 'react'
 import styled from 'styled-components'
+
+import { IDENTITY } from '../shared/constants'
+
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div`
   display: flex;
@@ -20,18 +24,16 @@ const Header = styled.h3`
   color: white;
 `
 
-type Props = { identity: string }
+type Props = { identity: IDENTITY }
 
-export const Identity = React.forwardRef<HTMLHeadingElement, Props>(
-  ({ identity }, ref) => {
-    return (
-      <Container>
-        {ref ? (
-          <Header ref={ref}>- {identity} -</Header>
-        ) : (
-          <Header>- {identity} -</Header>
-        )}
-      </Container>
-    )
-  }
-)
+export const Identity = ({ identity }: Props) => {
+  const [, targetRef] = useIntersectionObserver(identity)
+
+  const headRef = targetRef as RefObject<HTMLHeadingElement>
+
+  return (
+    <Container>
+      <Header ref={headRef}>- {identity} -</Header>
+    </Container>
+  )
+}
