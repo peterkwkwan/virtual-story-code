@@ -15,8 +15,10 @@ import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
-import { OrangeTriangle } from './ParallaxLayers/Intro/OrangeTriangle'
+import { WorldPlanet } from './ParallaxLayers/Intro/WorldPlanet'
 import { Eat } from './ParallaxLayers/Intro/Eat'
+import { Triangle } from './ParallaxLayers/Intro/Triangle'
+import { Code } from './ParallaxLayers/Intro/Code'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
@@ -41,7 +43,10 @@ export const Home = () => {
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
   const visibility = useStore((state) => state.visibility)
-  const isVisible = visibility[IDENTITY.EAT]
+  const eatIsVisible = visibility[IDENTITY.EAT]
+  const codeIsVisible = visibility[IDENTITY.CODE]
+
+  console.log({ visibility })
 
   const parallax = useRef<IParallax>(null)
   const myCareerPage = 7
@@ -78,16 +83,21 @@ export const Home = () => {
           >
             <Intro />
           </ParallaxLayer>
-          <OrangeTriangle
+          <WorldPlanet
+            offset={0.5}
+            sticky={{ start: 0.5, end: 2 }}
+            eatIsVisible={eatIsVisible}
+          />
+          <Triangle
             offset={1}
             speed={1}
             sticky={{ start: 1, end: 4 }}
-            isVisible={isVisible}
+            show={codeIsVisible || eatIsVisible}
           />
           <ParallaxLayer
             offset={1}
             speed={1}
-            sticky={{ start: 1, end: 2 }}
+            sticky={{ start: 1, end: 2.5 }}
             style={{
               zIndex: 1,
             }}
@@ -95,9 +105,9 @@ export const Home = () => {
             <Eat />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={2}
+            offset={2.5}
             speed={1}
-            sticky={{ start: 2, end: 3 }}
+            sticky={{ start: 2.5, end: 3.5 }}
             style={{
               zIndex: 1,
             }}
@@ -105,14 +115,14 @@ export const Home = () => {
             <Identity identity={IDENTITY.SLEEP} />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={3}
+            offset={3.5}
             speed={1}
-            sticky={{ start: 3, end: 3.7 }}
+            sticky={{ start: 3.5, end: 4 }}
             style={{
               zIndex: 1,
             }}
           >
-            <Identity identity={IDENTITY.CODE} />
+            <Code />
           </ParallaxLayer>
           <ParallaxLayer
             offset={4}
