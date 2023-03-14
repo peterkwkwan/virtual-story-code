@@ -9,29 +9,30 @@ const Container = styled.div`
   width: 100%;
 `
 
-const Stars = styled.div<{shadows: string, animationSeconds: number, height: number }>`
+const Stars = styled.div<{
+  shadows: string
+  animationSeconds: number
+  height: number
+}>`
   box-shadow: ${(props) => props.shadows};
-  animation: float ${props =>props.animationSeconds}s linear infinite;
+  animation: float ${(props) => props.animationSeconds}s linear infinite;
   @keyframes float {
     0% {
-        opacity: 0;
+      opacity: 0;
       transform: translateY(0px);
     }
-    2% {
-        opacity: 0.5;
-    }
-    5% {
-        opacity: 1;
+    1% {
+      opacity: 1;
     }
     90% {
-        opacity: 1;
+      opacity: 1;
     }
-    95%{
-        opacity: 0.5;
+    95% {
+      opacity: 0.5;
     }
     100% {
-        opacity: 0;
-      transform: translateY(-${props => props.height}px);
+      opacity: 0;
+      transform: translateY(-${(props) => props.height}px);
     }
   }
 `
@@ -75,9 +76,21 @@ export const ParallaxStars = () => {
 
   return (
     <Container>
-      <SmallStars shadows={smallShadows} animationSeconds={60} height={height}/>
-      <MediumStars shadows={mediumShadows} animationSeconds={90} height={height}/>
-      <LargeStars shadows={largeShadows} animationSeconds={120} height={height}/>
+      <SmallStars
+        shadows={smallShadows}
+        animationSeconds={60}
+        height={height}
+      />
+      <MediumStars
+        shadows={mediumShadows}
+        animationSeconds={90}
+        height={height}
+      />
+      <LargeStars
+        shadows={largeShadows}
+        animationSeconds={120}
+        height={height}
+      />
     </Container>
   )
 }
