@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 
-export const defaultTheme: DefaultTheme = {
+export const theme: DefaultTheme = {
   palette: {
     white: '#fff',
     vsCodeBlue: '#1F97E8',
@@ -8,7 +8,11 @@ export const defaultTheme: DefaultTheme = {
     brightPink: '#ef9ba9',
     persianGreen: '#00a693',
     darkOrange: '#ff8c00',
-    
+    marioRed: '#EA2502',
+    marioGreen: '#40B22F',
+    marioYellow: '#FED503',
+    marioBlue: '#039DE2',
+
     dark01: '#1e1e1e',
     dark02: 'rgb(51, 51, 51)',
     dark03: '#252526',

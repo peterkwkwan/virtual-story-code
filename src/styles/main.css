@@ -19,3 +19,7 @@
   font-family: 'Mr Dafoe';
   src: url(/assets/fonts/MrDafoe-Regular.ttf);
 }
+@font-face {
+  font-family: 'SuperMario256';
+  src: url(/assets/fonts/SuperMario256.ttf);
+}
