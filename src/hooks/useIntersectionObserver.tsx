@@ -5,10 +5,14 @@ import { useStore, VisibilityState } from './useStore'
 import { IDENTITY } from '@/pages/explorer/Home/ParallaxLayers/shared/constants'
 
 type UseIntersectionObserver = (
-  key: IDENTITY
+  key: IDENTITY | string,
+  threshold?: number
 ) => [VisibilityState, React.RefObject<Element>]
 
-const useIntersectionObserver: UseIntersectionObserver = (key) => {
+const useIntersectionObserver: UseIntersectionObserver = (
+  key,
+  threshold = 0.5
+) => {
   const [visibility, setVisibility] = useStore((state) => [
     state.visibility,
     state.setVisibility,
@@ -21,7 +25,7 @@ const useIntersectionObserver: UseIntersectionObserver = (key) => {
       ([entry]) => {
         setVisibility({ [key]: entry.isIntersecting })
       },
-      { threshold: 0.5 }
+      { threshold }
     )
 
     if (targetRef.current) {
