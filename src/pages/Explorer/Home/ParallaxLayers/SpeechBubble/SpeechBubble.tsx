@@ -3,7 +3,10 @@ import styled from 'styled-components'
 
 import { TypewriterWrapper } from './TypewriterWrapper'
 
-const Container = styled.div`
+import { useStore } from '@/hooks/useStore'
+
+const Container = styled.div<{ show: boolean }>`
+  background-color: ${(props) => props.theme.palette.persianGreen};
   position: absolute;
   margin-left: 5%;
   margin-top: 5%;
@@ -15,6 +18,18 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   pointer-events: none;
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  transition: all 5s;
+  animation: ${(props) => props.show && 'grow 1s'};
+  transform-origin: bottom left;
+  @keyframes grow {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 `
 
 const NameTag = styled.p`
@@ -130,6 +145,9 @@ export const SpeechBubble = ({
 }: {
   scrollToCallback: () => void
 }) => {
+  const visibility = useStore((state) => state.visibility)
+  const speechBubbleStart = visibility['speechBubbleStart']
+
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
   const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
@@ -151,7 +169,7 @@ export const SpeechBubble = ({
   }
 
   return (
-    <Container>
+    <Container show={speechBubbleStart}>
       <NameTag>Peter</NameTag>
       <InnerBorder>
         <SpeechBubbleTextContainer>

@@ -15,10 +15,10 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
 `
-const NameContainer = styled.div<{ isVisible: boolean }>`
+const NameContainer = styled.div<{ showName: boolean }>`
   position: relative;
   display: flex;
-  text-shadow: ${(props) => (props.isVisible ? '1px 1px 2px #000' : '')};
+  text-shadow: ${(props) => (props.showName ? '1px 1px 2px #000' : '')};
   transition: text-shadow 1s;
 
   &::before,
@@ -47,7 +47,7 @@ const NameContainer = styled.div<{ isVisible: boolean }>`
   }
 `
 
-const HeaderText = styled.div<{ isVisible: boolean }>`
+const HeaderText = styled.div<{ showName: boolean }>`
   position: relative;
   margin: 0;
   font-family: 'League Spartan';
@@ -56,78 +56,74 @@ const HeaderText = styled.div<{ isVisible: boolean }>`
 `
 
 const HelloThere = styled(HeaderText)`
-  font-size: ${(props) => (props.isVisible ? '4rem' : '8rem')};
-  font-weight: ${(props) => (props.isVisible ? 100 : 400)};
+  font-size: ${(props) => (props.showName ? '4rem' : '8rem')};
+  font-weight: ${(props) => (props.showName ? 100 : 400)};
   color: ${(props) =>
-    props.isVisible ? 'white' : props.theme.palette.yellowBrackets};
+    props.showName ? 'white' : props.theme.palette.yellowBrackets};
   text-shadow: 1px 1px 2px #000;
-  opacity: ${(props) => (props.isVisible ? 0.65 : 1)};
+  opacity: ${(props) => (props.showName ? 0.65 : 1)};
 `
 
 const App = styled(HeaderText)`
   font-weight: 100;
   line-height: 95%;
-  font-size: ${(props) => (props.isVisible ? '0px' : '4rem')};
-  opacity: ${(props) => (props.isVisible ? 0 : 1)};
-  position: ${(props) => (props.isVisible ? 'absolute' : 'relative')};
+  font-size: ${(props) => (props.showName ? '0px' : '4rem')};
+  opacity: ${(props) => (props.showName ? 0 : 1)};
+  position: ${(props) => (props.showName ? 'absolute' : 'relative')};
 `
 
 const IAm = styled(HeaderText)`
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  width: ${(props) => (props.isVisible ? 'unset' : '0px')};
+  opacity: ${(props) => (props.showName ? 1 : 0)};
+  width: ${(props) => (props.showName ? 'unset' : '0px')};
 `
 
 const Name = styled(HeaderText)`
   font-size: 8rem;
   line-height: 95%;
   color: ${(props) =>
-    props.isVisible ? 'white' : props.theme.palette.darkOrange};
-  font-size: ${(props) => (props.isVisible ? '8rem' : '0px')};
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    props.showName ? props.theme.palette.yellowBrackets : 'transparent'};
+  font-size: ${(props) => (props.showName ? '8rem' : '0px')};
+  opacity: ${(props) => (props.showName ? 1 : 0)};
 `
 
 const NotTypical = styled(HeaderText)`
   font-weight: 100;
   line-height: 95%;
-  font-size: ${(props) => (props.isVisible ? '0px' : '4rem')};
-  opacity: ${(props) => (props.isVisible ? 0 : 1)};
+  font-size: ${(props) => (props.showName ? '0px' : '4rem')};
+  opacity: ${(props) => (props.showName ? 0 : 1)};
 `
 
-export const Intro = () => {
-  const visibility = useStore((state) => state.visibility)
-
-  const isVisible = visibility[IDENTITY.EAT]
-
+export const Intro = ({ showName }: { showName: boolean }) => {
   return (
     <Container>
-      <NameContainer isVisible={isVisible}>
+      <NameContainer showName={showName}>
         <div style={{ marginLeft: '0.5rem' }}>
-          <NotTypical isVisible={isVisible}>Not</NotTypical>
-          <NotTypical isVisible={isVisible}>Your typical</NotTypical>
-          <HelloThere isVisible={isVisible}>Hello</HelloThere>
+          <NotTypical showName={showName}>Not</NotTypical>
+          <NotTypical showName={showName}>Your typical</NotTypical>
+          <HelloThere showName={showName}>Hello</HelloThere>
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <HelloThere isVisible={isVisible}>
-              {isVisible ? 'there' : 'world'}
+            <HelloThere showName={showName}>
+              {showName ? 'there' : 'world'}
             </HelloThere>
-            <App isVisible={isVisible}>App</App>
+            <App showName={showName}>App</App>
             <IAm
               style={{
                 marginLeft: '1rem',
                 fontSize: '2rem',
               }}
-              isVisible={isVisible}
+              showName={showName}
             >
               I&apos;m
             </IAm>
           </div>
 
-          <Name isVisible={isVisible}>Peter</Name>
-          <Name isVisible={isVisible}>Kwan</Name>
+          <Name showName={showName}>Peter</Name>
+          <Name showName={showName}>Kwan</Name>
         </div>
       </NameContainer>
       <ScrollPrompt />

@@ -16,12 +16,13 @@ import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
 import { WorldPlanet } from './ParallaxLayers/Intro/WorldPlanet'
+import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
-  background-color: ${(props) => props.theme.palette.persianGreen};
+  background-color: ${(props) => props.theme.palette.text01};
   clip-path: polygon(
     0% 5%,
     100% 0%,
@@ -42,8 +43,7 @@ export const Home = () => {
   const visibility = useStore((state) => state.visibility)
   const eatIsVisible = visibility[IDENTITY.EAT]
   const codeIsVisible = visibility[IDENTITY.CODE]
-
-  console.log({ visibility })
+  const sleepIsVisible = visibility[IDENTITY.SLEEP]
 
   const parallax = useRef<IParallax>(null)
   const myCareerPage = 7
@@ -78,12 +78,12 @@ export const Home = () => {
               zIndex: 10,
             }}
           >
-            <Intro />
+            <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
           </ParallaxLayer>
           <WorldPlanet
             offset={0.5}
-            sticky={{ start: 0.5, end: 2 }}
-            show={codeIsVisible || eatIsVisible}
+            sticky={{ start: 0.5, end: 4 }}
+            expand={codeIsVisible || eatIsVisible || sleepIsVisible}
           />
           <ParallaxLayer
             offset={1}
@@ -93,7 +93,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity={IDENTITY.EAT} />
+            <Identity identity={IDENTITY.EAT} hide={sleepIsVisible} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2.5}
@@ -103,7 +103,7 @@ export const Home = () => {
               zIndex: 1,
             }}
           >
-            <Identity identity={IDENTITY.SLEEP} />
+            <Identity identity={IDENTITY.SLEEP} hide={codeIsVisible} />
           </ParallaxLayer>
           <ParallaxLayer
             offset={3.5}
@@ -115,27 +115,10 @@ export const Home = () => {
           >
             <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
-          <ParallaxLayer
-            offset={4}
-            speed={0.1}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: theme.palette.vsCodeBlue,
-              clipPath: 'polygon(0% 0%, 50% 100%, 50% 0%)',
-            }}
-          />
-          <ParallaxLayer
-            offset={4}
-            speed={0.1}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: theme.palette.dark02,
-              clipPath: 'polygon(50% 0%, 50% 100%, 100% 0%)',
-            }}
+          <IntersectionTrackerLayer
+            offset={5}
+            sticky={{ start: 5, end: 6 }}
+            uniqueId="speechBubbleStart"
           />
           <SpeechBubbleParallaxLayer
             offset={5}
