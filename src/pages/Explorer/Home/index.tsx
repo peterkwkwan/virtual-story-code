@@ -15,7 +15,7 @@ import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
-import { WorldPlanet } from './ParallaxLayers/Intro/WorldPlanet'
+import { Planet } from './ParallaxLayers/Intro/Planet'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
@@ -45,6 +45,7 @@ export const Home = () => {
   const codeIsVisible = visibility[IDENTITY.CODE]
   const sleepIsVisible = visibility[IDENTITY.SLEEP]
 
+  console.log(visibility)
   const parallax = useRef<IParallax>(null)
   const myCareerPage = 7
 
@@ -80,7 +81,7 @@ export const Home = () => {
           >
             <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
           </ParallaxLayer>
-          <WorldPlanet
+          <Planet
             offset={0.5}
             sticky={{ start: 0.5, end: 4 }}
             expand={codeIsVisible || eatIsVisible || sleepIsVisible}

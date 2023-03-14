@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { RefObject } from 'react'
 import styled from 'styled-components'
+
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div`
   display: flex;
@@ -21,8 +23,12 @@ const MarioVine = styled.img`
 `
 
 export const TimelineBackbone = () => {
+  const [, targetRef] = useIntersectionObserver('marioVine', 0.12)
+
+  const divRef = targetRef as RefObject<HTMLDivElement>
+
   return (
-    <Container>
+    <Container ref={divRef}>
       <Backbone>
         <MarioVine src="/assets/images/mario-vine.svg" alt="mario-vine" />
       </Backbone>
