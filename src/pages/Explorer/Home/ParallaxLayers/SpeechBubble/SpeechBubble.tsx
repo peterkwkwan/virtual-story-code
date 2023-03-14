@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { TypewriterWrapper } from './TypewriterWrapper'
 
+import { theme } from '@/theme/theme'
 import { useStore } from '@/hooks/useStore'
 
 const Container = styled.div<{ show: boolean }>`
@@ -33,14 +34,14 @@ const Container = styled.div<{ show: boolean }>`
 `
 
 const NameTag = styled.p`
-  font-size: 2rem;
+  font-family: 'SuperMario256';
+  font-size: 2.5rem;
+  -webkit-text-stroke: 5px black;
   position: absolute;
   margin: 0;
   top: -5%;
   left: 18%;
-  color: ${(props) => props.theme.palette.white};
-  text-shadow: 2px 2px 4px ${(props) => props.theme.palette.dark02};
-  font-style: italic;
+  text-shadow: 2px 2px 8px ${(props) => props.theme.palette.dark02};
 `
 
 const InnerBorder = styled.div`
@@ -118,10 +119,10 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: ${(props) => props.theme.palette.dark02};
+  color: black;
   border-radius: 50px;
   border: 1px solid ${(props) => props.theme.palette.grey};
-  background-color: ${(props) => props.theme.palette.white};
+  background-color: ${(props) => props.theme.palette.marioGreen};
   box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
   height: 40px;
   width: 40px;
@@ -134,10 +135,10 @@ const Button = styled.button`
 `
 
 const TypewriterStringToRender = [
-  'Hi, click the button below!',
+  `Hi, <span style="color:${theme.palette.marioGreen}">click</span> the button below!`,
   "I'm Peter, a developer with a keen passion for <i>aesthetics</i> ✨",
   'I enjoy mentoring junior developers and empowering my team',
-  'My other passions include writing, weight lifting and cooking',
+  'My other passions include game dev, weight lifting and cooking',
 ]
 
 export const SpeechBubble = ({
@@ -156,6 +157,7 @@ export const SpeechBubble = ({
     if (textAvailable) {
       setCurrentStringIndex((prev) => prev + 1)
     } else {
+      setCurrentStringIndex(0)
       scrollToCallback()
     }
   }
@@ -170,7 +172,13 @@ export const SpeechBubble = ({
 
   return (
     <Container show={speechBubbleStart}>
-      <NameTag>Peter</NameTag>
+      <NameTag>
+        <span style={{ color: theme.palette.marioRed }}>P</span>
+        <span style={{ color: theme.palette.marioGreen }}>E</span>
+        <span style={{ color: theme.palette.marioYellow }}>T</span>
+        <span style={{ color: theme.palette.marioBlue }}>E</span>
+        <span style={{ color: theme.palette.marioRed }}>R</span>
+      </NameTag>
       <InnerBorder>
         <SpeechBubbleTextContainer>
           <TypewriterWrapper

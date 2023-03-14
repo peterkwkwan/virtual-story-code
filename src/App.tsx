@@ -10,7 +10,7 @@ import { LoadingAnimation } from './pages/loading/LoadingAnimation'
 import { File } from './pages/explorer/shared/types'
 import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
-import { defaultTheme } from './theme/theme'
+import { theme } from './theme/theme'
 import ZeldaParallax from './pages/loading/ZeldaParallax'
 
 interface ExplorerContextProp {
@@ -49,7 +49,7 @@ function App() {
     <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle />
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={theme}>
           {/* <ZeldaParallax showLoadingPage={showLoadingPage}/> */}
           {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
           <MainContainer>
