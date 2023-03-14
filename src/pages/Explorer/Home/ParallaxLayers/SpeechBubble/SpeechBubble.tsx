@@ -138,7 +138,7 @@ const TypewriterStringToRender = [
   `Hi, <span style="color:${theme.palette.marioGreen}">click</span> the button below!`,
   "I'm Peter, a developer with a keen passion for <i>aesthetics</i> ✨",
   'I enjoy mentoring junior developers and empowering my team',
-  'My other passions include game dev, weight lifting and cooking',
+  'My hobbies include game dev, weight lifting and cooking',
 ]
 
 export const SpeechBubble = ({
