@@ -14,26 +14,29 @@ const Container = styled.div`
   position: relative;
 `
 
-const Header = styled.h3`
+const Header = styled.h3<{ hide: boolean }>`
   position: absolute;
   bottom: 10%;
   text-transform: uppercase;
   font-family: 'League Spartan';
   font-size: 2rem;
   font-weight: 700;
-  color: white;
+  color: ${(props) => (props.hide ? 'transparent' : 'white')};
+  transition: color 0.5s;
 `
 
-type Props = { identity: IDENTITY }
+type Props = { identity: IDENTITY; hide?: boolean }
 
-export const Identity = ({ identity }: Props) => {
+export const Identity = ({ identity, hide = false }: Props) => {
   const [, targetRef] = useIntersectionObserver(identity)
 
   const headRef = targetRef as RefObject<HTMLHeadingElement>
 
   return (
     <Container>
-      <Header ref={headRef}>- {identity} -</Header>
+      <Header ref={headRef} hide={hide}>
+        - {identity} -
+      </Header>
     </Container>
   )
 }
