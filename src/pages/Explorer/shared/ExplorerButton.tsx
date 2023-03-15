@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ExplorerContext } from '../../../App'
-import { useIcon } from '../../../hooks/useIcon'
-import { StyledLink } from '../../../components/elements/StyledLink'
+import { ExplorerContext } from '@/App'
+import { StyledLink } from '@/components/elements/StyledLink'
+import { useIcon } from '@/hooks/useIcon'
 
 interface Props {
   title: string
