@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import {
   Parallax as ParallaxSpring,
@@ -17,13 +17,14 @@ import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
 import { Planet } from './ParallaxLayers/Intro/Planet'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
-import { SpaceshipLayer } from './ParallaxLayers/Intro/SpaceshipLayer'
-import { Shipspace } from './ParallaxLayers/Intro/Shipspace'
+import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
 
-const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
+const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<{
+  showSpeechBubble: boolean
+}>`
   background-color: ${(props) => props.theme.palette.text01};
   clip-path: polygon(
     0% 5%,
@@ -34,6 +35,8 @@ const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
     14% 48%,
     4% 48%
   );
+  opacity: ${(props) => (props.showSpeechBubble ? 1 : 0)};
+  transition: opacity 0.5s;
 `
 
 export const Home = () => {
@@ -46,8 +49,14 @@ export const Home = () => {
   const eatIsVisible = visibility[IDENTITY.EAT]
   const sleepIsVisible = visibility[IDENTITY.SLEEP]
   const codeIsVisible = visibility[IDENTITY.CODE]
+  const speechBubbleVisible = visibility['speechBubbleStart']
 
-  console.log(visibility)
+  const [showSpeechBubble, setShowSpeechBubble] = useState(false)
+
+  useEffect(() => {
+    setShowSpeechBubble(false)
+  }, [speechBubbleVisible])
+
   const parallax = useRef<IParallax>(null)
   const myCareerPage = 7
 
@@ -55,6 +64,10 @@ export const Home = () => {
     if (parallax.current) {
       parallax.current.scrollTo(myCareerPage)
     }
+  }
+
+  const handleShowSpeechBubble = () => {
+    setShowSpeechBubble(true)
   }
 
   return (
@@ -91,9 +104,15 @@ export const Home = () => {
             medium={sleepIsVisible}
             large={codeIsVisible}
           />
-          <SpaceshipLayer offset={0} sticky={{ start: 0, end: 6 }}>
-            <Shipspace />
-          </SpaceshipLayer>
+          <ParallaxLayer
+            offset={0}
+            sticky={{ start: 0, end: 6 }}
+            style={{
+              zIndex: speechBubbleVisible ? 1 : 0,
+            }}
+          >
+            <MovingMario handleShowSpeechBubble={handleShowSpeechBubble} />
+          </ParallaxLayer>
           <ParallaxLayer
             offset={1}
             speed={1}
@@ -125,16 +144,24 @@ export const Home = () => {
             <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
           <IntersectionTrackerLayer
-            offset={5}
-            sticky={{ start: 5, end: 6 }}
+            offset={5.5}
+            sticky={{ start: 5.5, end: 6 }}
             uniqueId="speechBubbleStart"
+            threshold={1}
           />
           <SpeechBubbleParallaxLayer
             offset={5}
             speed={0.2}
             sticky={{ start: 5, end: 6 }}
+            style={{
+              zIndex: 1,
+            }}
+            showSpeechBubble={showSpeechBubble}
           >
-            <SpeechBubble scrollToCallback={handleScrollToCallback} />
+            <SpeechBubble
+              scrollToCallback={handleScrollToCallback}
+              showSpeechBubble={showSpeechBubble}
+            />
           </SpeechBubbleParallaxLayer>
           <ParallaxLayer
             offset={myCareerPage}
