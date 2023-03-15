@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { TypewriterWrapper } from './TypewriterWrapper'
 
 import { theme } from '@/theme/theme'
-import { useStore } from '@/hooks/useStore'
 
 const Container = styled.div<{ show: boolean }>`
   background-color: ${(props) => props.theme.palette.persianGreen};
@@ -143,12 +142,11 @@ const TypewriterStringToRender = [
 
 export const SpeechBubble = ({
   scrollToCallback,
+  showSpeechBubble,
 }: {
   scrollToCallback: () => void
+  showSpeechBubble: boolean
 }) => {
-  const visibility = useStore((state) => state.visibility)
-  const speechBubbleStart = visibility['speechBubbleStart']
-
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
   const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
@@ -171,7 +169,7 @@ export const SpeechBubble = ({
   }
 
   return (
-    <Container show={speechBubbleStart}>
+    <Container show={showSpeechBubble}>
       <NameTag>
         <span style={{ color: theme.palette.marioRed }}>P</span>
         <span style={{ color: theme.palette.marioGreen }}>E</span>

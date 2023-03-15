@@ -5,10 +5,15 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 interface Props extends ParallaxLayerProps {
   uniqueId: string
+  threshold?: number
 }
 
-export const IntersectionTrackerLayer = ({ uniqueId, ...rest }: Props) => {
-  const [, targetRef] = useIntersectionObserver(uniqueId, 0.1)
+export const IntersectionTrackerLayer = ({
+  uniqueId,
+  threshold = 0.5,
+  ...rest
+}: Props) => {
+  const [, targetRef] = useIntersectionObserver(uniqueId, threshold)
 
   const divRef = targetRef as RefObject<HTMLDivElement>
 
