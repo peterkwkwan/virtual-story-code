@@ -2,11 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { ParallaxLayer } from '@react-spring/parallax'
 
-export const Planet = styled(ParallaxLayer)<{ expand: boolean }>`
-  background-color: ${(props) =>
-    props.expand
-      ? props.theme.palette.marioBlue
-      : props.theme.palette.marioGreen};
-  clip-path: ${(props) => (props.expand ? 'circle(32%)' : 'circle(10%)')};
-  transition: clip-path 1s, background-color 2s;
+interface Props {
+  small?: boolean
+  medium?: boolean
+  large?: boolean
+}
+
+export const Planet = styled(ParallaxLayer)<Props>`
+  background-color: ${(props) => props.theme.palette.marioGreen};
+  clip-path: circle(5%);
+  clip-path: ${(props) => props.small && 'circle(15%)'};
+  clip-path: ${(props) => props.medium && 'circle(25%)'};
+  clip-path: ${(props) => props.large && 'circle(35%)'};
+  transition: clip-path 2s;
 `
