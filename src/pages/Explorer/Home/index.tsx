@@ -17,6 +17,8 @@ import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
 import { Planet } from './ParallaxLayers/Intro/Planet'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
+import { SpaceshipLayer } from './ParallaxLayers/Intro/SpaceshipLayer'
+import { Shipspace } from './ParallaxLayers/Intro/Shipspace'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
@@ -42,8 +44,8 @@ export const Home = () => {
 
   const visibility = useStore((state) => state.visibility)
   const eatIsVisible = visibility[IDENTITY.EAT]
-  const codeIsVisible = visibility[IDENTITY.CODE]
   const sleepIsVisible = visibility[IDENTITY.SLEEP]
+  const codeIsVisible = visibility[IDENTITY.CODE]
 
   console.log(visibility)
   const parallax = useRef<IParallax>(null)
@@ -81,11 +83,15 @@ export const Home = () => {
           >
             <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
           </ParallaxLayer>
+
           <Planet
             offset={0.5}
             sticky={{ start: 0.5, end: 4 }}
             expand={codeIsVisible || eatIsVisible || sleepIsVisible}
           />
+          <SpaceshipLayer offset={0.5} sticky={{ start: 0.5, end: 6 }}>
+            <Shipspace />
+          </SpaceshipLayer>
           <ParallaxLayer
             offset={1}
             speed={1}
