@@ -45,9 +45,6 @@ export const RetroMario = ({
       }, 1000)
     }
   }
-  const handleMouseEnter = () => {
-    marioJump()
-  }
 
   const handleClick = () => {
     marioJump()
@@ -57,7 +54,6 @@ export const RetroMario = ({
     <StyledMario
       src={marioSrc}
       marioIsJumping={marioIsJumping}
-      onMouseOver={handleMouseEnter}
       onClick={handleClick}
     />
   )

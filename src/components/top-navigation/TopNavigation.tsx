@@ -61,10 +61,15 @@ const Title = styled.p`
   font-size: 12;
 `
 
+const LozLink = styled.img<{ darkLink: boolean }>`
+  filter: ${(props) => props.darkLink && 'contrast(200%) grayscale(100%)'};
+`
+
 const TopNavigation = () => {
   const [gradient, setGradient] = useState(false)
   const [marioIsJumping, setMarioIsJumping] = useState(false)
   const [marioKartIsRacing, setMarioKartIsRacing] = useState(false)
+  const [darkLink, setDarkLink] = useState(false)
   const { currentFile } = useContext(ExplorerContext)
   const [file] = currentFile
   const handleMarioJump = () => {
@@ -92,8 +97,8 @@ const TopNavigation = () => {
     return file.title && `${file.title} —`
   }
 
-  const handleZeldaClick = () => {
-    window.open('https://en.wikipedia.org/wiki/The_Legend_of_Zelda', '_blank')
+  const handleLozClick = () => {
+    setDarkLink((prev) => !prev)
   }
 
   return (
@@ -123,11 +128,12 @@ const TopNavigation = () => {
         <MarioKart marioKartIsRacing={marioKartIsRacing} />
         <Title>{renderCurrentFile()} virtual-story-code</Title>
 
-        <img
+        <LozLink
           height="32"
           style={{ cursor: 'pointer' }}
           src="/assets/icons/link.png"
-          onClick={handleZeldaClick}
+          darkLink={darkLink}
+          onClick={handleLozClick}
         />
       </Box>
     </StyledNavigation>
