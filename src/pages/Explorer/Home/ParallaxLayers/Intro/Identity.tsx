@@ -22,7 +22,7 @@ const Header = styled.h3<{ hide: boolean }>`
   font-size: 2rem;
   font-weight: 700;
   color: ${(props) => (props.hide ? 'transparent' : 'white')};
-  transition: color 0.5s;
+  transition: color 0.25s;
 `
 
 type Props = { identity: IDENTITY; hide?: boolean }
