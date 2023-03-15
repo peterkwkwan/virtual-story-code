@@ -87,15 +87,17 @@ export const Home = () => {
           <Planet
             offset={0.5}
             sticky={{ start: 0.5, end: 4 }}
-            expand={codeIsVisible || eatIsVisible || sleepIsVisible}
+            small={eatIsVisible}
+            medium={sleepIsVisible}
+            large={codeIsVisible}
           />
-          <SpaceshipLayer offset={0.5} sticky={{ start: 0.5, end: 6 }}>
+          <SpaceshipLayer offset={0} sticky={{ start: 0, end: 6 }}>
             <Shipspace />
           </SpaceshipLayer>
           <ParallaxLayer
             offset={1}
             speed={1}
-            sticky={{ start: 1, end: 2.45 }}
+            sticky={{ start: 1, end: 2 }}
             style={{
               zIndex: 1,
             }}
@@ -105,7 +107,7 @@ export const Home = () => {
           <ParallaxLayer
             offset={2.5}
             speed={1}
-            sticky={{ start: 2.5, end: 3.45 }}
+            sticky={{ start: 2, end: 3 }}
             style={{
               zIndex: 1,
             }}
@@ -115,7 +117,7 @@ export const Home = () => {
           <ParallaxLayer
             offset={3.5}
             speed={1}
-            sticky={{ start: 3.5, end: 4 }}
+            sticky={{ start: 3, end: 4 }}
             style={{
               zIndex: 1,
             }}
