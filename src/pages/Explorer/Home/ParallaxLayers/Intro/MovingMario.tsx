@@ -5,20 +5,19 @@ import { IDENTITY } from '../shared/constants'
 
 import { useStore } from '@/hooks/useStore'
 
-type Props = {
+type MarioProps = {
   triggerFirstTransform: boolean
   triggerSecondTransform: boolean
   triggerThirdTransform: boolean
   speechBubbleVisible: boolean
 }
 
-const Ship = styled.div<Props>`
+const Mario = styled.img<MarioProps>`
   position: absolute;
   top: 0;
   right: 0;
-  height: 50px;
-  width: 50px;
-  background-color: white;
+  height: 100px;
+  width: 100px;
   right: ${(props) => props.triggerFirstTransform && '20%'};
   top: ${(props) => props.triggerFirstTransform && '20%'};
   right: ${(props) => props.triggerSecondTransform && '40%'};
@@ -28,9 +27,20 @@ const Ship = styled.div<Props>`
   right: ${(props) => props.speechBubbleVisible && '80%'};
   top: ${(props) => props.speechBubbleVisible && '80%'};
   transition: all 2s;
+  z-index: 5;
+  cursor: pointer;
+  pointer-events: all;
+  &:hover {
+    filter: drop-shadow(0px 0px 4px #fff);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
 `
+interface Props {
+  handleShowSpeechBubble: () => void
+}
 
-export const Shipspace = () => {
+export const MovingMario = ({ handleShowSpeechBubble }: Props) => {
   const visibility = useStore((state) => state.visibility)
 
   const triggerFirstTransform = visibility[IDENTITY.EAT]
@@ -44,5 +54,23 @@ export const Shipspace = () => {
     speechBubbleVisible,
   }
 
-  return <Ship {...props} />
+  const getSvgPath = () => {
+    if (triggerFirstTransform && !triggerSecondTransform) {
+      return '/assets/images/paper-mario/fallingMario1.svg'
+    }
+    if (triggerSecondTransform && !triggerThirdTransform) {
+      return '/assets/images/paper-mario/fallingMario2.svg'
+    }
+    if (triggerThirdTransform) {
+      return '/assets/images/paper-mario/fallingMario3.svg'
+    }
+    if (speechBubbleVisible) {
+      return '/assets/images/paper-mario/faintedmario.svg'
+    }
+    return '/assets/images/paper-mario/marioInSpace.svg'
+  }
+
+  return (
+    <Mario {...props} src={getSvgPath()} onClick={handleShowSpeechBubble} />
+  )
 }
