@@ -26,7 +26,7 @@ const Mario = styled.img<MarioProps>`
   top: ${(props) => props.triggerThirdTransform && '60%'};
   right: ${(props) => props.speechBubbleVisible && '80%'};
   top: ${(props) => props.speechBubbleVisible && '80%'};
-  transition: all 2s;
+  transition: all 4s;
   z-index: 5;
   cursor: pointer;
   pointer-events: all;
