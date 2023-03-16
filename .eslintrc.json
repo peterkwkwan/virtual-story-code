@@ -27,7 +27,7 @@
       }
     ],
     "semi": ["error", "never"],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "import/newline-after-import": "error",
     "import/order": [
       "error",
