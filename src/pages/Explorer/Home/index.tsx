@@ -15,7 +15,7 @@ import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IDENTITY } from './ParallaxLayers/shared/constants'
-import { Planet } from './ParallaxLayers/Intro/Planet'
+import { PlanetLayer } from './ParallaxLayers/Intro/PlanetLayer'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 
@@ -97,7 +97,7 @@ export const Home = () => {
             <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
           </ParallaxLayer>
 
-          <Planet
+          <PlanetLayer
             offset={0.5}
             sticky={{ start: 0.5, end: 4 }}
             small={eatIsVisible}

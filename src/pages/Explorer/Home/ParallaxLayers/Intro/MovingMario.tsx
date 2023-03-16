@@ -56,18 +56,18 @@ export const MovingMario = ({ handleShowSpeechBubble }: Props) => {
 
   const getSvgPath = () => {
     if (triggerFirstTransform && !triggerSecondTransform) {
-      return '/assets/images/paper-mario/fallingMario1.svg'
+      return '/assets/images/home/fallingMario1.svg'
     }
     if (triggerSecondTransform && !triggerThirdTransform) {
-      return '/assets/images/paper-mario/fallingMario2.svg'
+      return '/assets/images/home/fallingMario2.svg'
     }
     if (triggerThirdTransform) {
-      return '/assets/images/paper-mario/fallingMario3.svg'
+      return '/assets/images/home/fallingMario3.svg'
     }
     if (speechBubbleVisible) {
-      return '/assets/images/paper-mario/faintedmario.svg'
+      return '/assets/images/home/faintedmario.svg'
     }
-    return '/assets/images/paper-mario/marioInSpace.svg'
+    return '/assets/images/home/marioInSpace.svg'
   }
 
   return (
