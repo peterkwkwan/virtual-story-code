@@ -114,22 +114,25 @@ const ClickMe = styled.p`
 `
 
 const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
   color: black;
-  border-radius: 50px;
-  border: 1px solid ${(props) => props.theme.palette.grey};
   background-color: ${(props) => props.theme.palette.marioGreen};
-  box-shadow: 0 0 40px ${(props) => props.theme.palette.dark02};
-  height: 40px;
-  width: 40px;
-  padding: 28px;
-  pointer-events: all;
+  border: 1px solid transparent;
+  font-size: 2rem;
+  padding: 8px 16px;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0px 5px grey;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: all;
   &:hover {
-    box-shadow: 0 0 40px ${(props) => props.theme.palette.white};
+    border: 1px solid black;
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px grey;
   }
 `
 

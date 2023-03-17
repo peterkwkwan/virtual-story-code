@@ -99,10 +99,10 @@ export const Home = () => {
 
           <PlanetLayer
             offset={0.5}
-            sticky={{ start: 0.5, end: 4 }}
+            sticky={{ start: 0.5, end: 6 }}
             small={eatIsVisible}
             medium={sleepIsVisible}
-            large={codeIsVisible}
+            large={codeIsVisible || speechBubbleVisible}
           />
           <ParallaxLayer
             offset={0}
