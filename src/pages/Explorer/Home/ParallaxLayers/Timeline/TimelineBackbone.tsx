@@ -1,7 +1,10 @@
 import React, { RefObject } from 'react'
 import styled from 'styled-components'
 
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import {
+  Tracker,
+  useIntersectionObserver,
+} from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div`
   display: flex;
@@ -23,7 +26,7 @@ const MarioVine = styled.img`
 `
 
 export const TimelineBackbone = () => {
-  const [, targetRef] = useIntersectionObserver('marioVine', 0.12)
+  const [, targetRef] = useIntersectionObserver(Tracker.MARIO_VINE, 0.12)
 
   const divRef = targetRef as RefObject<HTMLDivElement>
 
