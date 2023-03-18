@@ -28,10 +28,12 @@ import layer3 from '/assets/images/parallax/home/layer_03.png'
 import layer4 from '/assets/images/parallax/home/layer_04.png'
 import layer5 from '/assets/images/parallax/home/layer_05.png'
 import layer6 from '/assets/images/parallax/home/layer_06.png'
+import layer7 from '/assets/images/parallax/home/layer_07.png'
+import layer8 from '/assets/images/parallax/home/layer_08.png'
 
-const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<{
-  showspeechbubble: string
-}>`
+type SpeechBubbleLayerProps = { showspeechbubble: string }
+
+const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
   background-color: ${(props) => props.theme.palette.text01};
   clip-path: polygon(
     0% 5%,
@@ -53,6 +55,17 @@ const Image = styled.img`
   background-repeat: no-repeat;
   background-position: center;
 `
+
+const LAYERS = [
+  { layer: layer1, zIndex: 3, offset: 4 },
+  { layer: layer2, zIndex: 3, offset: 4.1 },
+  { layer: layer3, zIndex: 3, offset: 4.1 },
+  { layer: layer4, zIndex: 2, offset: 4.1 },
+  { layer: layer5, zIndex: 3, offset: 4.2 },
+  { layer: layer6, zIndex: 3, offset: 4.3 },
+  { layer: layer7, zIndex: 3, offset: 4.4 },
+  { layer: layer8, zIndex: 3, offset: 4.95 },
+]
 
 export const Home = () => {
   const theme = useTheme()
@@ -160,24 +173,19 @@ export const Home = () => {
           >
             <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
-          <ParallaxLayer offset={4} speed={0.1} style={{ zIndex: 2 }}>
-            <Image src={layer1} />
-          </ParallaxLayer>
-          <ParallaxLayer offset={4.1} speed={0.3} style={{ zIndex: 2 }}>
-            <Image src={layer2} />
-          </ParallaxLayer>
-          <ParallaxLayer offset={4.2} speed={0.5} style={{ zIndex: 2 }}>
-            <Image src={layer3} />
-          </ParallaxLayer>
-          <ParallaxLayer offset={4.3} speed={0.7} style={{ zIndex: 2 }}>
-            <Image src={layer4} />
-          </ParallaxLayer>
-          <ParallaxLayer offset={4.4} speed={0.9} style={{ zIndex: 2 }}>
-            <Image src={layer5} />
-          </ParallaxLayer>
-          <ParallaxLayer offset={4.5} speed={1} style={{ zIndex: 2 }}>
-            <Image src={layer6} />
-          </ParallaxLayer>
+          {LAYERS.map(({ layer, zIndex, offset }, i) => {
+            const speed = 0.1 * (i + 1)
+            return (
+              <ParallaxLayer
+                key={`layer${i}`}
+                offset={offset}
+                speed={speed}
+                style={{ zIndex }}
+              >
+                <Image src={layer} />
+              </ParallaxLayer>
+            )
+          })}
           <IntersectionTrackerLayer
             offset={5.5}
             sticky={{ start: 5.5, end: 6 }}
