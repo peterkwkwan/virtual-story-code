@@ -22,8 +22,15 @@ import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { useStore } from '@/hooks/useStore'
 
+import layer1 from '/assets/images/parallax/home/layer_01.png'
+import layer2 from '/assets/images/parallax/home/layer_02.png'
+import layer3 from '/assets/images/parallax/home/layer_03.png'
+import layer4 from '/assets/images/parallax/home/layer_04.png'
+import layer5 from '/assets/images/parallax/home/layer_05.png'
+import layer6 from '/assets/images/parallax/home/layer_06.png'
+
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<{
-  showSpeechBubble: boolean
+  showspeechbubble: string
 }>`
   background-color: ${(props) => props.theme.palette.text01};
   clip-path: polygon(
@@ -35,8 +42,16 @@ const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<{
     14% 48%,
     4% 48%
   );
-  opacity: ${(props) => (props.showSpeechBubble ? 1 : 0)};
+  opacity: ${(props) => (props.showspeechbubble === 'true' ? 1 : 0)};
   transition: opacity 0.5s;
+`
+
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `
 
 export const Home = () => {
@@ -51,14 +66,16 @@ export const Home = () => {
   const codeIsVisible = visibility[IDENTITY.CODE]
   const speechBubbleVisible = visibility['speechBubbleStart']
 
-  const [showSpeechBubble, setShowSpeechBubble] = useState(false)
-
-  useEffect(() => {
-    setShowSpeechBubble(false)
-  }, [speechBubbleVisible])
+  const [showspeechbubble, setshowspeechbubble] = useState(false)
+  const speechBubbleStart = 5
 
   const parallax = useRef<IParallax>(null)
+  const numberOfPages = 10
   const myCareerPage = 7
+
+  useEffect(() => {
+    setshowspeechbubble(false)
+  }, [speechBubbleVisible])
 
   const handleScrollToCallback = () => {
     if (parallax.current) {
@@ -66,8 +83,8 @@ export const Home = () => {
     }
   }
 
-  const handleShowSpeechBubble = () => {
-    setShowSpeechBubble(true)
+  const handleshowspeechbubble = () => {
+    setshowspeechbubble(true)
   }
 
   return (
@@ -79,7 +96,8 @@ export const Home = () => {
       >
         <ParallaxSpring
           ref={parallax}
-          pages={10}
+          id="parallax-scroll-id"
+          pages={numberOfPages}
           style={{ position: 'relative', top: '0', left: '0' }}
         >
           <ParallaxLayer offset={0} speed={1}>
@@ -97,21 +115,20 @@ export const Home = () => {
             <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
           </ParallaxLayer>
 
-          <PlanetLayer
-            offset={0.5}
-            sticky={{ start: 0.5, end: 6 }}
-            small={eatIsVisible}
-            medium={sleepIsVisible}
-            large={codeIsVisible || speechBubbleVisible}
-          />
+          <PlanetLayer offset={2} />
           <ParallaxLayer
             offset={0}
             sticky={{ start: 0, end: 6 }}
             style={{
-              zIndex: speechBubbleVisible ? 1 : 0,
+              zIndex: 1,
             }}
           >
-            <MovingMario handleShowSpeechBubble={handleShowSpeechBubble} />
+            <MovingMario
+              handleshowspeechbubble={handleshowspeechbubble}
+              parallax={parallax}
+              numberOfPages={numberOfPages}
+              speechBubbleStart={speechBubbleStart}
+            />
           </ParallaxLayer>
           <ParallaxLayer
             offset={1}
@@ -143,6 +160,24 @@ export const Home = () => {
           >
             <Identity identity={IDENTITY.CODE} />
           </ParallaxLayer>
+          <ParallaxLayer offset={4} speed={0.1} style={{ zIndex: 2 }}>
+            <Image src={layer1} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.1} speed={0.3} style={{ zIndex: 2 }}>
+            <Image src={layer2} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.2} speed={0.5} style={{ zIndex: 2 }}>
+            <Image src={layer3} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.3} speed={0.7} style={{ zIndex: 2 }}>
+            <Image src={layer4} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.4} speed={0.9} style={{ zIndex: 2 }}>
+            <Image src={layer5} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.5} speed={1} style={{ zIndex: 2 }}>
+            <Image src={layer6} />
+          </ParallaxLayer>
           <IntersectionTrackerLayer
             offset={5.5}
             sticky={{ start: 5.5, end: 6 }}
@@ -152,17 +187,18 @@ export const Home = () => {
           <SpeechBubbleParallaxLayer
             offset={5}
             speed={0.2}
-            sticky={{ start: 5, end: 6 }}
+            sticky={{ start: speechBubbleStart, end: 6 }}
             style={{
               zIndex: 1,
             }}
-            showSpeechBubble={showSpeechBubble}
+            showspeechbubble={showspeechbubble ? 'true' : 'false'}
           >
             <SpeechBubble
               scrollToCallback={handleScrollToCallback}
-              showSpeechBubble={showSpeechBubble}
+              showspeechbubble={showspeechbubble}
             />
           </SpeechBubbleParallaxLayer>
+
           <ParallaxLayer
             offset={myCareerPage}
             speed={0.1}
