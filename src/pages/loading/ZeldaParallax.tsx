@@ -2,13 +2,13 @@ import React, { memo, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
 
-import layer1 from '/assets/images/parallax/layer_01.png'
-import layer2 from '/assets/images/parallax/layer_02.png'
-import layer3 from '/assets/images/parallax/layer_03.png'
-import layer4 from '/assets/images/parallax/layer_04.png'
-import layer5 from '/assets/images/parallax/layer_05.png'
-import layer6 from '/assets/images/parallax/layer_06.png'
-import layer7 from '/assets/images/parallax/layer_07.png'
+import layer1 from '/assets/images/parallax/zelda/layer_01.png'
+import layer2 from '/assets/images/parallax/zelda/layer_02.png'
+import layer3 from '/assets/images/parallax/zelda/layer_03.png'
+import layer4 from '/assets/images/parallax/zelda/layer_04.png'
+import layer5 from '/assets/images/parallax/zelda/layer_05.png'
+import layer6 from '/assets/images/parallax/zelda/layer_06.png'
+import layer7 from '/assets/images/parallax/zelda/layer_07.png'
 
 const Container = styled.div<{ showLoadingPage: boolean }>`
   position: absolute;
