@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { IParallax } from '@react-spring/parallax'
 
 import { IDENTITY } from '../shared/constants'
 
@@ -10,6 +11,7 @@ type MarioProps = {
   triggerSecondTransform: boolean
   triggerThirdTransform: boolean
   speechBubbleVisible: boolean
+  offset: number
 }
 
 const Mario = styled.img<MarioProps>`
@@ -18,15 +20,9 @@ const Mario = styled.img<MarioProps>`
   right: 0;
   height: 100px;
   width: 100px;
-  right: ${(props) => props.triggerFirstTransform && '20%'};
-  top: ${(props) => props.triggerFirstTransform && '20%'};
-  right: ${(props) => props.triggerSecondTransform && '40%'};
-  top: ${(props) => props.triggerSecondTransform && '40%'};
-  right: ${(props) => props.triggerThirdTransform && '60%'};
-  top: ${(props) => props.triggerThirdTransform && '60%'};
-  right: ${(props) => props.speechBubbleVisible && '80%'};
-  top: ${(props) => props.speechBubbleVisible && '80%'};
-  transition: all 4s;
+  right: ${(props) => props.offset}%;
+  top: ${(props) => props.offset}%;
+  transition: transform 1s;
   z-index: 5;
   cursor: pointer;
   pointer-events: all;
@@ -37,10 +33,18 @@ const Mario = styled.img<MarioProps>`
   }
 `
 interface Props {
-  handleShowSpeechBubble: () => void
+  handleshowspeechbubble: () => void
+  parallax: React.RefObject<IParallax>
+  numberOfPages: number
+  speechBubbleStart: number
 }
 
-export const MovingMario = ({ handleShowSpeechBubble }: Props) => {
+export const MovingMario = ({
+  handleshowspeechbubble,
+  parallax,
+  numberOfPages,
+  speechBubbleStart,
+}: Props) => {
   const visibility = useStore((state) => state.visibility)
 
   const triggerFirstTransform = visibility[IDENTITY.EAT]
@@ -53,6 +57,26 @@ export const MovingMario = ({ handleShowSpeechBubble }: Props) => {
     triggerThirdTransform,
     speechBubbleVisible,
   }
+
+  const [offsetPercentage, setOffsetPercentage] = useState(0)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallax.current) {
+        const percentage =
+          (parallax.current.current /
+            ((scrollHeight / numberOfPages) * speechBubbleStart)) *
+          100
+
+        if (percentage <= 85) setOffsetPercentage(percentage)
+      }
+    }
+    const container = document.getElementById('parallax-scroll-id')
+    const scrollHeight = container?.scrollHeight || 0
+    container?.addEventListener('scroll', handleScroll)
+    return () => {
+      container?.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const getSvgPath = () => {
     if (triggerFirstTransform && !triggerSecondTransform) {
@@ -71,6 +95,11 @@ export const MovingMario = ({ handleShowSpeechBubble }: Props) => {
   }
 
   return (
-    <Mario {...props} src={getSvgPath()} onClick={handleShowSpeechBubble} />
+    <Mario
+      {...props}
+      src={getSvgPath()}
+      offset={offsetPercentage}
+      onClick={handleshowspeechbubble}
+    />
   )
 }
