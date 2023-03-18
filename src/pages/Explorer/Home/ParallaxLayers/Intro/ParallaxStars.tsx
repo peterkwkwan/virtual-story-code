@@ -4,7 +4,6 @@ import styled, { useTheme } from 'styled-components'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 const Container = styled.div`
-  background: linear-gradient(to top, rgba(30, 30, 30, 0.9) 5%, rgba(0, 0, 0));
   height: 100%;
   width: 100%;
 `
