@@ -56,14 +56,14 @@ const Image = styled.img`
 `
 
 const LAYERS = [
-  { layer: layer1, zIndex: 3, offset: 1 },
-  { layer: layer2, zIndex: 3, offset: 1.1 },
-  { layer: layer3, zIndex: 3, offset: 1.1 },
+  { layer: layer1, zIndex: 1, offset: 1 },
+  { layer: layer2, zIndex: 1, offset: 1.1 },
+  { layer: layer3, zIndex: 1, offset: 1.1 },
   { layer: layer4, zIndex: -1, offset: 1.1 },
-  { layer: layer5, zIndex: 3, offset: 1.2 },
-  { layer: layer6, zIndex: 3, offset: 1.3 },
-  { layer: layer7, zIndex: 3, offset: 1.4 },
-  { layer: layer8, zIndex: 3, offset: 1.95 },
+  { layer: layer5, zIndex: 1, offset: 1.2 },
+  { layer: layer6, zIndex: 1, offset: 1.3 },
+  { layer: layer7, zIndex: 1, offset: 1.4 },
+  { layer: layer8, zIndex: 1, offset: 1.95 },
 ]
 
 export const Home = () => {
@@ -156,9 +156,6 @@ export const Home = () => {
           <SpeechBubbleParallaxLayer
             offset={speechBubbleStart}
             sticky={{ start: speechBubbleStart, end: 3 }}
-            style={{
-              zIndex: 1,
-            }}
             showspeechbubble={showspeechbubble ? 'true' : 'false'}
           >
             <SpeechBubble
