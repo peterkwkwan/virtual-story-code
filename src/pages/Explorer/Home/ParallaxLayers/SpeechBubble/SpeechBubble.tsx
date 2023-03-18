@@ -145,10 +145,10 @@ const TypewriterStringToRender = [
 
 export const SpeechBubble = ({
   scrollToCallback,
-  showSpeechBubble,
+  showspeechbubble,
 }: {
   scrollToCallback: () => void
-  showSpeechBubble: boolean
+  showspeechbubble: boolean
 }) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
@@ -172,7 +172,7 @@ export const SpeechBubble = ({
   }
 
   return (
-    <Container show={showSpeechBubble}>
+    <Container show={showspeechbubble}>
       <NameTag>
         <span style={{ color: theme.palette.marioRed }}>P</span>
         <span style={{ color: theme.palette.marioGreen }}>E</span>

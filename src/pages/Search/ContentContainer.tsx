@@ -46,7 +46,7 @@ export const ContentContainer = () => {
     <Container>
       {/* {profiles.map((profile) => ( */}
       {springs.map(({ x, y, scale }, i) => (
-        <animated.div key={i} style={{ x, y }}>
+        <animated.div key={Profiles[i].title} style={{ x, y }}>
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <animated.div
             style={{
