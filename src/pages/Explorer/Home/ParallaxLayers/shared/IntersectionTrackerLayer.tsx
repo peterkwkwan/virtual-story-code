@@ -1,10 +1,13 @@
 import React, { RefObject } from 'react'
 import { ParallaxLayer, ParallaxLayerProps } from '@react-spring/parallax'
 
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import {
+  Tracker,
+  useIntersectionObserver,
+} from '@/hooks/useIntersectionObserver'
 
 interface Props extends ParallaxLayerProps {
-  uniqueId: string
+  uniqueId: Tracker
   threshold?: number
 }
 
