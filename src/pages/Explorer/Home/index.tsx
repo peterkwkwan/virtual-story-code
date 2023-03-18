@@ -8,14 +8,11 @@ import {
 
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 import { Intro } from './ParallaxLayers/Intro/Intro'
-import { Identity } from './ParallaxLayers/Intro/Identity'
 import { TimelineBackbone } from './ParallaxLayers/Timeline/TimelineBackbone'
 import { SpeechBubble } from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
-import { IDENTITY } from './ParallaxLayers/shared/constants'
-import { PlanetLayer } from './ParallaxLayers/Intro/PlanetLayer'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 
@@ -30,6 +27,8 @@ import layer5 from '/assets/images/parallax/home/layer_05.png'
 import layer6 from '/assets/images/parallax/home/layer_06.png'
 import layer7 from '/assets/images/parallax/home/layer_07.png'
 import layer8 from '/assets/images/parallax/home/layer_08.png'
+
+import { Tracker } from '@/hooks/useIntersectionObserver'
 
 type SpeechBubbleLayerProps = { showspeechbubble: string }
 
@@ -57,14 +56,14 @@ const Image = styled.img`
 `
 
 const LAYERS = [
-  { layer: layer1, zIndex: 3, offset: 4 },
-  { layer: layer2, zIndex: 3, offset: 4.1 },
-  { layer: layer3, zIndex: 3, offset: 4.1 },
-  { layer: layer4, zIndex: 2, offset: 4.1 },
-  { layer: layer5, zIndex: 3, offset: 4.2 },
-  { layer: layer6, zIndex: 3, offset: 4.3 },
-  { layer: layer7, zIndex: 3, offset: 4.4 },
-  { layer: layer8, zIndex: 3, offset: 4.95 },
+  { layer: layer1, zIndex: 3, offset: 1 },
+  { layer: layer2, zIndex: 3, offset: 1.1 },
+  { layer: layer3, zIndex: 3, offset: 1.1 },
+  { layer: layer4, zIndex: -1, offset: 1.1 },
+  { layer: layer5, zIndex: 3, offset: 1.2 },
+  { layer: layer6, zIndex: 3, offset: 1.3 },
+  { layer: layer7, zIndex: 3, offset: 1.4 },
+  { layer: layer8, zIndex: 3, offset: 1.95 },
 ]
 
 export const Home = () => {
@@ -73,21 +72,18 @@ export const Home = () => {
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
-  const visibility = useStore((state) => state.visibility)
-  const eatIsVisible = visibility[IDENTITY.EAT]
-  const sleepIsVisible = visibility[IDENTITY.SLEEP]
-  const codeIsVisible = visibility[IDENTITY.CODE]
-  const speechBubbleVisible = visibility['speechBubbleStart']
+  const [showspeechbubble, setShowSpeechBubble] = useState(false)
 
-  const [showspeechbubble, setshowspeechbubble] = useState(false)
-  const speechBubbleStart = 5
+  const visibility = useStore((state) => state.visibility)
+  const speechBubbleVisible = visibility[Tracker.SPEECH_BUBBLE]
 
   const parallax = useRef<IParallax>(null)
-  const numberOfPages = 10
-  const myCareerPage = 7
+  const speechBubbleStart = 2
+  const myCareerPage = 4
+  const numberOfPages = 6
 
   useEffect(() => {
-    setshowspeechbubble(false)
+    setShowSpeechBubble(false)
   }, [speechBubbleVisible])
 
   const handleScrollToCallback = () => {
@@ -97,7 +93,7 @@ export const Home = () => {
   }
 
   const handleshowspeechbubble = () => {
-    setshowspeechbubble(true)
+    speechBubbleVisible && setShowSpeechBubble(true)
   }
 
   return (
@@ -116,25 +112,19 @@ export const Home = () => {
           <ParallaxLayer offset={0} speed={1}>
             <ParallaxStars />
           </ParallaxLayer>
-          <ParallaxLayer
+          <IntersectionTrackerLayer
             offset={0}
-            speed={0.5}
-            sticky={{ start: 0, end: 4 }}
-            style={{
-              color: 'white',
-              zIndex: 10,
-            }}
-          >
-            <Intro showName={codeIsVisible || eatIsVisible || sleepIsVisible} />
+            uniqueId={Tracker.INTRO}
+            sticky={{ start: 0, end: 0.5 }}
+            threshold={1}
+          />
+          <ParallaxLayer offset={0} speed={0.5} sticky={{ start: 0, end: 1.9 }}>
+            <Intro />
           </ParallaxLayer>
-
-          <PlanetLayer offset={2} />
           <ParallaxLayer
             offset={0}
-            sticky={{ start: 0, end: 6 }}
-            style={{
-              zIndex: 1,
-            }}
+            sticky={{ start: 0, end: 3 }}
+            style={{ zIndex: 1 }}
           >
             <MovingMario
               handleshowspeechbubble={handleshowspeechbubble}
@@ -143,36 +133,7 @@ export const Home = () => {
               speechBubbleStart={speechBubbleStart}
             />
           </ParallaxLayer>
-          <ParallaxLayer
-            offset={1}
-            speed={1}
-            sticky={{ start: 1, end: 2 }}
-            style={{
-              zIndex: 1,
-            }}
-          >
-            <Identity identity={IDENTITY.EAT} hide={sleepIsVisible} />
-          </ParallaxLayer>
-          <ParallaxLayer
-            offset={2.5}
-            speed={1}
-            sticky={{ start: 2, end: 3 }}
-            style={{
-              zIndex: 1,
-            }}
-          >
-            <Identity identity={IDENTITY.SLEEP} hide={codeIsVisible} />
-          </ParallaxLayer>
-          <ParallaxLayer
-            offset={3.5}
-            speed={1}
-            sticky={{ start: 3, end: 4 }}
-            style={{
-              zIndex: 1,
-            }}
-          >
-            <Identity identity={IDENTITY.CODE} />
-          </ParallaxLayer>
+
           {LAYERS.map(({ layer, zIndex, offset }, i) => {
             const speed = 0.1 * (i + 1)
             return (
@@ -187,15 +148,14 @@ export const Home = () => {
             )
           })}
           <IntersectionTrackerLayer
-            offset={5.5}
-            sticky={{ start: 5.5, end: 6 }}
-            uniqueId="speechBubbleStart"
+            offset={2.5}
+            sticky={{ start: 2.5, end: 3 }}
+            uniqueId={Tracker.SPEECH_BUBBLE}
             threshold={1}
           />
           <SpeechBubbleParallaxLayer
-            offset={5}
-            speed={0.2}
-            sticky={{ start: speechBubbleStart, end: 6 }}
+            offset={speechBubbleStart}
+            sticky={{ start: speechBubbleStart, end: 3 }}
             style={{
               zIndex: 1,
             }}
@@ -209,8 +169,7 @@ export const Home = () => {
 
           <ParallaxLayer
             offset={myCareerPage}
-            speed={0.1}
-            sticky={{ start: 7, end: 7.5 }}
+            sticky={{ start: myCareerPage, end: 4.5 }}
             style={{
               backgroundColor: theme.palette.darkOrange,
               display: 'flex',
@@ -222,7 +181,7 @@ export const Home = () => {
             <Title />
             <ScrollPrompt />
           </ParallaxLayer>
-          <ParallaxLayer offset={8} sticky={{ start: 8, end: 10 }}>
+          <ParallaxLayer offset={5} sticky={{ start: 5, end: 6 }}>
             <TimelineBackbone />
           </ParallaxLayer>
         </ParallaxSpring>

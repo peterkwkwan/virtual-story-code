@@ -2,10 +2,14 @@ import { useRef, useEffect } from 'react'
 
 import { useStore, VisibilityState } from './useStore'
 
-import { IDENTITY } from '@/pages/explorer/Home/ParallaxLayers/shared/constants'
+export enum Tracker {
+  INTRO = 'INTRO',
+  MARIO_VINE = 'MARIO_VINE',
+  SPEECH_BUBBLE = 'SPEECH_BUBBLE',
+}
 
 type UseIntersectionObserver = (
-  key: IDENTITY | string,
+  key: Tracker,
   threshold?: number
 ) => [VisibilityState, React.RefObject<Element>]
 
