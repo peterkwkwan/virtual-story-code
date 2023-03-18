@@ -1,15 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const ScrollPrompt = styled.div`
+import { useStore } from '@/hooks/useStore'
+
+export const Prompt = styled.div<{ marioVineVisible: boolean }>`
   bottom: 5%;
   position: absolute;
   width: 30px;
   height: 30px;
-  transform: rotate(45deg);
+  transform: ${(props) =>
+    props.marioVineVisible
+      ? 'rotate(90deg) translate(-20vw, -50vw) rotate(-360deg)'
+      : 'rotate(45deg)'};
   border-right: 2px #fff solid;
   border-bottom: 2px #fff solid;
-
+  transition: transform 1s;
   &:before {
     position: absolute;
     content: '';
@@ -34,3 +39,10 @@ export const ScrollPrompt = styled.div`
     }
   }
 `
+
+export const ScrollPrompt = () => {
+  const visibility = useStore((state) => state.visibility)
+  const marioVineVisible = visibility['marioVine']
+
+  return <Prompt marioVineVisible={marioVineVisible} />
+}
