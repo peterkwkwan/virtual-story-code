@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { TypewriterWrapper } from './TypewriterWrapper'
 
 import { theme } from '@/theme/theme'
+import { useBoundStore } from '@/hooks/useBoundStore'
+import { Tracker } from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div<{ show: boolean }>`
   background-color: ${(props) => props.theme.palette.persianGreen};
@@ -137,29 +139,30 @@ const Button = styled.button`
 `
 
 const TypewriterStringToRender = [
-  `Hi, <span style="color:${theme.palette.marioGreen}">click</span> the button below!`,
-  "I'm Peter, a developer with a keen passion for <i>aesthetics</i> ✨",
-  'I enjoy mentoring junior developers and empowering my team',
-  'My hobbies include game dev, weight lifting and cooking',
+  `Ow... (<span style="color:${theme.palette.marioGreen}">click</span> the button below to wake Mario up!)`,
+  'Wow, how did I end up here?',
+  `I guess <span style="color:${theme.palette.marioRed}; text-shadow: 1px 1px 2px #000;">Bowser</span> knocked me out cold...`,
+  `No time to waste! I have to go save <span style="color:${theme.palette.brightPink}; text-shadow: 1px 1px 2px #000;">Peach</span>!`,
 ]
 
 export const SpeechBubble = ({
-  scrollToCallback,
-  showspeechbubble,
+  finishSpeechCallback,
 }: {
-  scrollToCallback: () => void
-  showspeechbubble: boolean
+  finishSpeechCallback: () => void
 }) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0)
   const [showClickMe, setShowClickMe] = useState(true)
   const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
+
+  const visibility = useBoundStore((state) => state.visibility)
+  const showSpeechBubble = visibility[Tracker.SPEECH_BUBBLE]
 
   const handleClick = () => {
     if (textAvailable) {
       setCurrentStringIndex((prev) => prev + 1)
     } else {
       setCurrentStringIndex(0)
-      scrollToCallback()
+      finishSpeechCallback()
     }
   }
 
@@ -172,13 +175,13 @@ export const SpeechBubble = ({
   }
 
   return (
-    <Container show={showspeechbubble}>
+    <Container show={showSpeechBubble}>
       <NameTag>
-        <span style={{ color: theme.palette.marioRed }}>P</span>
-        <span style={{ color: theme.palette.marioGreen }}>E</span>
-        <span style={{ color: theme.palette.marioYellow }}>T</span>
-        <span style={{ color: theme.palette.marioBlue }}>E</span>
-        <span style={{ color: theme.palette.marioRed }}>R</span>
+        <span style={{ color: theme.palette.marioRed }}>M</span>
+        <span style={{ color: theme.palette.marioGreen }}>A</span>
+        <span style={{ color: theme.palette.marioYellow }}>R</span>
+        <span style={{ color: theme.palette.marioBlue }}>I</span>
+        <span style={{ color: theme.palette.marioRed }}>O</span>
       </NameTag>
       <InnerBorder>
         <SpeechBubbleTextContainer>
