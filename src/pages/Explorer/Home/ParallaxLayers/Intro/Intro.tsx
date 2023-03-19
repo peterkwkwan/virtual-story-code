@@ -32,8 +32,8 @@ const NameContainer = styled.div<{ percentage: number }>`
   &::before {
     top: -1rem;
     left: -0.5rem;
-    height: ${(props) => props.percentage || 1}%;
-    width: 5%;
+    height: ${(props) => props.percentage || 0}%;
+    width: ${(props) => props.percentage / 10 || 0}%;
     border-top: 5px solid white;
     border-left: 5px solid white;
   }
@@ -41,8 +41,8 @@ const NameContainer = styled.div<{ percentage: number }>`
   &::after {
     bottom: 0;
     right: -0.5rem;
-    height: ${(props) => props.percentage || 1}%;
-    width: 5%;
+    height: ${(props) => props.percentage || 0}%;
+    width: ${(props) => props.percentage / 10 || 0}%;
     border-bottom: 5px solid white;
     border-right: 5px solid white;
   }
