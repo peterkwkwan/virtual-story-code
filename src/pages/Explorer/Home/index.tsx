@@ -27,6 +27,8 @@ import layer5 from '/assets/images/parallax/home/layer_05.png'
 import layer6 from '/assets/images/parallax/home/layer_06.png'
 import layer7 from '/assets/images/parallax/home/layer_07.png'
 import layer8 from '/assets/images/parallax/home/layer_08.png'
+import layer9 from '/assets/images/parallax/home/layer_09.png'
+import layer10 from '/assets/images/parallax/home/layer_10.png'
 
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
@@ -57,13 +59,15 @@ const Image = styled.img`
 
 const LAYERS = [
   { layer: layer1, zIndex: 1, offset: 1 },
-  { layer: layer2, zIndex: 1, offset: 1.1 },
-  { layer: layer3, zIndex: 1, offset: 1.1 },
-  { layer: layer4, zIndex: -1, offset: 1.1 },
+  { layer: layer2, zIndex: 1, offset: 1.05 },
+  { layer: layer3, zIndex: 1, offset: 1.05 },
+  { layer: layer4, zIndex: -1, offset: 1.05 },
   { layer: layer5, zIndex: 1, offset: 1.2 },
-  { layer: layer6, zIndex: 1, offset: 1.3 },
-  { layer: layer7, zIndex: 1, offset: 1.4 },
-  { layer: layer8, zIndex: 1, offset: 1.95 },
+  { layer: layer6, zIndex: 2, offset: 1.25 },
+  { layer: layer7, zIndex: 3, offset: 1.35 },
+  { layer: layer8, zIndex: 4, offset: 1.8 },
+  { layer: layer9, zIndex: 3, offset: 1.95 },
+  { layer: layer10, zIndex: 1, offset: 1.95 },
 ]
 
 export const Home = () => {
@@ -135,7 +139,7 @@ export const Home = () => {
           </ParallaxLayer>
 
           {LAYERS.map(({ layer, zIndex, offset }, i) => {
-            const speed = 0.1 * (i + 1)
+            const speed = 0.15 * (i + 1)
             return (
               <ParallaxLayer
                 key={`layer${i}`}
