@@ -62,7 +62,7 @@ export const ParallaxStars = () => {
     for (let i = 0; i < numberOfstars; i++) {
       const xCoordinates = Math.floor(Math.random() * width)
       const yCoordinates = Math.floor(
-        Math.random() * (isSmall ? 1.5 * height * 4 : height * 4)
+        Math.random() * (isSmall ? 1.5 * height * 2 : height * 2)
       )
       boxShadowString += `, ${xCoordinates}px ${yCoordinates}px ${theme.palette.persianGreen}`
     }
