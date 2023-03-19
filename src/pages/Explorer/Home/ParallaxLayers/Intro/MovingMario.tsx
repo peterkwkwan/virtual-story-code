@@ -26,14 +26,12 @@ const Mario = styled.img<MarioProps>`
   }
 `
 interface Props {
-  handleshowspeechbubble: () => void
   parallax: React.RefObject<IParallax>
   numberOfPages: number
   speechBubbleStart: number
 }
 
 export const MovingMario = ({
-  handleshowspeechbubble,
   parallax,
   numberOfPages,
   speechBubbleStart,
@@ -82,11 +80,5 @@ export const MovingMario = ({
     return '/assets/images/home/faintedmario.svg'
   }
 
-  return (
-    <Mario
-      src={getSvgPath()}
-      offset={offsetPercentage}
-      onClick={handleshowspeechbubble}
-    />
-  )
+  return <Mario src={getSvgPath()} offset={offsetPercentage} />
 }
