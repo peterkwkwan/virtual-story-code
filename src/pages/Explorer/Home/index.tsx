@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import {
   Parallax as ParallaxSpring,
@@ -30,8 +30,9 @@ import layer9 from '/assets/images/parallax/home/layer_09.png'
 import layer10 from '/assets/images/parallax/home/layer_10.png'
 
 import { Tracker } from '@/hooks/useIntersectionObserver'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
-type SpeechBubbleLayerProps = { showspeechbubble: string }
+type SpeechBubbleLayerProps = { show: string }
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
   background-color: ${(props) => props.theme.palette.text01};
@@ -44,8 +45,14 @@ const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
     14% 48%,
     4% 48%
   );
-  opacity: ${(props) => (props.showspeechbubble === 'true' ? 1 : 0)};
+  opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
   transition: opacity 0.5s;
+`
+
+const CareerContainer = styled.div<{ show: boolean }>`
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  background-color: white;
+  height: 500px;
 `
 
 const Image = styled.img`
@@ -75,20 +82,18 @@ export const Home = () => {
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
-  const [showspeechbubble, setShowSpeechBubble] = useState(false)
+  const [showCareer, setShowCareer] = useState(false)
+
+  const visibility = useBoundStore((state) => state.visibility)
+  const showSpeechBubble = visibility[Tracker.SPEECH_BUBBLE]
 
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
   const myCareerPage = 4
-  const numberOfPages = 6
+  const numberOfPages = showCareer ? 6 : 3
 
-  const handleScrollToCallback = () => {
-    if (parallax.current) {
-      parallax.current.scrollTo(myCareerPage)
-    }
-  }
-  const handleshowspeechbubble = () => {
-    setShowSpeechBubble(true)
+  const handleFinishSpeech = () => {
+    setShowCareer(true)
   }
 
   return (
@@ -122,7 +127,6 @@ export const Home = () => {
           />
           <ParallaxLayer offset={0} sticky={{ start: 0, end: 3 }}>
             <MovingMario
-              handleshowspeechbubble={handleshowspeechbubble}
               parallax={parallax}
               numberOfPages={numberOfPages}
               speechBubbleStart={speechBubbleStart}
@@ -145,32 +149,40 @@ export const Home = () => {
           <SpeechBubbleParallaxLayer
             offset={speechBubbleStart}
             sticky={{ start: speechBubbleStart, end: 3 }}
-            showspeechbubble={showspeechbubble ? 'true' : 'false'}
+            show={showSpeechBubble ? 'true' : 'false'}
           >
-            <SpeechBubble
-              scrollToCallback={handleScrollToCallback}
-              showspeechbubble={showspeechbubble}
-            />
+            <SpeechBubble finishSpeechCallback={handleFinishSpeech} />
           </SpeechBubbleParallaxLayer>
-
+          <IntersectionTrackerLayer
+            offset={2.9}
+            threshold={1}
+            uniqueId={Tracker.SPEECH_BUBBLE}
+          />
           <ParallaxLayer
             offset={myCareerPage}
             sticky={{ start: myCareerPage, end: 4.5 }}
             style={{
               backgroundColor: theme.palette.darkOrange,
-              display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
+              display: showCareer ? 'flex' : 'none',
             }}
           >
             <Title />
             <ScrollPrompt />
           </ParallaxLayer>
-          <ParallaxLayer offset={5} sticky={{ start: 5, end: 6 }}>
+          <ParallaxLayer
+            offset={5}
+            sticky={{ start: 5, end: 6 }}
+            style={{
+              display: showCareer ? 'block' : 'none',
+            }}
+          >
             <TimelineBackbone />
           </ParallaxLayer>
         </ParallaxSpring>
+        {/* <CareerContainer show={showCareer}>HELLO</CareerContainer> */}
       </ExplorerWrapper>
     </>
   )
