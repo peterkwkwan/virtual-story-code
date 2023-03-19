@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { useStore } from '@/hooks/useStore'
+import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div`
@@ -52,7 +52,7 @@ const Subtitle = styled.h6`
 `
 
 export const Title = () => {
-  const visibility = useStore((state) => state.visibility)
+  const visibility = useBoundStore((state) => state.visibility)
   const shatter = visibility[Tracker.MARIO_VINE]
 
   return (

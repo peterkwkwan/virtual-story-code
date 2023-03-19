@@ -17,7 +17,6 @@ import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTr
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
-import { useStore } from '@/hooks/useStore'
 
 import layer1 from '/assets/images/parallax/home/layer_01.png'
 import layer2 from '/assets/images/parallax/home/layer_02.png'
@@ -78,26 +77,18 @@ export const Home = () => {
 
   const [showspeechbubble, setShowSpeechBubble] = useState(false)
 
-  const visibility = useStore((state) => state.visibility)
-  const speechBubbleVisible = visibility[Tracker.SPEECH_BUBBLE]
-
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
   const myCareerPage = 4
   const numberOfPages = 6
-
-  useEffect(() => {
-    setShowSpeechBubble(false)
-  }, [speechBubbleVisible])
 
   const handleScrollToCallback = () => {
     if (parallax.current) {
       parallax.current.scrollTo(myCareerPage)
     }
   }
-
   const handleshowspeechbubble = () => {
-    speechBubbleVisible && setShowSpeechBubble(true)
+    setShowSpeechBubble(true)
   }
 
   return (
@@ -116,20 +107,20 @@ export const Home = () => {
           <ParallaxLayer offset={0} speed={1}>
             <ParallaxStars />
           </ParallaxLayer>
-          <IntersectionTrackerLayer
-            offset={0}
-            uniqueId={Tracker.INTRO}
-            sticky={{ start: 0, end: 0.5 }}
-            threshold={1}
-          />
-          <ParallaxLayer offset={0} speed={0.5} sticky={{ start: 0, end: 1.9 }}>
-            <Intro />
-          </ParallaxLayer>
           <ParallaxLayer
             offset={0}
-            sticky={{ start: 0, end: 3 }}
-            style={{ zIndex: 1 }}
+            speed={0.5}
+            style={{ zIndex: 2 }}
+            sticky={{ start: 0, end: 1.2 }}
           >
+            <Intro />
+          </ParallaxLayer>
+          <IntersectionTrackerLayer
+            offset={2.2}
+            uniqueId={Tracker.INTRO}
+            threshold={1}
+          />
+          <ParallaxLayer offset={0} sticky={{ start: 0, end: 3 }}>
             <MovingMario
               handleshowspeechbubble={handleshowspeechbubble}
               parallax={parallax}
@@ -151,12 +142,6 @@ export const Home = () => {
               </ParallaxLayer>
             )
           })}
-          <IntersectionTrackerLayer
-            offset={2.5}
-            sticky={{ start: 2.5, end: 3 }}
-            uniqueId={Tracker.SPEECH_BUBBLE}
-            threshold={1}
-          />
           <SpeechBubbleParallaxLayer
             offset={speechBubbleStart}
             sticky={{ start: speechBubbleStart, end: 3 }}

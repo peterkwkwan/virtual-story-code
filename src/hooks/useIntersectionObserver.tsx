@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 
-import { useStore, VisibilityState } from './useStore'
+import { VisibilityState } from './slices/createVisibilitySlice'
+import { useBoundStore } from './useBoundStore'
 
 export enum Tracker {
   INTRO = 'INTRO',
@@ -17,7 +18,7 @@ const useIntersectionObserver: UseIntersectionObserver = (
   key,
   threshold = 0.5
 ) => {
-  const [visibility, setVisibility] = useStore((state) => [
+  const [visibility, setVisibility] = useBoundStore((state) => [
     state.visibility,
     state.setVisibility,
   ])

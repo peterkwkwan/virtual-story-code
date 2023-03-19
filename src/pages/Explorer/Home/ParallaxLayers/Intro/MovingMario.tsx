@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { IParallax } from '@react-spring/parallax'
 
-import { useStore } from '@/hooks/useStore'
-import { Tracker } from '@/hooks/useIntersectionObserver'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
 type MarioProps = {
   offset: number
@@ -39,11 +38,11 @@ export const MovingMario = ({
   numberOfPages,
   speechBubbleStart,
 }: Props) => {
-  const visibility = useStore((state) => state.visibility)
+  const offsetPercentage = useBoundStore((state) => state.offsetPercentage)
+  const setOffsetPercentage = useBoundStore(
+    (state) => state.setOffsetPercentage
+  )
 
-  const speechBubbleVisible = visibility[Tracker.SPEECH_BUBBLE]
-
-  const [offsetPercentage, setOffsetPercentage] = useState(0)
   useEffect(() => {
     const handleScroll = () => {
       if (parallax.current) {
@@ -64,7 +63,7 @@ export const MovingMario = ({
   }, [])
 
   const getSvgPath = () => {
-    if (offsetPercentage >= 80 || speechBubbleVisible) {
+    if (offsetPercentage >= 80) {
       return '/assets/images/home/faintedmario.svg'
     }
     if (offsetPercentage < 10) {

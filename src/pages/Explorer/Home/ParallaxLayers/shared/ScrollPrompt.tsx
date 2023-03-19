@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { useStore } from '@/hooks/useStore'
+import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
 export const Prompt = styled.div<{ marioVineVisible: boolean }>`
@@ -42,7 +42,7 @@ export const Prompt = styled.div<{ marioVineVisible: boolean }>`
 `
 
 export const ScrollPrompt = () => {
-  const visibility = useStore((state) => state.visibility)
+  const visibility = useBoundStore((state) => state.visibility)
   const marioVineVisible = visibility[Tracker.MARIO_VINE]
 
   return <Prompt marioVineVisible={marioVineVisible} />
