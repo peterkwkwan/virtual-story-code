@@ -8,7 +8,6 @@ import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
 const Container = styled.div<{ show: boolean }>`
-  background-color: ${(props) => props.theme.palette.persianGreen};
   position: absolute;
   margin-left: 5%;
   margin-top: 5%;
@@ -140,9 +139,11 @@ const Button = styled.button`
 
 const TypewriterStringToRender = [
   `Ow... (<span style="color:${theme.palette.marioGreen}">click</span> the button below to wake Mario up!)`,
-  'Wow, how did I end up here?',
+  "It's-a-Me, Mario! Wait... how did I end up here?",
   `I guess <span style="color:${theme.palette.marioRed}; text-shadow: 1px 1px 2px #000;">Bowser</span> knocked me out cold...`,
   `No time to waste! I have to go save <span style="color:${theme.palette.brightPink}; text-shadow: 1px 1px 2px #000;">Peach</span>!`,
+  'But I need to find a way out...',
+  "Look! A path opened up below! Let's go!",
 ]
 
 export const SpeechBubble = ({
@@ -150,18 +151,23 @@ export const SpeechBubble = ({
 }: {
   finishSpeechCallback: () => void
 }) => {
-  const [currentStringIndex, setCurrentStringIndex] = useState(0)
+  const speechIndex = useBoundStore((state) => state.speechIndex)
+  const increaseSpeechIndex = useBoundStore(
+    (state) => state.increaseSpeechIndex
+  )
+  const resetSpeechIndex = useBoundStore((state) => state.resetSpeechIndex)
+
   const [showClickMe, setShowClickMe] = useState(true)
-  const textAvailable = currentStringIndex < TypewriterStringToRender.length - 1
+  const textAvailable = speechIndex < TypewriterStringToRender.length - 1
 
   const visibility = useBoundStore((state) => state.visibility)
   const showSpeechBubble = visibility[Tracker.SPEECH_BUBBLE]
 
   const handleClick = () => {
     if (textAvailable) {
-      setCurrentStringIndex((prev) => prev + 1)
+      increaseSpeechIndex()
     } else {
-      setCurrentStringIndex(0)
+      resetSpeechIndex()
       finishSpeechCallback()
     }
   }
@@ -186,7 +192,7 @@ export const SpeechBubble = ({
       <InnerBorder>
         <SpeechBubbleTextContainer>
           <TypewriterWrapper
-            text={TypewriterStringToRender[currentStringIndex]}
+            text={TypewriterStringToRender[speechIndex]}
             handleHideClickMe={handleHideClickMe}
             handleShowClickMe={handleShowClickMe}
           />
