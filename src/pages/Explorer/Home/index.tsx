@@ -1,3 +1,5 @@
+import { url } from 'inspector'
+
 import React, { useRef, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import {
@@ -35,24 +37,61 @@ import { useBoundStore } from '@/hooks/useBoundStore'
 type SpeechBubbleLayerProps = { show: string }
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
-  background-color: ${(props) => props.theme.palette.text01};
+  /* background-color: ${(props) => props.theme.palette.text01};
   clip-path: polygon(
     0% 5%,
     100% 0%,
     82% 48%,
     18% 48%,
-    14% 56.3%,
+    16% 56.3%,
     14% 48%,
     4% 48%
-  );
+  ); */
   opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
   transition: opacity 0.5s;
+
+  &::before {
+    position: absolute;
+    bottom: -10px;
+    content: '';
+    height: 5%;
+    width: 100%;
+    filter: blur(10px);
+    transform: scale(0.95) translateZ(0);
+    /* background-position: left; */
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      to left,
+      #e5d6d8,
+      #dabbc9,
+      #c42da8,
+      #9e16c3,
+      #959595,
+      #e5b4f2,
+      #c42da8,
+      #e4428d,
+      #c5c3c3
+    );
+    animation: animateGlow 1.25s infinite;
+    @keyframes animateGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+  }
 `
 
-const CareerContainer = styled.div<{ show: boolean }>`
-  display: ${(props) => (props.show ? 'block' : 'none')};
-  background-color: white;
-  height: 500px;
+const CareerParallaxLayer = styled(ParallaxLayer)`
+  background-color: ${(props) => props.theme.palette.darkOrange};
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  background: hsl(0, 0%, 100%);
 `
 
 const Image = styled.img`
@@ -67,8 +106,8 @@ const LAYERS = [
   { layer: layer1, zIndex: 1, offset: 1 },
   { layer: layer2, zIndex: 1, offset: 1.05 },
   { layer: layer3, zIndex: 1, offset: 1.05 },
-  { layer: layer4, zIndex: -1, offset: 1.05 },
-  { layer: layer5, zIndex: 1, offset: 1.2 },
+  { layer: layer4, zIndex: -1, offset: 1.05, useImage: true },
+  { layer: layer5, zIndex: 1, offset: 1.25 },
   { layer: layer6, zIndex: 2, offset: 1.25 },
   { layer: layer7, zIndex: 3, offset: 1.35 },
   { layer: layer8, zIndex: 4, offset: 1.8 },
@@ -94,6 +133,11 @@ export const Home = () => {
 
   const handleFinishSpeech = () => {
     setShowCareer(true)
+    if (parallax.current) {
+      {
+        parallax.current.scrollTo(myCareerPage)
+      }
+    }
   }
 
   return (
@@ -133,16 +177,21 @@ export const Home = () => {
             />
           </ParallaxLayer>
 
-          {LAYERS.map(({ layer, zIndex, offset }, i) => {
+          {LAYERS.map(({ layer, zIndex, offset, useImage }, i) => {
             const speed = 0.15 * (i + 1)
             return (
               <ParallaxLayer
                 key={`layer${i}`}
                 offset={offset}
                 speed={speed}
-                style={{ zIndex }}
+                style={{
+                  zIndex,
+                  background: useImage
+                    ? ''
+                    : `url(${layer}) center center / cover no-repeat`,
+                }}
               >
-                <Image src={layer} />
+                {useImage && <Image src={layer} />}
               </ParallaxLayer>
             )
           })}
@@ -158,20 +207,14 @@ export const Home = () => {
             threshold={1}
             uniqueId={Tracker.SPEECH_BUBBLE}
           />
-          <ParallaxLayer
+          <CareerParallaxLayer
             offset={myCareerPage}
             sticky={{ start: myCareerPage, end: 4.5 }}
-            style={{
-              backgroundColor: theme.palette.darkOrange,
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              display: showCareer ? 'flex' : 'none',
-            }}
+            style={{ display: showCareer ? 'flex' : 'none' }}
           >
             <Title />
             <ScrollPrompt />
-          </ParallaxLayer>
+          </CareerParallaxLayer>
           <ParallaxLayer
             offset={5}
             sticky={{ start: 5, end: 6 }}
@@ -182,7 +225,6 @@ export const Home = () => {
             <TimelineBackbone />
           </ParallaxLayer>
         </ParallaxSpring>
-        {/* <CareerContainer show={showCareer}>HELLO</CareerContainer> */}
       </ExplorerWrapper>
     </>
   )
