@@ -1,7 +1,5 @@
-import { url } from 'inspector'
-
 import React, { useRef, useState } from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 import {
   Parallax as ParallaxSpring,
   ParallaxLayer,
@@ -17,36 +15,15 @@ import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
+import { ParallaxMountains } from './ParallaxLayers/Intro/ParallaxMountains'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
-
-import layer1 from '/assets/images/parallax/home/layer_01.png'
-import layer2 from '/assets/images/parallax/home/layer_02.png'
-import layer3 from '/assets/images/parallax/home/layer_03.png'
-import layer4 from '/assets/images/parallax/home/layer_04.png'
-import layer5 from '/assets/images/parallax/home/layer_05.png'
-import layer6 from '/assets/images/parallax/home/layer_06.png'
-import layer7 from '/assets/images/parallax/home/layer_07.png'
-import layer8 from '/assets/images/parallax/home/layer_08.png'
-import layer9 from '/assets/images/parallax/home/layer_09.png'
-import layer10 from '/assets/images/parallax/home/layer_10.png'
-
 import { Tracker } from '@/hooks/useIntersectionObserver'
 import { useBoundStore } from '@/hooks/useBoundStore'
 
 type SpeechBubbleLayerProps = { show: string }
 
 const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
-  /* background-color: ${(props) => props.theme.palette.text01};
-  clip-path: polygon(
-    0% 5%,
-    100% 0%,
-    82% 48%,
-    18% 48%,
-    16% 56.3%,
-    14% 48%,
-    4% 48%
-  ); */
   opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
   transition: opacity 0.5s;
 
@@ -94,29 +71,7 @@ const CareerParallaxLayer = styled(ParallaxLayer)`
   background: hsl(0, 0%, 100%);
 `
 
-const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`
-
-const LAYERS = [
-  { layer: layer1, zIndex: 1, offset: 1 },
-  { layer: layer2, zIndex: 1, offset: 1.05 },
-  { layer: layer3, zIndex: 1, offset: 1.05 },
-  { layer: layer4, zIndex: -1, offset: 1.05, useImage: true },
-  { layer: layer5, zIndex: 1, offset: 1.25 },
-  { layer: layer6, zIndex: 2, offset: 1.25 },
-  { layer: layer7, zIndex: 3, offset: 1.35 },
-  { layer: layer8, zIndex: 4, offset: 1.8 },
-  { layer: layer9, zIndex: 3, offset: 1.95 },
-  { layer: layer10, zIndex: 1, offset: 1.95 },
-]
-
 export const Home = () => {
-  const theme = useTheme()
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
@@ -177,24 +132,7 @@ export const Home = () => {
             />
           </ParallaxLayer>
 
-          {LAYERS.map(({ layer, zIndex, offset, useImage }, i) => {
-            const speed = 0.15 * (i + 1)
-            return (
-              <ParallaxLayer
-                key={`layer${i}`}
-                offset={offset}
-                speed={speed}
-                style={{
-                  zIndex,
-                  background: useImage
-                    ? ''
-                    : `url(${layer}) center center / cover no-repeat`,
-                }}
-              >
-                {useImage && <Image src={layer} />}
-              </ParallaxLayer>
-            )
-          })}
+          <ParallaxMountains />
           <SpeechBubbleParallaxLayer
             offset={speechBubbleStart}
             sticky={{ start: speechBubbleStart, end: 3 }}
