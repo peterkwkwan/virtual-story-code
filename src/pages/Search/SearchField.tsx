@@ -1,7 +1,9 @@
 import React from 'react'
 import TypewriterComponent from 'typewriter-effect'
 
-import { Icon, TextBox, TextField } from './shared/styled'
+import { Icon, TextBox } from './shared/styled'
+
+import { TextField } from '@/components/elements/TextField'
 
 export const SearchField = () => {
   return (
