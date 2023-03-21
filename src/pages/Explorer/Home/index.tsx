@@ -9,7 +9,10 @@ import {
 import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 import { Intro } from './ParallaxLayers/Intro/Intro'
 import { TimelineBackbone } from './ParallaxLayers/Timeline/TimelineBackbone'
-import { SpeechBubble } from './ParallaxLayers/SpeechBubble/SpeechBubble'
+import {
+  SpeechBubble,
+  SpeechBubbleParallaxLayer,
+} from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
 import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
@@ -17,7 +20,6 @@ import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTr
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 import { ParallaxMountains } from './ParallaxLayers/Intro/ParallaxMountains'
 
-import { useLastContributed } from '@/hooks/useLastContributed'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
 const CareerParallaxLayer = styled(ParallaxLayer)`
@@ -82,10 +84,12 @@ export const Home = () => {
 
           <ParallaxMountains />
 
-          <SpeechBubble
-            finishSpeechCallback={handleFinishSpeech}
-            speechBubbleStart={speechBubbleStart}
-          />
+          <SpeechBubbleParallaxLayer
+            offset={speechBubbleStart}
+            sticky={{ start: 2, end: 2.9 }}
+          >
+            <SpeechBubble finishSpeechCallback={handleFinishSpeech} />
+          </SpeechBubbleParallaxLayer>
 
           <IntersectionTrackerLayer
             offset={2.9}

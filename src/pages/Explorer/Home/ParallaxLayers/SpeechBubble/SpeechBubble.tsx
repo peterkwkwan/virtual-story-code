@@ -8,12 +8,7 @@ import { theme } from '@/theme/theme'
 import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
-type SpeechBubbleLayerProps = { show: string }
-
-const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
-  opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
-  transition: opacity 0.5s;
-
+export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   &::before {
     position: absolute;
     bottom: -10px;
@@ -61,9 +56,9 @@ const Container = styled.div<{ show: boolean }>`
   align-items: center;
   pointer-events: none;
   opacity: ${(props) => (props.show ? 1 : 0)};
-  transition: all 5s;
   animation: ${(props) => props.show && 'grow 1s'};
   transform-origin: bottom left;
+  transition: opacity 1s;
   @keyframes grow {
     from {
       transform: scale(0);
@@ -189,10 +184,8 @@ const TypewriterStringToRender = [
 
 export const SpeechBubble = ({
   finishSpeechCallback,
-  speechBubbleStart,
 }: {
   finishSpeechCallback: () => void
-  speechBubbleStart: number
 }) => {
   const speechIndex = useBoundStore((state) => state.speechIndex)
   const increaseSpeechIndex = useBoundStore(
@@ -224,35 +217,29 @@ export const SpeechBubble = ({
   }
 
   return (
-    <SpeechBubbleParallaxLayer
-      offset={speechBubbleStart}
-      sticky={{ start: speechBubbleStart, end: 3 }}
-      show={showSpeechBubble ? 'true' : 'false'}
-    >
-      <Container show={showSpeechBubble}>
-        <NameTag>
-          <span style={{ color: theme.palette.marioRed }}>M</span>
-          <span style={{ color: theme.palette.marioGreen }}>A</span>
-          <span style={{ color: theme.palette.marioYellow }}>R</span>
-          <span style={{ color: theme.palette.marioBlue }}>I</span>
-          <span style={{ color: theme.palette.marioRed }}>O</span>
-        </NameTag>
-        <InnerBorder>
-          <SpeechBubbleTextContainer>
-            <TypewriterWrapper
-              text={TypewriterStringToRender[speechIndex]}
-              handleHideClickMe={handleHideClickMe}
-              handleShowClickMe={handleShowClickMe}
-            />
-            <ButtonContainer>
-              {showClickMe && <ClickMe>Click!</ClickMe>}
-              <Button onClick={handleClick}>
-                {textAvailable ? 'A' : '\u2713'}
-              </Button>
-            </ButtonContainer>
-          </SpeechBubbleTextContainer>
-        </InnerBorder>
-      </Container>
-    </SpeechBubbleParallaxLayer>
+    <Container show={showSpeechBubble}>
+      <NameTag>
+        <span style={{ color: theme.palette.marioRed }}>M</span>
+        <span style={{ color: theme.palette.marioGreen }}>A</span>
+        <span style={{ color: theme.palette.marioYellow }}>R</span>
+        <span style={{ color: theme.palette.marioBlue }}>I</span>
+        <span style={{ color: theme.palette.marioRed }}>O</span>
+      </NameTag>
+      <InnerBorder>
+        <SpeechBubbleTextContainer>
+          <TypewriterWrapper
+            text={TypewriterStringToRender[speechIndex]}
+            handleHideClickMe={handleHideClickMe}
+            handleShowClickMe={handleShowClickMe}
+          />
+          <ButtonContainer>
+            {showClickMe && <ClickMe>Click!</ClickMe>}
+            <Button onClick={handleClick}>
+              {textAvailable ? 'A' : '\u2713'}
+            </Button>
+          </ButtonContainer>
+        </SpeechBubbleTextContainer>
+      </InnerBorder>
+    </Container>
   )
 }
