@@ -31,10 +31,6 @@ const CareerParallaxLayer = styled(ParallaxLayer)`
 `
 
 export const Home = () => {
-  const date = new Date('2019-05-01')
-  const diff = useLastContributed(date)
-  const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
-
   const [showCareer, setShowCareer] = useState(false)
 
   const parallax = useRef<IParallax>(null)
@@ -53,11 +49,7 @@ export const Home = () => {
 
   return (
     <>
-      <ExplorerWrapper
-        emptyContainer
-        contributors={contributors}
-        numberOfLines={27}
-      >
+      <ExplorerWrapper>
         <ParallaxSpring
           ref={parallax}
           id="parallax-scroll-id"

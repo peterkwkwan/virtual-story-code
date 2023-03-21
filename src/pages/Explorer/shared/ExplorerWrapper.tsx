@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import { BaseContentContainer } from '../../shared/styledContainers'
 
 interface Props {
-  children: React.ReactNode;
-  contributors: React.ReactNode;
-  numberOfLines: number;
-  emptyContainer?: boolean
+  children: React.ReactNode
+  contributors?: React.ReactNode
+  numberOfLines?: number
 }
 
 const StyledContainer = styled(BaseContentContainer)`
@@ -16,8 +15,8 @@ const StyledContainer = styled(BaseContentContainer)`
 `
 
 const FileContents = styled.div`
-   height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 `
 
 const LineNumbers = styled.aside`
@@ -33,7 +32,7 @@ const LineNumbers = styled.aside`
       direction: rtl;
       text-align: center;
       width: 66px;
-      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-family: Menlo, Monaco, 'Courier New', monospace;
       line-height: 18px;
       letter-spacing: 0px;
       font-size: 12px;
@@ -55,18 +54,17 @@ const Contributors = styled.div`
 export const ExplorerWrapper = ({
   children,
   contributors,
-  numberOfLines,
-  emptyContainer
+  numberOfLines = 0,
 }: Props) => {
   const lineNumbers = [...Array(numberOfLines).keys()]
   lineNumbers.shift()
 
+  const emptyContainer = !contributors || !numberOfLines
+
   return (
     <StyledContainer>
       {emptyContainer ? (
-        <FileContents>
-          {children}
-        </FileContents>
+        <FileContents>{children}</FileContents>
       ) : (
         <>
           <LineNumbers>
