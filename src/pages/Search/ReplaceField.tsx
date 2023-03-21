@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Icon, TextBox, TextField } from './shared/styled'
+import { Icon, TextBox } from './shared/styled'
+
+import { TextField } from '@/components/elements/TextField'
 
 const ReplaceContainer = styled(TextBox)`
   margin: 6px 4px 0 20px;
