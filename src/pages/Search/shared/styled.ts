@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface IconProps {
-  height: number;
-  width: number;
+  height: number
+  width: number
 }
 
 export const Icon = styled.img<IconProps>`
-  height: ${(props) => props.height + "px"};
-  width: ${(props) => props.width + "px"};
+  height: ${(props) => props.height + 'px'};
+  width: ${(props) => props.width + 'px'};
   padding: 0 4px 0 0;
-`;
+`
 
 export const TextBox = styled.div`
   background-color: ${(props) => props.theme.palette.dark04};
@@ -19,12 +19,5 @@ export const TextBox = styled.div`
   height: 24px;
   padding-left: 4px;
   margin: 0 12px 0 20px;
-  border: ${(props) => "1px solid " + props.theme.palette.selectedBlueBorder};
-`;
-
-export const TextField = styled.div`
-  font-size: 13px;
-  cursor: text;
-  line-height: 18px;
-  letter-spacing: 0.3px;
-`;
+  border: ${(props) => '1px solid ' + props.theme.palette.selectedBlueBorder};
+`
