@@ -19,47 +19,6 @@ import { ParallaxMountains } from './ParallaxLayers/Intro/ParallaxMountains'
 
 import { useLastContributed } from '@/hooks/useLastContributed'
 import { Tracker } from '@/hooks/useIntersectionObserver'
-import { useBoundStore } from '@/hooks/useBoundStore'
-
-type SpeechBubbleLayerProps = { show: string }
-
-const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
-  opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
-  transition: opacity 0.5s;
-
-  &::before {
-    position: absolute;
-    bottom: -10px;
-    content: '';
-    height: 5%;
-    width: 100%;
-    filter: blur(10px);
-    transform: scale(0.95) translateZ(0);
-    /* background-position: left; */
-    background-size: 200% 200%;
-    background-image: linear-gradient(
-      to left,
-      #e5d6d8,
-      #dabbc9,
-      #c42da8,
-      #9e16c3,
-      #959595,
-      #e5b4f2,
-      #c42da8,
-      #e4428d,
-      #c5c3c3
-    );
-    animation: animateGlow 1.25s infinite;
-    @keyframes animateGlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 200% 50%;
-      }
-    }
-  }
-`
 
 const CareerParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.darkOrange};
@@ -77,9 +36,6 @@ export const Home = () => {
   const contributors = `${diff} | 2 authors (Mandy Shum and 1 other)`
 
   const [showCareer, setShowCareer] = useState(false)
-
-  const visibility = useBoundStore((state) => state.visibility)
-  const showSpeechBubble = visibility[Tracker.SPEECH_BUBBLE]
 
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
@@ -133,13 +89,12 @@ export const Home = () => {
           </ParallaxLayer>
 
           <ParallaxMountains />
-          <SpeechBubbleParallaxLayer
-            offset={speechBubbleStart}
-            sticky={{ start: speechBubbleStart, end: 3 }}
-            show={showSpeechBubble ? 'true' : 'false'}
-          >
-            <SpeechBubble finishSpeechCallback={handleFinishSpeech} />
-          </SpeechBubbleParallaxLayer>
+
+          <SpeechBubble
+            finishSpeechCallback={handleFinishSpeech}
+            speechBubbleStart={speechBubbleStart}
+          />
+
           <IntersectionTrackerLayer
             offset={2.9}
             threshold={1}

@@ -1,11 +1,52 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { ParallaxLayer } from '@react-spring/parallax'
 
 import { TypewriterWrapper } from './TypewriterWrapper'
 
 import { theme } from '@/theme/theme'
 import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
+
+type SpeechBubbleLayerProps = { show: string }
+
+const SpeechBubbleParallaxLayer = styled(ParallaxLayer)<SpeechBubbleLayerProps>`
+  opacity: ${(props) => (props.show === 'true' ? 1 : 0)};
+  transition: opacity 0.5s;
+
+  &::before {
+    position: absolute;
+    bottom: -10px;
+    content: '';
+    height: 5%;
+    width: 100%;
+    filter: blur(10px);
+    transform: scale(0.95) translateZ(0);
+    /* background-position: left; */
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      to left,
+      #e5d6d8,
+      #dabbc9,
+      #c42da8,
+      #9e16c3,
+      #959595,
+      #e5b4f2,
+      #c42da8,
+      #e4428d,
+      #c5c3c3
+    );
+    animation: animateGlow 1.25s infinite;
+    @keyframes animateGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+  }
+`
 
 const Container = styled.div<{ show: boolean }>`
   position: absolute;
@@ -148,8 +189,10 @@ const TypewriterStringToRender = [
 
 export const SpeechBubble = ({
   finishSpeechCallback,
+  speechBubbleStart,
 }: {
   finishSpeechCallback: () => void
+  speechBubbleStart: number
 }) => {
   const speechIndex = useBoundStore((state) => state.speechIndex)
   const increaseSpeechIndex = useBoundStore(
@@ -181,29 +224,35 @@ export const SpeechBubble = ({
   }
 
   return (
-    <Container show={showSpeechBubble}>
-      <NameTag>
-        <span style={{ color: theme.palette.marioRed }}>M</span>
-        <span style={{ color: theme.palette.marioGreen }}>A</span>
-        <span style={{ color: theme.palette.marioYellow }}>R</span>
-        <span style={{ color: theme.palette.marioBlue }}>I</span>
-        <span style={{ color: theme.palette.marioRed }}>O</span>
-      </NameTag>
-      <InnerBorder>
-        <SpeechBubbleTextContainer>
-          <TypewriterWrapper
-            text={TypewriterStringToRender[speechIndex]}
-            handleHideClickMe={handleHideClickMe}
-            handleShowClickMe={handleShowClickMe}
-          />
-          <ButtonContainer>
-            {showClickMe && <ClickMe>Click!</ClickMe>}
-            <Button onClick={handleClick}>
-              {textAvailable ? 'A' : '\u2713'}
-            </Button>
-          </ButtonContainer>
-        </SpeechBubbleTextContainer>
-      </InnerBorder>
-    </Container>
+    <SpeechBubbleParallaxLayer
+      offset={speechBubbleStart}
+      sticky={{ start: speechBubbleStart, end: 3 }}
+      show={showSpeechBubble ? 'true' : 'false'}
+    >
+      <Container show={showSpeechBubble}>
+        <NameTag>
+          <span style={{ color: theme.palette.marioRed }}>M</span>
+          <span style={{ color: theme.palette.marioGreen }}>A</span>
+          <span style={{ color: theme.palette.marioYellow }}>R</span>
+          <span style={{ color: theme.palette.marioBlue }}>I</span>
+          <span style={{ color: theme.palette.marioRed }}>O</span>
+        </NameTag>
+        <InnerBorder>
+          <SpeechBubbleTextContainer>
+            <TypewriterWrapper
+              text={TypewriterStringToRender[speechIndex]}
+              handleHideClickMe={handleHideClickMe}
+              handleShowClickMe={handleShowClickMe}
+            />
+            <ButtonContainer>
+              {showClickMe && <ClickMe>Click!</ClickMe>}
+              <Button onClick={handleClick}>
+                {textAvailable ? 'A' : '\u2713'}
+              </Button>
+            </ButtonContainer>
+          </SpeechBubbleTextContainer>
+        </InnerBorder>
+      </Container>
+    </SpeechBubbleParallaxLayer>
   )
 }
