@@ -48,7 +48,7 @@ const Container = styled.div<{ show: boolean }>`
   margin-left: 5%;
   margin-top: 5%;
   border-radius: 30rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.palette.dark04};
   height: 35%;
   width: 80%;
   display: flex;
@@ -176,8 +176,8 @@ const Button = styled.button`
 const TypewriterStringToRender = [
   `Ow... (<span style="color:${theme.palette.marioGreen}">click</span> the button below to wake Mario up!)`,
   "It's-a-Me, Mario! Wait... how did I end up here?",
-  `I guess <span style="color:${theme.palette.marioRed}; text-shadow: 1px 1px 2px #000;">Bowser</span> knocked me out cold...`,
-  `No time to waste! I have to go save <span style="color:${theme.palette.brightPink}; text-shadow: 1px 1px 2px #000;">Peach</span>!`,
+  `<span style="color:${theme.palette.marioRed}; font-family: 'SuperMario256'; text-shadow: 1px 1px 2px ${theme.palette.marioYellow};">Bowser</span> must have knocked me out cold...`,
+  `No time to waste! I have to go save <span style="color:${theme.palette.brightPink}; font-family: 'SuperMario256'; text-shadow: 1px 1px 2px #fff};">Peach</span>!`,
   'But I need to find a way out...',
   "Look! A path opened up below! Let's go!",
 ]
