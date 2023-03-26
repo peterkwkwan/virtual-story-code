@@ -11,33 +11,96 @@ import { Tracker } from '@/hooks/useIntersectionObserver'
 export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
   &::before {
     position: absolute;
-    bottom: -10px;
+    bottom: -30%;
     content: '';
-    height: 5%;
+    height: 45%;
     width: 100%;
-    filter: blur(10px);
-    transform: scale(0.95) translateZ(0);
-    /* background-position: left; */
-    background-size: 200% 200%;
-    background-image: linear-gradient(
-      to left,
-      #e5d6d8,
-      #dabbc9,
-      #c42da8,
-      #9e16c3,
-      #959595,
-      #e5b4f2,
-      #c42da8,
-      #e4428d,
-      #c5c3c3
+    transform: scale(1.5);
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0) 100%
     );
-    animation: animateGlow 1.25s infinite;
-    @keyframes animateGlow {
-      0% {
-        background-position: 0% 50%;
+    animation: flicker 8s infinite;
+    @keyframes flicker {
+      from {
+        opacity: 0.5;
       }
-      100% {
-        background-position: 200% 50%;
+      4% {
+        opacity: 0.7;
+      }
+      8% {
+        opacity: 0.45;
+      }
+      12% {
+        opacity: 0.65;
+      }
+      16% {
+        opacity: 0.3;
+      }
+      20% {
+        opacity: 0.5;
+      }
+      24% {
+        opacity: 0.6;
+      }
+      28% {
+        opacity: 0.25;
+      }
+      32% {
+        opacity: 0.3;
+      }
+      36% {
+        opacity: 0.55;
+      }
+      40% {
+        opacity: 0.4;
+      }
+      44% {
+        opacity: 0.6;
+      }
+      48% {
+        opacity: 0.35;
+      }
+      52% {
+        opacity: 0.2;
+      }
+      56% {
+        opacity: 0.7;
+      }
+      60% {
+        opacity: 0.5;
+      }
+      64% {
+        opacity: 0.65;
+      }
+      68% {
+        opacity: 0.35;
+      }
+      72% {
+        opacity: 0.5;
+      }
+      76% {
+        opacity: 0.4;
+      }
+      80% {
+        opacity: 0.65;
+      }
+      84% {
+        opacity: 0.4;
+      }
+      88% {
+        opacity: 0.35;
+      }
+      92% {
+        opacity: 0.6;
+      }
+      96% {
+        opacity: 0.3;
+      }
+      to {
+        opacity: 0.5;
       }
     }
   }
