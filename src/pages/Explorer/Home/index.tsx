@@ -12,6 +12,7 @@ import { TimelineBackbone } from './ParallaxLayers/Timeline/TimelineBackbone'
 import {
   SpeechBubble,
   SpeechBubbleParallaxLayer,
+  TypewriterStringToRender,
 } from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
@@ -21,6 +22,7 @@ import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 import { ParallaxMountains } from './ParallaxLayers/Intro/ParallaxMountains'
 
 import { Tracker } from '@/hooks/useIntersectionObserver'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
 const CareerParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.darkOrange};
@@ -34,6 +36,9 @@ const CareerParallaxLayer = styled(ParallaxLayer)`
 
 export const Home = () => {
   const [showCareer, setShowCareer] = useState(false)
+
+  const speechIndex = useBoundStore((state) => state.speechIndex)
+  const finalSpeechText = speechIndex === TypewriterStringToRender.length - 1
 
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
@@ -87,6 +92,7 @@ export const Home = () => {
           <SpeechBubbleParallaxLayer
             offset={speechBubbleStart}
             sticky={{ start: 2, end: 2.9 }}
+            flicker={finalSpeechText.toString()}
           >
             <SpeechBubble finishSpeechCallback={handleFinishSpeech} />
           </SpeechBubbleParallaxLayer>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { ParallaxLayer } from '@react-spring/parallax'
+import { ParallaxLayer, ParallaxLayerProps } from '@react-spring/parallax'
 
 import { TypewriterWrapper } from './TypewriterWrapper'
 
@@ -8,7 +8,13 @@ import { theme } from '@/theme/theme'
 import { useBoundStore } from '@/hooks/useBoundStore'
 import { Tracker } from '@/hooks/useIntersectionObserver'
 
-export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
+interface ISpeechBubbleParallaxLayer extends ParallaxLayerProps {
+  flicker: string
+}
+
+export const SpeechBubbleParallaxLayer = styled(
+  ParallaxLayer
+)<ISpeechBubbleParallaxLayer>`
   &::before {
     position: absolute;
     bottom: -30%;
@@ -22,7 +28,9 @@ export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
       rgba(255, 255, 255, 0) 40%,
       rgba(255, 255, 255, 0) 100%
     );
-    animation: flicker 8s infinite;
+    opacity: 0;
+    animation: ${(props) =>
+      props.flicker === 'true' ? 'flicker 8s infinite;' : ''};
     @keyframes flicker {
       from {
         opacity: 0.5;
@@ -34,7 +42,7 @@ export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
         opacity: 0.45;
       }
       12% {
-        opacity: 0.65;
+        opacity: 0.75;
       }
       16% {
         opacity: 0.3;
@@ -73,7 +81,7 @@ export const SpeechBubbleParallaxLayer = styled(ParallaxLayer)`
         opacity: 0.5;
       }
       64% {
-        opacity: 0.65;
+        opacity: 0.85;
       }
       68% {
         opacity: 0.35;
@@ -236,7 +244,7 @@ const Button = styled.button`
   }
 `
 
-const TypewriterStringToRender = [
+export const TypewriterStringToRender = [
   `Ow... (<span style="color:${theme.palette.marioGreen}">click</span> the button below to wake Mario up!)`,
   "It's-a-Me, Mario! Wait... how did I end up here?",
   `<span style="color:${theme.palette.marioRed}; font-family: 'SuperMario256'; text-shadow: 1px 1px 2px ${theme.palette.marioYellow};">Bowser</span> must have knocked me out cold...`,
