@@ -3,23 +3,32 @@ import styled from 'styled-components'
 
 import { Extension } from './shared/types'
 
-const Container = styled.div`
+import { StyledLink } from '@/components/elements/StyledLink'
+
+const Button = styled.button`
   display: flex;
-  padding-left: 16px;
+  width: 100%;
+  padding: 0 0 0 16px;
   background-color: ${(props) => props.theme.palette.dark03};
   &:hover {
     cursor: pointer;
     background-color: ${(props) => props.theme.palette.grey};
   }
+  border: none;
 `
 
 const Content = styled.div`
-  width: calc(100% - 16px - 56px);
+  width: calc(100% - 16px - 42px - 14px);
   font-size: 13px;
   font-family: sans-serif;
+  font-weight: 600;
   line-height: 18px;
   padding: 4px 0;
-  font-weight: 600;
+  text-align: start;
+`
+
+const Name = styled.span`
+  color: ${(props) => props.theme.palette.text01};
 `
 
 const Description = styled.p`
@@ -33,6 +42,7 @@ const Description = styled.p`
 
 const Author = styled.span`
   font-size: 90%;
+  color: ${(props) => props.theme.palette.text04};
 `
 
 export const ExtensionsButton = ({
@@ -40,15 +50,18 @@ export const ExtensionsButton = ({
   name,
   description,
   type,
+  url,
 }: Extension) => {
   return (
-    <Container>
-      {icon}
-      <Content>
-        <span>{name}</span>
-        <Description>{description}</Description>
-        <Author>{type}</Author>
-      </Content>
-    </Container>
+    <StyledLink path={url}>
+      <Button>
+        {icon}
+        <Content>
+          <Name>{name}</Name>
+          <Description>{description}</Description>
+          <Author>{type}</Author>
+        </Content>
+      </Button>
+    </StyledLink>
   )
 }
