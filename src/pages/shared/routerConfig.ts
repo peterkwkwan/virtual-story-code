@@ -14,6 +14,7 @@ import { SearchContent } from '../search/SearchContent'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
 import { Home } from '../explorer/Home'
+import { ExtReact } from '../extensions/ExtReact'
 
 export enum PagePaths {
   HOME = 'explorer',
@@ -32,6 +33,7 @@ export enum PagePaths {
   README = 'explorer/readme',
   SEARCH = 'search',
   EXTENSIONS = 'extensions',
+  REACT = 'extensions/react',
 }
 
 export enum PageNames {
@@ -47,83 +49,84 @@ export enum PageNames {
   BBYNORTH = 'BurnabyNorth.html',
   README = 'README.md',
   PACKAGE_JSON = 'package.json',
-  GIT_IGNORE = '.gitignore'
+  GIT_IGNORE = '.gitignore',
+  REACT = 'Skill: React',
 }
 
 interface RouterConfig {
-  path: PagePaths;
-  component: () => JSX.Element;
-  fileName?: PageNames;
+  path: PagePaths
+  component: () => JSX.Element
+  fileName?: PageNames
 }
 export const routerConfig: RouterConfig[] = [
-  { 
+  {
     path: PagePaths.HOME,
     component: Home,
   },
   {
     path: PagePaths.BCW_GROUP,
     component: BCWGroup,
-    fileName: PageNames.BCW_GROUP
+    fileName: PageNames.BCW_GROUP,
   },
   {
     path: PagePaths.SERAI,
     component: Serai,
-    fileName: PageNames.SERAI
+    fileName: PageNames.SERAI,
   },
   {
     path: PagePaths.PAG,
     component: Pag,
-    fileName: PageNames.PAG
+    fileName: PageNames.PAG,
   },
   {
     path: PagePaths.MANULIFE,
     component: Manulife,
-    fileName: PageNames.MANULIFE
+    fileName: PageNames.MANULIFE,
   },
   {
     path: PagePaths.ACURIS,
     component: Acuris,
-    fileName: PageNames.ACURIS
+    fileName: PageNames.ACURIS,
   },
   {
     path: PagePaths.COLEMAN,
     component: Coleman,
-    fileName: PageNames.COLEMAN
+    fileName: PageNames.COLEMAN,
   },
   {
     path: PagePaths.CATHAY,
     component: CathayDragon,
-    fileName: PageNames.CATHAY
+    fileName: PageNames.CATHAY,
   },
   {
     path: PagePaths.MCGILL,
     component: McGill,
-    fileName: PageNames.MCGILL
+    fileName: PageNames.MCGILL,
   },
   {
     path: PagePaths.HKU,
     component: HKU,
-    fileName: PageNames.HKU
+    fileName: PageNames.HKU,
   },
   {
     path: PagePaths.BBYNORTH,
     component: BurnabyNorth,
-    fileName: PageNames.BBYNORTH
+    fileName: PageNames.BBYNORTH,
   },
   {
     path: PagePaths.PACKAGE_JSON,
     component: PackageJson,
-    fileName: PageNames.PACKAGE_JSON
+    fileName: PageNames.PACKAGE_JSON,
   },
   {
     path: PagePaths.GIT_IGNORE,
     component: Gitignore,
-    fileName: PageNames.GIT_IGNORE
+    fileName: PageNames.GIT_IGNORE,
   },
   {
     path: PagePaths.README,
     component: Readme,
-    fileName: PageNames.README
+    fileName: PageNames.README,
   },
   {
     path: PagePaths.SEARCH,
@@ -132,5 +135,10 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.EXTENSIONS,
     component: ExtensionsContent,
+  },
+  {
+    path: PagePaths.REACT,
+    component: ExtReact,
+    fileName: PageNames.REACT,
   },
 ]

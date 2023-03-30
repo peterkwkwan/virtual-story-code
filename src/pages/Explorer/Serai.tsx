@@ -26,7 +26,7 @@ export const Serai = () => {
     techStack: [
       'React v16',
       'Next.js',
-      'React Router v5', 
+      'React Router v5',
       'React Query v3',
       'TypeScript',
       'ArgoCD',
