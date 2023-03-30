@@ -23,39 +23,37 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
-    type: 'Asynchronous data handling library',
+      'Routing framework that enables easier client and server-side routing in React applications',
+    type: 'React Library',
   },
   {
     name: 'React Query',
     icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
-    type: 'Asynchronous data handling library',
+      'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
+    type: 'React Library',
   },
   {
     name: 'JavaScript',
     icon: <ExtensionIcon src="/assets/icons/extensions/javascript.svg" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'Scripting or programming language that enables programmers to implement complex features on web pages',
     type: 'Programming language',
   },
   {
     name: 'TypeScript',
     icon: <ExtensionIcon src="/assets/icons/extensions/typescript.svg" />,
     url: '',
-    description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
   },
   {
     name: 'HTML',
     icon: <ExtensionIcon src="/assets/icons/extensions/html.svg" />,
     url: '',
-    description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    description: 'Standard markup language for creating Web pages.',
     type: 'Frontend',
   },
   {
@@ -63,7 +61,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/css.svg" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'Stylesheet language used to describe the presentation of a document written in HTML',
     type: 'Frontend',
   },
   {
@@ -71,7 +69,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/styled.svg" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'CSS-in-JS styling solution that allows developers to write actual CSS code in JavaScript files to style React components',
     type: 'UI library',
   },
   {
@@ -79,7 +77,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/tailwind.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'CSS framework that provides single-purpose utility classes for rapid app development',
     type: 'UI library',
   },
   {
@@ -87,7 +85,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/mui.svg" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      "React ready-for-production component library that implements Google's Material Design",
     type: 'UI library',
   },
   {
@@ -95,7 +93,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/storybook.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'Development environment tool that is used as a playground for UI components',
     type: 'UI development tool',
   },
   {
@@ -103,7 +101,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      "Stripe's JavaScript API allowing businesses to collect payment and customer details using customizable Stripe Elements",
     type: 'Payment Gateway',
   },
   {
@@ -111,7 +109,7 @@ export const ExtensionsList: Extension[] = [
     icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
     url: '',
     description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+      'Source code management tool for development collaboration and team organization',
     type: 'Source control',
   },
 ]
