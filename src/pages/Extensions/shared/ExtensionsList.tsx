@@ -20,7 +20,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'React Router',
-    icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/router.png" />,
     url: '',
     description:
       'Routing framework that enables easier client and server-side routing in React applications',
@@ -98,7 +98,7 @@ export const ExtensionsList: Extension[] = [
   },
   {
     name: 'Stripe.js',
-    icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
+    icon: <ExtensionIcon src="/assets/icons/extensions/stripe.png" />,
     url: '',
     description:
       "Stripe's JavaScript API allowing businesses to collect payment and customer details using customizable Stripe Elements",
