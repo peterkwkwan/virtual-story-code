@@ -64,7 +64,7 @@ export const RouteTab = ({ name, isExtension }: Props) => {
         <StyledLink
           path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
         >
-          <Cross>&times;</Cross>
+          <Cross>&#215;</Cross>
         </StyledLink>
       </Tab>
     </Container>
