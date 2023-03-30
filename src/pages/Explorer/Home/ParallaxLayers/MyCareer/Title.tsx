@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { useBoundStore } from '@/hooks/useBoundStore'
-import { Tracker } from '@/hooks/useIntersectionObserver'
-
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -52,9 +49,6 @@ const Subtitle = styled.h6`
 `
 
 export const Title = () => {
-  const visibility = useBoundStore((state) => state.visibility)
-  const shatter = visibility[Tracker.MARIO_VINE]
-
   return (
     <Container>
       <Header>My Career</Header>

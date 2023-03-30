@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import {
   Parallax as ParallaxSpring,
@@ -27,26 +27,22 @@ import { useBoundStore } from '@/hooks/useBoundStore'
 const CareerParallaxLayer = styled(ParallaxLayer)`
   background-color: ${(props) => props.theme.palette.darkOrange};
   flex-direction: column;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
   position: relative;
-  background: hsl(0, 0%, 100%);
 `
 
 export const Home = () => {
-  const [showCareer, setShowCareer] = useState(false)
-
   const speechIndex = useBoundStore((state) => state.speechIndex)
   const finalSpeechText = speechIndex === TypewriterStringToRender.length - 1
 
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
   const myCareerPage = 4
-  const numberOfPages = showCareer ? 6 : 3
+  const numberOfPages = 6
 
   const handleFinishSpeech = () => {
-    setShowCareer(true)
     if (parallax.current) {
       {
         parallax.current.scrollTo(myCareerPage)
@@ -105,18 +101,12 @@ export const Home = () => {
           <CareerParallaxLayer
             offset={myCareerPage}
             sticky={{ start: myCareerPage, end: 4.5 }}
-            style={{ display: showCareer ? 'flex' : 'none' }}
           >
             <Title />
             <ScrollPrompt />
           </CareerParallaxLayer>
-          <ParallaxLayer
-            offset={5}
-            sticky={{ start: 5, end: 6 }}
-            style={{
-              display: showCareer ? 'block' : 'none',
-            }}
-          >
+
+          <ParallaxLayer offset={5} sticky={{ start: 5, end: 6 }}>
             <TimelineBackbone />
           </ParallaxLayer>
         </ParallaxSpring>
