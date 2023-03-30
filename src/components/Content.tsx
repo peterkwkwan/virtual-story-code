@@ -23,7 +23,10 @@ export const Content = () => {
               route.component()
             ) : (
               <Container>
-                <RouteTab name={route.fileName} />
+                <RouteTab
+                  name={route.fileName}
+                  isExtension={route.path.includes('extensions')}
+                />
                 {route.component()}
               </Container>
             )
