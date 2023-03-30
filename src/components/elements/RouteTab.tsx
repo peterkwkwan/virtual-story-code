@@ -56,7 +56,6 @@ interface Props {
 }
 
 export const RouteTab = ({ name, isExtension }: Props) => {
-  console.log(isExtension)
   return (
     <Container>
       <Tab>
