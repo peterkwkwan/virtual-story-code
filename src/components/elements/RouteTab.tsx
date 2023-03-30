@@ -8,7 +8,7 @@ import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
 const Container = styled.div`
   height: 38px;
   width: 100%;
-  background-color: ${props => props.theme.palette.dark03};
+  background-color: ${(props) => props.theme.palette.dark03};
 `
 
 const Tab = styled.div`
@@ -19,11 +19,11 @@ const Tab = styled.div`
   align-items: center;
   line-height: 35px;
   color: white;
-  background-color: ${props => props.theme.palette.dark01};
+  background-color: ${(props) => props.theme.palette.dark01};
 `
 
 const Label = styled.p`
-  font-family: "Segoe UI", Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 13px;
   margin: 0;
   text-overflow: ellipsis;
@@ -44,22 +44,26 @@ const Cross = styled.button`
   background: none;
   color: inherit;
   outline: inherit;
-  :hover{
-    background: ${props => props.theme.palette.dark02};
+  :hover {
+    background: ${(props) => props.theme.palette.dark02};
     cursor: pointer;
   }
 `
 
 interface Props {
-  name: PageNames;
+  name: PageNames
+  isExtension: boolean
 }
 
-export const RouteTab = ({ name }: Props) => {
+export const RouteTab = ({ name, isExtension }: Props) => {
+  console.log(isExtension)
   return (
     <Container>
       <Tab>
         <Label>{name}</Label>
-        <StyledLink path={PagePaths.HOME}>
+        <StyledLink
+          path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
+        >
           <Cross>&times;</Cross>
         </StyledLink>
       </Tab>
