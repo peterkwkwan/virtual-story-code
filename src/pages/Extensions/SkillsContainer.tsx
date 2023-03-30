@@ -14,8 +14,8 @@ interface StyledFolder {
 }
 
 const Container = styled.div`
-  margin: 12px 0 0;
-  height: calc(100% - 12px - 19.5px);
+  padding: 12px 0 0;
+  height: calc(100% - 26px - 14px);
 `
 
 const FolderButton = styled.button<FolderButton>`
@@ -30,8 +30,10 @@ const FolderButton = styled.button<FolderButton>`
   font-weight: 600;
   font-family: sans-serif;
   text-align: start;
+  box-shadow: -10px 5px 2px ${(props) => props.theme.palette.dark01};
   color: inherit;
   cursor: pointer;
+
   &:before {
     content: url('/assets/icons/arrow.svg');
     display: inline-block;
@@ -49,8 +51,7 @@ const CollapsibleFolder = styled.div<StyledFolder>`
   height: calc(100% - 22px);
   overflow: auto;
   transition: background-color 0.5s;
-  background-color: ${(props) =>
-    props.isHovering ? 'rgba(121, 121, 121, 0.4)' : props.theme.palette.dark01};
+  background-color: ${(props) => props.theme.palette.dark04};
   background-clip: text;
   &::-webkit-scrollbar {
     width: 10px;

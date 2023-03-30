@@ -6,10 +6,10 @@ import { Extension } from './shared/types'
 const Container = styled.div`
   display: flex;
   padding-left: 16px;
-  background-color: ${props => props.theme.palette.dark01};
+  background-color: ${(props) => props.theme.palette.dark03};
   &:hover {
     cursor: pointer;
-    background-color: ${props => props.theme.palette.grey};
+    background-color: ${(props) => props.theme.palette.grey};
   }
 `
 

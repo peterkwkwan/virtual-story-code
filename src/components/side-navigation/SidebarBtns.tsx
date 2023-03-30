@@ -15,6 +15,7 @@ const Sidebar = styled.aside`
   background-color: ${(props) => props.theme.palette.dark02};
   height: 100%;
   width: 48px;
+  z-index: 1;
 `
 
 const ButtonUnorderedList = styled.ul`
