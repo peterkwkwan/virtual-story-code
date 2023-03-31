@@ -42,5 +42,7 @@ export const theme: DefaultTheme = {
     angleBrackets: '#808080',
 
     grey: 'rgba(193, 192, 192, 0.05)',
+
+    divider: 'rgba(128, 128, 128, 0.35)',
   },
 }

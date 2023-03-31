@@ -43,6 +43,8 @@ declare module 'styled-components' {
       angleBrackets: string
 
       grey: string
+
+      divider: string
     }
   }
 }

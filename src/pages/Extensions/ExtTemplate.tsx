@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { StarRating } from '@/components/elements/StarRating'
+import { Tab, Tabs } from '@/components/elements/Tabs'
 
 const Container = styled.div`
   color: ${(props) => props.theme.palette.text01};
@@ -88,6 +89,18 @@ const Status = styled.div`
   font-size: 90%;
 `
 
+const Body = styled.div`
+  flex: 1;
+  overflow: hidden;
+`
+
+const TabContainer = styled.div`
+  height: 36px;
+  line-height: 36px;
+  padding-left: 20px;
+  border-bottom: 1px solid ${(props) => props.theme.palette.divider};
+`
+
 interface Props {
   logoSrc: string
   title: string
@@ -97,6 +110,12 @@ interface Props {
   description: string
 }
 
+const TABS_DATA: Tab[] = [
+  { id: 1, label: 'Tab 1', content: <>Tab 1 content</> },
+  { id: 2, label: 'Tab 2', content: <>Tab 2 content</> },
+  { id: 3, label: 'Tab 3', content: <>Tab 3 content</> },
+]
+
 export const ExtTemplate = ({
   logoSrc,
   title,
@@ -105,6 +124,12 @@ export const ExtTemplate = ({
   rating,
   description,
 }: Props) => {
+  const [activeTab, setActiveTab] = useState(TABS_DATA[0])
+
+  function handleTabChange(tab: Tab) {
+    setActiveTab(tab)
+  }
+
   return (
     <Container>
       <Header>
@@ -127,6 +152,15 @@ export const ExtTemplate = ({
           <Status>This skill is installed globally.</Status>
         </Details>
       </Header>
+      <Body>
+        <TabContainer>
+          <Tabs
+            tabs={TABS_DATA}
+            activeTab={activeTab}
+            onTabChange={handleTabChange}
+          />
+        </TabContainer>
+      </Body>
     </Container>
   )
 }
