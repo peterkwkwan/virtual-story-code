@@ -77,43 +77,14 @@ export const ExtensionsList: Extension[] = [
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
     type: 'Frontend framework',
     fileName: ExtPageNames.EXT_REACT,
+    proficiency: 'Expert',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
-      })
-    },
-  },
-  {
-    title: 'React Router',
-    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />,
-    path: ExtPagePaths.EXT_REACTROUTER,
-    description:
-      'Routing framework that enables easier client and server-side routing in React applications',
-    type: 'React Library',
-    fileName: ExtPageNames.EXT_REACTROUTER,
-    component: function () {
-      return ExtTemplate({
-        title: this.title,
-        description: this.description,
-        logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
-      })
-    },
-  },
-  {
-    title: 'React Query',
-    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTQUERY]} />,
-    path: ExtPagePaths.EXT_REACTQUERY,
-    description:
-      'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
-    type: 'React Library',
-    fileName: ExtPageNames.EXT_REACTQUERY,
-    component: function () {
-      return ExtTemplate({
-        title: this.title,
-        description: this.description,
-        logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
       })
     },
   },
@@ -125,10 +96,13 @@ export const ExtensionsList: Extension[] = [
       'Scripting or programming language that enables programmers to implement complex features on web pages',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_JAVASCRIPT,
+    proficiency: 'Expert',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
       })
     },
@@ -140,10 +114,13 @@ export const ExtensionsList: Extension[] = [
     description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_TYPESCRIPT,
+    proficiency: 'Advanced',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
       })
     },
@@ -155,10 +132,13 @@ export const ExtensionsList: Extension[] = [
     description: 'High-level, general-purpose programming language',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_PYTHON,
+    proficiency: 'Intermediate',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
       })
     },
@@ -171,10 +151,13 @@ export const ExtensionsList: Extension[] = [
       'Strongly typed, general-purpose programming language used to create desktop applications, cloud services and video games',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_CSHARP,
+    proficiency: 'Functional',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
       })
     },
@@ -187,10 +170,13 @@ export const ExtensionsList: Extension[] = [
       'Game development tool built on C# that enables creation of 2D, 3D and VR video games.',
     type: 'Game development',
     fileName: ExtPageNames.EXT_UNITY,
+    proficiency: 'Hobbyist',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
       })
     },
@@ -202,10 +188,13 @@ export const ExtensionsList: Extension[] = [
     description: 'Standard markup language for creating Web pages.',
     type: 'Frontend',
     fileName: ExtPageNames.EXT_HTML,
+    proficiency: 'Expert',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
       })
     },
@@ -218,10 +207,13 @@ export const ExtensionsList: Extension[] = [
       'Stylesheet language used to describe the presentation of a document written in HTML',
     type: 'Frontend',
     fileName: ExtPageNames.EXT_CSS,
+    proficiency: 'Expert',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
       })
     },
@@ -234,10 +226,13 @@ export const ExtensionsList: Extension[] = [
       'CSS-in-JS styling solution that allows developers to write actual CSS code in JavaScript files to style React components',
     type: 'UI library',
     fileName: ExtPageNames.EXT_STYLEDCOMPONENTS,
+    proficiency: 'Advanced',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
       })
     },
@@ -250,10 +245,13 @@ export const ExtensionsList: Extension[] = [
       'CSS framework that provides single-purpose utility classes for rapid app development',
     type: 'UI library',
     fileName: ExtPageNames.EXT_TAILWIND,
+    proficiency: 'Intermediate',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
       })
     },
@@ -266,11 +264,52 @@ export const ExtensionsList: Extension[] = [
       "React ready-for-production component library that implements Google's Material Design",
     type: 'UI library',
     fileName: ExtPageNames.EXT_MUI,
+    proficiency: 'Advanced',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
+      })
+    },
+  },
+  {
+    title: 'React Router',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />,
+    path: ExtPagePaths.EXT_REACTROUTER,
+    description:
+      'Routing framework that enables easier client and server-side routing in React applications',
+    type: 'React Library',
+    fileName: ExtPageNames.EXT_REACTROUTER,
+    proficiency: 'Intermediate',
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
+      })
+    },
+  },
+  {
+    title: 'React Query',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTQUERY]} />,
+    path: ExtPagePaths.EXT_REACTQUERY,
+    description:
+      'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
+    type: 'React Library',
+    fileName: ExtPageNames.EXT_REACTQUERY,
+    proficiency: 'Intermediate',
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
       })
     },
   },
@@ -282,10 +321,13 @@ export const ExtensionsList: Extension[] = [
       'Development environment tool that is used as a playground for UI components',
     type: 'UI development tool',
     fileName: ExtPageNames.EXT_STORYBOOK,
+    proficiency: 'Intermediate',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
       })
     },
@@ -298,10 +340,13 @@ export const ExtensionsList: Extension[] = [
       "Stripe's JavaScript API allowing businesses to collect payment and customer details using customizable Stripe Elements",
     type: 'Payment Gateway',
     fileName: ExtPageNames.EXT_STRIPE,
+    proficiency: 'Intermediate',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
       })
     },
@@ -314,10 +359,13 @@ export const ExtensionsList: Extension[] = [
       'Source code management tool for development collaboration and team organization',
     type: 'Source control',
     fileName: ExtPageNames.EXT_GIT,
+    proficiency: 'Advanced',
     component: function () {
       return ExtTemplate({
         title: this.title,
+        type: this.type,
         description: this.description,
+        proficiency: this.proficiency,
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
       })
     },
