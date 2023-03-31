@@ -27,7 +27,7 @@ const Content = styled.div`
   text-align: start;
 `
 
-const Name = styled.span`
+const Title = styled.span`
   color: ${(props) => props.theme.palette.text01};
 `
 
@@ -47,17 +47,17 @@ const Author = styled.span`
 
 export const ExtensionsButton = ({
   icon,
-  name,
+  title,
   description,
   type,
-  url,
+  path,
 }: Extension) => {
   return (
-    <StyledLink path={url}>
+    <StyledLink path={path}>
       <Button>
         {icon}
         <Content>
-          <Name>{name}</Name>
+          <Title>{title}</Title>
           <Description>{description}</Description>
           <Author>{type}</Author>
         </Content>
