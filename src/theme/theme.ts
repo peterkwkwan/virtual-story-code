@@ -4,6 +4,7 @@ export const theme: DefaultTheme = {
   palette: {
     white: '#fff',
     vsCodeBlue: '#1F97E8',
+    vsCodeDeepBlue: '#0E639C',
     deepPink: '#ff6d6d',
     brightPink: '#ef9ba9',
     persianGreen: '#00a693',

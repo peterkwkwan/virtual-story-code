@@ -9,5 +9,11 @@ export interface Extension {
   icon: JSX.Element
   type: string
   fileName: ExtPageNames
+  proficiency:
+    | 'Expert'
+    | 'Advanced'
+    | 'Intermediate'
+    | 'Functional'
+    | 'Hobbyist'
   component: () => JSX.Element
 }
