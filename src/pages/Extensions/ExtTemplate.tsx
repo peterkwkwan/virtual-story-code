@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { StarRating } from '@/components/elements/StarRating'
+
 const Container = styled.div`
   color: ${(props) => props.theme.palette.text01};
   font-family: sans-serif;
@@ -91,6 +93,7 @@ interface Props {
   title: string
   type: string
   proficiency: string
+  rating: number
   description: string
 }
 
@@ -99,6 +102,7 @@ export const ExtTemplate = ({
   title,
   type,
   proficiency,
+  rating,
   description,
 }: Props) => {
   return (
@@ -113,13 +117,14 @@ export const ExtTemplate = ({
               Level:&nbsp;
               {proficiency}
             </div>
+            <StarRating rating={rating} />
           </Subtitle>
           <Description>{description}</Description>
           <ButtonContainer>
             <DisableButton>Disable</DisableButton>
             <UninstallButton>Uninstall</UninstallButton>
           </ButtonContainer>
-          <Status>This skill is installed globally</Status>
+          <Status>This skill is installed globally.</Status>
         </Details>
       </Header>
     </Container>

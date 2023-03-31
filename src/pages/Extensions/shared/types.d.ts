@@ -15,5 +15,6 @@ export interface Extension {
     | 'Intermediate'
     | 'Functional'
     | 'Hobbyist'
+  rating: number
   component: () => JSX.Element
 }

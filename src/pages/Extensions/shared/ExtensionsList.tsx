@@ -78,12 +78,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Frontend framework',
     fileName: ExtPageNames.EXT_REACT,
     proficiency: 'Expert',
+    rating: 5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
       })
     },
@@ -97,12 +99,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Programming language',
     fileName: ExtPageNames.EXT_JAVASCRIPT,
     proficiency: 'Expert',
+    rating: 5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
       })
     },
@@ -115,12 +119,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Programming language',
     fileName: ExtPageNames.EXT_TYPESCRIPT,
     proficiency: 'Advanced',
+    rating: 4.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
       })
     },
@@ -133,12 +139,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Programming language',
     fileName: ExtPageNames.EXT_PYTHON,
     proficiency: 'Intermediate',
+    rating: 3,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
       })
     },
@@ -152,12 +160,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Programming language',
     fileName: ExtPageNames.EXT_CSHARP,
     proficiency: 'Functional',
+    rating: 2,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
       })
     },
@@ -171,12 +181,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Game development',
     fileName: ExtPageNames.EXT_UNITY,
     proficiency: 'Hobbyist',
+    rating: 1.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
       })
     },
@@ -189,12 +201,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Frontend',
     fileName: ExtPageNames.EXT_HTML,
     proficiency: 'Expert',
+    rating: 5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
       })
     },
@@ -208,12 +222,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Frontend',
     fileName: ExtPageNames.EXT_CSS,
     proficiency: 'Expert',
+    rating: 5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
       })
     },
@@ -227,12 +243,14 @@ export const ExtensionsList: Extension[] = [
     type: 'UI library',
     fileName: ExtPageNames.EXT_STYLEDCOMPONENTS,
     proficiency: 'Advanced',
+    rating: 4.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
       })
     },
@@ -246,12 +264,14 @@ export const ExtensionsList: Extension[] = [
     type: 'UI library',
     fileName: ExtPageNames.EXT_TAILWIND,
     proficiency: 'Intermediate',
+    rating: 3,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
       })
     },
@@ -265,12 +285,14 @@ export const ExtensionsList: Extension[] = [
     type: 'UI library',
     fileName: ExtPageNames.EXT_MUI,
     proficiency: 'Advanced',
+    rating: 4.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
       })
     },
@@ -284,12 +306,14 @@ export const ExtensionsList: Extension[] = [
     type: 'React Library',
     fileName: ExtPageNames.EXT_REACTROUTER,
     proficiency: 'Intermediate',
+    rating: 3.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
       })
     },
@@ -303,12 +327,14 @@ export const ExtensionsList: Extension[] = [
     type: 'React Library',
     fileName: ExtPageNames.EXT_REACTQUERY,
     proficiency: 'Intermediate',
+    rating: 3.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
       })
     },
@@ -322,12 +348,14 @@ export const ExtensionsList: Extension[] = [
     type: 'UI development tool',
     fileName: ExtPageNames.EXT_STORYBOOK,
     proficiency: 'Intermediate',
+    rating: 3,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
       })
     },
@@ -341,12 +369,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Payment Gateway',
     fileName: ExtPageNames.EXT_STRIPE,
     proficiency: 'Intermediate',
+    rating: 3.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
       })
     },
@@ -360,12 +390,14 @@ export const ExtensionsList: Extension[] = [
     type: 'Source control',
     fileName: ExtPageNames.EXT_GIT,
     proficiency: 'Advanced',
+    rating: 4.5,
     component: function () {
       return ExtTemplate({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
+        rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
       })
     },
