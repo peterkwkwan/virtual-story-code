@@ -1,7 +1,13 @@
+import React from 'react'
+
+import { ExtPageNames, ExtPagePaths } from './ExtensionsList'
+
 export interface Extension {
-  name: string
+  title: string
   description: string
-  url: string
+  path: ExtPagePaths
   icon: JSX.Element
   type: string
+  fileName: ExtPageNames
+  component: () => JSX.Element
 }
