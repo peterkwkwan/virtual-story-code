@@ -2,8 +2,39 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Extension } from './types'
+import { ExtTemplate } from '../ExtTemplate'
 
-import { PagePaths } from '@/pages/shared/routerConfig'
+export enum ExtPagePaths {
+  EXT_REACT = 'extensions/react',
+  EXT_REACTROUTER = 'extensions/react-router',
+  EXT_REACTQUERY = 'extensions/react-query',
+  EXT_JAVASCRIPT = 'extensions/javascript',
+  EXT_TYPESCRIPT = 'extensions/typescript',
+  EXT_HTML = 'extensions/html',
+  EXT_CSS = 'extensions/css',
+  EXT_STYLEDCOMPONENTS = 'extensions/styled-components',
+  EXT_TAILWIND = 'extensions/tailwind',
+  EXT_MUI = 'extensions/mui',
+  EXT_STORYBOOK = 'extensions/storybook',
+  EXT_STRIPE = 'extensions/stripe',
+  EXT_GIT = 'extensions/git',
+}
+
+export enum ExtPageNames {
+  EXT_REACT = 'Skill: React',
+  EXT_REACTROUTER = 'Skill: React Router',
+  EXT_REACTQUERY = 'Skill: React Query',
+  EXT_JAVASCRIPT = 'Skill: JavaScript',
+  EXT_TYPESCRIPT = 'Skill: TypeScript',
+  EXT_HTML = 'Skill: HTML',
+  EXT_CSS = 'Skill: CSS',
+  EXT_STYLEDCOMPONENTS = 'Skill: styled-components',
+  EXT_TAILWIND = 'Skill: Tailwind',
+  EXT_MUI = 'Skill: MUI',
+  EXT_STORYBOOK = 'Skill: Storybook',
+  EXT_STRIPE = 'Skill: Stripe',
+  EXT_GIT = 'Skill: Git',
+}
 
 const ExtensionIcon = styled.img`
   width: 42px;
@@ -11,107 +42,227 @@ const ExtensionIcon = styled.img`
   padding: 10px 14px 10px 0;
 `
 
+const LogoSrc = {
+  [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
+  [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.png',
+  [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.png',
+  [ExtPageNames.EXT_JAVASCRIPT]: '/assets/icons/extensions/javascript.svg',
+  [ExtPageNames.EXT_TYPESCRIPT]: '/assets/icons/extensions/typescript.svg',
+  [ExtPageNames.EXT_HTML]: '/assets/icons/extensions/html.svg',
+  [ExtPageNames.EXT_CSS]: '/assets/icons/extensions/css.svg',
+  [ExtPageNames.EXT_STYLEDCOMPONENTS]: '/assets/icons/extensions/styled.svg',
+  [ExtPageNames.EXT_TAILWIND]: '/assets/icons/extensions/tailwind.png',
+  [ExtPageNames.EXT_MUI]: '/assets/icons/extensions/mui.svg',
+  [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.png',
+  [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.png',
+  [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.png',
+}
+
 export const ExtensionsList: Extension[] = [
   {
-    name: 'React',
-    icon: <ExtensionIcon src="/assets/icons/extensions/react.svg" />,
-    url: PagePaths.EXT_REACT,
+    title: 'React',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACT]} />,
+    path: ExtPagePaths.EXT_REACT,
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
     type: 'Frontend framework',
+    fileName: ExtPageNames.EXT_REACT,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
+      })
+    },
   },
   {
-    name: 'React Router',
-    icon: <ExtensionIcon src="/assets/icons/extensions/router.png" />,
-    url: PagePaths.EXT_REACTROUTER,
+    title: 'React Router',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />,
+    path: ExtPagePaths.EXT_REACTROUTER,
     description:
       'Routing framework that enables easier client and server-side routing in React applications',
     type: 'React Library',
+    fileName: ExtPageNames.EXT_REACTROUTER,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
+      })
+    },
   },
   {
-    name: 'React Query',
-    icon: <ExtensionIcon src="/assets/icons/extensions/query.png" />,
-    url: PagePaths.EXT_REACTQUERY,
+    title: 'React Query',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTQUERY]} />,
+    path: ExtPagePaths.EXT_REACTQUERY,
     description:
       'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
     type: 'React Library',
+    fileName: ExtPageNames.EXT_REACTQUERY,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
+      })
+    },
   },
   {
-    name: 'JavaScript',
-    icon: <ExtensionIcon src="/assets/icons/extensions/javascript.svg" />,
-    url: PagePaths.EXT_JAVASCRIPT,
+    title: 'JavaScript',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_JAVASCRIPT]} />,
+    path: ExtPagePaths.EXT_JAVASCRIPT,
     description:
       'Scripting or programming language that enables programmers to implement complex features on web pages',
     type: 'Programming language',
+    fileName: ExtPageNames.EXT_JAVASCRIPT,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
+      })
+    },
   },
   {
-    name: 'TypeScript',
-    icon: <ExtensionIcon src="/assets/icons/extensions/typescript.svg" />,
-    url: PagePaths.EXT_TYPESCRIPT,
+    title: 'TypeScript',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TYPESCRIPT]} />,
+    path: ExtPagePaths.EXT_TYPESCRIPT,
     description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
+    fileName: ExtPageNames.EXT_TYPESCRIPT,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
+      })
+    },
   },
   {
-    name: 'HTML',
-    icon: <ExtensionIcon src="/assets/icons/extensions/html.svg" />,
-    url: PagePaths.EXT_HTML,
+    title: 'HTML',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_HTML]} />,
+    path: ExtPagePaths.EXT_HTML,
     description: 'Standard markup language for creating Web pages.',
     type: 'Frontend',
+    fileName: ExtPageNames.EXT_HTML,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
+      })
+    },
   },
   {
-    name: 'CSS',
-    icon: <ExtensionIcon src="/assets/icons/extensions/css.svg" />,
-    url: PagePaths.EXT_CSS,
+    title: 'CSS',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_CSS]} />,
+    path: ExtPagePaths.EXT_CSS,
     description:
       'Stylesheet language used to describe the presentation of a document written in HTML',
     type: 'Frontend',
+    fileName: ExtPageNames.EXT_CSS,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
+      })
+    },
   },
   {
-    name: 'styled-components',
-    icon: <ExtensionIcon src="/assets/icons/extensions/styled.svg" />,
-    url: PagePaths.EXT_STYLEDCOMPONENTS,
+    title: 'styled-components',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS]} />,
+    path: ExtPagePaths.EXT_STYLEDCOMPONENTS,
     description:
       'CSS-in-JS styling solution that allows developers to write actual CSS code in JavaScript files to style React components',
     type: 'UI library',
+    fileName: ExtPageNames.EXT_STYLEDCOMPONENTS,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
+      })
+    },
   },
   {
-    name: 'Tailwind CSS',
-    icon: <ExtensionIcon src="/assets/icons/extensions/tailwind.png" />,
-    url: PagePaths.EXT_TAILWIND,
+    title: 'Tailwind CSS',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TAILWIND]} />,
+    path: ExtPagePaths.EXT_TAILWIND,
     description:
       'CSS framework that provides single-purpose utility classes for rapid app development',
     type: 'UI library',
+    fileName: ExtPageNames.EXT_TAILWIND,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
+      })
+    },
   },
   {
-    name: 'Material UI',
-    icon: <ExtensionIcon src="/assets/icons/extensions/mui.svg" />,
-    url: PagePaths.EXT_MUI,
+    title: 'Material UI',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_MUI]} />,
+    path: ExtPagePaths.EXT_MUI,
     description:
       "React ready-for-production component library that implements Google's Material Design",
     type: 'UI library',
+    fileName: ExtPageNames.EXT_MUI,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
+      })
+    },
   },
   {
-    name: 'Storybook',
-    icon: <ExtensionIcon src="/assets/icons/extensions/storybook.png" />,
-    url: PagePaths.EXT_STORYBOOK,
+    title: 'Storybook',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STORYBOOK]} />,
+    path: ExtPagePaths.EXT_STORYBOOK,
     description:
       'Development environment tool that is used as a playground for UI components',
     type: 'UI development tool',
+    fileName: ExtPageNames.EXT_STORYBOOK,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
+      })
+    },
   },
   {
-    name: 'Stripe.js',
-    icon: <ExtensionIcon src="/assets/icons/extensions/stripe.png" />,
-    url: PagePaths.EXT_STRIPE,
+    title: 'Stripe.js',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STRIPE]} />,
+    path: ExtPagePaths.EXT_STRIPE,
     description:
       "Stripe's JavaScript API allowing businesses to collect payment and customer details using customizable Stripe Elements",
     type: 'Payment Gateway',
+    fileName: ExtPageNames.EXT_STRIPE,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
+      })
+    },
   },
   {
-    name: 'Git',
-    icon: <ExtensionIcon src="/assets/icons/extensions/git.png" />,
-    url: PagePaths.EXT_GIT,
+    title: 'Git',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_GIT]} />,
+    path: ExtPagePaths.EXT_GIT,
     description:
       'Source code management tool for development collaboration and team organization',
     type: 'Source control',
+    fileName: ExtPageNames.EXT_GIT,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
+      })
+    },
   },
 ]
