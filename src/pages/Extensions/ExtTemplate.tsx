@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { ExtensionWrapper } from './shared/ExtensionWrapper'
-import { ExtComponentProps } from './shared/types'
 
-export const ExtTemplate = ({
-  logoSrc,
-  title,
-  description,
-}: ExtComponentProps) => {
+interface Props {
+  logoSrc: string
+  title: string
+  description: string
+}
+
+export const ExtTemplate = ({ logoSrc, title, description }: Props) => {
   return (
     <ExtensionWrapper logoSrc={logoSrc} title={title} description={description}>
       React
