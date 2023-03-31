@@ -50,6 +50,11 @@ const Cross = styled.button`
   }
 `
 
+const Icon = styled.img`
+  width: 18px;
+  height: 18px;
+  margin-right: 2px;
+`
 interface Props {
   name: PageNames
   isExtension: boolean
@@ -59,6 +64,12 @@ export const RouteTab = ({ name, isExtension }: Props) => {
   return (
     <Container>
       <Tab>
+        {isExtension && (
+          <Icon
+            src="/assets/icons/extensions/extension-icon.jpg"
+            alt="extension-icon"
+          />
+        )}
         <Label>{name}</Label>
         <StyledLink
           path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
