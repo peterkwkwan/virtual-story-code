@@ -10,6 +10,9 @@ export enum ExtPagePaths {
   EXT_REACTQUERY = 'extensions/react-query',
   EXT_JAVASCRIPT = 'extensions/javascript',
   EXT_TYPESCRIPT = 'extensions/typescript',
+  EXT_PYTHON = 'extensions/python',
+  EXT_CSHARP = 'extensions/c-sharp',
+  EXT_UNITY = 'extensions/unity',
   EXT_HTML = 'extensions/html',
   EXT_CSS = 'extensions/css',
   EXT_STYLEDCOMPONENTS = 'extensions/styled-components',
@@ -26,6 +29,9 @@ export enum ExtPageNames {
   EXT_REACTQUERY = 'Skill: React Query',
   EXT_JAVASCRIPT = 'Skill: JavaScript',
   EXT_TYPESCRIPT = 'Skill: TypeScript',
+  EXT_PYTHON = 'Skill: Python',
+  EXT_CSHARP = 'Skill: C#',
+  EXT_UNITY = 'Skill: Unity',
   EXT_HTML = 'Skill: HTML',
   EXT_CSS = 'Skill: CSS',
   EXT_STYLEDCOMPONENTS = 'Skill: styled-components',
@@ -44,18 +50,22 @@ const ExtensionIcon = styled.img`
 
 const LogoSrc = {
   [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
-  [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.png',
+  [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.svg',
   [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.png',
   [ExtPageNames.EXT_JAVASCRIPT]: '/assets/icons/extensions/javascript.svg',
   [ExtPageNames.EXT_TYPESCRIPT]: '/assets/icons/extensions/typescript.svg',
+  [ExtPageNames.EXT_PYTHON]: '/assets/icons/extensions/python.svg',
+  [ExtPageNames.EXT_CSHARP]: '/assets/icons/extensions/c-sharp.svg',
+  [ExtPageNames.EXT_UNITY]: '/assets/icons/extensions/unity.png',
   [ExtPageNames.EXT_HTML]: '/assets/icons/extensions/html.svg',
   [ExtPageNames.EXT_CSS]: '/assets/icons/extensions/css.svg',
-  [ExtPageNames.EXT_STYLEDCOMPONENTS]: '/assets/icons/extensions/styled.svg',
-  [ExtPageNames.EXT_TAILWIND]: '/assets/icons/extensions/tailwind.png',
+  [ExtPageNames.EXT_STYLEDCOMPONENTS]:
+    '/assets/icons/extensions/styled-components.svg',
+  [ExtPageNames.EXT_TAILWIND]: '/assets/icons/extensions/tailwind.svg',
   [ExtPageNames.EXT_MUI]: '/assets/icons/extensions/mui.svg',
-  [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.png',
+  [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.svg',
   [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.png',
-  [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.png',
+  [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
 }
 
 export const ExtensionsList: Extension[] = [
@@ -135,6 +145,53 @@ export const ExtensionsList: Extension[] = [
         title: this.title,
         description: this.description,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
+      })
+    },
+  },
+  {
+    title: 'Python',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_PYTHON]} />,
+    path: ExtPagePaths.EXT_PYTHON,
+    description: 'High-level, general-purpose programming language',
+    type: 'Programming language',
+    fileName: ExtPageNames.EXT_PYTHON,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
+      })
+    },
+  },
+  {
+    title: 'C#',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_CSHARP]} />,
+    path: ExtPagePaths.EXT_CSHARP,
+    description:
+      'Strongly typed, general-purpose programming language used to create desktop applications, cloud services and video games',
+    type: 'Programming language',
+    fileName: ExtPageNames.EXT_CSHARP,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
+      })
+    },
+  },
+  {
+    title: 'Unity',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_UNITY]} />,
+    path: ExtPagePaths.EXT_UNITY,
+    description:
+      'Game development tool built on C# that enables creation of 2D, 3D and VR video games.',
+    type: 'Game development',
+    fileName: ExtPageNames.EXT_UNITY,
+    component: function () {
+      return ExtTemplate({
+        title: this.title,
+        description: this.description,
+        logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
       })
     },
   },
