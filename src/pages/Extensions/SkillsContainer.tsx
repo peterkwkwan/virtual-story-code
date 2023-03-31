@@ -96,7 +96,7 @@ export const SkillsContainer = () => {
         onMouseLeave={handleMouseLeave}
       >
         {ExtensionsList.map((extension) => (
-          <ExtensionsButton key={extension.name} {...extension} />
+          <ExtensionsButton key={extension.title} {...extension} />
         ))}
       </CollapsibleFolder>
     </Container>
