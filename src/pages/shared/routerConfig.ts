@@ -19,9 +19,11 @@ import {
   ExtPageNames,
   ExtPagePaths,
 } from '../extensions/ExtensionsList'
+import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
 
 export enum PagePaths {
   HOME = 'explorer',
+  WTW = 'explorer/wtw',
   BCW_GROUP = 'explorer/bcw',
   SERAI = 'explorer/serai',
   PAG = 'explorer/pag',
@@ -40,6 +42,7 @@ export enum PagePaths {
 }
 
 export enum PageNames {
+  WTW = 'WillisTowersWatson.tsx',
   BCW_GROUP = 'BCWGroup.tsx',
   SERAI = 'Serai.tsx',
   PAG = 'PAG.tsx',
@@ -64,6 +67,11 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.HOME,
     component: Home,
+  },
+  {
+    path: PagePaths.WTW,
+    component: WillisTowersWatson,
+    fileName: PageNames.WTW,
   },
   {
     path: PagePaths.BCW_GROUP,
