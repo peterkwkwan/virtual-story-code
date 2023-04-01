@@ -50,9 +50,13 @@ interface Props {
 }
 
 export const WorkExperience = ({ companies, title }: Props) => {
+  const isSingular = companies.length === 1
   return (
     <Container>
-      <Intro>I have experience in {title} at these previous positions:</Intro>
+      <Intro>
+        I have experience in {title} at {isSingular ? 'this' : 'these'} previous
+        position{isSingular ? '' : 's'}:
+      </Intro>
       <CompanyCardContainer>
         {companies.map((company) => {
           return (
