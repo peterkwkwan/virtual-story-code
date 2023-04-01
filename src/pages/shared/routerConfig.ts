@@ -18,7 +18,7 @@ import {
   ExtensionsList,
   ExtPageNames,
   ExtPagePaths,
-} from '../extensions/shared/ExtensionsList'
+} from '../extensions/ExtensionsList'
 
 export enum PagePaths {
   HOME = 'explorer',

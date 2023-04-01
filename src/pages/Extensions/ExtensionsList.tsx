@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Extension } from './types'
-import { ExtTemplate } from '../ExtTemplate'
+import { ExtensionContentWrapper } from './ExtensionContentWrapper'
+import { Extension } from './shared/types'
+import { generateTabs } from './tabs'
+
+import { Companies } from '@/constants/companies'
+import { Projects } from '@/constants/projects'
 
 export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
@@ -80,13 +84,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Expert',
     rating: 5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -101,13 +109,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Expert',
     rating: 5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -121,13 +133,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Advanced',
     rating: 4.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -141,13 +157,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -162,13 +182,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Functional',
     rating: 2,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -183,13 +207,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Hobbyist',
     rating: 1.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -203,13 +231,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Expert',
     rating: 5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -224,13 +256,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Expert',
     rating: 5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -245,13 +281,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Advanced',
     rating: 4.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -266,13 +306,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -287,13 +331,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Advanced',
     rating: 4.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -308,13 +356,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -329,13 +381,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -350,13 +406,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -371,13 +431,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Intermediate',
     rating: 3.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
@@ -392,13 +456,17 @@ export const ExtensionsList: Extension[] = [
     proficiency: 'Advanced',
     rating: 4.5,
     component: function () {
-      return ExtTemplate({
+      return ExtensionContentWrapper({
         title: this.title,
         type: this.type,
         description: this.description,
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI, Companies.BCW],
+        }),
       })
     },
   },
