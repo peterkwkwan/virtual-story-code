@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { ExtensionsButton } from './ExtensionsButton'
-import { ExtensionsList } from './ExtensionsList'
+import { ExtensionsList } from '.'
 
 interface FolderButton {
   opened: boolean
@@ -70,7 +70,7 @@ const CollapsibleFolder = styled.div<StyledFolder>`
   }
 `
 
-export const SkillsContainer = () => {
+export const SkillSidebarList = () => {
   const [opened, setOpened] = useState(true)
   const [hovering, setHovering] = useState(false)
   const handleFolderClick = () => {

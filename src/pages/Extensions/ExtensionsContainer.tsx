@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { ExtensionsSearchBox } from './ExtensionsSearchBox'
-import { SkillsContainer } from './SkillsContainer'
+import { SkillSidebarList } from './SkillSidebarList'
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const ExtensionsContainer = () => {
   return (
     <Container>
       <ExtensionsSearchBox />
-      <SkillsContainer />
+      <SkillSidebarList />
     </Container>
   )
 }
