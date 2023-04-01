@@ -130,6 +130,8 @@ const Container = styled.div<{ show: boolean }>`
   animation: ${(props) => props.show && 'grow 1s'};
   transform-origin: bottom left;
   transition: opacity 1s;
+  user-select: none;
+  -webkit-user-select: none;
   @keyframes grow {
     from {
       transform: scale(0);
