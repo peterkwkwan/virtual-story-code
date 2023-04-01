@@ -38,6 +38,7 @@ const CompanyCard = styled.div`
 
 const CompanyLogo = styled.img`
   width: 48px;
+  height: 48px;
   filter: brightness(80%);
 `
 
