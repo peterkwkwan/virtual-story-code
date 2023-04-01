@@ -8,7 +8,7 @@ export enum Companies {
   COLEMAN_RESEARCH = 'Coleman Research',
 }
 
-export const CompanyDescriptions = {
+export const CompanyDescriptions: { [key: string]: string } = {
   [Companies.WTW]:
     'WTW (or Willis Towers Watson) is a global advisory, broking, and solutions provider, operating in over 140 countries worldwide.',
   [Companies.BCW]:

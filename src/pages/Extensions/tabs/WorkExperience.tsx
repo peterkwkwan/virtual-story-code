@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Companies } from '@/constants/companies'
+import { Companies, CompanyDescriptions } from '@/constants/companies'
 
 const Container = styled.div`
   width: 60%;
@@ -13,20 +13,21 @@ const Intro = styled.p`
 
 const CompanyCardContainer = styled.div`
   margin-top: 16px;
+  width: 100%;
 `
 
 const CompanyCard = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: fit-content;
+  width: 100%;
   color: ${(props) => props.theme.palette.text02};
   :not(:first-of-type) {
-    margin-top: 12px;
+    margin-top: 20px;
   }
   :hover {
     color: ${(props) => props.theme.palette.text01};
-    > span {
+    p:first-of-type {
       border-bottom: 1px solid ${(props) => props.theme.palette.text01};
     }
     > img {
@@ -39,9 +40,28 @@ const CompanyLogo = styled.img`
   width: 48px;
   filter: brightness(80%);
 `
-const Title = styled.span`
+
+const Details = styled.div`
   margin-left: 12px;
+  overflow: hidden;
+`
+
+const Title = styled.p`
+  margin: 0;
+  font-weight: 700;
   border-bottom: 1px solid transparent;
+  width: fit-content;
+`
+
+const Description = styled.p`
+  font-weight: 200;
+  margin: 8px 0 0;
+  font-size: 90%;
+  color: ${(props) => props.theme.palette.text03};
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 `
 
 interface Props {
@@ -54,8 +74,8 @@ export const WorkExperience = ({ companies, title }: Props) => {
   return (
     <Container>
       <Intro>
-        I have experience in {title} at {isSingular ? 'this' : 'these'} previous
-        position{isSingular ? '' : 's'}:
+        I have experience in {title} at {isSingular ? 'this' : 'these'}&nbsp;
+        {isSingular ? 'company' : 'companies'}:
       </Intro>
       <CompanyCardContainer>
         {companies.map((company) => {
@@ -67,7 +87,10 @@ export const WorkExperience = ({ companies, title }: Props) => {
                   .toLowerCase()}.png`}
                 alt={`${company}-logo`}
               />
-              <Title>{company}</Title>
+              <Details>
+                <Title>{company}</Title>
+                <Description>{CompanyDescriptions[company]}</Description>
+              </Details>
             </CompanyCard>
           )
         })}
