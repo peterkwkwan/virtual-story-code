@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { StyledLink } from './StyledLink'
 
 import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
-import { ExtPageNames } from '@/pages/extensions/shared/ExtensionsList'
+import { ExtPageNames } from '@/pages/extensions/ExtensionsList'
 
 const Container = styled.div`
   height: 38px;
