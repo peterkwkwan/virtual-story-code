@@ -19,7 +19,6 @@ export const Tabs = ({ tabs, activeTab, onTabChange }: TabsProps) => {
           onClick={() => onTabChange(tab)}
         />
       ))}
-      <div className="tab-content">{activeTab.content}</div>
     </div>
   )
 }
