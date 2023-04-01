@@ -1,7 +1,3 @@
-import React from 'react'
-
-import { ExtPageNames, ExtPagePaths } from './ExtensionsList'
-
 export interface Extension {
   title: string
   description: string
