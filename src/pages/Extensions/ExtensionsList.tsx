@@ -130,8 +130,8 @@ export const ExtensionsList: Extension[] = [
     description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_TYPESCRIPT,
-    proficiency: 'Advanced',
-    rating: 4.5,
+    proficiency: 'Expert',
+    rating: 5,
     component: function () {
       return ExtensionContentWrapper({
         title: this.title,
@@ -142,7 +142,12 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+          ],
         }),
       })
     },
@@ -180,7 +185,7 @@ export const ExtensionsList: Extension[] = [
     type: 'Programming language',
     fileName: ExtPageNames.EXT_CSHARP,
     proficiency: 'Functional',
-    rating: 2,
+    rating: 2.5,
     component: function () {
       return ExtensionContentWrapper({
         title: this.title,
@@ -191,7 +196,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.WTW, Companies.PAG],
         }),
       })
     },
@@ -240,7 +245,13 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+            Companies.MANULIFE,
+          ],
         }),
       })
     },
@@ -265,7 +276,13 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+            Companies.MANULIFE,
+          ],
         }),
       })
     },
@@ -290,7 +307,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.WTW, Companies.SERAI],
         }),
       })
     },
@@ -315,7 +332,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.MANULIFE],
         }),
       })
     },
@@ -340,7 +357,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.WTW, Companies.BCW, Companies.SERAI],
         }),
       })
     },
@@ -365,7 +382,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.BCW, Companies.SERAI],
         }),
       })
     },
@@ -390,7 +407,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.BCW, Companies.SERAI],
         }),
       })
     },
@@ -415,7 +432,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.SERAI],
         }),
       })
     },
@@ -440,7 +457,7 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [Companies.BCW],
         }),
       })
     },
@@ -465,7 +482,13 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+            Companies.MANULIFE,
+          ],
         }),
       })
     },

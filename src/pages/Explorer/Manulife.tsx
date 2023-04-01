@@ -5,6 +5,8 @@ import { useLastContributed } from '../../hooks/useLastContributed'
 import { JobDescriptionTsx } from './shared/JobDescriptionTsx'
 import { IJobDescription } from './shared/types'
 
+import { Companies, CompanyDescriptions } from '@/constants/companies'
+
 export const Manulife = () => {
   const date = new Date('2020-05-01')
   const diff = useLastContributed(date)
@@ -12,11 +14,10 @@ export const Manulife = () => {
 
   const jobDescription: IJobDescription = {
     role: 'Software Developer',
-    companyName: 'Manulife',
+    companyName: Companies.MANULIFE,
     date: 'August 2019 - May 2020',
     location: 'Hong Kong',
-    companyDescription:
-      'Manulife is a multinational insurance company headquartered in Toronto, Canada.',
+    companyDescription: CompanyDescriptions[Companies.MANULIFE],
     functions: [
       'Spearheaded the Hong Kong CWS (Customer Web Site) revamp',
       'Worked closely with the UI/UX team to gather requirements and implement features',

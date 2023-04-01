@@ -19,5 +19,17 @@ export const generateTabs = ({ companies, title, projects }: Props) => {
       label: 'Work Experience',
       content: <WorkExperience companies={companies} title={title} />,
     })
+
+  tabs.push({
+    id: 2,
+    label: 'Label 2',
+    content: <></>,
+  })
+
+  tabs.push({
+    id: 3,
+    label: 'Label 3',
+    content: <></>,
+  })
   return tabs
 }
