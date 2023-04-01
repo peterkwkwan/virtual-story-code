@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { ExtensionsButton } from './ExtensionsButton'
-import { ExtensionsList } from './shared/ExtensionsList'
+import { ExtensionsList } from './ExtensionsList'
 
 interface FolderButton {
   opened: boolean
