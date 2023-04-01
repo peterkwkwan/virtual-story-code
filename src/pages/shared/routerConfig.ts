@@ -14,11 +14,7 @@ import { SearchContent } from '../search/SearchContent'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
 import { Home } from '../explorer/Home'
-import {
-  ExtensionsList,
-  ExtPageNames,
-  ExtPagePaths,
-} from '../extensions/ExtensionsList'
+import { ExtensionsList, ExtPageNames, ExtPagePaths } from '../extensions'
 import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
 
 export enum PagePaths {
