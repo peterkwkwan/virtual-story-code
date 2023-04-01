@@ -101,6 +101,13 @@ const TabContainer = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.palette.divider};
 `
 
+const Content = styled.div`
+  height: calc(100% - 36px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 8px 0 0 20px;
+`
 interface Props {
   logoSrc: string
   title: string
@@ -108,23 +115,19 @@ interface Props {
   proficiency: string
   rating: number
   description: string
+  tabs: Tab[]
 }
 
-const TABS_DATA: Tab[] = [
-  { id: 1, label: 'Tab 1', content: <>Tab 1 content</> },
-  { id: 2, label: 'Tab 2', content: <>Tab 2 content</> },
-  { id: 3, label: 'Tab 3', content: <>Tab 3 content</> },
-]
-
-export const ExtTemplate = ({
+export const ExtensionContentWrapper = ({
   logoSrc,
   title,
   type,
   proficiency,
   rating,
   description,
+  tabs,
 }: Props) => {
-  const [activeTab, setActiveTab] = useState(TABS_DATA[0])
+  const [activeTab, setActiveTab] = useState(tabs[0])
 
   function handleTabChange(tab: Tab) {
     setActiveTab(tab)
@@ -155,11 +158,12 @@ export const ExtTemplate = ({
       <Body>
         <TabContainer>
           <Tabs
-            tabs={TABS_DATA}
+            tabs={tabs}
             activeTab={activeTab}
             onTabChange={handleTabChange}
           />
         </TabContainer>
+        <Content>{activeTab.content}</Content>
       </Body>
     </Container>
   )
