@@ -5,6 +5,8 @@ import { useLastContributed } from '../../hooks/useLastContributed'
 import { INonTechJobDescription } from './shared/types'
 import { JobDescriptionScss } from './shared/JobDescriptionScss'
 
+import { Companies } from '@/constants/companies'
+
 export const Coleman = () => {
   const date = new Date('2016-03-01')
   const diff = useLastContributed(date)
@@ -12,7 +14,7 @@ export const Coleman = () => {
 
   const jobDescription: INonTechJobDescription = {
     role: 'Operations Analyst',
-    companyName: 'Coleman Research',
+    companyName: Companies.COLEMAN_RESEARCH,
     date: 'March 2015 - March 2016',
     location: 'Hong Kong',
     companyDescription:

@@ -5,6 +5,8 @@ import { ExplorerWrapper } from './shared/ExplorerWrapper'
 import { JobDescriptionScss } from './shared/JobDescriptionScss'
 import { INonTechJobDescription } from './shared/types'
 
+import { Companies } from '@/constants/companies'
+
 export const Acuris = () => {
   const date = new Date('2019-05-01')
   const diff = useLastContributed(date)
@@ -12,7 +14,7 @@ export const Acuris = () => {
 
   const jobDescription: INonTechJobDescription = {
     role: 'Relationship Manager',
-    companyName: 'Acuris',
+    companyName: Companies.ACURIS,
     date: 'March 2016 - May 2019',
     location: 'Hong Kong',
     companyDescription:

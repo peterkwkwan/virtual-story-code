@@ -5,6 +5,8 @@ import { useLastContributed } from '../../hooks/useLastContributed'
 import { JobDescriptionTsx } from './shared/JobDescriptionTsx'
 import { IJobDescription } from './shared/types'
 
+import { Companies, CompanyDescriptions } from '@/constants/companies'
+
 export const Pag = () => {
   const date = new Date('2021-10-01')
   const diff = useLastContributed(date)
@@ -12,11 +14,10 @@ export const Pag = () => {
 
   const jobDescription: IJobDescription = {
     role: 'Software Developer',
-    companyName: 'PAG',
+    companyName: Companies.PAG,
     date: 'May 2020 - October 2021',
     location: 'Hong Kong',
-    companyDescription:
-      'PAG is one of Asia’s leading investment firms, managing more than US$35 billion in capital across strategies including private equity, real estate and absolute returns.',
+    companyDescription: CompanyDescriptions[Companies.PAG],
     functions: [
       'Identified inefficient workflows in HR / PE teams; built React apps to avoid human errors and streamline processes',
       'Refactored a single-file C# 4000+ line vendor app into a scalable format. Resolved 10+ legacy bugs and increased performance by 95%, resulting in efficient extendibility',

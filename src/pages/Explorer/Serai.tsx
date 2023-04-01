@@ -5,6 +5,8 @@ import { useLastContributed } from '../../hooks/useLastContributed'
 import { JobDescriptionTsx } from './shared/JobDescriptionTsx'
 import { IJobDescription } from './shared/types'
 
+import { Companies, CompanyDescriptions } from '@/constants/companies'
+
 export const Serai = () => {
   const date = new Date('2022-07-25')
   const diff = useLastContributed(date)
@@ -12,11 +14,10 @@ export const Serai = () => {
 
   const jobDescription: IJobDescription = {
     role: 'Software Engineer',
-    companyName: 'Serai',
+    companyName: Companies.SERAI,
     date: 'October 2021 - July 2022',
     location: 'Hong Kong',
-    companyDescription:
-      'Serai by HSBC is a B2B platform helping businesses simplify their supply chains.',
+    companyDescription: CompanyDescriptions[Companies.SERAI],
     functions: [
       'Worked in the Supply Chain Solutions (SCS) frontend team, developing features, code review and pair-programming',
       'Navigation revamp from top-navbar to sidebar, which improved responsiveness across viewports and UX',
