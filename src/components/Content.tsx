@@ -6,8 +6,8 @@ import { routerConfig } from '../pages/shared/routerConfig'
 import { RouteTab } from './elements/RouteTab'
 
 const Container = styled.div`
-  height: calc(100% - 38px);
-  width: 100%;
+  height: 100%;
+  width: calc(100% - 348px);
   display: block;
 `
 

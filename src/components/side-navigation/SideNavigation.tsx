@@ -7,7 +7,7 @@ import { ExtensionsViewlet } from '../../pages/extensions/ExtensionsViewlet'
 import { SearchViewlet } from '../../pages/search/SearchViewlet'
 import { SidebarBtns } from './SidebarBtns'
 
-const Container = styled.div`
+const Container = styled.aside`
   display: flex;
   height: 100%;
   width: 348px;
