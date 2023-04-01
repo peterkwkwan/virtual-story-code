@@ -93,7 +93,12 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+          ],
         }),
       })
     },
@@ -118,7 +123,13 @@ export const ExtensionsList: Extension[] = [
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI, Companies.BCW],
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+            Companies.MANULIFE,
+          ],
         }),
       })
     },
@@ -147,6 +158,7 @@ export const ExtensionsList: Extension[] = [
             Companies.BCW,
             Companies.SERAI,
             Companies.PAG,
+            Companies.MANULIFE,
           ],
         }),
       })
