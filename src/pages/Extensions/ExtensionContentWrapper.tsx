@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { RelatedResources } from './tabs/RelatedResources'
+
 import { StarRating } from '@/components/elements/StarRating'
 import { Tab, Tabs } from '@/components/elements/Tabs'
+import { ResourceLinks } from '@/constants/skills'
 
 const Container = styled.div`
   color: ${(props) => props.theme.palette.text01};
@@ -102,11 +105,12 @@ const TabContainer = styled.div`
 `
 
 const Content = styled.div`
+  display: flex;
   height: calc(100% - 36px);
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 8px 0 0 20px;
+  padding: 12px 0 0 20px;
 `
 interface Props {
   logoSrc: string
@@ -116,6 +120,7 @@ interface Props {
   rating: number
   description: string
   tabs: Tab[]
+  resourceLinks: ResourceLinks
 }
 
 export const ExtensionContentWrapper = ({
@@ -126,6 +131,7 @@ export const ExtensionContentWrapper = ({
   rating,
   description,
   tabs,
+  resourceLinks,
 }: Props) => {
   const [activeTab, setActiveTab] = useState(tabs[0])
 
@@ -163,7 +169,10 @@ export const ExtensionContentWrapper = ({
             onTabChange={handleTabChange}
           />
         </TabContainer>
-        <Content>{activeTab.content}</Content>
+        <Content>
+          {activeTab.content}
+          <RelatedResources resources={resourceLinks} />
+        </Content>
       </Body>
     </Container>
   )

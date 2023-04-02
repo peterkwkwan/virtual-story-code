@@ -7,6 +7,7 @@ import { generateTabs } from './tabs'
 
 import { Companies } from '@/constants/companies'
 import { Projects } from '@/constants/projects'
+import { Resources, Skills } from '@/constants/skills'
 
 export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
@@ -91,6 +92,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -121,6 +123,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -151,6 +154,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -181,6 +185,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI, Companies.BCW],
@@ -206,6 +211,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.PAG],
@@ -231,6 +237,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI, Companies.BCW],
@@ -255,6 +262,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -286,6 +294,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -317,6 +326,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.SERAI],
@@ -342,6 +352,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.MANULIFE],
@@ -367,6 +378,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.BCW, Companies.SERAI],
@@ -392,6 +404,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW, Companies.SERAI],
@@ -417,6 +430,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW, Companies.SERAI],
@@ -442,6 +456,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI],
@@ -467,6 +482,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW],
@@ -492,6 +508,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
+        resourceLinks: Resources[Skills.REACT],
         tabs: generateTabs({
           title: this.title,
           companies: [
