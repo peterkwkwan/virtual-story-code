@@ -10,7 +10,6 @@ import { ResourceLinks } from '@/constants/skills'
 const Container = styled.div`
   color: ${(props) => props.theme.palette.text01};
   font-family: sans-serif;
-  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
