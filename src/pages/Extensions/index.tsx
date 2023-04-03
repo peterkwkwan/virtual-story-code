@@ -123,7 +123,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.JAVASCRIPT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -154,7 +154,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.TYPESCRIPT],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -185,7 +185,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.PYTHON],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI, Companies.BCW],
@@ -211,7 +211,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.CSHARP],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.PAG],
@@ -237,7 +237,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_UNITY],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.UNITY],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI, Companies.BCW],
@@ -262,7 +262,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_HTML],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.HTML],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -294,7 +294,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_CSS],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.CSS],
         tabs: generateTabs({
           title: this.title,
           companies: [
@@ -326,36 +326,11 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.STYLED_COMPONENTS],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.SERAI],
-        }),
-      })
-    },
-  },
-  {
-    title: 'Tailwind CSS',
-    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TAILWIND]} />,
-    path: ExtPagePaths.EXT_TAILWIND,
-    description:
-      'CSS framework that provides single-purpose utility classes for rapid app development',
-    type: 'UI library',
-    fileName: ExtPageNames.EXT_TAILWIND,
-    proficiency: 'Intermediate',
-    rating: 3,
-    component: function () {
-      return ExtensionContentWrapper({
-        title: this.title,
-        type: this.type,
-        description: this.description,
-        proficiency: this.proficiency,
-        rating: this.rating,
-        logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
-        resourceLinks: Resources[Skills.REACT],
-        tabs: generateTabs({
-          title: this.title,
-          companies: [Companies.MANULIFE],
+          projects: [Projects.VIRTUAL_STORY_CODE],
         }),
       })
     },
@@ -378,7 +353,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_MUI],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.MUI],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.BCW, Companies.SERAI],
@@ -387,6 +362,33 @@ export const ExtensionsList: Extension[] = [
     },
   },
   {
+    title: 'Tailwind CSS',
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TAILWIND]} />,
+    path: ExtPagePaths.EXT_TAILWIND,
+    description:
+      'CSS framework that provides single-purpose utility classes for rapid app development',
+    type: 'UI library',
+    fileName: ExtPageNames.EXT_TAILWIND,
+    proficiency: 'Intermediate',
+    rating: 3,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
+        resourceLinks: Resources[Skills.TAILWIND],
+        tabs: generateTabs({
+          title: this.title,
+          projects: [Projects.MOVIES_DB],
+        }),
+      })
+    },
+  },
+
+  {
     title: 'React Router',
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />,
     path: ExtPagePaths.EXT_REACTROUTER,
@@ -394,8 +396,8 @@ export const ExtensionsList: Extension[] = [
       'Routing framework that enables easier client and server-side routing in React applications',
     type: 'React Library',
     fileName: ExtPageNames.EXT_REACTROUTER,
-    proficiency: 'Intermediate',
-    rating: 3.5,
+    proficiency: 'Advanced',
+    rating: 4,
     component: function () {
       return ExtensionContentWrapper({
         title: this.title,
@@ -404,7 +406,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.REACT_ROUTER],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW, Companies.SERAI],
@@ -420,8 +422,8 @@ export const ExtensionsList: Extension[] = [
       'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
     type: 'React Library',
     fileName: ExtPageNames.EXT_REACTQUERY,
-    proficiency: 'Intermediate',
-    rating: 3.5,
+    proficiency: 'Advanced',
+    rating: 4,
     component: function () {
       return ExtensionContentWrapper({
         title: this.title,
@@ -430,7 +432,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.REACT_QUERY],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW, Companies.SERAI],
@@ -456,7 +458,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.STORYBOOK],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI],
@@ -482,7 +484,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.STRIPE],
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW],
@@ -508,7 +510,7 @@ export const ExtensionsList: Extension[] = [
         proficiency: this.proficiency,
         rating: this.rating,
         logoSrc: LogoSrc[ExtPageNames.EXT_GIT],
-        resourceLinks: Resources[Skills.REACT],
+        resourceLinks: Resources[Skills.GIT],
         tabs: generateTabs({
           title: this.title,
           companies: [
