@@ -5,16 +5,21 @@ import { Extension } from './shared/types'
 
 import { StyledLink } from '@/components/elements/StyledLink'
 
-const Button = styled.button`
+const Button = styled.button<{ selected: boolean }>`
   display: flex;
   width: 100%;
   padding: 0 0 0 16px;
-  background-color: ${(props) => props.theme.palette.dark03};
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.palette.grey};
+    background-color: ${(props) =>
+      props.selected ? 'hsla(215, 78%, 30%, 0.83)' : props.theme.palette.grey};
   }
-  border: none;
+  background-color: ${(props) =>
+    props.selected ? 'hsla(215, 78%, 30%, 0.83)' : props.theme.palette.dark03};
+  border: ${(props) =>
+    props.selected
+      ? '1px solid ' + props.theme.palette.selectedBlueBorder
+      : '1px solid transparent'};
 `
 
 const Content = styled.div`
@@ -27,12 +32,12 @@ const Content = styled.div`
   text-align: start;
 `
 
-const Title = styled.span`
-  color: ${(props) => props.theme.palette.text01};
+const Title = styled.span<{ selected: boolean }>`
+  color: ${(props) => (props.selected ? 'white' : props.theme.palette.text01)};
 `
 
-const Description = styled.p`
-  color: ${(props) => props.theme.palette.text02};
+const Description = styled.p<{ selected: boolean }>`
+  color: ${(props) => (props.selected ? 'white' : props.theme.palette.text02)};
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -40,10 +45,16 @@ const Description = styled.p`
   font-weight: 400;
 `
 
-const Author = styled.span`
+const Author = styled.span<{ selected: boolean }>`
   font-size: 90%;
-  color: ${(props) => props.theme.palette.text04};
+  color: ${(props) => (props.selected ? 'white' : props.theme.palette.text04)};
 `
+
+interface ExtensionProps extends Extension {
+  handleSetSelected: (index: number) => void
+  selected: boolean
+  index: number
+}
 
 export const ExtensionsButton = ({
   icon,
@@ -51,15 +62,22 @@ export const ExtensionsButton = ({
   description,
   type,
   path,
-}: Extension) => {
+  handleSetSelected,
+  selected,
+  index,
+}: ExtensionProps) => {
+  const handleClick = () => {
+    handleSetSelected(index)
+  }
+
   return (
     <StyledLink path={path}>
-      <Button>
+      <Button selected={selected} onClick={handleClick}>
         {icon}
         <Content>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-          <Author>{type}</Author>
+          <Title selected={selected}>{title}</Title>
+          <Description selected={selected}>{description}</Description>
+          <Author selected={selected}>{type}</Author>
         </Content>
       </Button>
     </StyledLink>
