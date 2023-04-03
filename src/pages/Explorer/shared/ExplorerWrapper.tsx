@@ -12,6 +12,7 @@ interface Props {
 const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
   width: 100%;
+  height: calc(100% - 38px);
 `
 
 const FileContents = styled.div`
@@ -62,11 +63,13 @@ export const ExplorerWrapper = ({
   const emptyContainer = !contributors || !numberOfLines
 
   return (
-    <StyledContainer>
+    <>
       {emptyContainer ? (
-        <FileContents>{children}</FileContents>
+        <BaseContentContainer>
+          <FileContents>{children}</FileContents>
+        </BaseContentContainer>
       ) : (
-        <>
+        <StyledContainer>
           <LineNumbers>
             <ul>
               {lineNumbers.map((number) => (
@@ -78,8 +81,8 @@ export const ExplorerWrapper = ({
             <Contributors>Peter Kwan, {contributors}</Contributors>
             {children}
           </FileContents>
-        </>
+        </StyledContainer>
       )}
-    </StyledContainer>
+    </>
   )
 }
