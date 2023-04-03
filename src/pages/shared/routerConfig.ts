@@ -9,7 +9,7 @@ import { McGill } from '../explorer/McGill'
 import { PackageJson } from '../explorer/PackageJson'
 import { Serai } from '../explorer/Serai'
 import { Pag } from '../explorer/Pag'
-import { ExtensionsContent } from '../extensions/ExtensionsContent'
+import { ExtensionsHome } from '../extensions/ExtensionsHome'
 import { SearchContent } from '../search/SearchContent'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
@@ -140,7 +140,7 @@ export const routerConfig: RouterConfig[] = [
   },
   {
     path: PagePaths.EXTENSIONS,
-    component: ExtensionsContent,
+    component: ExtensionsHome,
   },
   ...ExtensionsList,
 ]
