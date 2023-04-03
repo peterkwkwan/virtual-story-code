@@ -36,7 +36,7 @@ export const WillisTowersWatson = () => {
   }
 
   return (
-    <ExplorerWrapper contributors={contributors} numberOfLines={48}>
+    <ExplorerWrapper contributors={contributors} numberOfLines={32}>
       <JobDescriptionTsx jobDescription={jobDescription} />
     </ExplorerWrapper>
   )
