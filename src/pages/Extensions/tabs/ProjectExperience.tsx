@@ -13,41 +13,35 @@ const ProjectCardContainer = styled.div`
 `
 
 const ProjectCard = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
   width: 100%;
+  cursor: pointer;
   color: ${(props) => props.theme.palette.text02};
+  filter: brightness(80%);
+
   :not(:first-of-type) {
     margin-top: 20px;
   }
   :hover {
+    filter: brightness(100%);
+
     color: ${(props) => props.theme.palette.text01};
-    p:first-of-type {
+    h6:first-of-type {
       border-bottom: 1px solid ${(props) => props.theme.palette.text01};
-    }
-    > img {
-      filter: brightness(100%);
     }
   }
 `
 
-const ProjectLogo = styled.img`
-  width: 48px;
-  height: 48px;
-  filter: brightness(80%);
-`
-
-const Details = styled.div`
-  margin-left: 12px;
-  overflow: hidden;
-`
-
-const Title = styled.p`
+const Title = styled.h6`
+  font-size: 1rem;
   margin: 0;
   font-weight: 700;
   border-bottom: 1px solid transparent;
   width: fit-content;
+`
+
+const ProjectType = styled.div`
+  font-size: 0.875rem;
+  color: ${(props) => props.theme.palette.text03};
 `
 
 const Description = styled.p`
@@ -78,16 +72,9 @@ export const ProjectExperience = ({ projects, title }: Props) => {
         {projects.map((project) => {
           return (
             <ProjectCard key={project}>
-              <ProjectLogo
-                src={`/assets/icons/projects/${project
-                  .replace(/\s+/g, '-')
-                  .toLowerCase()}.png`}
-                alt={`${project}-logo`}
-              />
-              <Details>
-                <Title>{project}</Title>
-                <Description>{ProjectDescriptions[project]}</Description>
-              </Details>
+              <Title>{project}</Title>
+              <ProjectType>Personal</ProjectType>
+              <Description>{ProjectDescriptions[project]}</Description>
             </ProjectCard>
           )
         })}

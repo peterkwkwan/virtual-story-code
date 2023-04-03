@@ -23,7 +23,7 @@ const CompanyCard = styled.div`
   }
   :hover {
     color: ${(props) => props.theme.palette.text01};
-    p:first-of-type {
+    h6:first-of-type {
       border-bottom: 1px solid ${(props) => props.theme.palette.text01};
     }
     > img {
@@ -43,8 +43,9 @@ const Details = styled.div`
   overflow: hidden;
 `
 
-const Title = styled.p`
+const Title = styled.h6`
   margin: 0;
+  font-size: 1rem;
   font-weight: 700;
   border-bottom: 1px solid transparent;
   width: fit-content;
