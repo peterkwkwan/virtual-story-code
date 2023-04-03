@@ -44,6 +44,7 @@ declare module 'styled-components' {
 
       grey: string
 
+      hyperlink: string
       divider: string
     }
   }

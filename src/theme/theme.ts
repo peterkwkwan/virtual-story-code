@@ -43,6 +43,7 @@ export const theme: DefaultTheme = {
 
     grey: 'rgba(193, 192, 192, 0.05)',
 
+    hyperlink: '#3794ff',
     divider: 'rgba(128, 128, 128, 0.35)',
   },
 }
