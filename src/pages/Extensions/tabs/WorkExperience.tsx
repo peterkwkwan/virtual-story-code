@@ -3,10 +3,6 @@ import styled from 'styled-components'
 
 import { Companies, CompanyDescriptions } from '@/constants/companies'
 
-const Container = styled.div`
-  width: 60%;
-`
-
 const Intro = styled.p`
   margin: 0;
 `
@@ -73,7 +69,7 @@ interface Props {
 export const WorkExperience = ({ companies, title }: Props) => {
   const isSingular = companies.length === 1
   return (
-    <Container>
+    <>
       <Intro>
         I have experience in {title} at {isSingular ? 'this' : 'these'}&nbsp;
         {isSingular ? 'company' : 'companies'}:
@@ -96,6 +92,6 @@ export const WorkExperience = ({ companies, title }: Props) => {
           )
         })}
       </CompanyCardContainer>
-    </Container>
+    </>
   )
 }
