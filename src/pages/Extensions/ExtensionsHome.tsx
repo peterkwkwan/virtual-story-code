@@ -23,20 +23,34 @@ const LetterPress = styled.div`
 `
 
 const Summary = styled.div`
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: auto;
+  column-gap: 8px;
+  row-gap: 12px;
   margin-top: 20px;
+  user-select: none;
   font-family: sans-serif;
   color: ${(props) => props.theme.palette.text03};
 `
-const Tips = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  user-select: none;
+const Col1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
 `
 
-const Tip = styled.li`
-  :not(:first-of-type) {
-    margin-top: 8px;
-  }
+const Col2 = styled.div`
+  text-align: left;
+`
+
+const IconImage = styled.img`
+  display: inline-block;
+  border-radius: 3px;
+  vertical-align: middle;
+  padding: 4px;
+  width: 12px;
+  background-color: ${(props) => props.theme.palette.secondaryGrey};
 `
 
 export const ExtensionsHome = () => {
@@ -45,10 +59,14 @@ export const ExtensionsHome = () => {
       <Container>
         <LetterPress />
         <Summary>
-          <Tips>
-            <Tip>Select my skills on the left sidebar</Tip>
-            <Tip>Use the searchbox to filter skills</Tip>
-          </Tips>
+          <Col1>Select my skills on the left sidebar</Col1>
+          <Col2>
+            <IconImage src="/assets/icons/arrow-left.png" />
+          </Col2>
+          <Col1>Use the searchbox to filter skills</Col1>
+          <Col2>
+            <IconImage src="/assets/icons/search.png" />
+          </Col2>
         </Summary>
       </Container>
     </BaseContentContainer>
