@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { RefObject, useState } from 'react'
 import styled from 'styled-components'
 
 import { ExtensionsButton } from './ExtensionsButton'
 import { ExtensionsList } from '.'
 
+import {
+  Tracker,
+  useIntersectionObserver,
+} from '@/hooks/useIntersectionObserver'
+
 interface FolderButton {
   opened: boolean
+  shadow: boolean
 }
 
 interface StyledFolder {
@@ -30,9 +36,12 @@ const FolderButton = styled.button<FolderButton>`
   font-weight: 600;
   font-family: sans-serif;
   text-align: start;
-  box-shadow: -10px 5px 2px ${(props) => props.theme.palette.dark01};
+  box-shadow: ${(props) =>
+    props.shadow ? '-10px 5px 2px ' + props.theme.palette.dark01 : ''};
   color: inherit;
   cursor: pointer;
+
+  transition: box-shadow 0.5s;
 
   &:before {
     content: url('/assets/icons/arrow.svg');
@@ -71,6 +80,13 @@ const CollapsibleFolder = styled.div<StyledFolder>`
 `
 
 export const SkillSidebarList = () => {
+  const [visibility, targetRef] = useIntersectionObserver(
+    Tracker.FIRST_EXT_BUTTON,
+    0.1
+  )
+  const showBoxShadow = !visibility[Tracker.FIRST_EXT_BUTTON]
+  const divRef = targetRef as RefObject<HTMLDivElement>
+
   const [opened, setOpened] = useState(true)
   const [hovering, setHovering] = useState(false)
   const handleFolderClick = () => {
@@ -86,7 +102,11 @@ export const SkillSidebarList = () => {
 
   return (
     <Container>
-      <FolderButton opened={opened} onClick={handleFolderClick}>
+      <FolderButton
+        opened={opened}
+        shadow={showBoxShadow}
+        onClick={handleFolderClick}
+      >
         INSTALLED
       </FolderButton>
       <CollapsibleFolder
@@ -95,9 +115,16 @@ export const SkillSidebarList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {ExtensionsList.map((extension) => (
-          <ExtensionsButton key={extension.title} {...extension} />
-        ))}
+        {ExtensionsList.map((extension, index) => {
+          if (index === 0) {
+            return (
+              <div ref={divRef}>
+                <ExtensionsButton key={extension.title} {...extension} />
+              </div>
+            )
+          }
+          return <ExtensionsButton key={extension.title} {...extension} />
+        })}
       </CollapsibleFolder>
     </Container>
   )
