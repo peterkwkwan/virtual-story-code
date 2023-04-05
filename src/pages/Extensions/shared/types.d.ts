@@ -6,7 +6,7 @@ export interface Extension {
   type: string
   fileName: ExtPageNames
   proficiency:
-    | 'Expert'
+    | 'Proficient'
     | 'Advanced'
     | 'Intermediate'
     | 'Functional'

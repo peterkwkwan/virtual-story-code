@@ -82,7 +82,7 @@ export const ExtensionsList: Extension[] = [
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
     type: 'Frontend framework',
     fileName: ExtPageNames.EXT_REACT,
-    proficiency: 'Expert',
+    proficiency: 'Proficient',
     rating: 5,
     component: function () {
       return ExtensionContentWrapper({
@@ -113,7 +113,7 @@ export const ExtensionsList: Extension[] = [
       'Scripting or programming language that enables programmers to implement complex features on web pages',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_JAVASCRIPT,
-    proficiency: 'Expert',
+    proficiency: 'Proficient',
     rating: 5,
     component: function () {
       return ExtensionContentWrapper({
@@ -144,7 +144,7 @@ export const ExtensionsList: Extension[] = [
     description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
     fileName: ExtPageNames.EXT_TYPESCRIPT,
-    proficiency: 'Expert',
+    proficiency: 'Proficient',
     rating: 5,
     component: function () {
       return ExtensionContentWrapper({
@@ -252,7 +252,7 @@ export const ExtensionsList: Extension[] = [
     description: 'Standard markup language for creating Web pages.',
     type: 'Frontend',
     fileName: ExtPageNames.EXT_HTML,
-    proficiency: 'Expert',
+    proficiency: 'Proficient',
     rating: 5,
     component: function () {
       return ExtensionContentWrapper({
@@ -284,7 +284,7 @@ export const ExtensionsList: Extension[] = [
       'Stylesheet language used to describe the presentation of a document written in HTML',
     type: 'Frontend',
     fileName: ExtPageNames.EXT_CSS,
-    proficiency: 'Expert',
+    proficiency: 'Proficient',
     rating: 5,
     component: function () {
       return ExtensionContentWrapper({
