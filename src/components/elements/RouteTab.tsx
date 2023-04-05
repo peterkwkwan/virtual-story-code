@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { StyledLink } from './StyledLink'
 
 import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
 import { ExtPageNames } from '@/pages/extensions'
+import { ExplorerContext } from '@/App'
 
 const Container = styled.div`
   height: 38px;
@@ -62,6 +63,13 @@ interface Props {
 }
 
 export const RouteTab = ({ name, isExtension }: Props) => {
+  const { currentFile } = useContext(ExplorerContext)
+  const [, setFile] = currentFile
+
+  const handleClose = () => {
+    setFile({ title: '', path: '' })
+  }
+
   return (
     <Container>
       <Tab>
@@ -75,7 +83,7 @@ export const RouteTab = ({ name, isExtension }: Props) => {
         <StyledLink
           path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
         >
-          <Cross>&#215;</Cross>
+          <Cross onClick={handleClose}>&#215;</Cross>
         </StyledLink>
       </Tab>
     </Container>
