@@ -10,5 +10,6 @@ Project tech stack:
 2. [styled-components](https://styled-components.com/) - CSS in JS, global theming, and conditional styling
 3. [React Router](https://reactrouter.com/) - native-like site navigation
 4. [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - lightweight app-wide state management
+5. [React Spring](https://www.react-spring.dev/) - for more complex animations and parallax effects
 
 copyright © 2023 [peterkwkwan](https://github.com/peterkwkwan)
