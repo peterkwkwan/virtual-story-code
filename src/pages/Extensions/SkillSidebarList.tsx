@@ -119,8 +119,8 @@ export const SkillSidebarList = () => {
         {ExtensionsList.map((extension, index) => {
           if (index === 0) {
             return (
-              <div ref={divRef}>
-                <ExtensionsButton key={extension.title} {...extension} />
+              <div ref={divRef} key={extension.title}>
+                <ExtensionsButton {...extension} />
               </div>
             )
           }
