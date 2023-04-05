@@ -89,7 +89,6 @@ export const SkillSidebarList = () => {
 
   const [opened, setOpened] = useState(true)
   const [hovering, setHovering] = useState(false)
-  const [selectedIndex, setSelected] = useState<undefined | number>(undefined)
 
   const handleFolderClick = () => {
     setOpened((prevState) => !prevState)
@@ -100,10 +99,6 @@ export const SkillSidebarList = () => {
   }
   const handleMouseEnter = () => {
     setHovering(true)
-  }
-
-  const handleSetSelected = (index: number) => {
-    setSelected(index)
   }
 
   return (
@@ -125,25 +120,11 @@ export const SkillSidebarList = () => {
           if (index === 0) {
             return (
               <div ref={divRef}>
-                <ExtensionsButton
-                  key={extension.title}
-                  {...extension}
-                  handleSetSelected={handleSetSelected}
-                  selected={selectedIndex === index}
-                  index={index}
-                />
+                <ExtensionsButton key={extension.title} {...extension} />
               </div>
             )
           }
-          return (
-            <ExtensionsButton
-              key={extension.title}
-              {...extension}
-              handleSetSelected={handleSetSelected}
-              selected={selectedIndex === index}
-              index={index}
-            />
-          )
+          return <ExtensionsButton key={extension.title} {...extension} />
         })}
       </CollapsibleFolder>
     </Container>

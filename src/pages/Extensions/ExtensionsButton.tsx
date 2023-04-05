@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Extension } from './shared/types'
 
 import { StyledLink } from '@/components/elements/StyledLink'
+import { useActivePath } from '@/hooks/useActivePath'
 
 const Button = styled.button<{ selected: boolean }>`
   display: flex;
@@ -50,34 +51,27 @@ const Author = styled.span<{ selected: boolean }>`
   color: ${(props) => (props.selected ? 'white' : props.theme.palette.text04)};
 `
 
-interface ExtensionProps extends Extension {
-  handleSetSelected: (index: number) => void
-  selected: boolean
-  index: number
-}
-
 export const ExtensionsButton = ({
   icon,
   title,
   description,
   type,
   path,
-  handleSetSelected,
-  selected,
-  index,
-}: ExtensionProps) => {
-  const handleClick = () => {
-    handleSetSelected(index)
-  }
+}: Extension) => {
+  const active = useActivePath(path)
+
+  // const handleClick = () => {
+  //   handleSetSelected(index)
+  // }
 
   return (
     <StyledLink path={path}>
-      <Button selected={selected} onClick={handleClick}>
+      <Button selected={active}>
         {icon}
         <Content>
-          <Title selected={selected}>{title}</Title>
-          <Description selected={selected}>{description}</Description>
-          <Author selected={selected}>{type}</Author>
+          <Title selected={active}>{title}</Title>
+          <Description selected={active}>{description}</Description>
+          <Author selected={active}>{type}</Author>
         </Content>
       </Button>
     </StyledLink>
