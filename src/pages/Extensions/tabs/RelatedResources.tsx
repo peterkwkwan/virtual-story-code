@@ -29,7 +29,7 @@ const renderResources = (resources: ResourceLinks) => {
 
   for (const key in resources) {
     linksEl.push(
-      <LinkContainer>
+      <LinkContainer key={key}>
         <ExternalLink
           href={resources[key]}
           text={key}
