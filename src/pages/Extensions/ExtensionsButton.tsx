@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import { Extension } from './shared/types'
 
-import { StyledLink } from '@/components/elements/StyledLink'
+import { UnstyledLink } from '@/components/elements/UnstyledLink'
 import { useActivePath } from '@/hooks/useActivePath'
 import { ExplorerContext } from '@/App'
 
@@ -72,7 +72,7 @@ export const ExtensionsButton = ({
   }, [pathname])
 
   return (
-    <StyledLink path={path}>
+    <UnstyledLink path={path}>
       <Button selected={active}>
         {icon}
         <Content>
@@ -81,6 +81,6 @@ export const ExtensionsButton = ({
           <Author selected={active}>{type}</Author>
         </Content>
       </Button>
-    </StyledLink>
+    </UnstyledLink>
   )
 }

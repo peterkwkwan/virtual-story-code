@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import { StyledLink } from './StyledLink'
+import { UnstyledLink } from './UnstyledLink'
 
 import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
 import { ExtPageNames } from '@/pages/extensions'
@@ -80,11 +80,11 @@ export const RouteTab = ({ name, isExtension }: Props) => {
           />
         )}
         <Label>{name}</Label>
-        <StyledLink
+        <UnstyledLink
           path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
         >
           <Cross onClick={handleClose}>&#215;</Cross>
-        </StyledLink>
+        </UnstyledLink>
       </Tab>
     </Container>
   )

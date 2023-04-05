@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { ExplorerContext } from '@/App'
-import { StyledLink } from '@/components/elements/StyledLink'
+import { UnstyledLink } from '@/components/elements/UnstyledLink'
 import { useIcon } from '@/hooks/useIcon'
 import { useActivePath } from '@/hooks/useActivePath'
 
@@ -65,11 +65,11 @@ export const ExplorerButton = (props: Props) => {
   }, [pathname])
 
   return (
-    <StyledLink path={rest.path}>
+    <UnstyledLink path={rest.path}>
       <StyledButton selected={active} {...rest}>
         <img style={{ width: 16, height: 16, marginRight: 4 }} src={iconPath} />
         {rest.title}
       </StyledButton>
-    </StyledLink>
+    </UnstyledLink>
   )
 }

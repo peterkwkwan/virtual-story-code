@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { StyledLink } from '../elements/StyledLink'
+import { UnstyledLink } from '../elements/UnstyledLink'
 
 enum SidebarOptions {
   EXPLORER = 'Explorer',
@@ -65,14 +65,14 @@ export const SidebarBtns = () => {
     <Sidebar>
       <ButtonUnorderedList>
         {buttons.map((btn) => (
-          <StyledLink key={btn.title} path={btn.path}>
+          <UnstyledLink key={btn.title} path={btn.path}>
             <SidebarButtons
               key={btn.title}
               selected={pathname.includes(btn.path)}
             >
               <img src={btn.src} />
             </SidebarButtons>
-          </StyledLink>
+          </UnstyledLink>
         ))}
       </ButtonUnorderedList>
     </Sidebar>

@@ -7,12 +7,12 @@ const CustomLink = styled(Link)`
   color: inherit;
 `
 
-export const StyledLink = ({
+export const UnstyledLink = ({
   children,
   path,
 }: {
-  children: React.ReactNode;
-  path: string;
+  children: React.ReactNode
+  path: string
 }) => {
   return <CustomLink to={path}>{children}</CustomLink>
 }

@@ -19,8 +19,8 @@ import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
 
 export enum PagePaths {
   HOME = 'explorer',
-  WTW = 'explorer/wtw',
-  BCW_GROUP = 'explorer/bcw',
+  WTW = 'explorer/willis-towers-watson',
+  BCW_GROUP = 'explorer/bcw-group',
   SERAI = 'explorer/serai',
   PAG = 'explorer/pag',
   MANULIFE = 'explorer/manulife',

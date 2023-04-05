@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Companies, CompanyDescriptions } from '@/constants/companies'
+import { UnstyledLink } from '@/components/elements/UnstyledLink'
 
 const Intro = styled.p`
   margin: 0;
@@ -9,7 +10,13 @@ const Intro = styled.p`
 
 const CompanyCardContainer = styled.div`
   margin-top: 16px;
-  width: 100%;
+  a {
+    width: 100%;
+    :not(:first-of-type) {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  }
 `
 
 const CompanyCard = styled.div`
@@ -18,9 +25,7 @@ const CompanyCard = styled.div`
   cursor: pointer;
   width: 100%;
   color: ${(props) => props.theme.palette.text02};
-  :not(:first-of-type) {
-    margin-top: 20px;
-  }
+
   :hover {
     color: ${(props) => props.theme.palette.text01};
     h6:first-of-type {
@@ -67,8 +72,13 @@ interface Props {
   title: string
 }
 
+function toKebabCase(word: string) {
+  return word.replace(/\s+/g, '-').toLowerCase()
+}
+
 export const WorkExperience = ({ companies, title }: Props) => {
   const isSingular = companies.length === 1
+
   return (
     <>
       <Intro>
@@ -78,18 +88,21 @@ export const WorkExperience = ({ companies, title }: Props) => {
       <CompanyCardContainer>
         {companies.map((company) => {
           return (
-            <CompanyCard key={company}>
-              <CompanyLogo
-                src={`/assets/icons/companies/${company
-                  .replace(/\s+/g, '-')
-                  .toLowerCase()}.png`}
-                alt={`${company}-logo`}
-              />
-              <Details>
-                <Title>{company}</Title>
-                <Description>{CompanyDescriptions[company]}</Description>
-              </Details>
-            </CompanyCard>
+            <UnstyledLink
+              key={company}
+              path={`/explorer/${toKebabCase(company)}`}
+            >
+              <CompanyCard>
+                <CompanyLogo
+                  src={`/assets/icons/companies/${toKebabCase(company)}.png`}
+                  alt={`${company}-logo`}
+                />
+                <Details>
+                  <Title>{company}</Title>
+                  <Description>{CompanyDescriptions[company]}</Description>
+                </Details>
+              </CompanyCard>
+            </UnstyledLink>
           )
         })}
       </CompanyCardContainer>
