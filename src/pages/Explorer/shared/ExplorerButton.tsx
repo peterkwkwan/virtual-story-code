@@ -64,13 +64,9 @@ export const ExplorerButton = (props: Props) => {
     }
   }, [pathname])
 
-  const handleClick = () => {
-    setFile({ title: rest.title, path: rest.path })
-  }
-
   return (
     <StyledLink path={rest.path}>
-      <StyledButton selected={active} {...rest} onClick={handleClick}>
+      <StyledButton selected={active} {...rest}>
         <img style={{ width: 16, height: 16, marginRight: 4 }} src={iconPath} />
         {rest.title}
       </StyledButton>
