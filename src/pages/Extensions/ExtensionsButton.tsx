@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
+import { useLocation } from 'react-router-dom'
 
 import { Extension } from './shared/types'
 
 import { StyledLink } from '@/components/elements/StyledLink'
 import { useActivePath } from '@/hooks/useActivePath'
+import { ExplorerContext } from '@/App'
 
 const Button = styled.button<{ selected: boolean }>`
   display: flex;
@@ -59,10 +61,15 @@ export const ExtensionsButton = ({
   path,
 }: Extension) => {
   const active = useActivePath(path)
+  const { pathname } = useLocation()
+  const { currentFile } = useContext(ExplorerContext)
+  const [, setFile] = currentFile
 
-  // const handleClick = () => {
-  //   handleSetSelected(index)
-  // }
+  useEffect(() => {
+    if (pathname.includes(path)) {
+      setFile({ title: `Skill: ${title}`, path: path })
+    }
+  }, [pathname])
 
   return (
     <StyledLink path={path}>
