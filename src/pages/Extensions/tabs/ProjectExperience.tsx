@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ProjectDescriptions, Projects } from '@/constants/projects'
+import { ProjectDetails, Projects } from '@/constants/projects'
+import { ExternalLink } from '@/components/elements/ExternalLink'
 
 const Intro = styled.p`
   margin: 0;
@@ -14,7 +15,8 @@ const ProjectCardContainer = styled.div`
 
 const ProjectCard = styled.div`
   width: 100%;
-  cursor: pointer;
+  cursor: default;
+  user-select: none;
   color: ${(props) => props.theme.palette.text02};
   filter: brightness(80%);
 
@@ -23,11 +25,7 @@ const ProjectCard = styled.div`
   }
   :hover {
     filter: brightness(100%);
-
     color: ${(props) => props.theme.palette.text01};
-    h6:first-of-type {
-      border-bottom: 1px solid ${(props) => props.theme.palette.text01};
-    }
   }
 `
 
@@ -39,15 +37,10 @@ const Title = styled.h6`
   width: fit-content;
 `
 
-const ProjectType = styled.div`
-  font-size: 0.875rem;
-  color: ${(props) => props.theme.palette.text03};
-`
-
 const Description = styled.p`
+  margin: 0;
   font-weight: 200;
-  margin: 8px 0 0;
-  font-size: 90%;
+  font-size: 0.875rem;
   color: ${(props) => props.theme.palette.text03};
   overflow: hidden;
   white-space: nowrap;
@@ -55,9 +48,29 @@ const Description = styled.p`
   width: 100%;
 `
 
+const Icon = styled.img`
+  width: 12px;
+  height: 12px;
+`
+
+const StyledAnchor = styled.a`
+  display: inline-block;
+  margin: 4px 0 0 6px;
+  color: ${(props) => props.theme.palette.text03};
+  text-decoration: none;
+  :hover {
+    color: ${(props) => props.theme.palette.text02};
+    text-decoration: underline;
+  }
+`
+
 interface Props {
   projects: Projects[]
   title: string
+}
+
+const isGitHub = (urlText: string) => {
+  return urlText === 'GitHub'
 }
 
 export const ProjectExperience = ({ projects, title }: Props) => {
@@ -73,8 +86,23 @@ export const ProjectExperience = ({ projects, title }: Props) => {
           return (
             <ProjectCard key={project}>
               <Title>{project}</Title>
-              <ProjectType>Personal</ProjectType>
-              <Description>{ProjectDescriptions[project]}</Description>
+              <Description>{ProjectDetails[project].description}</Description>
+              <div>
+                {isGitHub(ProjectDetails[project].urlText) ? (
+                  <Icon
+                    src="/assets/icons/search/GitHub.svg"
+                    alt="GitHub logo"
+                  />
+                ) : (
+                  <Icon src="/assets/icons/share.png" alt="redirect" />
+                )}
+                <StyledAnchor
+                  href={ProjectDetails[project].url}
+                  target="_blank"
+                >
+                  {ProjectDetails[project].urlText}
+                </StyledAnchor>
+              </div>
             </ProjectCard>
           )
         })}
