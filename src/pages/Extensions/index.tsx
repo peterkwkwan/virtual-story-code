@@ -101,6 +101,11 @@ export const ExtensionsList: Extension[] = [
             Companies.SERAI,
             Companies.PAG,
           ],
+          projects: [
+            Projects.SANITY_STUDIO,
+            Projects.VIRTUAL_STORY_CODE,
+            Projects.MOVIES_DB,
+          ],
         }),
       })
     },
@@ -133,6 +138,7 @@ export const ExtensionsList: Extension[] = [
             Companies.PAG,
             Companies.MANULIFE,
           ],
+          projects: [Projects.ASTEROIDS, Projects.DEFEND_JEDI_TEMPLE],
         }),
       })
     },
@@ -164,6 +170,11 @@ export const ExtensionsList: Extension[] = [
             Companies.PAG,
             Companies.MANULIFE,
           ],
+          projects: [
+            Projects.SANITY_STUDIO,
+            Projects.VIRTUAL_STORY_CODE,
+            Projects.METAMASK,
+          ],
         }),
       })
     },
@@ -189,6 +200,7 @@ export const ExtensionsList: Extension[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.SERAI, Companies.BCW],
+          projects: [Projects.CASE_OF_THE_MONTH],
         }),
       })
     },
@@ -330,7 +342,7 @@ export const ExtensionsList: Extension[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.SERAI],
-          projects: [Projects.VIRTUAL_STORY_CODE],
+          projects: [Projects.VIRTUAL_STORY_CODE, Projects.METAMASK],
         }),
       })
     },
@@ -382,7 +394,7 @@ export const ExtensionsList: Extension[] = [
         resourceLinks: Resources[Skills.TAILWIND],
         tabs: generateTabs({
           title: this.title,
-          projects: [Projects.MOVIES_DB],
+          projects: [Projects.MOVIES_DB, Projects.POKEAPI],
         }),
       })
     },
@@ -410,6 +422,7 @@ export const ExtensionsList: Extension[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW, Companies.SERAI],
+          projects: [Projects.VIRTUAL_STORY_CODE],
         }),
       })
     },

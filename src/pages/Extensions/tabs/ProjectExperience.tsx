@@ -41,7 +41,7 @@ const Description = styled.p`
   margin: 0;
   font-weight: 200;
   font-size: 0.875rem;
-  color: ${(props) => props.theme.palette.text03};
+  color: ${(props) => props.theme.palette.text02};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

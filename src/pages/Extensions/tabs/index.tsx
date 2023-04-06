@@ -42,10 +42,5 @@ export const generateTabs = ({ companies, title, projects }: Props) => {
       ),
     })
 
-  tabs.push({
-    id: 3,
-    label: 'Label 3',
-    content: <Container></Container>,
-  })
   return tabs
 }
