@@ -3,7 +3,19 @@ export enum Projects {
   MOVIES_DB = 'Latest Movies Releasing',
 }
 
-export const ProjectDescriptions: { [key: string]: string } = {
-  [Projects.VIRTUAL_STORY_CODE]: '',
-  [Projects.MOVIES_DB]: '',
+export const ProjectDetails: {
+  [key: string]: { description: string; url: string; urlText: string }
+} = {
+  [Projects.VIRTUAL_STORY_CODE]: {
+    description:
+      'My personal website inspired by the aesthetic of Visual Studio Code',
+    url: 'https://github.com/peterkwkwan/virtual-story-code',
+    urlText: 'GitHub',
+  },
+  [Projects.MOVIES_DB]: {
+    description:
+      "Movies database that utilizes API from 'The Movie Database API'",
+    url: 'https://github.com/peterkwkwan/latest_movies_releasing',
+    urlText: 'GitHub',
+  },
 }
