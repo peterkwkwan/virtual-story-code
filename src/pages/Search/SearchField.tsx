@@ -13,7 +13,7 @@ export const SearchField = () => {
         <TypewriterComponent
           onInit={(typewriter) => {
             typewriter
-              .pauseFor(2000)
+              .pauseFor(500)
               .typeString("peter kwan - let's connect!")
               .pauseFor(2500)
               .start()
