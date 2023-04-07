@@ -9,7 +9,7 @@ const Container = styled.div`
   font-family: SF-Pro, sans-serif;
 `
 
-export const SearchContainer = () => {
+export const SearchSidebar = () => {
   return (
     <Container>
       <SearchField />
