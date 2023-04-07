@@ -3,11 +3,16 @@ import styled from 'styled-components'
 
 const ButtonLink = styled.button`
   --background-color: ${(props) => props.theme.palette.dark02};
-  --border-color: linear-gradient(to bottom right, #5d00ff, #ff2f00);
-  --border-width: 0.5em;
-  --edge-size: 0.5em;
+  --border-color: linear-gradient(
+    to bottom right,
+    ${(props) => props.theme.palette.vsCodeDeepBlue},
+    ${(props) => props.theme.palette.vsCodeBlue}
+  );
+  --border-width: 5px;
+  --edge-size: 0.8rem;
 
   color: ${(props) => props.theme.palette.text04};
+  font-family: SF-Pro, sans-serif;
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
@@ -29,14 +34,14 @@ const ButtonLink = styled.button`
   transition: color 250ms;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     background: var(--border-color);
     z-index: -2;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     background: var(--background-color);
@@ -75,9 +80,9 @@ const ButtonLink = styled.button`
 `
 
 interface Props {
-  title: string;
-  hyperlink: string;
-  handleIsHovering: (hovering: boolean) => void;
+  title: string
+  hyperlink: string
+  handleIsHovering: (hovering: boolean) => void
 }
 export const AnimatedButton = ({
   title,
