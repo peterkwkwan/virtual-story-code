@@ -13,7 +13,10 @@ interface ImgProps {
 const Image = styled.img<ImgProps>`
   display: block;
   border-radius: 50%;
-  border: 5px solid #5d00ff;
+  border: 5px solid
+    ${(props) => (props.isHovering ? props.theme.palette.vsCodeBlue : 'white')};
+  filter: ${(props) => (props.isHovering ? 'grayscale(0%)' : 'grayscale(80%)')};
+  transition: all 0.8s;
 `
 
 export const Avatar = ({ title, isHovering }: Props) => {
