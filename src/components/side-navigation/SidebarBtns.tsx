@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { UnstyledLink } from '../elements/UnstyledLink'
+
+import { ExplorerContext } from '@/App'
 
 enum SidebarOptions {
   EXPLORER = 'Explorer',
@@ -61,6 +63,13 @@ const buttons = [
 export const SidebarBtns = () => {
   const { pathname } = useLocation()
 
+  const { currentFile } = useContext(ExplorerContext)
+  const [, setFile] = currentFile
+
+  const handleChangePage = () => {
+    setFile({ title: '', path: '' })
+  }
+
   return (
     <Sidebar>
       <ButtonUnorderedList>
@@ -69,6 +78,7 @@ export const SidebarBtns = () => {
             <SidebarButtons
               key={btn.title}
               selected={pathname.includes(btn.path)}
+              onClick={handleChangePage}
             >
               <img src={btn.src} />
             </SidebarButtons>

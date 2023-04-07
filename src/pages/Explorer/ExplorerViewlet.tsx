@@ -45,9 +45,10 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   line-height: 22px;
   white-space: pre;
   text-decoration: none;
-  font-size: 13px;
-  text-align: start;
+  font-size: 11px;
+  font-weight: 700;
   font-family: Segoe WPC, Segoe UI, sans-serif;
+  text-align: start;
   cursor: pointer;
   background-color: ${(props) => props.theme.palette.dark03};
   &:before {

@@ -28,7 +28,7 @@ const FolderButton = styled.button<StyledFolder>`
   line-height: 22px;
   white-space: pre;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   text-align: start;
   color: inherit;
   font-family: Segoe WPC, Segoe UI, sans-serif;
