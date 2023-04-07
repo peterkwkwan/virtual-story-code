@@ -12,7 +12,6 @@ interface Props {
 const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
   width: 100%;
-  height: calc(100% - 38px);
 `
 
 const FileContents = styled.div`

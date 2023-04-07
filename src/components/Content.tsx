@@ -11,6 +11,8 @@ const Container = styled.div`
   display: block;
 `
 
+const ROUTE_TAB_HEIGHT = 38
+
 export const Content = () => {
   return (
     <Routes>
@@ -27,7 +29,14 @@ export const Content = () => {
                   name={route.fileName}
                   isExtension={route.path.includes('extensions')}
                 />
-                {route.component()}
+                <div
+                  style={{
+                    height: `calc(100% - ${ROUTE_TAB_HEIGHT}px`,
+                    overflow: 'auto',
+                  }}
+                >
+                  {route.component()}
+                </div>
               </Container>
             )
           }
