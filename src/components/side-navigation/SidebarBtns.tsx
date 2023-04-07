@@ -9,7 +9,7 @@ import { ExplorerContext } from '@/App'
 enum SidebarOptions {
   EXPLORER = 'Explorer',
   SEARCH = 'Search',
-  GIT = 'Git',
+  BLOG = 'Blog',
   EXTENSIONS = 'Extensions',
 }
 
@@ -49,9 +49,9 @@ const buttons = [
     path: 'search',
   },
   {
-    title: SidebarOptions.GIT,
+    title: SidebarOptions.BLOG,
     src: '/assets/icons/sidebar/git-btn.svg',
-    path: 'git',
+    path: 'blog',
   },
   {
     title: SidebarOptions.EXTENSIONS,

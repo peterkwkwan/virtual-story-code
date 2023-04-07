@@ -2,10 +2,12 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ExplorerViewlet } from '../../pages/explorer/ExplorerViewlet'
-import { ExtensionsViewlet } from '../../pages/extensions/ExtensionsViewlet'
-import { SearchViewlet } from '../../pages/search/SearchViewlet'
 import { SidebarBtns } from './SidebarBtns'
+
+import { ExplorerViewlet } from '@/pages/explorer/ExplorerViewlet'
+import { ExtensionsViewlet } from '@/pages/extensions/ExtensionsViewlet'
+import { SearchViewlet } from '@/pages/search/SearchViewlet'
+import { BlogViewlet } from '@/pages/blog/BlogViewlet'
 
 const Container = styled.aside`
   display: flex;
@@ -15,6 +17,7 @@ const Container = styled.aside`
 const SidebarConfigs = {
   ['explorer']: <ExplorerViewlet />,
   ['search']: <SearchViewlet />,
+  ['blog']: <BlogViewlet />,
   ['extensions']: <ExtensionsViewlet />,
 }
 
