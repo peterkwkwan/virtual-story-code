@@ -11,6 +11,8 @@ import { Resources, Skills } from '@/constants/skills'
 
 export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
+  EXT_NEXT_JS = 'extensions/next-js',
+  EXT_GATSBY = 'extensions/gatsby',
   EXT_REACTROUTER = 'extensions/react-router',
   EXT_REACTQUERY = 'extensions/react-query',
   EXT_JAVASCRIPT = 'extensions/javascript',
@@ -30,6 +32,8 @@ export enum ExtPagePaths {
 
 export enum ExtPageNames {
   EXT_REACT = 'Skill: React',
+  EXT_NEXT_JS = 'Skill: Next.js',
+  EXT_GATSBY = 'Skill: Gatsby',
   EXT_REACTROUTER = 'Skill: React Router',
   EXT_REACTQUERY = 'Skill: React Query',
   EXT_JAVASCRIPT = 'Skill: JavaScript',
@@ -55,6 +59,8 @@ const ExtensionIcon = styled.img`
 
 const LogoSrc = {
   [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
+  [ExtPageNames.EXT_NEXT_JS]: '/assets/icons/extensions/nextjs.svg',
+  [ExtPageNames.EXT_GATSBY]: '/assets/icons/extensions/gatsby.svg',
   [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.svg',
   [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.png',
   [ExtPageNames.EXT_JAVASCRIPT]: '/assets/icons/extensions/javascript.svg',
@@ -75,76 +81,7 @@ const LogoSrc = {
 
 export const ExtensionsList: Extension[] = [
   {
-    title: 'React',
-    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACT]} />,
-    path: ExtPagePaths.EXT_REACT,
-    description:
-      'Open-source front-end JavaScript library for building user interfaces based on UI components',
-    type: 'Frontend framework',
-    fileName: ExtPageNames.EXT_REACT,
-    proficiency: 'Proficient',
-    rating: 5,
-    component: function () {
-      return ExtensionContentWrapper({
-        title: this.title,
-        type: this.type,
-        description: this.description,
-        proficiency: this.proficiency,
-        rating: this.rating,
-        logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
-        resourceLinks: Resources[Skills.REACT],
-        tabs: generateTabs({
-          title: this.title,
-          companies: [
-            Companies.WTW,
-            Companies.BCW,
-            Companies.SERAI,
-            Companies.PAG,
-          ],
-          projects: [
-            Projects.SANITY_STUDIO,
-            Projects.VIRTUAL_STORY_CODE,
-            Projects.MOVIES_DB,
-          ],
-        }),
-      })
-    },
-  },
-  {
-    title: 'JavaScript',
-    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_JAVASCRIPT]} />,
-    path: ExtPagePaths.EXT_JAVASCRIPT,
-    description:
-      'Scripting or programming language that enables programmers to implement complex features on web pages',
-    type: 'Programming language',
-    fileName: ExtPageNames.EXT_JAVASCRIPT,
-    proficiency: 'Proficient',
-    rating: 5,
-    component: function () {
-      return ExtensionContentWrapper({
-        title: this.title,
-        type: this.type,
-        description: this.description,
-        proficiency: this.proficiency,
-        rating: this.rating,
-        logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
-        resourceLinks: Resources[Skills.JAVASCRIPT],
-        tabs: generateTabs({
-          title: this.title,
-          companies: [
-            Companies.WTW,
-            Companies.BCW,
-            Companies.SERAI,
-            Companies.PAG,
-            Companies.MANULIFE,
-          ],
-          projects: [Projects.ASTEROIDS, Projects.DEFEND_JEDI_TEMPLE],
-        }),
-      })
-    },
-  },
-  {
-    title: 'TypeScript',
+    title: Skills.TYPESCRIPT,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TYPESCRIPT]} />,
     path: ExtPagePaths.EXT_TYPESCRIPT,
     description: 'Superset of JavaScript that adds type safety to projects',
@@ -180,7 +117,41 @@ export const ExtensionsList: Extension[] = [
     },
   },
   {
-    title: 'Python',
+    title: Skills.JAVASCRIPT,
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_JAVASCRIPT]} />,
+    path: ExtPagePaths.EXT_JAVASCRIPT,
+    description:
+      'Scripting or programming language that enables programmers to implement complex features on web pages',
+    type: 'Programming language',
+    fileName: ExtPageNames.EXT_JAVASCRIPT,
+    proficiency: 'Proficient',
+    rating: 5,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
+        resourceLinks: Resources[Skills.JAVASCRIPT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+            Companies.MANULIFE,
+          ],
+          projects: [Projects.ASTEROIDS, Projects.DEFEND_JEDI_TEMPLE],
+        }),
+      })
+    },
+  },
+
+  {
+    title: Skills.PYTHON,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_PYTHON]} />,
     path: ExtPagePaths.EXT_PYTHON,
     description: 'High-level, general-purpose programming language',
@@ -206,7 +177,7 @@ export const ExtensionsList: Extension[] = [
     },
   },
   {
-    title: 'C#',
+    title: Skills.CSHARP,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_CSHARP]} />,
     path: ExtPagePaths.EXT_CSHARP,
     description:
@@ -227,6 +198,94 @@ export const ExtensionsList: Extension[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW, Companies.PAG],
+        }),
+      })
+    },
+  },
+  {
+    title: Skills.REACT,
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACT]} />,
+    path: ExtPagePaths.EXT_REACT,
+    description:
+      'Open-source front-end JavaScript library for building user interfaces based on UI components',
+    type: 'Frontend library',
+    fileName: ExtPageNames.EXT_REACT,
+    proficiency: 'Proficient',
+    rating: 5,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_REACT],
+        resourceLinks: Resources[Skills.REACT],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [
+            Companies.WTW,
+            Companies.BCW,
+            Companies.SERAI,
+            Companies.PAG,
+          ],
+          projects: [
+            Projects.SANITY_STUDIO,
+            Projects.VIRTUAL_STORY_CODE,
+            Projects.MOVIES_DB,
+          ],
+        }),
+      })
+    },
+  },
+  {
+    title: Skills.NEXT_JS,
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_NEXT_JS]} />,
+    path: ExtPagePaths.EXT_NEXT_JS,
+    description:
+      'Meta framework with out-of-the-box tools that handle features such as routing and data fetching.',
+    type: 'React framework',
+    fileName: ExtPageNames.EXT_NEXT_JS,
+    proficiency: 'Intermediate',
+    rating: 3,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_NEXT_JS],
+        resourceLinks: Resources[Skills.NEXT_JS],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.SERAI],
+        }),
+      })
+    },
+  },
+  {
+    title: Skills.GATSBY,
+    icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_GATSBY]} />,
+    path: ExtPagePaths.EXT_GATSBY,
+    description:
+      'Meta framework for building performant static sites. Comes with a powerful GraphQL API layer.',
+    type: 'React framework',
+    fileName: ExtPageNames.EXT_GATSBY,
+    proficiency: 'Intermediate',
+    rating: 3,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_GATSBY],
+        resourceLinks: Resources[Skills.GATSBY],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.WTW],
         }),
       })
     },

@@ -1,9 +1,11 @@
 export enum Skills {
-  REACT = 'React',
   JAVASCRIPT = 'JavaScript',
   TYPESCRIPT = 'TypeScript',
   PYTHON = 'Python',
   CSHARP = 'C#',
+  REACT = 'React',
+  NEXT_JS = 'Next.js',
+  GATSBY = 'Gatsby',
   UNITY = 'Unity',
   HTML = 'HTML',
   CSS = 'CSS',
@@ -22,12 +24,6 @@ export type ResourceLinks = { [key: string]: string }
 type ResourceLinkMapping = { [key: string]: ResourceLinks }
 
 export const Resources: ResourceLinkMapping = {
-  [Skills.REACT]: {
-    'Official React Docs': 'https://react.dev/',
-    'React Developer Tools': 'https://react.dev/learn/react-developer-tools',
-    'VSCode React snippets':
-      'https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets',
-  },
   [Skills.JAVASCRIPT]: {
     'JavaScript - MDN':
       'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
@@ -38,6 +34,19 @@ export const Resources: ResourceLinkMapping = {
   [Skills.PYTHON]: { 'Python Docs': 'https://docs.python.org/3/' },
   [Skills.CSHARP]: {
     'C# Docs': 'https://learn.microsoft.com/en-us/dotnet/csharp/',
+  },
+  [Skills.REACT]: {
+    'Official React Docs': 'https://react.dev/',
+    'React Developer Tools': 'https://react.dev/learn/react-developer-tools',
+    'VSCode React snippets':
+      'https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets',
+  },
+  [Skills.NEXT_JS]: {
+    'Official Next.js Docs': 'https://nextjs.org/docs',
+  },
+  [Skills.GATSBY]: {
+    'Official Gatsby Docs': 'https://www.gatsbyjs.com/docs/',
+    'Gatsby Cloud': 'https://www.gatsbyjs.com/products/cloud/',
   },
   [Skills.UNITY]: {
     'Official Unity Site': 'https://unity.com/',
