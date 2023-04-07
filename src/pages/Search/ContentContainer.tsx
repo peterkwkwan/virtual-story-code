@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSprings, animated, to as interpolate } from 'react-spring'
 import styled from 'styled-components'
 
 import { Content } from './Content'
@@ -23,39 +22,11 @@ const Profiles = [
   { title: 'Resume', hyperlink: HyperLink.RESUME },
 ]
 
-const to = (i: number) => ({
-  x: 0,
-  y: 10,
-  scale: 1,
-  delay: i * 500,
-})
-const from = (_i: number) => ({ x: 0, scale: 1.5, y: -1000 })
-// This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r: number, s: number) =>
-  `perspective(1500px) rotateX(30deg) rotateY(${
-    r / 10
-  }deg) rotateZ(${r}deg) scale(${s})`
-
 export const ContentContainer = () => {
-  const [springs] = useSprings(Profiles.length, (i) => ({
-    ...to(i),
-    from: from(i),
-  }))
-
   return (
     <Container>
-      {/* {profiles.map((profile) => ( */}
-      {springs.map(({ x, y, scale }, i) => (
-        <animated.div key={Profiles[i].title} style={{ x, y }}>
-          {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-          <animated.div
-            style={{
-              transform: interpolate([scale], trans),
-            }}
-          >
-            <Content key={Profiles[i].title} {...Profiles[i]} />
-          </animated.div>
-        </animated.div>
+      {Profiles.map((profile) => (
+        <Content key={profile.title} {...profile} />
       ))}
     </Container>
   )
