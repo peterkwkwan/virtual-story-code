@@ -10,6 +10,7 @@ import { ExplorerContext } from '@/App'
 const Container = styled.div`
   height: 38px;
   width: 100%;
+  user-select: none;
   background-color: ${(props) => props.theme.palette.dark03};
 `
 
