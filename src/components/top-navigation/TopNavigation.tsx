@@ -12,8 +12,8 @@ import { PagePaths } from '@/pages/shared/routerConfig'
 const navOptions = [
   { name: 'Home', path: PagePaths.HOME },
   { name: 'Contact Me', path: PagePaths.SEARCH },
+  { name: 'Blog', path: PagePaths.BLOG },
   { name: 'Skills', path: PagePaths.EXTENSIONS },
-  { name: 'Medium', path: '' },
 ]
 
 export const StyledList = styled.ul`
