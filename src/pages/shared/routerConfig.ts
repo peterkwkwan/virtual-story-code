@@ -10,12 +10,13 @@ import { PackageJson } from '../explorer/PackageJson'
 import { Serai } from '../explorer/Serai'
 import { Pag } from '../explorer/Pag'
 import { ExtensionsHome } from '../extensions/ExtensionsHome'
-import { SearchContent } from '../search/SearchContent'
+import { SearchContent } from '../search'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
 import { Home } from '../explorer/Home'
 import { ExtensionsList, ExtPageNames, ExtPagePaths } from '../extensions'
 import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
+import { Blog } from '../blog'
 
 export enum PagePaths {
   HOME = 'explorer',
@@ -34,6 +35,7 @@ export enum PagePaths {
   GIT_IGNORE = 'explorer/gitignore',
   README = 'explorer/readme',
   SEARCH = 'search',
+  BLOG = 'blog',
   EXTENSIONS = 'extensions',
 }
 
@@ -52,6 +54,7 @@ export enum PageNames {
   README = 'README.md',
   PACKAGE_JSON = 'package.json',
   GIT_IGNORE = '.gitignore',
+  SEARCH = 'contact.me',
 }
 
 interface RouterConfig {
@@ -137,6 +140,11 @@ export const routerConfig: RouterConfig[] = [
   {
     path: PagePaths.SEARCH,
     component: SearchContent,
+    fileName: PageNames.SEARCH,
+  },
+  {
+    path: PagePaths.BLOG,
+    component: Blog,
   },
   {
     path: PagePaths.EXTENSIONS,
