@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { AnimatedButton } from './AnimatedButton'
+import { AvatarButton } from './AvatarButton'
 import { Avatar } from './Avatar'
 
 const Container = styled.div`
@@ -29,7 +29,7 @@ export const AvatarContent = (props: Props) => {
   return (
     <Container>
       <Avatar title={props.title} isHovering={isHovering} />
-      <AnimatedButton {...props} handleIsHovering={handleIsHovering} />
+      <AvatarButton {...props} handleIsHovering={handleIsHovering} />
     </Container>
   )
 }

@@ -84,11 +84,7 @@ interface Props {
   hyperlink: string
   handleIsHovering: (hovering: boolean) => void
 }
-export const AnimatedButton = ({
-  title,
-  hyperlink,
-  handleIsHovering,
-}: Props) => {
+export const AvatarButton = ({ title, hyperlink, handleIsHovering }: Props) => {
   const handleClick = () => {
     window.open(hyperlink, '_blank')
   }
