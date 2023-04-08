@@ -53,7 +53,10 @@ const BlogDate = styled.span<{ selected: boolean }>`
 `
 
 const BlogLink = styled.a<{ selected: boolean }>`
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  align-items: center;
   color: ${(props) => (props.selected ? 'white' : props.theme.palette.text03)};
   font-size: 0.75rem;
   text-decoration: none;
@@ -89,7 +92,11 @@ export const BlogSidebarButton = ({
         </BlogButton>
       </UnstyledLink>
       <BlogLink selected={active} href={url} target="_blank">
-        {url}
+        <img
+          src="/assets/images/search/medium.png"
+          style={{ width: '12px', height: '12px', marginRight: '4px' }}
+        />
+        View on Medium
       </BlogLink>
     </BlogItem>
   )
