@@ -34,7 +34,7 @@ const StyledButton = styled.button<Props>`
     props.selected
       ? '1px solid ' + props.theme.palette.selectedBlueBorder
       : 'none'};
-  color: inherit;
+  color: ${(props) => (props.selected ? 'white' : 'inherit')};
   line-height: ${(props) => (props.selected ? '20px' : '22px')};
   white-space: pre;
   font-size: 13px;
