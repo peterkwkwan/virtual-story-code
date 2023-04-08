@@ -9,18 +9,18 @@ import { McGill } from '../explorer/McGill'
 import { PackageJson } from '../explorer/PackageJson'
 import { Serai } from '../explorer/Serai'
 import { Pag } from '../explorer/Pag'
-import { ExtensionsHome } from '../extensions/ExtensionsHome'
-import { SearchContent } from '../search'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
-import { Home } from '../explorer/Home'
+import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
 import {
   ExtensionsList,
   ExtPageNames,
   ExtPagePaths,
 } from '../extensions/ExtensionsRouterConfig'
-import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
-import { Blog } from '../blog'
+import { Home } from '../explorer/Home'
+import { ExtensionsHome } from '../extensions'
+import { BlogHome } from '../blog'
+import { SearchHome } from '../search'
 
 export enum PagePaths {
   HOME = 'explorer',
@@ -143,12 +143,12 @@ export const routerConfig: RouterConfig[] = [
   },
   {
     path: PagePaths.SEARCH,
-    component: SearchContent,
+    component: SearchHome,
     fileName: PageNames.SEARCH,
   },
   {
     path: PagePaths.BLOG,
-    component: Blog,
+    component: BlogHome,
   },
   {
     path: PagePaths.EXTENSIONS,

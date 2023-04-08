@@ -11,7 +11,7 @@ const TIPS = [
   },
 ]
 
-export const Blog = () => {
+export const BlogHome = () => {
   return (
     <BaseContentContainer>
       <LetterPressHome tips={TIPS} />

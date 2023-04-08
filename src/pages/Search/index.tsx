@@ -3,7 +3,7 @@ import React from 'react'
 import { BaseContentContainer } from '../shared/styledContainers'
 import { ContentContainer } from './ContentContainer'
 
-export const SearchContent = () => {
+export const SearchHome = () => {
   return (
     <BaseContentContainer>
       <ContentContainer />
