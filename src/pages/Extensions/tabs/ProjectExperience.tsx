@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ProjectDetails, Projects } from '@/constants/projects'
-import { ExternalLink } from '@/components/elements/ExternalLink'
 
 const Intro = styled.p`
   margin: 0;
