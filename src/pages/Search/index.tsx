@@ -1,12 +1,33 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { BaseContentContainer } from '../shared/styledContainers'
-import { ContentContainer } from './ContentContainer'
+import { HyperLink } from './shared/constants'
+import { AvatarContent } from './AvatarContent'
+
+const Container = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+`
+
+const Profiles = [
+  { title: 'GitHub', hyperlink: HyperLink.GITHUB },
+  { title: 'LinkedIn', hyperlink: HyperLink.LINKEDIN },
+  { title: 'Medium', hyperlink: HyperLink.MEDIUM },
+  { title: 'Resume', hyperlink: HyperLink.RESUME },
+]
 
 export const SearchHome = () => {
   return (
     <BaseContentContainer>
-      <ContentContainer />
+      <Container>
+        {Profiles.map((profile) => (
+          <AvatarContent key={profile.title} {...profile} />
+        ))}
+      </Container>
     </BaseContentContainer>
   )
 }

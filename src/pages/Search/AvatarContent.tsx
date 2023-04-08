@@ -15,11 +15,11 @@ const Container = styled.div`
 `
 
 interface Props {
-  title: string;
-  hyperlink: string;
+  title: string
+  hyperlink: string
 }
 
-export const Content = (props: Props) => {
+export const AvatarContent = (props: Props) => {
   const [isHovering, setIsHovering] = useState(false)
 
   const handleIsHovering = (hovering: boolean) => {
