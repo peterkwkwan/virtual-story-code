@@ -11,10 +11,11 @@ export const SearchField = () => {
       <TextField>
         {' '}
         <TypewriterComponent
+          options={{ delay: 50 }}
           onInit={(typewriter) => {
             typewriter
               .pauseFor(500)
-              .typeString("peter kwan - let's connect!")
+              .typeString('peter kwan: software engineer')
               .pauseFor(2500)
               .start()
           }}

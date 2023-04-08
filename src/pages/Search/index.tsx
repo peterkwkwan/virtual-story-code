@@ -6,11 +6,15 @@ import { HyperLink } from './shared/constants'
 import { AvatarContainer } from './AvatarContainer'
 
 const Container = styled.div`
-  display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+`
+
+const ProfilesContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50%;
 `
 
 const Profiles = [
@@ -24,9 +28,11 @@ export const SearchHome = () => {
   return (
     <BaseContentContainer>
       <Container>
-        {Profiles.map((profile) => (
-          <AvatarContainer key={profile.title} {...profile} />
-        ))}
+        <ProfilesContainer>
+          {Profiles.map((profile) => (
+            <AvatarContainer key={profile.title} {...profile} />
+          ))}
+        </ProfilesContainer>
       </Container>
     </BaseContentContainer>
   )

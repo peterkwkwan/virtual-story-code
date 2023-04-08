@@ -5,8 +5,8 @@ const ButtonLink = styled.button`
   --background-color: ${(props) => props.theme.palette.dark02};
   --border-color: linear-gradient(
     to bottom right,
-    ${(props) => props.theme.palette.vsCodeDeepBlue},
-    ${(props) => props.theme.palette.vsCodeBlue}
+    ${(props) => props.theme.palette.vsCodeBlue},
+    ${(props) => props.theme.palette.vsCodeDeepBlue}
   );
   --border-width: 5px;
   --edge-size: 0.8rem;
