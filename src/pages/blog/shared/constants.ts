@@ -1,12 +1,12 @@
 export enum Blogs {
-  IMPOSTER = 'Overcoming Impostor Syndrome',
+  IMPOSTOR = 'Overcoming Impostor Syndrome',
   FIVE_TIPS = '5 Tips for Aspiring Developers',
   FIVE_JS_FEATURES = '5 JavaScript features you (probably) haven’t used',
   CHATGPT_SUPERCHARGE = '4 Ways ChatGPT can supercharge your development process',
 }
 
 export const BlogLinks: { [key: string]: string } = {
-  [Blogs.IMPOSTER]:
+  [Blogs.IMPOSTOR]:
     'https://medium.com/codex/self-taught-perspectives-how-to-overcome-impostor-syndrome-13166ff28c81',
   [Blogs.FIVE_TIPS]:
     'https://medium.com/codex/5-tips-for-aspiring-developers-7bba426072fa',

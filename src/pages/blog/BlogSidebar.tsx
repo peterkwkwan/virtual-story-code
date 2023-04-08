@@ -20,9 +20,9 @@ const MyBlogs = [
     url: BlogLinks[Blogs.FIVE_TIPS],
   },
   {
-    title: Blogs.IMPOSTER,
+    title: Blogs.IMPOSTOR,
     date: 'May 29, 2022',
-    url: BlogLinks[Blogs.IMPOSTER],
+    url: BlogLinks[Blogs.IMPOSTOR],
   },
 ]
 
