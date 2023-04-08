@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { UnstyledLink } from './UnstyledLink'
 
 import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
-import { ExtPageNames } from '@/pages/extensions'
+import { ExtPageNames } from '@/pages/extensions/ExtensionsRouterConfig'
 import { ExplorerContext } from '@/App'
 
 const Container = styled.div`

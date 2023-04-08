@@ -2,7 +2,7 @@ import React, { RefObject, useState } from 'react'
 import styled from 'styled-components'
 
 import { ExtensionsButton } from './ExtensionsButton'
-import { ExtensionsList } from '.'
+import { ExtensionsList } from './ExtensionsRouterConfig'
 
 import {
   Tracker,

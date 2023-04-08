@@ -14,7 +14,11 @@ import { SearchContent } from '../search'
 import { BCWGroup } from '../explorer/BCWGroup'
 import { Readme } from '../explorer/Readme'
 import { Home } from '../explorer/Home'
-import { ExtensionsList, ExtPageNames, ExtPagePaths } from '../extensions'
+import {
+  ExtensionsList,
+  ExtPageNames,
+  ExtPagePaths,
+} from '../extensions/ExtensionsRouterConfig'
 import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
 import { Blog } from '../blog'
 
