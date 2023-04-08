@@ -1,10 +1,10 @@
-export interface Extension {
+import { RouterConfig } from '@/pages/shared/routerConfig'
+
+export interface ExtensionConfig extends RouterConfig {
   title: string
   description: string
-  path: ExtPagePaths
   icon: JSX.Element
   type: string
-  fileName: ExtPageNames
   proficiency:
     | 'Proficient'
     | 'Advanced'
@@ -12,5 +12,4 @@ export interface Extension {
     | 'Functional'
     | 'Hobbyist'
   rating: number
-  component: () => JSX.Element
 }

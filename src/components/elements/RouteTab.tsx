@@ -6,6 +6,7 @@ import { UnstyledLink } from './UnstyledLink'
 import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
 import { ExtPageNames } from '@/pages/extensions/ExtensionsRouterConfig'
 import { ExplorerContext } from '@/App'
+import { BlogPageNames } from '@/pages/blog/BlogRouterConfig'
 
 const Container = styled.div`
   height: 38px;
@@ -59,7 +60,7 @@ const Icon = styled.img`
   margin-right: 2px;
 `
 interface Props {
-  name: PageNames | ExtPageNames
+  name: PageNames | ExtPageNames | BlogPageNames
   isExtension: boolean
 }
 

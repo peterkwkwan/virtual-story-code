@@ -21,6 +21,11 @@ import { Home } from '../explorer/Home'
 import { ExtensionsHome } from '../extensions'
 import { BlogHome } from '../blog'
 import { SearchHome } from '../search'
+import {
+  BlogList,
+  BlogPageNames,
+  BlogsPagePaths,
+} from '../blog/BlogRouterConfig'
 
 export enum PagePaths {
   HOME = 'explorer',
@@ -61,10 +66,10 @@ export enum PageNames {
   SEARCH = 'contact.me',
 }
 
-interface RouterConfig {
-  path: PagePaths | ExtPagePaths
+export interface RouterConfig {
+  path: PagePaths | ExtPagePaths | BlogsPagePaths
   component: () => JSX.Element
-  fileName?: PageNames | ExtPageNames
+  fileName?: PageNames | ExtPageNames | BlogPageNames
 }
 export const routerConfig: RouterConfig[] = [
   {
@@ -155,4 +160,5 @@ export const routerConfig: RouterConfig[] = [
     component: ExtensionsHome,
   },
   ...ExtensionsList,
+  ...BlogList,
 ]

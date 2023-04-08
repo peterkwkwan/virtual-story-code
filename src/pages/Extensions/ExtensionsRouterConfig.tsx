@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ExtensionContentWrapper } from './ExtensionContentWrapper'
-import { Extension } from './shared/types'
+import { ExtensionConfig } from './shared/types'
 import { generateTabs } from './tabs'
 
 import { Companies } from '@/constants/companies'
@@ -79,7 +79,7 @@ const LogoSrc = {
   [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
 }
 
-export const ExtensionsList: Extension[] = [
+export const ExtensionsList: ExtensionConfig[] = [
   {
     title: Skills.TYPESCRIPT,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TYPESCRIPT]} />,

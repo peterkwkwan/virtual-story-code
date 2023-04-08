@@ -2,27 +2,34 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { BlogLinks, Blogs } from './shared/constants'
+import { BlogsPagePaths } from './BlogRouterConfig'
+
+import { UnstyledLink } from '@/components/elements/UnstyledLink'
 
 const MyBlogs = [
   {
     title: Blogs.CHATGPT_SUPERCHARGE,
     date: 'Feb 19, 2023',
     url: BlogLinks[Blogs.CHATGPT_SUPERCHARGE],
+    internalPath: BlogsPagePaths.BLOG_CHATGPT_SUPERCHARGE,
   },
   {
     title: Blogs.FIVE_JS_FEATURES,
     date: 'Feb 14, 2023',
     url: BlogLinks[Blogs.FIVE_JS_FEATURES],
+    internalPath: BlogsPagePaths.BLOG_FIVE_JS_FEATURES,
   },
   {
     title: Blogs.FIVE_TIPS,
     date: 'Jun 16, 2022',
     url: BlogLinks[Blogs.FIVE_TIPS],
+    internalPath: BlogsPagePaths.BLOG_FIVE_TIPS,
   },
   {
     title: Blogs.IMPOSTOR,
     date: 'May 29, 2022',
     url: BlogLinks[Blogs.IMPOSTOR],
+    internalPath: BlogsPagePaths.BLOG_IMPOSTOR,
   },
 ]
 
@@ -94,10 +101,12 @@ export const BlogSidebar = () => {
       <BlogCount>{MyBlogs.length} articles found</BlogCount>
       {MyBlogs.map((blog) => (
         <BlogItem key={blog.url}>
-          <BlogButton>
-            <BlogTitle>{blog.title}</BlogTitle>
-            <BlogDate>{blog.date}</BlogDate>
-          </BlogButton>
+          <UnstyledLink path={blog.internalPath}>
+            <BlogButton>
+              <BlogTitle>{blog.title}</BlogTitle>
+              <BlogDate>{blog.date}</BlogDate>
+            </BlogButton>
+          </UnstyledLink>
           <BlogLink href={blog.url} target="_blank">
             {blog.url}
           </BlogLink>

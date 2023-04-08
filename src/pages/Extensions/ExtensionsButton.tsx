@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
-import { Extension } from './shared/types'
+import { ExtensionConfig } from './shared/types'
 
 import { UnstyledLink } from '@/components/elements/UnstyledLink'
 import { useActivePath } from '@/hooks/useActivePath'
@@ -59,7 +59,7 @@ export const ExtensionsButton = ({
   description,
   type,
   path,
-}: Extension) => {
+}: ExtensionConfig) => {
   const active = useActivePath(path)
   const { pathname } = useLocation()
   const { currentFile } = useContext(ExplorerContext)

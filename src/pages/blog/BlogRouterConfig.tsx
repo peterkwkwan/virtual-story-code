@@ -1,4 +1,5 @@
-import { Blogs } from './shared/constants'
+import { RouterConfig } from '../shared/routerConfig'
+import { BlogSnippet, Blogs } from './shared/constants'
 
 export enum BlogsPagePaths {
   BLOG_IMPOSTOR = 'blog/overcoming-impostor-syndrome',
@@ -7,8 +8,32 @@ export enum BlogsPagePaths {
   BLOG_CHATGPT_SUPERCHARGE = 'blog/chatgpt-supercharge-development-process',
 }
 export enum BlogPageNames {
-  BLOG_IMPOSTOR = `Blog: ${Blogs.IMPOSTOR}`,
-  BLOG_FIVE_TIPS = `Blog: ${Blogs.FIVE_TIPS}`,
-  BLOG_FIVE_JS_FEATURES = `Blog: ${Blogs.FIVE_JS_FEATURES}`,
-  BLOG_CHATGPT_SUPERCHARGE = `Blog: ${Blogs.CHATGPT_SUPERCHARGE}`,
+  BLOG_IMPOSTOR = 'Blog: Overcoming Impostor Syndrome',
+  BLOG_FIVE_TIPS = 'Blog: 5 Tips for Aspiring Developers',
+  BLOG_FIVE_JS_FEATURES = 'Blog: 5 JavaScript features you (probably) haven’t used',
+  BLOG_CHATGPT_SUPERCHARGE = 'Blog: 4 Ways ChatGPT can supercharge your development process',
 }
+
+type BlogConfig = RouterConfig
+export const BlogList: BlogConfig[] = [
+  {
+    fileName: BlogPageNames.BLOG_IMPOSTOR,
+    path: BlogsPagePaths.BLOG_IMPOSTOR,
+    component: () => BlogSnippet[Blogs.IMPOSTOR],
+  },
+  {
+    fileName: BlogPageNames.BLOG_FIVE_TIPS,
+    path: BlogsPagePaths.BLOG_FIVE_TIPS,
+    component: () => BlogSnippet[Blogs.FIVE_TIPS],
+  },
+  {
+    fileName: BlogPageNames.BLOG_FIVE_JS_FEATURES,
+    path: BlogsPagePaths.BLOG_FIVE_JS_FEATURES,
+    component: () => BlogSnippet[Blogs.FIVE_JS_FEATURES],
+  },
+  {
+    fileName: BlogPageNames.BLOG_CHATGPT_SUPERCHARGE,
+    path: BlogsPagePaths.BLOG_CHATGPT_SUPERCHARGE,
+    component: () => BlogSnippet[Blogs.CHATGPT_SUPERCHARGE],
+  },
+]
