@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { BaseContentContainer } from '../shared/styledContainers'
 import { HyperLink } from './shared/constants'
-import { AvatarContent } from './AvatarContent'
+import { AvatarContainer } from './AvatarContainer'
 
 const Container = styled.div`
   display: grid;
@@ -25,7 +25,7 @@ export const SearchHome = () => {
     <BaseContentContainer>
       <Container>
         {Profiles.map((profile) => (
-          <AvatarContent key={profile.title} {...profile} />
+          <AvatarContainer key={profile.title} {...profile} />
         ))}
       </Container>
     </BaseContentContainer>

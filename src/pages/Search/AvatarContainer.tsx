@@ -19,7 +19,7 @@ interface Props {
   hyperlink: string
 }
 
-export const AvatarContent = (props: Props) => {
+export const AvatarContainer = (props: Props) => {
   const [isHovering, setIsHovering] = useState(false)
 
   const handleIsHovering = (hovering: boolean) => {
