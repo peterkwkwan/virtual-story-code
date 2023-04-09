@@ -35,6 +35,7 @@ const SidebarButtons = styled.button<{ selected: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${(props) => (props.selected ? 1 : 0.5)};
 `
 
 const buttons = [
