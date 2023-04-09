@@ -93,7 +93,7 @@ export const ProjectExperience = ({ projects, title }: Props) => {
                     alt="GitHub logo"
                   />
                 ) : (
-                  <Icon src="/assets/icons/share.png" alt="redirect" />
+                  <Icon src="/assets/icons/link-external.svg" alt="redirect" />
                 )}
                 <StyledAnchor
                   href={ProjectDetails[project].url}
