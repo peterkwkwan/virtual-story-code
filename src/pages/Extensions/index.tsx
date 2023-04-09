@@ -8,11 +8,11 @@ import { LetterPressHome } from '@/components/elements/LetterPressHome'
 const TIPS = [
   {
     text: 'Select my skills in the left sidebar',
-    src: '/assets/icons/arrow-left.png',
+    src: '/assets/icons/arrow-left.svg',
   },
   {
     text: 'Use the searchbox to filter skills',
-    src: '/assets/icons/search.png',
+    src: '/assets/icons/sidebar/search-btn.svg',
   },
 ]
 
