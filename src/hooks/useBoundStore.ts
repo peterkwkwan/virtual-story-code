@@ -12,11 +12,16 @@ import {
   createVisibilitySlice,
   VisibilitySlice,
 } from './slices/createVisibilitySlice'
+import { BlackNWhiteSlice, createBnWSlice } from './slices/createBnWSlice'
 
-type Slices = OffsetPercentageSlice & SpeechTrackerSlice & VisibilitySlice
+type Slices = BlackNWhiteSlice &
+  OffsetPercentageSlice &
+  SpeechTrackerSlice &
+  VisibilitySlice
 
 export const useBoundStore = create<Slices>()((...a) => ({
   ...createVisibilitySlice(...a),
   ...createOffsetPercentageSlice(...a),
   ...createSpeechTrackerSlice(...a),
+  ...createBnWSlice(...a),
 }))

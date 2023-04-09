@@ -49,5 +49,5 @@ export const StarRating = ({ rating }: { rating: number }) => {
     starList.push(<GreyStar key={fullStars + halfStars + i} src={EMPTY_STAR} />)
   }
 
-  return <Container>{starList}</Container>
+  return <Container className="StarRating">{starList}</Container>
 }

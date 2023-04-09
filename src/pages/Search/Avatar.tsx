@@ -25,6 +25,7 @@ const Image = styled.img<ImgProps>`
 export const Avatar = ({ title, isHovering }: Props) => {
   return (
     <Image
+      className="Avatar"
       isHovering={isHovering}
       src={`/assets/images/search/${title.toLowerCase()}.png`}
     />

@@ -64,11 +64,11 @@ export const ExplorerWrapper = ({
   return (
     <>
       {emptyContainer ? (
-        <BaseContentContainer>
+        <BaseContentContainer className="BaseContainer">
           <FileContents>{children}</FileContents>
         </BaseContentContainer>
       ) : (
-        <StyledContainer>
+        <StyledContainer className="BaseContainer">
           <LineNumbers>
             <ul>
               {lineNumbers.map((number) => (

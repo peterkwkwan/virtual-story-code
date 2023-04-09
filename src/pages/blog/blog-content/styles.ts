@@ -5,6 +5,7 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: 80%;
   font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+
   p {
     line-height: 28px;
     word-break: break-word;

@@ -12,6 +12,7 @@ import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
 import { theme } from './theme/theme'
 import ZeldaParallax from './pages/loading/ZeldaParallax'
+import { useBoundStore } from './hooks/useBoundStore'
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
@@ -40,6 +41,7 @@ export const ExplorerContext = React.createContext<ExplorerContextProp>({
 function App() {
   const [file, setFile] = useState(initFile)
   const [showLoadingPage, setShowLoadingPage] = useState(true)
+  const isBlackNWhite = useBoundStore((state) => state.isBlackNWhite)
 
   const handleEnterSite = () => {
     setShowLoadingPage(false)
@@ -48,7 +50,7 @@ function App() {
   return (
     <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
-        <GlobalStyle />
+        <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
           {/* <ZeldaParallax showLoadingPage={showLoadingPage}/> */}
           {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}

@@ -8,6 +8,7 @@ import { RetroMario } from './RetroMario'
 import { TopNavLink } from './TopNavLink'
 
 import { PagePaths } from '@/pages/shared/routerConfig'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
 const navOptions = [
   { name: 'Home', path: PagePaths.HOME },
@@ -61,15 +62,23 @@ const Title = styled.p`
   font-size: 12;
 `
 
-const LozLink = styled.img<{ darkLink: boolean }>`
-  filter: ${(props) => props.darkLink && 'contrast(200%) grayscale(100%)'};
+const LoZLink = styled.img<{ isBlackNWhite: boolean }>`
+  position: relative;
+  background: transparent;
+  filter: ${(props) =>
+    props.isBlackNWhite
+      ? 'hue-rotate(300deg) contrast(200%) drop-shadow(-12px 0px 10px rgb(240, 13, 130))'
+      : 'contrast(150%)'};
 `
 
 const TopNavigation = () => {
   const [gradient, setGradient] = useState(false)
   const [marioIsJumping, setMarioIsJumping] = useState(false)
   const [marioKartIsRacing, setMarioKartIsRacing] = useState(false)
-  const [darkLink, setDarkLink] = useState(false)
+  const [isBlackNWhite, setIsBlackNWhite] = useBoundStore((state) => [
+    state.isBlackNWhite,
+    state.setIsBlackNWhite,
+  ])
   const { currentFile } = useContext(ExplorerContext)
   const [file] = currentFile
   const handleMarioJump = () => {
@@ -98,12 +107,12 @@ const TopNavigation = () => {
   }
 
   const handleLozClick = () => {
-    setDarkLink((prev) => !prev)
+    setIsBlackNWhite()
   }
 
   return (
     <StyledNavigation>
-      <Box gradient={gradient}>
+      <Box gradient={gradient} className="TopNav">
         <StyledList>
           <RetroMario
             handleMarioJump={handleMarioJump}
@@ -128,11 +137,12 @@ const TopNavigation = () => {
         <MarioKart marioKartIsRacing={marioKartIsRacing} />
         <Title>{renderCurrentFile()} virtual-story-code</Title>
 
-        <LozLink
+        <LoZLink
           height="32"
           style={{ cursor: 'pointer' }}
           src="/assets/icons/link.png"
-          darkLink={darkLink}
+          isBlackNWhite={isBlackNWhite}
+          className="LozLink"
           onClick={handleLozClick}
         />
       </Box>
