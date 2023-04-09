@@ -10,7 +10,7 @@ interface Props {
   gradient: boolean
 }
 
-const StyledLink = styled(Link)<{ gradient: string; active: boolean }>`
+const StyledLink = styled(Link)<{ gradient: string; active: string }>`
   padding: 0 12px;
   border-radius: 5px;
   display: flex;
@@ -24,7 +24,7 @@ const StyledLink = styled(Link)<{ gradient: string; active: boolean }>`
       ? props.theme.palette.dark01
       : props.theme.palette.white};
   background-color: ${(props) =>
-    props.active
+    props.active === 'true'
       ? props.gradient === 'true'
         ? 'rgba(0, 0, 0, 0.1)'
         : 'rgba(255, 255, 255, 0.25)'
@@ -43,7 +43,7 @@ export const TopNavLink = ({ path, name, gradient }: Props) => {
     <StyledLink
       to={path}
       gradient={gradient ? 'true' : 'false'}
-      active={isActive}
+      active={isActive ? 'true' : 'false'}
     >
       {name}
     </StyledLink>

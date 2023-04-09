@@ -291,7 +291,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Unity',
+    title: Skills.UNITY,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_UNITY]} />,
     path: ExtPagePaths.EXT_UNITY,
     description:
@@ -317,7 +317,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'HTML',
+    title: Skills.HTML,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_HTML]} />,
     path: ExtPagePaths.EXT_HTML,
     description: 'Standard markup language for creating Web pages.',
@@ -348,7 +348,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'CSS',
+    title: Skills.CSS,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_CSS]} />,
     path: ExtPagePaths.EXT_CSS,
     description:
@@ -380,7 +380,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'styled-components',
+    title: Skills.STYLED_COMPONENTS,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS]} />,
     path: ExtPagePaths.EXT_STYLEDCOMPONENTS,
     description:
@@ -407,7 +407,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Material UI',
+    title: Skills.MUI,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_MUI]} />,
     path: ExtPagePaths.EXT_MUI,
     description:
@@ -433,7 +433,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Tailwind CSS',
+    title: Skills.TAILWIND,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_TAILWIND]} />,
     path: ExtPagePaths.EXT_TAILWIND,
     description:
@@ -460,7 +460,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
 
   {
-    title: 'React Router',
+    title: Skills.REACT_ROUTER,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />,
     path: ExtPagePaths.EXT_REACTROUTER,
     description:
@@ -487,7 +487,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'React Query',
+    title: Skills.REACT_QUERY,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_REACTQUERY]} />,
     path: ExtPagePaths.EXT_REACTQUERY,
     description:
@@ -513,7 +513,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Storybook',
+    title: Skills.STORYBOOK,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STORYBOOK]} />,
     path: ExtPagePaths.EXT_STORYBOOK,
     description:
@@ -539,7 +539,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Stripe.js',
+    title: Skills.STRIPE,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_STRIPE]} />,
     path: ExtPagePaths.EXT_STRIPE,
     description:
@@ -565,7 +565,7 @@ export const ExtensionsList: ExtensionConfig[] = [
     },
   },
   {
-    title: 'Git',
+    title: Skills.GIT,
     icon: <ExtensionIcon src={LogoSrc[ExtPageNames.EXT_GIT]} />,
     path: ExtPagePaths.EXT_GIT,
     description:
