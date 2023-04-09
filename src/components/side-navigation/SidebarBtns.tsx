@@ -50,7 +50,7 @@ const buttons = [
   },
   {
     title: SidebarOptions.BLOG,
-    src: '/assets/icons/sidebar/git-btn.svg',
+    src: '/assets/icons/sidebar/source-control-btn.svg',
     path: 'blog',
   },
   {

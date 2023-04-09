@@ -64,12 +64,12 @@ export const LetterPressHome = ({ tips }: Props) => {
       <LetterPress />
       <Summary>
         {tips.map((tip) => (
-          <>
+          <React.Fragment key={tip.text}>
             <Col1>{tip.text}</Col1>
             <Col2>
               <IconImage src={tip.src} />
             </Col2>
-          </>
+          </React.Fragment>
         ))}
       </Summary>
     </Container>

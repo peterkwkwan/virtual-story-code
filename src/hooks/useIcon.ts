@@ -1,29 +1,29 @@
 export const useIcon = (value: string) => {
-  const suffix = value.split('.').pop()
+  if (value.includes('Skill:')) {
+    return '/assets/icons/extensions/skillList.svg'
+  }
+  if (value.includes('Blog:')) {
+    return '/assets/icons/edit.svg'
+  }
 
-  let pathName = ''
+  const suffix = value.split('.').pop()
 
   switch (suffix) {
     case 'tsx':
-      pathName = '/assets/icons/reactts.svg'
-      break
+      return '/assets/icons/reactts.svg'
     case 'html':
-      pathName = '/assets/icons/html.svg'
-      break
+      return '/assets/icons/html.svg'
     case 'scss':
-      pathName = '/assets/icons/scss.svg'
-      break
+      return '/assets/icons/scss.svg'
     case 'md':
-      pathName = '/assets/icons/text.svg'
-      break
+      return '/assets/icons/text.svg'
     case 'test':
-      pathName = '/assets/icons/test.svg'
-      break
+      return '/assets/icons/test.svg'
     case 'json':
-      pathName = '/assets/icons/json.svg'
-      break
+      return '/assets/icons/json.svg'
+    case 'me':
+      return '/assets/icons/feedback.svg'
     default:
-      pathName = '/assets/icons/git.svg'
+      return '/assets/icons/git.svg'
   }
-  return pathName
 }

@@ -7,7 +7,7 @@ import { LetterPressHome } from '@/components/elements/LetterPressHome'
 const TIPS = [
   {
     text: 'Click on any article in the sidebar',
-    src: '/assets/icons/arrow-left.png',
+    src: '/assets/icons/arrow-left.svg',
   },
 ]
 
