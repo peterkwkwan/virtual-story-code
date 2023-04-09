@@ -34,7 +34,8 @@ const FolderButton = styled.button<FolderButton>`
   text-decoration: none;
   font-size: 11px;
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: start;
   box-shadow: ${(props) =>
     props.shadow ? '-10px 5px 2px ' + props.theme.palette.dark01 : ''};

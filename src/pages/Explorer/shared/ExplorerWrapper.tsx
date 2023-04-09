@@ -45,7 +45,8 @@ const Contributors = styled.div`
   height: 20px;
   line-height: 15px;
   font-size: 11px;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.palette.contributors};

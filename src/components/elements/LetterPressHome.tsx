@@ -28,7 +28,8 @@ const Summary = styled.div`
   row-gap: 12px;
   margin-top: 20px;
   user-select: none;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: ${(props) => props.theme.palette.text03};
 `
 const Col1 = styled.div`

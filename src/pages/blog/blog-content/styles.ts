@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   color: ${(props) => props.theme.palette.text01};
-  font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   ::before {
     position: absolute;
     top: 0;

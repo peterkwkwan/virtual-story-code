@@ -31,7 +31,8 @@ const FolderButton = styled.button<StyledFolder>`
   font-size: 13px;
   text-align: start;
   color: inherit;
-  font-family: Segoe WPC, Segoe UI, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   cursor: pointer;
   padding-left: 16px;
   &:before {

@@ -39,7 +39,8 @@ const StyledButton = styled.button<Props>`
   white-space: pre;
   font-size: 13px;
   text-align: start;
-  font-family: Segoe WPC, Segoe UI, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   cursor: pointer;
   padding-left: ${(props) => calcPadding(props.isRoot, props.selected)};
   display: flex;

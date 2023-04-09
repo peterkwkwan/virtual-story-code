@@ -47,7 +47,8 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   text-decoration: none;
   font-size: 11px;
   font-weight: 700;
-  font-family: Segoe WPC, Segoe UI, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: start;
   cursor: pointer;
   background-color: ${(props) => props.theme.palette.dark03};

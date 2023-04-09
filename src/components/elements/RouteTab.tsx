@@ -28,7 +28,8 @@ const Tab = styled.div`
 `
 
 const Label = styled.p`
-  font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 13px;
   margin: 0;
   text-overflow: ellipsis;
