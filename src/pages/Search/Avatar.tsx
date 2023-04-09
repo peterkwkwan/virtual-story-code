@@ -14,6 +14,7 @@ const Image = styled.img<ImgProps>`
   display: block;
   border-radius: 50%;
   width: 180px;
+  height: 180px;
   border: 5px solid
     ${(props) => (props.isHovering ? props.theme.palette.vsCodeBlue : 'white')};
   filter: ${(props) =>
