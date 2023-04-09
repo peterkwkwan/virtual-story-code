@@ -7,6 +7,7 @@ import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
 import { ExtPageNames } from '@/pages/extensions/ExtensionsRouterConfig'
 import { ExplorerContext } from '@/App'
 import { BlogPageNames } from '@/pages/blog/BlogRouterConfig'
+import { useIcon } from '@/hooks/useIcon'
 
 const Container = styled.div`
   height: 38px;
@@ -55,16 +56,18 @@ const Cross = styled.button`
 `
 
 const Icon = styled.img`
-  width: 18px;
-  height: 18px;
-  margin-right: 2px;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
 `
 interface Props {
   name: PageNames | ExtPageNames | BlogPageNames
-  isExtension: boolean
+  basePath: string
 }
 
-export const RouteTab = ({ name, isExtension }: Props) => {
+export const RouteTab = ({ name, basePath }: Props) => {
+  const iconPath = useIcon(name)
+
   const { currentFile } = useContext(ExplorerContext)
   const [, setFile] = currentFile
 
@@ -75,17 +78,14 @@ export const RouteTab = ({ name, isExtension }: Props) => {
   return (
     <Container>
       <Tab>
-        {isExtension && (
-          <Icon
-            src="/assets/icons/extensions/extension-icon.jpg"
-            alt="extension-icon"
-          />
-        )}
+        <Icon src={iconPath} alt="tab-icon" />
         <Label>{name}</Label>
-        <UnstyledLink
-          path={isExtension ? `/${PagePaths.EXTENSIONS}` : `/${PagePaths.HOME}`}
-        >
-          <Cross onClick={handleClose}>&#215;</Cross>
+        <UnstyledLink path={`/${basePath}`}>
+          {basePath == 'search' ? (
+            <div style={{ width: '8px' }} />
+          ) : (
+            <Cross onClick={handleClose}>&#215;</Cross>
+          )}
         </UnstyledLink>
       </Tab>
     </Container>

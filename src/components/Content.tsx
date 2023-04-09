@@ -27,7 +27,7 @@ export const Content = () => {
               <Container>
                 <RouteTab
                   name={route.fileName}
-                  isExtension={route.path.includes('extensions')}
+                  basePath={route.path.split('/')[0]}
                 />
                 <div
                   style={{
