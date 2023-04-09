@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { BaseContentContainer } from '../shared/styledContainers'
 import { HyperLink } from './shared/constants'
 import { AvatarContainer } from './AvatarContainer'
+import { ContactForm } from './ContactForm'
 
 const Container = styled.div`
   width: 100%;
@@ -33,6 +34,7 @@ export const SearchHome = () => {
             <AvatarContainer key={profile.title} {...profile} />
           ))}
         </ProfilesContainer>
+        <ContactForm />
       </Container>
     </BaseContentContainer>
   )
