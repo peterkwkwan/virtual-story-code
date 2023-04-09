@@ -1,11 +1,28 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  position: relative;
   color: ${(props) => props.theme.palette.text01};
-  margin: 0 auto;
-  max-width: 80%;
   font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  ::before {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(37, 37, 38, 0.5) 75%,
+      rgba(37, 37, 38, 1) 100%
+    );
+    pointer-events: none;
+  }
+`
 
+export const InnerContainer = styled.div`
+  margin: 0 auto;
+  max-width: 75%;
   p {
     line-height: 28px;
     word-break: break-word;
