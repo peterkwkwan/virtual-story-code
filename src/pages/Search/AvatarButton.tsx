@@ -9,12 +9,12 @@ const ButtonLink = styled.button`
     ${(props) => props.theme.palette.vsCodeDeepBlue}
   );
   --border-width: 5px;
-  --edge-size: 0.8rem;
+  --edge-size: 0.5rem;
 
   color: ${(props) => props.theme.palette.text04};
-  font-family: SF-Pro, sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
   cursor: pointer;
   background: var(--background-color);
   padding: 0.6em 2em;

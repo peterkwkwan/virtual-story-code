@@ -7,14 +7,20 @@ const Container = styled.div`
   max-width: 80%;
   label,
   input,
-  textarea {
+  textarea,
+  button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
       sans-serif;
+    transition: all 0.25s;
   }
   input,
   textarea {
     background: transparent;
+  }
+  input,
+  textarea,
+  button {
     color: ${(props) => props.theme.palette.text01};
     :focus {
       outline: none;
@@ -43,23 +49,75 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   font-size: 1rem;
   border: 2px solid ${(props) => props.theme.palette.divider};
+  resize: none;
+  :focus {
+    border: 2px solid ${(props) => props.theme.palette.vsCodeBlue};
+  }
 `
 
 const SubmitButton = styled.button`
-  width: fit-content;
+  width: 200px;
   padding: 12px 24px;
   margin: 20px 0 40px;
   cursor: pointer;
-  background-color: red;
-  border: none;
-  color: ${(props) => props.theme.palette.text01};
+  background: ${(props) => props.theme.palette.vsCodeDeepBlue};
+
+  border: 2px solid transparent;
+  :hover,
+  :focus {
+    color: white;
+    background: ${(props) => props.theme.palette.vsCodeBlue};
+  }
+  :disabled {
+    border: 2px solid ${(props) => props.theme.palette.divider};
+    background: ${(props) => props.theme.palette.dark02};
+    color: ${(props) => props.theme.palette.text01};
+    cursor: default;
+  }
+`
+
+const Icon = styled.img`
+  width: 12px;
+  height: 12px;
+`
+
+const LoadingIcon = styled(Icon)`
+  animation: spin 1s infinite linear;
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`
+
+const ButtonContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm('mqkogenl')
 
-  if (state.succeeded) {
-    return <p>Thanks for your message!</p>
+  const getButtonText = () => {
+    if (state.succeeded)
+      return (
+        <ButtonContent>
+          <Icon src="/assets/icons/check.svg" alt="completed" />
+          <span style={{ marginLeft: '4px' }}>Sent!</span>
+        </ButtonContent>
+      )
+    if (state.submitting)
+      return <LoadingIcon src="/assets/icons/loading.svg" alt="loading" />
+    return (
+      <ButtonContent>
+        <Icon src="/assets/icons/mail.svg" alt="email" />
+        <span style={{ marginLeft: '4px' }}>Send me a message</span>
+      </ButtonContent>
+    )
   }
 
   return (
@@ -80,8 +138,11 @@ export const ContactForm = () => {
             field="message"
             errors={state.errors}
           />
-          <SubmitButton disabled={state.submitting} type="submit">
-            Send me a message
+          <SubmitButton
+            disabled={state.submitting || state.succeeded}
+            type="submit"
+          >
+            {getButtonText()}
           </SubmitButton>
         </div>
       </form>

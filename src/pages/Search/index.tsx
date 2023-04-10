@@ -15,7 +15,7 @@ const ProfilesContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 32px;
+  margin: 12px 0 28px;
 `
 
 const Profiles = [
