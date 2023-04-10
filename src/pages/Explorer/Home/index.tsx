@@ -40,7 +40,7 @@ export const Home = () => {
   const parallax = useRef<IParallax>(null)
   const speechBubbleStart = 2
   const myCareerPage = 4
-  const numberOfPages = 6
+  const numberOfPages = 7
 
   const handleFinishSpeech = () => {
     if (parallax.current) {
@@ -106,7 +106,7 @@ export const Home = () => {
             <ScrollPrompt />
           </CareerParallaxLayer>
 
-          <ParallaxLayer offset={5} sticky={{ start: 5, end: 6 }}>
+          <ParallaxLayer offset={5} sticky={{ start: 5, end: 7 }}>
             <TimelineBackbone />
           </ParallaxLayer>
         </ParallaxSpring>
