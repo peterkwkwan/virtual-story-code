@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { UnstyledLink } from './UnstyledLink'
 
-import { PageNames, PagePaths } from '@/pages/shared/routerConfig'
+import { PageNames } from '@/pages/shared/routerConfig'
 import { ExtPageNames } from '@/pages/extensions/ExtensionsRouterConfig'
 import { ExplorerContext } from '@/App'
 import { BlogPageNames } from '@/pages/blog/BlogRouterConfig'
@@ -13,6 +13,9 @@ const Container = styled.div`
   height: 38px;
   width: 100%;
   user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   background-color: ${(props) => props.theme.palette.dark03};
 `
 

@@ -12,6 +12,11 @@ interface Props {
 const StyledContainer = styled(BaseContentContainer)`
   font-size: 12px;
   width: 100%;
+  white-space: nowrap;
+  overflow: auto;
+  @media only screen and (min-width: 1200px) {
+    white-space: normal;
+  }
 `
 
 const FileContents = styled.div`
@@ -50,6 +55,9 @@ const Contributors = styled.div`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.palette.contributors};
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `
 
 export const ExplorerWrapper = ({

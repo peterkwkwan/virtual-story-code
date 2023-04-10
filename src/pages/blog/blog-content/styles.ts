@@ -24,7 +24,7 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 80%;
   p {
     line-height: 28px;
     word-break: break-word;
