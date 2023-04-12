@@ -108,6 +108,7 @@ export const ExtensionsList: ExtensionConfig[] = [
             Companies.MANULIFE,
           ],
           projects: [
+            Projects.GECKODONIA,
             Projects.SANITY_STUDIO,
             Projects.VIRTUAL_STORY_CODE,
             Projects.METAMASK,
@@ -230,6 +231,7 @@ export const ExtensionsList: ExtensionConfig[] = [
             Companies.PAG,
           ],
           projects: [
+            Projects.GECKODONIA,
             Projects.SANITY_STUDIO,
             Projects.VIRTUAL_STORY_CODE,
             Projects.MOVIES_DB,
@@ -259,7 +261,8 @@ export const ExtensionsList: ExtensionConfig[] = [
         resourceLinks: Resources[Skills.NEXT_JS],
         tabs: generateTabs({
           title: this.title,
-          companies: [Companies.SERAI],
+          companies: [Companies.WTW, Companies.SERAI],
+          projects: [Projects.GECKODONIA],
         }),
       })
     },
@@ -453,7 +456,7 @@ export const ExtensionsList: ExtensionConfig[] = [
         resourceLinks: Resources[Skills.TAILWIND],
         tabs: generateTabs({
           title: this.title,
-          projects: [Projects.MOVIES_DB, Projects.POKEAPI],
+          projects: [Projects.GECKODONIA, Projects.MOVIES_DB, Projects.POKEAPI],
         }),
       })
     },

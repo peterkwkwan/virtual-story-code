@@ -82,7 +82,7 @@ export const WorkExperience = ({ companies, title }: Props) => {
   return (
     <>
       <Intro>
-        I have experience in {title} at {isSingular ? 'this' : 'these'}&nbsp;
+        I have experience with {title} at {isSingular ? 'this' : 'these'}&nbsp;
         {isSingular ? 'company' : 'companies'}:
       </Intro>
       <CompanyCardContainer>

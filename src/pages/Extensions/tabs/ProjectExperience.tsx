@@ -77,7 +77,7 @@ export const ProjectExperience = ({ projects, title }: Props) => {
   return (
     <>
       <Intro>
-        I have experience in {title} in {isSingular ? 'this' : 'these'}&nbsp;
+        I have experience with {title} in {isSingular ? 'this' : 'these'}&nbsp;
         {isSingular ? 'project' : 'projects'}:
       </Intro>
       <ProjectCardContainer>

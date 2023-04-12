@@ -7,6 +7,7 @@ export enum Projects {
   METAMASK = 'MetaMask Wallet',
   ASTEROIDS = 'Asteroids',
   POKEAPI = 'PokéAPI React Native App',
+  GECKODONIA = 'Geckodonia',
 }
 
 export const ProjectDetails: {
@@ -55,6 +56,11 @@ export const ProjectDetails: {
   [Projects.POKEAPI]: {
     description: 'React Native app for viewing Gen 1 Pokemon cards',
     url: 'https://github.com/peterkwkwan/pokeapi-viewer',
+    urlText: 'GitHub',
+  },
+  [Projects.GECKODONIA]: {
+    description: 'An e-commerce platform for purchasing exotic geckos',
+    url: 'https://github.com/ericyang91/New_Geckodonia',
     urlText: 'GitHub',
   },
 }
