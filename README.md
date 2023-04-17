@@ -12,4 +12,6 @@ Project tech stack:
 4. [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - lightweight app-wide state management
 5. [React Spring](https://www.react-spring.dev/) - for more complex animations and parallax effects
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6f769fb-ee24-4e24-b754-b05f5dd96f22/deploy-status)](https://app.netlify.com/sites/peter-kwan/deploys)
+
 copyright © 2023 [peterkwkwan](https://github.com/peterkwkwan)
