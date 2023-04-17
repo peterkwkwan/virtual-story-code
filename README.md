@@ -13,6 +13,7 @@ Project tech stack:
 5. [React Spring](https://www.react-spring.dev/) - for more complex animations and parallax effects
 
 [Deployed on Netlify here - https://peter-kwan.netlify.app/](https://peter-kwan.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/91f60b1f-b576-4b17-8e3f-6c4c257cf24e/deploy-status)](https://app.netlify.com/sites/peter-kwan/deploys)
 
 copyright © 2023 [peterkwkwan](https://github.com/peterkwkwan)
