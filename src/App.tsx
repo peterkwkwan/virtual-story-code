@@ -52,8 +52,11 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
-          {/* <ZeldaParallax showLoadingPage={showLoadingPage}/> */}
-          {/* <LoadingAnimation showLoadingPage={showLoadingPage} onEnterClick={handleEnterSite}/> */}
+          <ZeldaParallax showLoadingPage={showLoadingPage} />
+          <LoadingAnimation
+            showLoadingPage={showLoadingPage}
+            onEnterClick={handleEnterSite}
+          />
           <MainContainer>
             <TopNavigation />
             <Body>
