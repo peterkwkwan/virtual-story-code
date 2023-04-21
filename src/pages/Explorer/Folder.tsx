@@ -62,7 +62,11 @@ export const Folder = ({ folder, name, onFolderClick }: FolderProps) => {
 
   return (
     <>
-      <FolderButton opened={folder.opened} onClick={handleClick}>
+      <FolderButton
+        opened={folder.opened}
+        aria-label="Toggle Folder"
+        onClick={handleClick}
+      >
         {name}
       </FolderButton>
       <FolderContents opened={folder.opened}>

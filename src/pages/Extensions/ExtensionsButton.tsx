@@ -74,7 +74,7 @@ export const ExtensionsButton = ({
 
   return (
     <UnstyledLink path={path}>
-      <Button selected={active}>
+      <Button selected={active} aria-label="Select skill">
         {icon}
         <Content>
           <Title selected={active}>{title}</Title>

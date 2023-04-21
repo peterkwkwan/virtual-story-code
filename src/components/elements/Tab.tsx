@@ -22,7 +22,7 @@ interface TabProps {
 
 export const Tab = ({ label, onClick, isActive }: TabProps) => {
   return (
-    <TabButton active={isActive} onClick={onClick}>
+    <TabButton aria-label="Switch Tab" active={isActive} onClick={onClick}>
       {label}
     </TabButton>
   )

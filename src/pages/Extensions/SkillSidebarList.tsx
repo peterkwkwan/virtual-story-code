@@ -108,6 +108,7 @@ export const SkillSidebarList = () => {
         opened={opened}
         shadow={showBoxShadow}
         onClick={handleFolderClick}
+        aria-label="Toggle skill folder"
       >
         INSTALLED
       </FolderButton>

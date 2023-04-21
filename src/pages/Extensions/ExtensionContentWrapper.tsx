@@ -155,8 +155,10 @@ export const ExtensionContentWrapper = ({
           </Subtitle>
           <Description>{description}</Description>
           <ButtonContainer>
-            <DisableButton>Disable</DisableButton>
-            <UninstallButton>Uninstall</UninstallButton>
+            <DisableButton aria-label="Disable skill">Disable</DisableButton>
+            <UninstallButton aria-label="Uninstall skill">
+              Uninstall
+            </UninstallButton>
           </ButtonContainer>
           <Status>This skill is installed globally.</Status>
         </Details>

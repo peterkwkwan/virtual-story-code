@@ -307,7 +307,7 @@ export const SpeechBubble = ({
           />
           <ButtonContainer>
             {showClickMe && <ClickMe>Click!</ClickMe>}
-            <Button onClick={handleClick}>
+            <Button aria-label="Next" onClick={handleClick}>
               {textAvailable ? 'A' : '\u2713'}
             </Button>
           </ButtonContainer>

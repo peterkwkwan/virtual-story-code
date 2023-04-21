@@ -91,6 +91,7 @@ export const AvatarButton = ({ title, hyperlink, handleIsHovering }: Props) => {
 
   return (
     <ButtonLink
+      aria-label={`Go to ${title}`}
       onMouseOver={() => handleIsHovering(true)}
       onMouseLeave={() => handleIsHovering(false)}
       onClick={handleClick}

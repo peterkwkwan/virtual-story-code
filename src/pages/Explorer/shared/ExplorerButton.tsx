@@ -67,7 +67,11 @@ export const ExplorerButton = (props: Props) => {
 
   return (
     <UnstyledLink path={rest.path}>
-      <StyledButton selected={active} {...rest}>
+      <StyledButton
+        selected={active}
+        {...rest}
+        aria-label={`Go to ${rest.title}`}
+      >
         <img style={{ width: 16, height: 16, marginRight: 4 }} src={iconPath} />
         {rest.title}
       </StyledButton>

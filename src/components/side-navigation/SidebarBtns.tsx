@@ -78,6 +78,7 @@ export const SidebarBtns = () => {
           <UnstyledLink key={btn.title} path={btn.path}>
             <SidebarButtons
               key={btn.title}
+              aria-label={`Go to ${btn.title}`}
               selected={pathname.includes(btn.path)}
               onClick={handleChangePage}
             >

@@ -103,10 +103,10 @@ const StyledButton = styled.button`
 `
 
 interface Props {
-  title: string;
-  onClick: () => void;
-  onMouseOver?: () => void;
-  onMouseLeave?: () => void;
+  title: string
+  onClick: () => void
+  onMouseOver?: () => void
+  onMouseLeave?: () => void
 }
 
 export const LoadingButton = ({
@@ -128,6 +128,7 @@ export const LoadingButton = ({
       onMouseOver={onMouseOverHandler}
       onMouseLeave={onMouseLeaveHandler}
       onClick={onClick}
+      aria-label="Enter site"
     >
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>

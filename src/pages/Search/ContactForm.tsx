@@ -141,6 +141,7 @@ export const ContactForm = () => {
           <SubmitButton
             disabled={state.submitting || state.succeeded}
             type="submit"
+            aria-label="Submit form"
           >
             {getButtonText()}
           </SubmitButton>
