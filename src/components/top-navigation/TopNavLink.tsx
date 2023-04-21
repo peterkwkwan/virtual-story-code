@@ -16,7 +16,8 @@ const StyledLink = styled(Link)<{ gradient: string; active: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: SF-Pro, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
   height: 100%;
   color: ${(props) =>

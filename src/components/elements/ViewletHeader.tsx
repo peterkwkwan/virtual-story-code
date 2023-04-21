@@ -17,7 +17,8 @@ const Title = styled.h6`
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-family: SF-Pro, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `
 export const ViewletHeader = ({ headerName }: { headerName: string }) => {
   return (
