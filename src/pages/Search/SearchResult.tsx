@@ -29,22 +29,22 @@ const getIconPath = (title: Results) => {
 
 const results = [
   {
-    icon: <Icon src={getIconPath(Results.GITHUB)} />,
+    icon: <Icon alt="icon-github" src={getIconPath(Results.GITHUB)} />,
     title: Results.GITHUB,
     hyperlink: HyperLink.GITHUB,
   },
   {
-    icon: <Icon src={getIconPath(Results.LINKEDIN)} />,
+    icon: <Icon alt="icon-linkedin" src={getIconPath(Results.LINKEDIN)} />,
     title: Results.LINKEDIN,
     hyperlink: HyperLink.LINKEDIN,
   },
   {
-    icon: <Icon src={getIconPath(Results.MEDIUM)} />,
+    icon: <Icon alt="icon-medium" src={getIconPath(Results.MEDIUM)} />,
     title: Results.MEDIUM,
     hyperlink: HyperLink.MEDIUM,
   },
   {
-    icon: <Icon src={getIconPath(Results.RESUME)} />,
+    icon: <Icon alt="icon-resume" src={getIconPath(Results.RESUME)} />,
     title: Results.RESUME,
     hyperlink: HyperLink.RESUME,
   },

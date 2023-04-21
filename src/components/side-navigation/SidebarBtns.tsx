@@ -82,7 +82,7 @@ export const SidebarBtns = () => {
               selected={pathname.includes(btn.path)}
               onClick={handleChangePage}
             >
-              <img src={btn.src} />
+              <img src={btn.src} alt="sidebar-btn" />
             </SidebarButtons>
           </UnstyledLink>
         ))}

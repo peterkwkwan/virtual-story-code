@@ -72,7 +72,11 @@ export const ExplorerButton = (props: Props) => {
         {...rest}
         aria-label={`Go to ${rest.title}`}
       >
-        <img style={{ width: 16, height: 16, marginRight: 4 }} src={iconPath} />
+        <img
+          style={{ width: 16, height: 16, marginRight: 4 }}
+          src={iconPath}
+          alt={`icon${rest.title}`}
+        />
         {rest.title}
       </StyledButton>
     </UnstyledLink>

@@ -54,6 +54,7 @@ export const RetroMario = ({
     <StyledMario
       src={marioSrc}
       marioIsJumping={marioIsJumping}
+      alt="Mario"
       onClick={handleClick}
     />
   )

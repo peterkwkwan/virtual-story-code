@@ -142,7 +142,7 @@ export const ExtensionContentWrapper = ({
   return (
     <Container>
       <Header>
-        <ExtensionLogo src={logoSrc} />
+        <ExtensionLogo src={logoSrc} alt={`${title}-logo`} />
         <Details>
           <Title>{title}</Title>
           <Subtitle>

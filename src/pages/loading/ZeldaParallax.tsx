@@ -85,25 +85,25 @@ const ZeldaParallax = ({ showLoadingPage }: Props) => {
     <Container showLoadingPage={showLoadingPage}>
       <ParallaxContainer id="zeldaParallax">
         <ImgContainer data-depth="1">
-          <ZeldaImg src={layer7} />
+          <ZeldaImg alt="layer-7" src={layer7} />
         </ImgContainer>
         <ImgContainer data-depth="0.9">
-          <ZeldaImg src={layer6} />
+          <ZeldaImg alt="layer-6" src={layer6} />
         </ImgContainer>
         <ImgContainer data-depth="0.7">
-          <ZeldaImg src={layer5} />
+          <ZeldaImg alt="layer-5" src={layer5} />
         </ImgContainer>
         <ImgContainer data-depth="0.4">
-          <ZeldaImg src={layer4} />
+          <ZeldaImg alt="layer-4" src={layer4} />
         </ImgContainer>
         <ImgContainer data-depth="0.3">
-          <ZeldaImg src={layer3} />
+          <ZeldaImg alt="layer-3" src={layer3} />
         </ImgContainer>
         <ImgContainer data-depth="0.2">
-          <ZeldaImg src={layer2} />
+          <ZeldaImg alt="layer-2" src={layer2} />
         </ImgContainer>
         <ImgContainer data-depth="0.1">
-          <ZeldaImg src={layer1} />
+          <ZeldaImg alt="layer-1" src={layer1} />
         </ImgContainer>
       </ParallaxContainer>
     </Container>

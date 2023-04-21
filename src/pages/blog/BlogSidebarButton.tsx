@@ -95,6 +95,7 @@ export const BlogSidebarButton = ({
         <img
           src="/assets/images/search/medium.png"
           style={{ width: '12px', height: '12px', marginRight: '4px' }}
+          alt="Medium Logo"
         />
         View on Medium
       </BlogLink>

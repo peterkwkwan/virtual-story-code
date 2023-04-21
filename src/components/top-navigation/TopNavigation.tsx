@@ -140,6 +140,7 @@ const TopNavigation = () => {
         <LoZLink
           height="32"
           style={{ cursor: 'pointer' }}
+          alt="Link"
           src="/assets/icons/top-navbar/lozLink.png"
           isBlackNWhite={isBlackNWhite}
           className="LozLink"

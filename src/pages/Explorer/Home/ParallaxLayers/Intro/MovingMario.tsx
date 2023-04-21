@@ -107,6 +107,7 @@ export const MovingMario = ({
       src={getSvgPath()}
       offset={offsetPercentage}
       talking={showSpeechBubble}
+      alt="Mario"
     />
   )
 }

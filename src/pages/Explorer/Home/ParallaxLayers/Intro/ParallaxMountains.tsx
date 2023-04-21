@@ -52,7 +52,7 @@ export const ParallaxMountains = () => {
                 : `url(${layer}) center center / cover no-repeat`,
             }}
           >
-            {useImage && <Image src={layer} />}
+            {useImage && <Image src={layer} alt={`layer-${i}`} />}
           </ParallaxLayer>
         )
       })}

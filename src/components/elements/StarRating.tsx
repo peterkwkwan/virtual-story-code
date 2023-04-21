@@ -36,17 +36,25 @@ export const StarRating = ({ rating }: { rating: number }) => {
 
   // Render full stars
   for (let i = 0; i < fullStars; i++) {
-    starList.push(<OrangeStar key={i} src={FULL_STAR} />)
+    starList.push(<OrangeStar key={i} src={FULL_STAR} alt="full-star" />)
   }
 
   // Render half stars
   for (let i = 0; i < halfStars; i++) {
-    starList.push(<OrangeStar key={fullStars + i} src={HALF_STAR} />)
+    starList.push(
+      <OrangeStar key={fullStars + i} src={HALF_STAR} alt="half-star" />
+    )
   }
 
   // Render empty stars
   for (let i = 0; i < emptyStars; i++) {
-    starList.push(<GreyStar key={fullStars + halfStars + i} src={EMPTY_STAR} />)
+    starList.push(
+      <GreyStar
+        key={fullStars + halfStars + i}
+        src={EMPTY_STAR}
+        alt="empty-star"
+      />
+    )
   }
 
   return <Container className="StarRating">{starList}</Container>

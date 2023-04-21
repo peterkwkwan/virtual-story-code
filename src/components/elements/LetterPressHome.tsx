@@ -68,7 +68,7 @@ export const LetterPressHome = ({ tips }: Props) => {
           <React.Fragment key={tip.text}>
             <Col1>{tip.text}</Col1>
             <Col2>
-              <IconImage src={tip.src} />
+              <IconImage src={tip.src} alt={tip.src} />
             </Col2>
           </React.Fragment>
         ))}
