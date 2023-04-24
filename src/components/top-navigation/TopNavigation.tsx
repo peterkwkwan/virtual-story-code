@@ -64,7 +64,7 @@ const Title = styled.p`
 `
 
 const LoZLink = styled.img<{ isBlackNWhite: boolean }>`
-  height: 32px;
+  height: 31px;
   width: 56px;
   position: relative;
   background: transparent;
