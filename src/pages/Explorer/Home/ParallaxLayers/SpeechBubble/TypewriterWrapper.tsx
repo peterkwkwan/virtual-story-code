@@ -2,7 +2,7 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 import styled from 'styled-components'
 
-const DescriptionText = styled.h6`
+const DescriptionText = styled.span`
   color: ${(props) => props.theme.palette.white};
   font-size: 2.5rem;
   text-align: center;

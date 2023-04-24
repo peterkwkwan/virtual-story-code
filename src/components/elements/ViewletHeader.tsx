@@ -8,7 +8,7 @@ const StyledHeader = styled.div`
   align-items: center;
 `
 
-const Title = styled.h6`
+const Title = styled.span`
   margin: 0;
   color: ${(props) => props.theme.palette.text04};
   font-weight: 400;
