@@ -15,7 +15,7 @@ import layer10 from '/assets/images/parallax/home/layer_10.webp'
 import styled from 'styled-components'
 
 const Image = styled.img`
-  height: 100%;
+  height: 776px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
