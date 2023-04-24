@@ -64,6 +64,8 @@ const Title = styled.p`
 `
 
 const LoZLink = styled.img<{ isBlackNWhite: boolean }>`
+  height: 32;
+  width: 56;
   position: relative;
   background: transparent;
   filter: ${(props) =>
@@ -139,7 +141,6 @@ const TopNavigation = () => {
         <Title>{renderCurrentFile()} virtual-story-code</Title>
 
         <LoZLink
-          height="32"
           style={{ cursor: 'pointer' }}
           alt="Link"
           src="/assets/icons/top-navbar/lozLink.png"
