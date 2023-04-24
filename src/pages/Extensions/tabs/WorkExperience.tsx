@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Companies, CompanyDescriptions } from '@/constants/companies'
 import { UnstyledLink } from '@/components/elements/UnstyledLink'
+import SkeletonImage from '@/components/elements/SkeletonImage'
 
 const Intro = styled.p`
   margin: 0;
@@ -35,12 +36,6 @@ const CompanyCard = styled.div`
       filter: brightness(100%);
     }
   }
-`
-
-const CompanyLogo = styled.img`
-  width: 48px;
-  height: 48px;
-  filter: brightness(80%);
 `
 
 const Details = styled.div`
@@ -93,9 +88,12 @@ export const WorkExperience = ({ companies, title }: Props) => {
               path={`/explorer/${toKebabCase(company)}`}
             >
               <CompanyCard>
-                <CompanyLogo
+                <SkeletonImage
                   src={`/assets/icons/companies/${toKebabCase(company)}.webp`}
                   alt={`${company}-logo`}
+                  width={48}
+                  height={48}
+                  style={{ filter: 'brightness(80%)' }}
                 />
                 <Details>
                   <Title>{company}</Title>

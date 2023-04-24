@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { CSSProperties, useState } from 'react'
 import styled from 'styled-components'
 
 const Skeleton = styled.div`
@@ -29,9 +29,10 @@ type Props = {
   alt: string
   width?: number
   height?: number
+  style?: CSSProperties
 }
 
-const SkeletonImage: React.FC<Props> = ({ src, alt, width, height }) => {
+const SkeletonImage: React.FC<Props> = ({ src, alt, width, height, style }) => {
   const [loaded, setLoaded] = useState(false)
 
   const handleLoad: React.ReactEventHandler<HTMLImageElement> = (e) => {
@@ -40,13 +41,13 @@ const SkeletonImage: React.FC<Props> = ({ src, alt, width, height }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      {!loaded && <Skeleton />}
+      {!loaded && <Skeleton style={{ ...style }} />}
       <img
         src={src}
         alt={alt}
         width={width}
         height={height}
-        style={{ opacity: loaded ? 1 : 0 }}
+        style={{ opacity: loaded ? 1 : 0, ...style }}
         onLoad={handleLoad}
       />
     </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { ExtensionContentWrapper } from './ExtensionContentWrapper'
 import { ExtensionConfig } from './shared/types'
@@ -8,6 +7,7 @@ import { generateTabs } from './tabs'
 import { Companies } from '@/constants/companies'
 import { Projects } from '@/constants/projects'
 import { Resources, Skills } from '@/constants/skills'
+import SkeletonImage from '@/components/elements/SkeletonImage'
 
 export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
@@ -51,11 +51,17 @@ export enum ExtPageNames {
   EXT_GIT = 'Skill: Git',
 }
 
-const ExtensionIcon = styled.img`
-  width: 42px;
-  height: 42px;
-  padding: 10px 14px 10px 0;
-`
+const ExtensionIcon = ({ src, alt }: { src: string; alt: string }) => {
+  return (
+    <SkeletonImage
+      src={src}
+      alt={alt}
+      width={42}
+      height={42}
+      style={{ margin: '10px 14px 10px 0' }}
+    />
+  )
+}
 
 const LogoSrc = {
   [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
