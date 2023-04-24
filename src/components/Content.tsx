@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 
 import { routerConfig } from '../pages/shared/routerConfig'
 import { RouteTab } from './elements/RouteTab'
+
+ReactGA.initialize('G-230YPQTB8S')
 
 const Container = styled.div`
   height: 100%;
@@ -14,6 +17,10 @@ const Container = styled.div`
 const ROUTE_TAB_HEIGHT = 38
 
 export const Content = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <Routes>
       {routerConfig.map((route) => (
