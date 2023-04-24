@@ -84,13 +84,11 @@ export const RouteTab = ({ name, basePath }: Props) => {
       <Tab>
         <Icon src={iconPath} alt="tab-icon" />
         <Label>{name}</Label>
-        <UnstyledLink path={`/${basePath}`}>
+        <UnstyledLink path={`/${basePath}`} aria-label={`Close ${basePath}`}>
           {basePath == 'search' ? (
-            <div style={{ width: '8px' }} aria-label="" />
+            <div style={{ width: '8px' }} />
           ) : (
-            <Cross aria-label="Close Tab" onClick={handleClose}>
-              &#215;
-            </Cross>
+            <Cross onClick={handleClose}>&#215;</Cross>
           )}
         </UnstyledLink>
       </Tab>
