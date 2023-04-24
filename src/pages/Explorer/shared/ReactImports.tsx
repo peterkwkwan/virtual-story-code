@@ -6,12 +6,13 @@ import { LightBlueText, LineBreak, PurpleText, StringText } from './StyledText'
 
 const StyledImport = styled.div`
   margin: 0;
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 `
 
 /* eslint-disable react/no-unescaped-entities */
 export const ReactImports = () => {
-  const typewriterString = '<span style="color: #c586c0;">import</span> <span style="color: #9cdcfe;">Job</span> <span style="color: #c586c0;">from</span> <span style="color: #ce9178;">\'career\'</span>'
+  const typewriterString =
+    '<span style="color: #c586c0;">import</span> <span style="color: #9cdcfe;">Job</span> <span style="color: #c586c0;">from</span> <span style="color: #ce9178;">\'career\'</span>'
   return (
     <>
       <StyledImport>

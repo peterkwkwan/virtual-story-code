@@ -16,7 +16,7 @@ import styled from 'styled-components'
 
 const Image = styled.img`
   height: 776px;
-  width: 100%;
+  width: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
