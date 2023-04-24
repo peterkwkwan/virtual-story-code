@@ -27,14 +27,14 @@ export const ReplaceField = () => {
           height={20}
           width={20}
           alt="replace"
-          src="/assets/icons/search/replace-icon.png"
+          src="/assets/icons/search/replace-icon.webp"
         />
       </ReplaceContainer>
       <Icon
         height={20}
         width={20}
         alt="replace"
-        src="/assets/icons/search/replace-icon2.png"
+        src="/assets/icons/search/replace-icon2.webp"
       />
     </div>
   )

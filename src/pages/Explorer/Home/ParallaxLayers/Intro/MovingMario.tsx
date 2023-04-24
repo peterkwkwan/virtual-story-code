@@ -73,33 +73,33 @@ export const MovingMario = ({
         speechIndex === marioIsThinking ||
         speechIndex === marioIsThinkingAgain
       ) {
-        return '/assets/images/home/mario/thinkingMario.png'
+        return '/assets/images/home/mario/thinkingMario.webp'
       }
       if (speechIndex === marioIsAngry) {
-        return '/assets/images/home/mario/angryMario.png'
+        return '/assets/images/home/mario/angryMario.webp'
       }
       if (speechIndex === marioIsNeutral) {
-        return '/assets/images/home/mario/neutralMario.png'
+        return '/assets/images/home/mario/neutralMario.webp'
       }
       if (speechIndex === marioIsHappy) {
-        return '/assets/images/home/mario/happyMario.png'
+        return '/assets/images/home/mario/happyMario.webp'
       }
-      return '/assets/images/home/mario/faintedmario.png'
+      return '/assets/images/home/mario/faintedmario.webp'
     }
     if (offsetPercentage < 10) {
       return '/assets/images/home/mario/marioInSpace.webp'
     }
     if (offsetPercentage < 30) {
-      return '/assets/images/home/mario/fallingMario1.png'
+      return '/assets/images/home/mario/fallingMario1.webp'
     }
     if (offsetPercentage < 55) {
-      return '/assets/images/home/mario/fallingMario2.png'
+      return '/assets/images/home/mario/fallingMario2.webp'
     }
     if (offsetPercentage < 80) {
-      return '/assets/images/home/mario/fallingMario3.png'
+      return '/assets/images/home/mario/fallingMario3.webp'
     }
 
-    return '/assets/images/home/mario/faintedmario.png'
+    return '/assets/images/home/mario/faintedmario.webp'
   }
 
   return (

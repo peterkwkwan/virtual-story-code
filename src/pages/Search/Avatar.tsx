@@ -28,7 +28,7 @@ export const Avatar = ({ title, isHovering }: Props) => {
       className="Avatar"
       isHovering={isHovering}
       alt={`${title}-avatar`}
-      src={`/assets/images/search/${title.toLowerCase()}.png`}
+      src={`/assets/images/search/${title.toLowerCase()}.webp`}
     />
   )
 }

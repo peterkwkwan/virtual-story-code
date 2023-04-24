@@ -93,7 +93,7 @@ export const BlogSidebarButton = ({
       </UnstyledLink>
       <BlogLink selected={active} href={url} target="_blank">
         <img
-          src="/assets/images/search/medium.png"
+          src="/assets/images/search/medium.webp"
           style={{ width: '12px', height: '12px', marginRight: '4px' }}
           alt="Medium Logo"
         />

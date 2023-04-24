@@ -25,7 +25,7 @@ export const SearchField = () => {
         height={20}
         width={60}
         alt="searchbar-icon"
-        src="/assets/icons/search/searchbar-icons.png"
+        src="/assets/icons/search/searchbar-icons.webp"
       />
     </TextBox>
   )
