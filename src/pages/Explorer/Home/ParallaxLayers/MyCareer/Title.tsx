@@ -41,7 +41,7 @@ const Header = styled.h3`
   z-index: 10;
 `
 
-const Subtitle = styled.h6`
+const Subtitle = styled.span`
   font-weight: 200;
   font-size: 2rem;
   margin: 0;
