@@ -86,7 +86,7 @@ export const RouteTab = ({ name, basePath }: Props) => {
         <Label>{name}</Label>
         <UnstyledLink path={`/${basePath}`}>
           {basePath == 'search' ? (
-            <div style={{ width: '8px' }} />
+            <div style={{ width: '8px' }} aria-label="" />
           ) : (
             <Cross aria-label="Close Tab" onClick={handleClose}>
               &#215;
