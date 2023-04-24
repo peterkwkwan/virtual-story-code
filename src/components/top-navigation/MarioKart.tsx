@@ -70,12 +70,12 @@ export const MarioKart = ({ marioKartIsRacing }: Props) => {
         return (
           <Sprite
             key={racer}
-            src={`/assets/icons/top-navbar/${racer}-mk.png`}
+            src={`/assets/icons/top-navbar/${racer}-mk.webp`}
             alt={`mk-racer-${racer}`}
           />
         )
       })}
-      <Pipe src="/assets/icons/top-navbar/mario-pipe.png" alt="pipe" />
+      <Pipe src="/assets/icons/top-navbar/mario-pipe.webp" alt="pipe" />
     </Container>
   )
 }
