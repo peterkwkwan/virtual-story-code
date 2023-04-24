@@ -1,21 +1,26 @@
 @font-face {
   font-family: 'Consola';
   src: url(/assets/fonts/CONSOLA.TTF);
+  font-display: swap;
 }
 @font-face {
   font-family: 'Menlo';
   src: url(/assets/fonts/Menlo.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: 'League Spartan';
   font-weight: 100 900;
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: 'Mr Dafoe';
   src: url(/assets/fonts/MrDafoe-Regular.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: 'SuperMario256';
   src: url(/assets/fonts/SuperMario256.ttf);
+  font-display: swap;
 }
