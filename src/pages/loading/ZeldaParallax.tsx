@@ -16,7 +16,6 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
   z-index: 1;
   background-color: ${(props) => props.theme.palette.dark01};
   display: flex;
-  transform: scale(1.2);
   max-height: 100vh;
   height: 100vh;
   width: 100vw;
@@ -50,13 +49,14 @@ const ParallaxContainer = styled.div`
 `
 
 const ImgContainer = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 `
 
 const ZeldaImg = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  transform: scale(1.2);
   object-fit: cover;
 `
 
