@@ -75,16 +75,17 @@ export const SidebarBtns = () => {
     <Sidebar>
       <ButtonUnorderedList>
         {buttons.map((btn) => (
-          <UnstyledLink key={btn.title} path={btn.path}>
-            <SidebarButtons
-              key={btn.title}
-              aria-label={`Go to ${btn.title}`}
-              selected={pathname.includes(btn.path)}
-              onClick={handleChangePage}
-            >
-              <img src={btn.src} width="24" height="24" alt="sidebar-btn" />
-            </SidebarButtons>
-          </UnstyledLink>
+          <li key={btn.title}>
+            <UnstyledLink key={btn.title} path={btn.path}>
+              <SidebarButtons
+                aria-label={`Go to ${btn.title}`}
+                selected={pathname.includes(btn.path)}
+                onClick={handleChangePage}
+              >
+                <img src={btn.src} width="24" height="24" alt="sidebar-btn" />
+              </SidebarButtons>
+            </UnstyledLink>
+          </li>
         ))}
       </ButtonUnorderedList>
     </Sidebar>
