@@ -24,6 +24,7 @@ export const SearchField = () => {
       <Icon
         height={20}
         width={60}
+        alt="searchbar-icon"
         src="/assets/icons/search/searchbar-icons.png"
       />
     </TextBox>

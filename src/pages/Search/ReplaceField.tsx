@@ -26,13 +26,14 @@ export const ReplaceField = () => {
         <Icon
           height={20}
           width={20}
+          alt="replace"
           src="/assets/icons/search/replace-icon.png"
         />
       </ReplaceContainer>
       <Icon
         height={20}
         width={20}
-        // style={{ position: "relative", left: 4 }}
+        alt="replace"
         src="/assets/icons/search/replace-icon2.png"
       />
     </div>
