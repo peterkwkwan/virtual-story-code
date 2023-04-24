@@ -11,7 +11,7 @@ interface Props {
 }
 
 const StyledLink = styled(Link)<{ gradient: string; active: string }>`
-  padding: 0 12px;
+  padding: 0 16px;
   border-radius: 5px;
   display: flex;
   justify-content: center;

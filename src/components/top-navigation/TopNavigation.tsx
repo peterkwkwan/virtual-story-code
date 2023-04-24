@@ -117,18 +117,17 @@ const TopNavigation = () => {
     <StyledNavigation>
       <Box gradient={gradient} className="TopNav">
         <StyledList>
-          <RetroMario
-            handleMarioJump={handleMarioJump}
-            marioIsJumping={marioIsJumping}
-            marioKartIsRacing={marioKartIsRacing}
-          />
-          {navOptions.map(({ name, path }) => (
-            <TopNavLink
-              key={name}
-              name={name}
-              gradient={gradient}
-              path={path}
+          <li>
+            <RetroMario
+              handleMarioJump={handleMarioJump}
+              marioIsJumping={marioIsJumping}
+              marioKartIsRacing={marioKartIsRacing}
             />
+          </li>
+          {navOptions.map(({ name, path }) => (
+            <li key={name} style={{ height: '100%', width: 'fit-content' }}>
+              <TopNavLink name={name} gradient={gradient} path={path} />
+            </li>
           ))}
         </StyledList>
       </Box>
