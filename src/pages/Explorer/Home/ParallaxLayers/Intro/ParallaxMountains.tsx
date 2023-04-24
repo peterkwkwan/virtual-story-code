@@ -20,6 +20,7 @@ const Image = styled.img`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  aspect-ratio: 0.82;
 `
 
 const LAYERS = [
