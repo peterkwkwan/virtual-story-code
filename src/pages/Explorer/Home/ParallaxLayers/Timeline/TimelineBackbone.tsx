@@ -28,6 +28,7 @@ const Backbone = styled.div`
 
 const MarioVine = styled.img`
   height: 100%;
+  width: auto;
   position: absolute;
   top: 0;
 `
