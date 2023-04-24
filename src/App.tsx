@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import './styles/main.css'
+import ReactGA from 'react-ga'
 
 import { Content } from './components/Content'
 import { SideNavigation } from './components/side-navigation/SideNavigation'
@@ -14,6 +15,8 @@ import { theme } from './theme/theme'
 import ZeldaParallax from './pages/loading/ZeldaParallax'
 import { useBoundStore } from './hooks/useBoundStore'
 
+ReactGA.initialize('G-230YPQTB8S')
+ReactGA.pageview(window.location.pathname + window.location.search)
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
 }

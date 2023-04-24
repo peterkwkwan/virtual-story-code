@@ -2468,6 +2468,11 @@ vite-plugin-checker@^0.5.6:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
+vite-plugin-radar@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-radar/-/vite-plugin-radar-0.7.0.tgz#87bacd584a019142d95773e1194825159ac3f78f"
+  integrity sha512-lTpCJ56GDVzNq41SU+6AZExUFP/yZauwpfEqyatw/ZayYYM7bEFq4KWN3+/Hjwxfe5nCIjIpE594XE1jtjjz2A==
+
 vite@^2.9.9:
   version "2.9.9"
   resolved "https://registry.npmjs.org/vite/-/vite-2.9.9.tgz"
