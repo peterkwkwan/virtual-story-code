@@ -14,7 +14,7 @@ const Container = styled.div`
 const LetterPress = styled.div`
   width: 290px;
   aspect-ratio: 1/1;
-  background-image: url('/assets/images/extensions/extensions-home.svg');
+  background-image: url('/assets/images/extensions-home.svg');
   background-size: 100%;
   background-position-x: center;
   background-repeat: no-repeat;

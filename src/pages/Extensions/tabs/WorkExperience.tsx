@@ -94,7 +94,7 @@ export const WorkExperience = ({ companies, title }: Props) => {
             >
               <CompanyCard>
                 <CompanyLogo
-                  src={`/assets/icons/companies/${toKebabCase(company)}.png`}
+                  src={`/assets/icons/companies/${toKebabCase(company)}.webp`}
                   alt={`${company}-logo`}
                 />
                 <Details>

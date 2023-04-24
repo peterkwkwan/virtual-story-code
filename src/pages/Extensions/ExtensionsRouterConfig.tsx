@@ -62,12 +62,12 @@ const LogoSrc = {
   [ExtPageNames.EXT_NEXT_JS]: '/assets/icons/extensions/nextjs.svg',
   [ExtPageNames.EXT_GATSBY]: '/assets/icons/extensions/gatsby.svg',
   [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.svg',
-  [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.png',
+  [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.webp',
   [ExtPageNames.EXT_JAVASCRIPT]: '/assets/icons/extensions/javascript.svg',
   [ExtPageNames.EXT_TYPESCRIPT]: '/assets/icons/extensions/typescript.svg',
   [ExtPageNames.EXT_PYTHON]: '/assets/icons/extensions/python.svg',
   [ExtPageNames.EXT_CSHARP]: '/assets/icons/extensions/c-sharp.svg',
-  [ExtPageNames.EXT_UNITY]: '/assets/icons/extensions/unity.png',
+  [ExtPageNames.EXT_UNITY]: '/assets/icons/extensions/unity.webp',
   [ExtPageNames.EXT_HTML]: '/assets/icons/extensions/html.svg',
   [ExtPageNames.EXT_CSS]: '/assets/icons/extensions/css.svg',
   [ExtPageNames.EXT_STYLEDCOMPONENTS]:
@@ -75,7 +75,7 @@ const LogoSrc = {
   [ExtPageNames.EXT_TAILWIND]: '/assets/icons/extensions/tailwind.svg',
   [ExtPageNames.EXT_MUI]: '/assets/icons/extensions/mui.svg',
   [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.svg',
-  [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.png',
+  [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.webp',
   [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
 }
 

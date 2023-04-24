@@ -21,9 +21,9 @@ const GreyStar = styled(StarIcon)`
     contrast(84%);
 `
 
-const FULL_STAR = '/assets/icons/extensions/star-full.png'
-const HALF_STAR = '/assets/icons/extensions/star-half.png'
-const EMPTY_STAR = '/assets/icons/extensions/star-empty.png'
+const FULL_STAR = '/assets/icons/extensions/star-full.webp'
+const HALF_STAR = '/assets/icons/extensions/star-half.webp'
+const EMPTY_STAR = '/assets/icons/extensions/star-empty.webp'
 
 export const StarRating = ({ rating }: { rating: number }) => {
   const maxStars = 5

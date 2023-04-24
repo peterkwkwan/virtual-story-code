@@ -127,19 +127,10 @@ const Container = styled.div<{ show: boolean }>`
   align-items: center;
   pointer-events: none;
   opacity: ${(props) => (props.show ? 1 : 0)};
-  animation: ${(props) => props.show && 'grow 1s'};
   transform-origin: bottom left;
   transition: opacity 1s;
   user-select: none;
   -webkit-user-select: none;
-  @keyframes grow {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
 `
 
 const NameTag = styled.p`
@@ -161,7 +152,7 @@ const InnerBorder = styled.div`
   align-items: center;
   &:before {
     content: '';
-    background: url('/assets/images/speech-bubble-border.png');
+    background: url('/assets/images/speech-bubble-border.webp');
     background-position: center;
     height: 50%;
     width: 15%;
@@ -172,7 +163,7 @@ const InnerBorder = styled.div`
   }
   &:after {
     content: '';
-    background: url('/assets/images/speech-bubble-border.png');
+    background: url('/assets/images/speech-bubble-border.webp');
     background-position: center;
     transform: rotate(180deg);
     height: 50%;
