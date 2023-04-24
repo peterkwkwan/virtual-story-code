@@ -11,8 +11,6 @@ export default defineConfig({
     react(),
     checker({ typescript: true }),
     VitePluginRadar({
-      enableDev: true,
-      // Google Analytics tag injection
       analytics: {
         id: 'G-230YPQTB8S',
       },
