@@ -5,6 +5,7 @@ import { BlogLinks, Blogs } from '../shared/constants'
 import { ContinueReading } from './ContinueReading'
 
 import { ExternalLink } from '@/components/elements/ExternalLink'
+import SkeletonImage from '@/components/elements/SkeletonImage'
 
 export const FiveJsFeatures = () => {
   return (
@@ -28,7 +29,7 @@ export const FiveJsFeatures = () => {
           .
         </p>
         <figure>
-          <img
+          <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fW6piHpnKBSH7k8oj7vj-Q.png"
             alt="JS Framework Popularity Chart"
           />
@@ -48,7 +49,7 @@ export const FiveJsFeatures = () => {
           worry, me too).
         </p>
         <figure>
-          <img
+          <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*8Zrmg9UcZAXZACLjo6jEkw.png"
             alt="Temporal"
           />

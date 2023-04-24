@@ -49,6 +49,7 @@ const IconImage = styled.img`
   vertical-align: middle;
   padding: 4px;
   width: 12px;
+  height: 12px;
   background-color: ${(props) => props.theme.palette.secondaryGrey};
 `
 

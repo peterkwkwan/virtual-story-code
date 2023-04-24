@@ -4,6 +4,8 @@ import { Container, InnerContainer, StyledCaption } from './styles'
 import { BlogLinks, Blogs } from '../shared/constants'
 import { ContinueReading } from './ContinueReading'
 
+import SkeletonImage from '@/components/elements/SkeletonImage'
+
 export const FiveTips = () => {
   return (
     <Container>
@@ -41,7 +43,7 @@ export const FiveTips = () => {
           (plateau).
         </p>
         <figure>
-          <img
+          <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1080/format:webp/1*lXv5aMOwsu0G4XE5pQDPkA.jpeg"
             alt="Man pushing boulder"
           />

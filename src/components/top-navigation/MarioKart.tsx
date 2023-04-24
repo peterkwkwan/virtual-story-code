@@ -31,6 +31,7 @@ const Sprite = styled.img`
     }
   }
   height: 24px;
+  width: 24px;
   animation: race 15s ease-in 3s;
   position: relative;
 `
