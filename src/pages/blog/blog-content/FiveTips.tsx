@@ -46,6 +46,9 @@ export const FiveTips = () => {
           <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1080/format:webp/1*lXv5aMOwsu0G4XE5pQDPkA.jpeg"
             alt="Man pushing boulder"
+            height="auto"
+            width="100%"
+            style={{ aspectRatio: '3/2' }}
           />
           <StyledCaption>It&apos;s gonne be a grind</StyledCaption>
         </figure>

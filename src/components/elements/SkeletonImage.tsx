@@ -27,8 +27,8 @@ const Skeleton = styled.div<{ muted: boolean }>`
 type Props = {
   src: string
   alt: string
-  width?: number
-  height?: number
+  width?: number | string
+  height?: number | string
   style?: CSSProperties
   muted?: boolean
 }

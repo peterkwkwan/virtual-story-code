@@ -32,6 +32,9 @@ export const FiveJsFeatures = () => {
           <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fW6piHpnKBSH7k8oj7vj-Q.png"
             alt="JS Framework Popularity Chart"
+            height="auto"
+            width="100%"
+            style={{ aspectRatio: '680/453' }}
           />
           <StyledCaption>
             Google — please shutdown Angular like you do with all your other
@@ -52,6 +55,9 @@ export const FiveJsFeatures = () => {
           <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*8Zrmg9UcZAXZACLjo6jEkw.png"
             alt="Temporal"
+            height="auto"
+            width="100%"
+            style={{ aspectRatio: '680/227' }}
           />
           <StyledCaption>Nani??</StyledCaption>
         </figure>

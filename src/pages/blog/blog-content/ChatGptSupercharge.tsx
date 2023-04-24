@@ -21,6 +21,9 @@ export const ChatGptSupercharge = () => {
           <SkeletonImage
             src="https://miro.medium.com/v2/resize:fit:1280/0*LDUWvWInhXM4ZaSw.gif"
             alt="Sweaty ChatGPT"
+            height="auto"
+            width="100%"
+            style={{ aspectRatio: '320/199' }}
           />
           <StyledCaption>
             Rare footage of ChatGPT writing 10 pages of documentation in under 5
