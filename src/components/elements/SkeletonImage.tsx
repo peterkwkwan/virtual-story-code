@@ -1,13 +1,13 @@
 import React, { CSSProperties, useState } from 'react'
 import styled from 'styled-components'
 
-const Skeleton = styled.div`
+const Skeleton = styled.div<{ muted: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ddd;
+  background-color: ${(props) => (props.muted ? 'transparent' : '#ddd')};
   animation: pulse 1.5s infinite;
   @keyframes pulse {
     0% {
@@ -30,9 +30,17 @@ type Props = {
   width?: number
   height?: number
   style?: CSSProperties
+  muted?: boolean
 }
 
-const SkeletonImage: React.FC<Props> = ({ src, alt, width, height, style }) => {
+const SkeletonImage: React.FC<Props> = ({
+  src,
+  alt,
+  width,
+  height,
+  style,
+  muted = false,
+}) => {
   const [loaded, setLoaded] = useState(false)
 
   const handleLoad: React.ReactEventHandler<HTMLImageElement> = (e) => {
@@ -41,7 +49,7 @@ const SkeletonImage: React.FC<Props> = ({ src, alt, width, height, style }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      {!loaded && <Skeleton style={{ ...style }} />}
+      {!loaded && <Skeleton style={{ ...style }} muted={muted} />}
       <img
         src={src}
         alt={alt}

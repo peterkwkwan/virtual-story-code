@@ -51,7 +51,7 @@ const NameContainer = styled.div<{ percentage: number }>`
 const HeaderText = styled.div`
   position: relative;
   margin: 0;
-  font-family: 'League Spartan';
+  font-family: 'League Spartan', 'League Spartan-fallback';
   text-transform: uppercase;
 `
 

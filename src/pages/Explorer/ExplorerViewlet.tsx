@@ -9,6 +9,8 @@ import { ViewletContainer } from '../shared/styledContainers'
 import { FolderContent } from './shared/types'
 import { FolderNames } from './shared/constants'
 
+import SkeletonImage from '@/components/elements/SkeletonImage'
+
 type IFolderStructure = Record<FolderNames, FolderContent>
 
 const initFolders: IFolderStructure = {
@@ -39,6 +41,7 @@ const initFolders: IFolderStructure = {
 }
 
 const StyledHeaderBtn = styled.button<{ show: boolean }>`
+  display: flex;
   width: 100%;
   border: none;
   color: inherit;
@@ -52,12 +55,6 @@ const StyledHeaderBtn = styled.button<{ show: boolean }>`
   text-align: start;
   cursor: pointer;
   background-color: ${(props) => props.theme.palette.dark03};
-  &:before {
-    content: url('/assets/icons/arrow.svg');
-    display: inline-block;
-    transform: ${(props) => props.show && 'rotate(90deg)'};
-    margin-right: 4px;
-  }
 `
 
 const rootFiles = [
@@ -127,6 +124,17 @@ export const ExplorerViewlet = () => {
     <ViewletContainer>
       <ViewletHeader headerName="explorer" />
       <StyledHeaderBtn show={show} onClick={handleToggle}>
+        <SkeletonImage
+          muted
+          src="/assets/icons/arrow.svg"
+          alt="arrow"
+          height={10}
+          width={10}
+          style={{
+            transform: show ? 'rotate(90deg)' : '',
+            marginRight: '4px',
+          }}
+        />
         VIRTUAL-STORY-CODE
       </StyledHeaderBtn>
 

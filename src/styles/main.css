@@ -14,6 +14,13 @@
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'League Spartan-fallback';
+  size-adjust: 78.5%;
+  src: local('Arial');
+}
+
 @font-face {
   font-family: 'Mr Dafoe';
   src: url(/assets/fonts/MrDafoe-Regular.ttf);

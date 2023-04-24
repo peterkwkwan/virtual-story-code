@@ -5,6 +5,7 @@ import { FolderNames } from './shared/constants'
 import { FolderContent } from './shared/types'
 
 import { ExplorerButton } from '@/pages/explorer/shared/ExplorerButton'
+import SkeletonImage from '@/components/elements/SkeletonImage'
 
 interface FolderProps {
   folder: FolderContent
@@ -21,6 +22,7 @@ interface StyledFolder {
 }
 
 const FolderButton = styled.button<StyledFolder>`
+  display: flex;
   width: 100%;
   background-color: ${(props) =>
     props.opened ? props.theme.palette.grey : 'inherit'};
@@ -35,12 +37,12 @@ const FolderButton = styled.button<StyledFolder>`
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   cursor: pointer;
   padding-left: 16px;
-  &:before {
+  /* &:before {
     content: url('/assets/icons/arrow.svg');
     display: inline-block;
     transform: ${(props) => props.opened && 'rotate(90deg)'};
     margin-right: 4px;
-  }
+  } */
 
   &:hover {
     background-color: ${(props) => props.theme.palette.grey};
@@ -67,6 +69,17 @@ export const Folder = ({ folder, name, onFolderClick }: FolderProps) => {
         aria-label="Toggle Folder"
         onClick={handleClick}
       >
+        <SkeletonImage
+          muted
+          src="/assets/icons/arrow.svg"
+          alt="arrow"
+          height={10}
+          width={10}
+          style={{
+            transform: folder.opened ? 'rotate(90deg)' : '',
+            marginRight: '4px',
+          }}
+        />
         {name}
       </FolderButton>
       <FolderContents opened={folder.opened}>
