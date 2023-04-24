@@ -87,7 +87,7 @@ export const MovingMario = ({
       return '/assets/images/home/mario/faintedmario.png'
     }
     if (offsetPercentage < 10) {
-      return '/assets/images/home/mario/marioInSpace.png'
+      return '/assets/images/home/mario/marioInSpace.webp'
     }
     if (offsetPercentage < 30) {
       return '/assets/images/home/mario/fallingMario1.png'
