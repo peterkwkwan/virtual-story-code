@@ -1,97 +1,51 @@
-import React from 'react'
-import TypewriterComponent from 'typewriter-effect'
+import React, { useContext } from 'react'
+import { Editor } from '@monaco-editor/react'
 
-import {
-  LightBlueText,
-  LineBreak,
-  StringText,
-  YellowText,
-  Indent,
-  PurpleText,
-  MutedGreenText,
-  DarkBlueText,
-} from './StyledText'
-import { INonTechJobDescription } from './types'
+import { getScssEditorDefaultValue } from './editorUtils'
 
-export const JobDescriptionScss = ({
-  jobDescription,
-}: {
-  jobDescription: INonTechJobDescription;
-}) => {
-  const { role, companyName, date, location, companyDescription, functions } =
-    jobDescription
+import { PageNames } from '@/pages/shared/routerConfig'
+import { Companies } from '@/constants/companies'
+import { ExplorerContext } from '@/App'
 
-  const basicInfo: Partial<INonTechJobDescription> = {
-    companyName: companyName,
-    date: date,
-    role: role,
-    location: location,
-    companyDescription: companyDescription,
+export const JobDescriptionScss = () => {
+  const { currentFile } = useContext(ExplorerContext)
+  const [file] = currentFile
+
+  const JOB_DEFAULT_VALUE_MAPPING: { [key: string]: string } = {
+    [PageNames.ACURIS]: getScssEditorDefaultValue({
+      role: 'Relationship Manager',
+      companyName: Companies.ACURIS,
+      date: 'March 2016 - May 2019',
+      location: 'Hong Kong',
+      companyDescription:
+        'Acuris is a leading provider of global corporate financial news, intelligence and analysis to advisory firms, investments banks, law firms, hedge funds, private equity firms and corporations.',
+      functions: [
+        'Official training mentor for 3 new joiners in the Relationship Management team.',
+        'Managed 50+ client relationships across investment banking, law firm & private equity sectors to ensure the client’s needs are met.',
+        'Identify client motivations, enabling cross-selling plus up-selling opportunities.',
+      ],
+    }),
+    [PageNames.COLEMAN]: getScssEditorDefaultValue({
+      role: 'Operations Analyst',
+      companyName: Companies.COLEMAN_RESEARCH,
+      date: 'March 2015 - March 2016',
+      location: 'Hong Kong',
+      companyDescription:
+        'Coleman Research is a leading expert-network research firm.',
+      functions: [
+        'Effectively manage relationships between experts and clients.',
+        "Primary contact for C-level industry advisers and world's leading PE firms, hedge funds, and consultancies.",
+        'Resolve member service issues both on expert and client levels.',
+      ],
+    }),
   }
-
-  /* eslint-disable react/no-unescaped-entities */
-
-  const renderBasicInfo = () => {
-    const elementList: JSX.Element[] = []
-    for (const property in basicInfo) {
-      elementList.push(
-        <div key={property}>
-          <LightBlueText>{property}</LightBlueText>:{' '}
-          <StringText>
-            "{basicInfo[property as keyof Partial<INonTechJobDescription>]}"
-          </StringText>
-          ;
-        </div>
-      )
-    }
-    return elementList
-  }
-
-  const renderJobFunctions = () => {
-    const elementList: JSX.Element[] = []
-    functions.map((item, idx) => {
-      elementList.push(
-        <div key={item}>
-          <YellowText>li:nth-child</YellowText>
-          <DarkBlueText>(</DarkBlueText>
-          <MutedGreenText>{idx + 1}</MutedGreenText>
-          <DarkBlueText>)</DarkBlueText> <DarkBlueText>{'{'}</DarkBlueText>
-          <Indent>
-            <LightBlueText>task</LightBlueText>:
-            <StringText> "{item}"</StringText>;
-          </Indent>
-          <DarkBlueText>{'}'}</DarkBlueText>
-        </div>
-      )
-    })
-    return elementList
-  }
-
   return (
-    <>
-      <div style={{ height: '18px' }}>
-        <TypewriterComponent
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(
-                '<span style="color: #D7BA7D;">.work-experience {</span>'
-              )
-              .pauseFor(2500)
-              .start()
-          }}
-        />
-      </div>
-      <Indent>
-        <LineBreak />
-        {renderBasicInfo()}
-        <LineBreak />
-        {'> '}
-        <YellowText>ul</YellowText> <PurpleText>{'{'}</PurpleText>
-        <Indent>{renderJobFunctions()}</Indent>
-        <PurpleText>{'}'}</PurpleText>
-      </Indent>
-      <YellowText>{'}'}</YellowText>
-    </>
+    <Editor
+      height="100%"
+      path={file.title}
+      defaultLanguage="scss"
+      defaultValue={JOB_DEFAULT_VALUE_MAPPING[file.title]}
+      theme="vs-dark"
+    />
   )
 }
-/* eslint-enable react/no-unescaped-entities */
