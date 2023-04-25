@@ -38,7 +38,6 @@ export const theme: DefaultTheme = {
     yellowBrackets: '#ffd700',
     stringText: '#ce9178',
     purpleText: '#c586c0',
-    lineNumberText: '#858585',
     angleBrackets: '#808080',
 
     grey: 'rgba(193, 192, 192, 0.05)',

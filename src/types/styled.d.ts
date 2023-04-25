@@ -39,7 +39,6 @@ declare module 'styled-components' {
       yellowBrackets: string
       stringText: string
       purpleText: string
-      lineNumberText: string
       angleBrackets: string
 
       grey: string

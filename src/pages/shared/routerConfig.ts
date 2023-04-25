@@ -67,7 +67,7 @@ export enum PageNames {
 }
 
 export interface RouterConfig {
-  path: PagePaths | ExtPagePaths | BlogsPagePaths
+  path: string
   component: () => JSX.Element
   fileName?: PageNames | ExtPageNames | BlogPageNames
 }

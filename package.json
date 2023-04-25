@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.4.1",
+    "@monaco-editor/react": "^4.5.0",
     "@react-spring/parallax": "^9.5.5",
     "parallax-js": "^3.1.0",
     "react": "^17.0.2",

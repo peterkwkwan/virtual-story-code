@@ -1,7 +1,7 @@
 import { RouterConfig } from '@/pages/shared/routerConfig'
 
 export interface ExtensionConfig extends RouterConfig {
-  title: string
+  title: Skills
   description: string
   icon: JSX.Element
   type: string

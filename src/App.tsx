@@ -40,7 +40,8 @@ export const ExplorerContext = React.createContext<ExplorerContextProp>({
 
 function App() {
   const [file, setFile] = useState(initFile)
-  const [showLoadingPage, setShowLoadingPage] = useState(true)
+  const [showLoadingPage, setShowLoadingPage] = useState(false)
+  // const [showLoadingPage, setShowLoadingPage] = useState(true)
   const isBlackNWhite = useBoundStore((state) => state.isBlackNWhite)
 
   const handleEnterSite = () => {

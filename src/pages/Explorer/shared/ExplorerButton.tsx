@@ -2,14 +2,14 @@ import React, { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { File } from './types'
+
 import { ExplorerContext } from '@/App'
 import { UnstyledLink } from '@/components/elements/UnstyledLink'
 import { useIcon } from '@/hooks/useIcon'
 import { useActivePath } from '@/hooks/useActivePath'
 
-interface Props {
-  title: string
-  path: string
+interface Props extends File {
   selected?: boolean
   icon?: unknown
   isRoot?: boolean
