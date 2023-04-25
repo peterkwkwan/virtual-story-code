@@ -4,11 +4,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'Menlo';
-  src: url(/assets/fonts/Menlo.ttf);
-  font-display: swap;
-}
-@font-face {
   font-family: 'League Spartan';
   font-weight: 100 900;
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
