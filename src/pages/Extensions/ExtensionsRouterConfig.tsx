@@ -51,18 +51,6 @@ export enum ExtPageNames {
   EXT_GIT = 'Skill: Git',
 }
 
-const ExtensionIcon = ({ src, alt }: { src: string; alt: string }) => {
-  return (
-    <SkeletonImage
-      src={src}
-      alt={alt}
-      width={42}
-      height={42}
-      style={{ margin: '10px 14px 10px 0' }}
-    />
-  )
-}
-
 const LogoSrc = {
   [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
   [ExtPageNames.EXT_NEXT_JS]: '/assets/icons/extensions/nextjs.svg',
@@ -83,6 +71,23 @@ const LogoSrc = {
   [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.svg',
   [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.webp',
   [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
+}
+
+for (const key in LogoSrc) {
+  const imgEl = new Image()
+  imgEl.src = LogoSrc[key as ExtPageNames]
+}
+
+const ExtensionIcon = ({ src, alt }: { src: string; alt: string }) => {
+  return (
+    <SkeletonImage
+      src={src}
+      alt={alt}
+      width={42}
+      height={42}
+      style={{ margin: '10px 14px 10px 0' }}
+    />
+  )
 }
 
 export const ExtensionsList: ExtensionConfig[] = [
