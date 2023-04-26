@@ -1,3 +1,9 @@
+import { Loading } from '../loading'
+import { Home } from '../explorer/Home'
+import { ExtensionsHome } from '../extensions'
+import { BlogHome } from '../blog'
+import { SearchHome } from '../search'
+import { BlogList, BlogPageNames } from '../blog/BlogRouterConfig'
 import { Acuris } from '../explorer/files/Acuris'
 import { BurnabyNorth } from '../explorer/files/BurnabyNorth'
 import { CathayDragon } from '../explorer/files/CathayDragon'
@@ -16,13 +22,9 @@ import {
   ExtensionsList,
   ExtPageNames,
 } from '../extensions/ExtensionsRouterConfig'
-import { Home } from '../explorer/Home'
-import { ExtensionsHome } from '../extensions'
-import { BlogHome } from '../blog'
-import { SearchHome } from '../search'
-import { BlogList, BlogPageNames } from '../blog/BlogRouterConfig'
 
 export enum PagePaths {
+  PAGE_LOADING = '',
   HOME = 'explorer',
   WTW = 'explorer/willis-towers-watson',
   BCW_GROUP = 'explorer/bcw-group',
@@ -67,6 +69,10 @@ export interface RouterConfig {
   fileName?: PageNames | ExtPageNames | BlogPageNames
 }
 export const routerConfig: RouterConfig[] = [
+  {
+    path: PagePaths.PAGE_LOADING,
+    component: Loading,
+  },
   {
     path: PagePaths.HOME,
     component: Home,

@@ -6,12 +6,10 @@ import './styles/main.css'
 import { Content } from './components/Content'
 import { SideNavigation } from './components/side-navigation/SideNavigation'
 import { TopNavigation } from './components/top-navigation/TopNavigation'
-import { LoadingAnimation } from './pages/loading/LoadingAnimation'
 import { File } from './pages/explorer/shared/types'
 import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
 import { theme } from './theme/theme'
-import ZeldaParallax from './pages/loading/ZeldaParallax'
 import { useBoundStore } from './hooks/useBoundStore'
 
 interface ExplorerContextProp {
@@ -40,24 +38,14 @@ export const ExplorerContext = React.createContext<ExplorerContextProp>({
 
 function App() {
   const [file, setFile] = useState(initFile)
-  const [showLoadingPage, setShowLoadingPage] = useState(false)
   // const [showLoadingPage, setShowLoadingPage] = useState(true)
   const isBlackNWhite = useBoundStore((state) => state.isBlackNWhite)
-
-  const handleEnterSite = () => {
-    setShowLoadingPage(false)
-  }
 
   return (
     <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
-          <ZeldaParallax showLoadingPage={showLoadingPage} />
-          <LoadingAnimation
-            showLoadingPage={showLoadingPage}
-            onEnterClick={handleEnterSite}
-          />
           <MainContainer>
             <TopNavigation />
             <Body>
