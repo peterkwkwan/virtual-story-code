@@ -33,7 +33,7 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
       transform: scale(0.2, 0.002);
       opacity: 0;
       z-index: -1;
-      display: "none";
+      display: 'none';
     }
   }
 `
@@ -86,7 +86,7 @@ const Initializing = styled.span<{ animationDelay: string }>`
     100% {
       opacity: 1;
     }
-  } ;
+  }
 `
 
 const loadingTips = [
@@ -125,10 +125,10 @@ const loadingTips = [
 ]
 
 interface Props {
-  showLoadingPage: boolean;
-  onEnterClick: () => void;
+  showLoadingPage: boolean
+  onEnterClick: () => void
 }
-export const LoadingAnimation = ({ showLoadingPage, onEnterClick }: Props) => {
+export const Content = ({ showLoadingPage, onEnterClick }: Props) => {
   const [loading, setLoading] = useState(true)
   const [isHoveringButton, setIsHoveringButton] = useState(false)
 
@@ -180,7 +180,6 @@ export const LoadingAnimation = ({ showLoadingPage, onEnterClick }: Props) => {
               />
             )}
           </EllipsisContainer>
-
         </div>
       </div>
       <Footer />
