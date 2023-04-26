@@ -3,6 +3,8 @@ import { useForm, ValidationError } from '@formspree/react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  border-top: 3px dotted ${(props) => props.theme.palette.dark04};
+  padding-top: 24px;
   margin: 0 auto;
   max-width: 80%;
   label,
@@ -123,7 +125,6 @@ export const ContactForm = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
-        Like what you see? Let&apos;s work together!
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <Label htmlFor="name">Name</Label>
           <Input required id="name" type="text" name="name" />

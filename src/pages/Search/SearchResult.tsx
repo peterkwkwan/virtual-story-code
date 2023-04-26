@@ -16,6 +16,12 @@ const Icon = styled.img`
   padding-right: 6px;
 `
 
+const Text = styled.p`
+  margin: 14px 0 14px 20px;
+  font-size: 0.75rem;
+  color: ${(props) => props.theme.palette.text02};
+`
+
 enum Results {
   GITHUB = 'GitHub',
   LINKEDIN = 'LinkedIn',
@@ -56,6 +62,7 @@ export const SearchResult = () => {
       {results.map((result) => (
         <ResultFile key={result.title} {...result} />
       ))}
+      <Text>Like what you see? Let&apos;s work together!</Text>
     </div>
   )
 }
