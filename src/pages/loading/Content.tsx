@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { LoadingButton } from './LoadingButton'
@@ -38,25 +38,6 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
   }
 `
 
-const FadeInTypography = styled.p`
-  font-family: League Spartan;
-  text-align: center;
-  margin: 1rem;
-  font-size: 1.1rem;
-  animation: fadeIn 1s linear;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-`
-
 const EllipsisContainer = styled.div`
   height: 46px;
   width: 130px;
@@ -89,41 +70,6 @@ const Initializing = styled.span<{ animationDelay: string }>`
   }
 `
 
-const loadingTips = [
-  'discovering new ways to make you wait',
-  'kindly wait while I finish a cup of coffee',
-  'busy taking the hobbits to isengard',
-  'tip: reading loading screens tips make you 10% smarter',
-  'warping you to the death star',
-  "if javascript is so good, why isn't there javascript 2 . . . ?",
-  'did you know? learning java is the leading cause of depression in Canada',
-  'tip: for faster PR reviews, shrink your commits by writing all your code on one line',
-  '"Googling stuff does not make you a doctor." Programmers: 😐',
-  '9/10 dentists attribute their success to stack overflow',
-  'creating technical debt is the fastest path to job security',
-  'asking a backend developer to write CSS is the primary cause of global warming',
-  'tip: instead of paying for hosting services, use the free one called localhost',
-  "what is a jedi master's favorite git command? git push --force",
-  '10 hours of debugging can save you 10 minutes of reading documentation',
-  "becoming a software engineer increases your chances of being asked to fix your grandma's printer by 200%",
-  'still trying to figure out who is json',
-  '⚡⚡⚡UNLIMITED POWER!!!⚡⚡⚡',
-  'Anakin Skywalker would have been granted a seat on the Jedi Council if he simply subscribed to AlgoExpert',
-  'flexing the boxes',
-  'this is where the fun begins',
-  'studies have shown that programming on the high ground results in 25% fewer merge conflicts',
-  'only a scrum master deals in absolutes!',
-  'only a sith deploys on fridays!',
-  'hello there! . . . general kenobi!',
-  "it's over, Anakin! I have LeetCode Premium!",
-  'refresh this page for more terrible jokes / memes',
-  "i don't like vim. it's rough, coarse and I can't seem to exit",
-  'dev horror story #1: I was once asked to center a div',
-  'if pokemon were data types, charmander would evolve into stringmander',
-  'speed up loading times by downloading more RAM',
-  'installing RGB accessories increases your coding efficiency by 43%',
-]
-
 interface Props {
   showLoadingPage: boolean
   onEnterClick: () => void
@@ -141,12 +87,6 @@ export const Content = ({ showLoadingPage, onEnterClick }: Props) => {
 
   const animatedEllipsis = ['0s', '0.1s', '0.2s']
 
-  const message = useMemo(() => {
-    const loadingTipsLength = loadingTips.length
-    const index = Math.floor(Math.random() * loadingTipsLength)
-    return loadingTips[index]
-  }, [])
-
   const handleMouseOverButton = () => {
     setIsHoveringButton(true)
   }
@@ -158,7 +98,6 @@ export const Content = ({ showLoadingPage, onEnterClick }: Props) => {
     <Container showLoadingPage={showLoadingPage}>
       <Logo isHoveringButton={isHoveringButton} />
       <div style={{ marginBottom: 16 }}>
-        <FadeInTypography>{message}</FadeInTypography>
         <div
           style={{
             display: 'flex',

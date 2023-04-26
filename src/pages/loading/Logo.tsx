@@ -6,10 +6,10 @@ const neonPink = '#fe05e1'
 const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
   position: relative;
   display: flex;
-  width: 400px;
-  height: 150px;
+  width: 100%;
+  height: 200px;
+  padding-top: 50px;
   font-family: League Spartan;
-  margin-bottom: 0;
   overflow: hidden;
   transition: all 1s ease;
   animation: fadeInFast 1s ease;
@@ -55,7 +55,7 @@ const StyledH1 = styled.h1`
   text-align: center;
   object-fit: contain;
   font-weight: 200;
-  font-size: 4rem;
+  font-size: 6rem;
   transition: all 1s ease;
   position: relative;
   margin: 0;
@@ -93,7 +93,7 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
   text-shadow: ${(props) =>
     props.isHoveringButton &&
     `0 0 0.05em #fff, 0 0 0.2em ${neonPink}, 0 0 0.3em ${neonPink}`};
-  transform: rotate(-5deg);
+  transform: rotate(-7deg);
   > span {
     font-size: 4rem;
   }
@@ -103,14 +103,12 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
         ? `4px solid ${neonPink}`
         : `4px solid ${props.theme.palette.white}`};
     position: absolute;
-    left: 50%;
+    left: ${(props) => (props.isHoveringButton ? '55%' : '48%')};
     bottom: 0;
-    width: ${(props) => (props.isHoveringButton ? '100%' : '4px')};
+    width: ${(props) => (props.isHoveringButton ? '90%' : '4px')};
     opacity: 0;
     content: '';
     transition: all 1s ease;
-    transform: rotate(0deg);
-
     animation: fadeIn 1s ease;
     margin-left: ${(props) => (props.isHoveringButton ? '-50%' : 'unset')};
     animation-fill-mode: forwards;
@@ -128,16 +126,24 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
   }
 `
 
+const By = styled.span`
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 8px;
+  color: ${(props) => props.theme.palette.text02};
+`
+
 const Logo = ({ isHoveringButton }: { isHoveringButton: boolean }) => {
   return (
     <LogoContainer isHoveringButton={isHoveringButton}>
       <AnimatedLogo>
         <StyledH1>
-          <StyledLetter isHoveringButton={isHoveringButton}>P</StyledLetter>eter
-          Kwan&apos;s
           <NeonSign isHoveringButton={isHoveringButton}>
             <span>V</span>irtual <span>S</span>tory Code
           </NeonSign>
+          <By>made by&nbsp;</By>
+          <StyledLetter isHoveringButton={isHoveringButton}>P</StyledLetter>eter
+          Kwan
         </StyledH1>
       </AnimatedLogo>
     </LogoContainer>
