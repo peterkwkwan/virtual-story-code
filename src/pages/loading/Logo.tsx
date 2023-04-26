@@ -12,18 +12,16 @@ const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
   font-family: League Spartan;
   overflow: hidden;
   transition: all 1s ease;
-  animation: fadeInFast 2s ease;
+  animation: logoFadeIn 2s ease;
   user-select: none;
-  @keyframes fadeInFast {
+  @keyframes logoFadeIn {
     0% {
       opacity: 0;
     }
     50% {
       opacity: 0.3;
     }
-    75% {
-      opacity: 0.5;
-    }
+
     100% {
       opacity: 1;
     }
