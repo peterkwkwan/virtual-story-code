@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle<{ isBlackNWhite: boolean }>`
     background-color: #1e1e1e;
   }
 
-  body aside, ul, a, img, button, .Avatar, .TopNav, .BaseContainer, .StarRating, #parallax-scroll-id {
+  body aside, ul, span, a, img, button, .Avatar, .TopNav, .BaseContainer, .StarRating, #parallax-scroll-id {
     -webkit-filter: ${(props) =>
       props.isBlackNWhite ? 'grayscale(100%)' : ''};
    -moz-filter: ${(props) => (props.isBlackNWhite ? 'grayscale(100%)' : '')};

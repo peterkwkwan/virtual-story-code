@@ -28,8 +28,8 @@ const StyledButton = styled.button`
   &:hover {
     color: #fff;
     background: var(--span-color);
-    box-shadow: 0 0 10px var(--hover-color), 0 0 40px var(--hover-color),
-      0 0 80px var(--hover-color);
+    box-shadow: 0 0 4px var(--hover-color), 0 0 8px var(--hover-color),
+      0 0 16px var(--hover-color);
     transition-delay: 1s;
   }
 

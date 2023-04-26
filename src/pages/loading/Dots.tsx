@@ -11,7 +11,7 @@ const Dot = styled.span`
   height: 40px;
   z-index: 2;
   display: inline-block;
-  animation: initializeDots 4s ease;
+  animation: initializeDots 2.5s ease;
 
   ::before {
     content: '';
@@ -32,7 +32,7 @@ const Dot = styled.span`
       0 0 60px ${(props) => props.theme.palette.vsCodeBlue},
       0 0 80px ${(props) => props.theme.palette.vsCodeBlue},
       0 0 100px ${(props) => props.theme.palette.vsCodeBlue};
-    animation: initializeDots 4s ease;
+    animation: initializeDots 2.5s ease;
   }
   &:hover:before {
     filter: brightness(90%);
