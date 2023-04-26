@@ -201,8 +201,8 @@ const ClickMe = styled.p`
   color: ${(props) => props.theme.palette.white};
   font-size: 0.75rem;
   transform: rotate(25deg);
-  animation: fadeIn 1s alternate infinite;
-  @keyframes fadeIn {
+  animation: speechBubbleFadeIn 1s alternate infinite;
+  @keyframes speechBubbleFadeIn {
     0% {
       opacity: 0;
     }

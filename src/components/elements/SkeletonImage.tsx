@@ -8,8 +8,8 @@ const Skeleton = styled.div<{ muted: boolean }>`
   right: 0;
   bottom: 0;
   background-color: ${(props) => (props.muted ? 'transparent' : '#ddd')};
-  animation: pulse 1.5s infinite;
-  @keyframes pulse {
+  animation: skeletonPulse 1.5s infinite;
+  @keyframes skeletonPulse {
     0% {
       opacity: 0.5;
     }

@@ -9,8 +9,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  animation: fadeIn 1s linear;
-  @keyframes fadeIn {
+  animation: footerFadeIn 1s linear;
+  @keyframes footerFadeIn {
     0% {
       opacity: 0;
     }
