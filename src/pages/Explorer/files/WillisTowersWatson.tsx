@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { ExplorerWrapper } from './shared/ExplorerWrapper'
-import { useLastContributed } from '../../hooks/useLastContributed'
-import { JobDescriptionTsx } from './shared/JobDescriptionTsx'
+import { ExplorerWrapper } from '../shared/ExplorerWrapper'
+import { JobDescriptionTsx } from '../shared/JobDescriptionTsx'
+
+import { useLastContributed } from '@/hooks/useLastContributed'
 
 export const WillisTowersWatson = () => {
   const date = new Date()

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useLastContributed } from '../../hooks/useLastContributed'
-import { ExplorerWrapper } from './shared/ExplorerWrapper'
-import { JobDescriptionScss } from './shared/JobDescriptionScss'
+import { useLastContributed } from '../../../hooks/useLastContributed'
+import { ExplorerWrapper } from '../shared/ExplorerWrapper'
+import { JobDescriptionScss } from '../shared/JobDescriptionScss'
 
 export const Acuris = () => {
   const date = new Date('2019-05-01')

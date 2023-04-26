@@ -28,19 +28,6 @@ declare module 'styled-components' {
       contributors: string
       selectedBlueBorder: string
 
-      lightBlueText: string
-      blueText: string
-      darkBlueText: string
-      greenText: string
-      commentGreen: string
-      mutedGreenText: string
-      lightYellowText: string
-      yellowText: string
-      yellowBrackets: string
-      stringText: string
-      purpleText: string
-      angleBrackets: string
-
       grey: string
       secondaryGrey: string
 

@@ -138,6 +138,7 @@ export const JobDescriptionTsx = () => {
       defaultLanguage="javascript"
       defaultValue={JOB_DEFAULT_VALUE_MAPPING[file.title]}
       theme="vs-dark"
+      options={{ wordWrap: true }}
     />
   )
 }

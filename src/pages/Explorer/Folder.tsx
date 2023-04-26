@@ -37,12 +37,6 @@ const FolderButton = styled.button<StyledFolder>`
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   cursor: pointer;
   padding-left: 16px;
-  /* &:before {
-    content: url('/assets/icons/arrow.svg');
-    display: inline-block;
-    transform: ${(props) => props.opened && 'rotate(90deg)'};
-    margin-right: 4px;
-  } */
 
   &:hover {
     background-color: ${(props) => props.theme.palette.grey};

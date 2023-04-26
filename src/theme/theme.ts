@@ -27,19 +27,6 @@ export const theme: DefaultTheme = {
     contributors: '#999',
     selectedBlueBorder: '#007fd4',
 
-    lightBlueText: '#9cdcfe',
-    blueText: '#4fc1ff',
-    darkBlueText: '#569cd6',
-    greenText: '#4ec9b0',
-    commentGreen: '#6a9955',
-    mutedGreenText: '#b5cea8',
-    lightYellowText: '#dcdcaa',
-    yellowText: '#D7BA7D',
-    yellowBrackets: '#ffd700',
-    stringText: '#ce9178',
-    purpleText: '#c586c0',
-    angleBrackets: '#808080',
-
     grey: 'rgba(193, 192, 192, 0.05)',
     secondaryGrey: 'rgba(128, 128, 128, 0.17)',
 

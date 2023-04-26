@@ -46,6 +46,7 @@ export const JobDescriptionScss = () => {
       defaultLanguage="scss"
       defaultValue={JOB_DEFAULT_VALUE_MAPPING[file.title]}
       theme="vs-dark"
+      options={{ wordWrap: true }}
     />
   )
 }

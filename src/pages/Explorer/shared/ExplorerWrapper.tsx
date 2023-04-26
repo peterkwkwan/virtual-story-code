@@ -55,20 +55,6 @@ export const ExplorerWrapper = ({ children, contributors }: Props) => {
           <Contributors>Peter Kwan, {contributors}</Contributors>
           {children}
         </StyledContainer>
-
-        // <StyledContainer className="BaseContainer">
-        //   <LineNumbers>
-        //     <ul>
-        //       {lineNumbers.map((number) => (
-        //         <li key={number}>{number}</li>
-        //       ))}
-        //     </ul>
-        //   </LineNumbers>
-        //   <FileContents>
-        //     <Contributors>Peter Kwan, {contributors}</Contributors>
-        //     {children}
-        //   </FileContents>
-        // </StyledContainer>
       )}
     </>
   )

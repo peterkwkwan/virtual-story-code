@@ -1,31 +1,26 @@
-import { Acuris } from '../explorer/Acuris'
-import { BurnabyNorth } from '../explorer/BurnabyNorth'
-import { CathayDragon } from '../explorer/CathayDragon'
-import { Coleman } from '../explorer/Coleman'
-import { Gitignore } from '../explorer/Gitignore'
-import { HKU } from '../explorer/HKU'
-import { Manulife } from '../explorer/Manulife'
-import { McGill } from '../explorer/McGill'
-import { PackageJson } from '../explorer/PackageJson'
-import { Serai } from '../explorer/Serai'
-import { Pag } from '../explorer/Pag'
-import { BCWGroup } from '../explorer/BCWGroup'
-import { Readme } from '../explorer/Readme'
-import { WillisTowersWatson } from '../explorer/WillisTowersWatson'
+import { Acuris } from '../explorer/files/Acuris'
+import { BurnabyNorth } from '../explorer/files/BurnabyNorth'
+import { CathayDragon } from '../explorer/files/CathayDragon'
+import { Coleman } from '../explorer/files/Coleman'
+import { Gitignore } from '../explorer/files/Gitignore'
+import { HKU } from '../explorer/files/HKU'
+import { Manulife } from '../explorer/files/Manulife'
+import { McGill } from '../explorer/files/McGill'
+import { PackageJson } from '../explorer/files/PackageJson'
+import { Serai } from '../explorer/files/Serai'
+import { Pag } from '../explorer/files/Pag'
+import { BCWGroup } from '../explorer/files/BCWGroup'
+import { Readme } from '../explorer/files/Readme'
+import { WillisTowersWatson } from '../explorer/files/WillisTowersWatson'
 import {
   ExtensionsList,
   ExtPageNames,
-  ExtPagePaths,
 } from '../extensions/ExtensionsRouterConfig'
 import { Home } from '../explorer/Home'
 import { ExtensionsHome } from '../extensions'
 import { BlogHome } from '../blog'
 import { SearchHome } from '../search'
-import {
-  BlogList,
-  BlogPageNames,
-  BlogsPagePaths,
-} from '../blog/BlogRouterConfig'
+import { BlogList, BlogPageNames } from '../blog/BlogRouterConfig'
 
 export enum PagePaths {
   HOME = 'explorer',

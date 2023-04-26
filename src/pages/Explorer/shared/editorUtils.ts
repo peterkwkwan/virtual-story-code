@@ -1,4 +1,8 @@
-import { IJobDescription, INonTechJobDescription } from './types'
+import {
+  IEducationDescription,
+  IJobDescription,
+  INonTechJobDescription,
+} from './types'
 
 export const getTsxEditorDefaultValue = (job: IJobDescription) => {
   return `import React from 'react';
@@ -56,4 +60,26 @@ export const getScssEditorDefaultValue = (job: INonTechJobDescription) => {
         }
     }
 }`
+}
+
+export const getHtmlEditorDefaultValue = (
+  educationDescription: IEducationDescription
+) => {
+  return `<!DOCTYPE html>
+  
+<html lang="en">
+  
+<head>
+  <meta description="education">
+  <meta name="degree" content="${educationDescription.degreeType}">
+  <meta name="year" content="${educationDescription.year}">
+  <title>${educationDescription.schoolName}</title>
+  <link rel="${educationDescription.location.city}" href="${educationDescription.location.country}">
+</head>
+
+<body>
+  <h1>Bachelor of Arts</h1>
+  <h2>Major in Economics</h2>
+  <h2>Minor in International Development</h2>
+</body>`
 }

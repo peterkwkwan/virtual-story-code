@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Editor } from '@monaco-editor/react'
 
-import { useLastContributed } from '../../hooks/useLastContributed'
-import { ExplorerWrapper } from './shared/ExplorerWrapper'
+import { ExplorerWrapper } from '../shared/ExplorerWrapper'
 
 import { ExplorerContext } from '@/App'
+import { useLastContributed } from '@/hooks/useLastContributed'
 
 export const CathayDragon = () => {
   const date = new Date('2012-08-01')
@@ -40,6 +40,7 @@ describe('Cathay Dragon intern', function () {
         defaultLanguage="javascript"
         defaultValue={defaultValue}
         theme="vs-dark"
+        options={{ wordWrap: true }}
       />
     </ExplorerWrapper>
   )
