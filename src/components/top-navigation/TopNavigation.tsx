@@ -27,12 +27,17 @@ export const StyledList = styled.ul`
   margin: 0;
   padding: 0;
   height: 100%;
+  li {
+    font-weight: 400;
+  }
+  li:nth-of-type(2) {
+    font-weight: 700;
+  }
 `
 const StyledNavigation = styled.nav`
   position: relative;
   top: 0;
   left: 0;
-  font-weight: 500;
   width: 100vw;
   height: 56px;
   font-size: 14px;

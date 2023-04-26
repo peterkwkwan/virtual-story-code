@@ -30,9 +30,6 @@ const StyledLink = styled(Link)<{ gradient: string; active: string }>`
         ? 'rgba(0, 0, 0, 0.1)'
         : 'rgba(255, 255, 255, 0.25)'
       : ''};
-  :nth-of-type(1) {
-    font-weight: 600;
-  }
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
