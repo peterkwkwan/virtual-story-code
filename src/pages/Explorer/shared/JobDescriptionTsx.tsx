@@ -12,9 +12,32 @@ export const JobDescriptionTsx = () => {
   const [file] = currentFile
 
   const JOB_DEFAULT_VALUE_MAPPING: { [key: string]: string } = {
+    [PageNames.WTW]: getTsxEditorDefaultValue({
+      role: 'Software Engineer',
+      isCurrentRole: true,
+      companyName: Companies.WTW,
+      date: 'November 2022 - Present',
+      location: 'Hong Kong',
+      companyDescription: CompanyDescriptions[Companies.WTW],
+      functions: [
+        'Successfully modernized a multi-million app legacy codebase (Career Navigator) from Gatsby v2 to Next.js v13. App was rewritten in TypeScript from JavaScript. This resulted in an improved developer experience, which included faster dev environment load times, ESLint formatting, type safety, and dependency upgrades to latest versions',
+        'Led the integration of a headless CMS solution into the Career Navigator app. Roadmap included sourcing details from 8+ CMS providers, integrating APIs from the CMS solutions, setting up CI/CD preview environments for our team to test the different CMS options, and ultimately pitching Sanity as the preferred option',
+        'Migrated Material UI v4 to v5 in Career Navigator app, refactoring over 3000 lines of code with respect to breaking changes and resolved 20+ legacy bugs',
+      ],
+      techStack: [
+        'React',
+        'Gatsby',
+        'TypeScript',
+        'JavaScript',
+        'C#',
+        'AngularJS',
+        'styled-components',
+        'Material UI',
+        'Git',
+      ],
+    }),
     [PageNames.BCW_GROUP]: getTsxEditorDefaultValue({
       role: 'Frontend Developer',
-      isCurrentRole: true,
       companyName: Companies.BCW,
       date: 'July 2022 - October 2022',
       location: 'Hong Kong',
@@ -106,27 +129,6 @@ export const JobDescriptionTsx = () => {
         'Storybook',
         'Jira',
         'SourceTree',
-      ],
-    }),
-    [PageNames.WTW]: getTsxEditorDefaultValue({
-      role: 'Software Engineer',
-      companyName: Companies.WTW,
-      date: 'November 2022 - Present',
-      location: 'Hong Kong',
-      companyDescription: CompanyDescriptions[Companies.WTW],
-      functions: [
-        'Migrated Material UI v4 to v5 in Career Navigator legacy app, refactoring over 3000 lines of code with respect to breaking changes. Resulted in improved developer experience and resolved 20+ legacy bugs',
-      ],
-      techStack: [
-        'React',
-        'Gatsby',
-        'TypeScript',
-        'JavaScript',
-        'C#',
-        'AngularJS',
-        'styled-components',
-        'Material UI',
-        'Git',
       ],
     }),
   }

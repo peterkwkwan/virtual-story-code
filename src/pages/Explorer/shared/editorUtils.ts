@@ -8,17 +8,21 @@ export const getTsxEditorDefaultValue = (job: IJobDescription) => {
   return `import React from 'react';
 import Job from 'career';
   
-export const WillisTowersWatson = () => {
-  const job = new Job("${job.companyName}")
-  
+export const ${job.companyName.replace(/\s/g, '')} = () => {
+  ${job.isCurrentRole ? 'const [isCurrentRole] = React.useState(true)' : ''}
+  const job = new Job("${job.companyName}"${
+    job.isCurrentRole ? ', isCurrentRole' : ''
+  })
+
   job.date = "November 2022 - Present"
   job.role = "${job.role}"
   job.location = "${job.location}"
   job.companyDescription = "${job.companyDescription}"
   
   job.function = {${job.functions.map((task, index) => {
-    return `\n    task${index + 1}: "${task}"`
+    return `\n\n    task${index + 1}: "${task}"`
   })}
+  
   }
   
   const techStack = [${job.techStack.map((stack) => {
