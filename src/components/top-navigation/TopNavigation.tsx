@@ -53,7 +53,7 @@ const Box = styled.div<{ gradient?: boolean }>`
   &:nth-of-type(1) {
     background: ${(props) =>
       props.gradient
-        ? 'linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, #f950b0 100%)'
+        ? 'linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(100,197,255,1) 34%, #f18bc5 100%)'
         : 'linear-gradient( 90deg, rgba(0, 169, 203, 1) 0%, rgba(9, 9, 121, 1) 34%, rgba(2, 0, 36, 1) 100% )'};
   }
   &:nth-of-type(2n) {
