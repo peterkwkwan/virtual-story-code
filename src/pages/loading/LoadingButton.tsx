@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import React, { useEffect, useState } from 'react'
 
 const BtnSpan = styled.span`
   position: absolute;
@@ -91,13 +90,15 @@ const StyledButton = styled.button`
     25% {
       transform: scale(0.03, 0.08);
     }
+    75% {
+      color: transparent;
+    }
     80% {
       transform: scale(1, 0.08);
-      color: transparent;
+      color: ${(props) => props.theme.palette.dark01};
     }
     100% {
       transform: scale(1, 1);
-      color: transparent;
     }
   }
 `
@@ -125,10 +126,10 @@ export const LoadingButton = ({
 
   return (
     <StyledButton
+      aria-label="Enter site"
       onMouseOver={onMouseOverHandler}
       onMouseLeave={onMouseLeaveHandler}
       onClick={onClick}
-      aria-label="Enter site"
     >
       <BtnSpan></BtnSpan>
       <BtnSpan></BtnSpan>

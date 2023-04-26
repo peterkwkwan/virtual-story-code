@@ -1,9 +1,4 @@
 @font-face {
-  font-family: 'Consola';
-  src: url(/assets/fonts/CONSOLA.TTF);
-  font-display: swap;
-}
-@font-face {
   font-family: 'League Spartan';
   font-weight: 100 900;
   src: url(/assets/fonts/LeagueSpartan-VariableFont_wght.ttf);
