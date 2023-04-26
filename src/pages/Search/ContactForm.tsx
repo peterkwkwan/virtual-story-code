@@ -123,6 +123,7 @@ export const ContactForm = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
+        Like what you see? Let&apos;s work together!
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <Label htmlFor="name">Name</Label>
           <Input required id="name" type="text" name="name" />

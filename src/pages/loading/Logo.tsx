@@ -12,19 +12,19 @@ const LogoContainer = styled.div<{ isHoveringButton: boolean }>`
   font-family: League Spartan;
   overflow: hidden;
   transition: all 1s ease;
-  animation: fadeInFast 1s ease;
-
+  animation: fadeInFast 2s ease;
+  user-select: none;
   @keyframes fadeInFast {
     0% {
       opacity: 0;
     }
-    25% {
-      opacity: 0.2;
-    }
     50% {
-      opacity: 0.8;
+      opacity: 0.3;
     }
     75% {
+      opacity: 0.5;
+    }
+    100% {
       opacity: 1;
     }
   }
@@ -59,11 +59,11 @@ const StyledH1 = styled.h1`
   transition: all 1s ease;
   position: relative;
   margin: 0;
-  z-index: 1;
 `
 
 const StyledLetter = styled.span<{ isHoveringButton: boolean }>`
   font-weight: 500;
+  z-index: 5;
   position: relative;
   display: inline-block;
   color: ${(props) => props.isHoveringButton && props.theme.palette.vsCodeBlue};
@@ -84,7 +84,10 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
   font-size: 3rem;
   margin: 0;
   top: -24px;
-  z-index: 0;
+  left: 10%;
+  z-index: 5;
+  width: fit-content;
+
   transition: all 1s ease;
   color: ${(props) =>
     props.isHoveringButton
@@ -98,6 +101,7 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
     font-size: 4rem;
   }
   ::after {
+    z-index: 5;
     border-bottom: ${(props) =>
       props.isHoveringButton
         ? `4px solid ${neonPink}`
@@ -106,27 +110,21 @@ const NeonSign = styled.span<{ isHoveringButton: boolean }>`
     left: ${(props) => (props.isHoveringButton ? '55%' : '48%')};
     bottom: 0;
     width: ${(props) => (props.isHoveringButton ? '90%' : '4px')};
-    opacity: 0;
+    opacity: ${(props) => (props.isHoveringButton ? 1 : 0)};
     content: '';
     transition: all 1s ease;
-    animation: fadeIn 1s ease;
     margin-left: ${(props) => (props.isHoveringButton ? '-50%' : 'unset')};
-    animation-fill-mode: forwards;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 `
 
+const NameLetters = styled.span`
+  position: relative;
+  z-index: 5;
+`
+
 const By = styled.span`
+  position: relative;
+  z-index: 5;
   font-size: 1rem;
   display: block;
   margin-bottom: 8px;
@@ -139,11 +137,14 @@ const Logo = ({ isHoveringButton }: { isHoveringButton: boolean }) => {
       <AnimatedLogo>
         <StyledH1>
           <NeonSign isHoveringButton={isHoveringButton}>
-            <span>V</span>irtual <span>S</span>tory Code
+            <span>V</span>irtual&nbsp;&nbsp;<span>S</span>tory&nbsp;Code
           </NeonSign>
           <By>made by&nbsp;</By>
-          <StyledLetter isHoveringButton={isHoveringButton}>P</StyledLetter>eter
-          Kwan
+          <StyledLetter isHoveringButton={isHoveringButton}>P</StyledLetter>
+          <NameLetters>eter</NameLetters>
+          &nbsp;
+          <StyledLetter isHoveringButton={isHoveringButton}>K</StyledLetter>
+          <NameLetters>wan</NameLetters>
         </StyledH1>
       </AnimatedLogo>
     </LogoContainer>

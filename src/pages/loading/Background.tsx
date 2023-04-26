@@ -1,18 +1,19 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
 
+import { Dots } from './Dots'
+
+import useWindowDimensions from '@/hooks/useWindowDimensions'
+
 const Container = styled.div<{ showLoadingPage: boolean }>`
   position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: ${(props) => props.theme.palette.dark01};
   display: flex;
   max-height: 100vh;
   height: 100vh;
   width: 100vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   animation: ${(props) => !props.showLoadingPage && 'switchPage 3s forwards'};
   -webkit-animation: ${(props) =>
     !props.showLoadingPage && 'switchPage 3s forwards'};
@@ -27,7 +28,6 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
     100% {
       transform: scale(0.2, 0.002);
       opacity: 0;
-      z-index: -1;
       display: 'none';
     }
   }
@@ -35,10 +35,18 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
 
 interface Props {
   showLoadingPage: boolean
+  children: React.ReactNode
 }
 
-const Background = ({ showLoadingPage }: Props) => {
-  return <Container showLoadingPage={showLoadingPage}></Container>
+const Background = ({ showLoadingPage, children }: Props) => {
+  const dimensions = useWindowDimensions()
+
+  return (
+    <Container showLoadingPage={showLoadingPage}>
+      <Dots dimensions={dimensions} />
+      {children}
+    </Container>
+  )
 }
 
 export default memo(Background)

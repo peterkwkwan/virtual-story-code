@@ -24,6 +24,8 @@ const Container = styled.div`
 `
 
 const VSCode = styled.a`
+  position: relative;
+  z-index: 5;
   margin: 0;
   color: ${(props) => props.theme.palette.vsCodeBlue};
 `

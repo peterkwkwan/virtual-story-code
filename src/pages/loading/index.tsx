@@ -17,11 +17,12 @@ export const Loading = () => {
   }
   return (
     <>
-      <Background showLoadingPage={showLoadingPage} />
-      <Content
-        showLoadingPage={showLoadingPage}
-        onEnterClick={handleEnterSite}
-      />
+      <Background showLoadingPage={showLoadingPage}>
+        <Content
+          showLoadingPage={showLoadingPage}
+          onEnterClick={handleEnterSite}
+        />
+      </Background>
     </>
   )
 }

@@ -8,12 +8,12 @@ import Logo from './Logo'
 const Container = styled.div<{ showLoadingPage: boolean }>`
   position: absolute;
   top: 0;
-  z-index: 2;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0));
   display: flex;
   max-height: 100vh;
   height: 100vh;
   width: 100vw;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -32,12 +32,15 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
     100% {
       transform: scale(0.2, 0.002);
       opacity: 0;
-      z-index: -1;
       display: 'none';
     }
   }
 `
 
+const ButtonContainer = styled.div`
+  z-index: 5;
+  margin-bottom: 16px;
+`
 const EllipsisContainer = styled.div`
   height: 46px;
   width: 130px;
@@ -97,7 +100,7 @@ export const Content = ({ showLoadingPage, onEnterClick }: Props) => {
   return (
     <Container showLoadingPage={showLoadingPage}>
       <Logo isHoveringButton={isHoveringButton} />
-      <div style={{ marginBottom: 16 }}>
+      <ButtonContainer>
         <div
           style={{
             display: 'flex',
@@ -120,7 +123,7 @@ export const Content = ({ showLoadingPage, onEnterClick }: Props) => {
             )}
           </EllipsisContainer>
         </div>
-      </div>
+      </ButtonContainer>
       <Footer />
     </Container>
   )
