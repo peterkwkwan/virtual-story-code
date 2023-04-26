@@ -3,7 +3,7 @@ import { RouterConfig } from '@/pages/shared/routerConfig'
 export interface ExtensionConfig extends RouterConfig {
   title: Skills
   description: string
-  icon: JSX.Element
+  iconSrc: string
   type: string
   proficiency:
     | 'Proficient'

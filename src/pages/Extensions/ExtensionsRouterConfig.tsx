@@ -7,7 +7,6 @@ import { generateTabs } from './tabs'
 import { Companies } from '@/constants/companies'
 import { Projects } from '@/constants/projects'
 import { Resources, Skills } from '@/constants/skills'
-import SkeletonImage from '@/components/elements/SkeletonImage'
 
 export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
@@ -73,29 +72,10 @@ const LogoSrc = {
   [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
 }
 
-for (const key in LogoSrc) {
-  const imgEl = new Image()
-  imgEl.src = LogoSrc[key as ExtPageNames]
-}
-
-const ExtensionIcon = ({ src, alt }: { src: string; alt: string }) => {
-  return (
-    <SkeletonImage
-      src={src}
-      alt={alt}
-      width={42}
-      height={42}
-      style={{ margin: '10px 14px 10px 0' }}
-    />
-  )
-}
-
 export const ExtensionsList: ExtensionConfig[] = [
   {
     title: Skills.TYPESCRIPT,
-    icon: (
-      <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_TYPESCRIPT]} />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_TYPESCRIPT],
     path: ExtPagePaths.EXT_TYPESCRIPT,
     description: 'Superset of JavaScript that adds type safety to projects',
     type: 'Programming language',
@@ -132,9 +112,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.JAVASCRIPT,
-    icon: (
-      <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_JAVASCRIPT]} />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_JAVASCRIPT],
     path: ExtPagePaths.EXT_JAVASCRIPT,
     description:
       'Scripting or programming language that enables programmers to implement complex features on web pages',
@@ -168,7 +146,7 @@ export const ExtensionsList: ExtensionConfig[] = [
 
   {
     title: Skills.PYTHON,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_PYTHON]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_PYTHON],
     path: ExtPagePaths.EXT_PYTHON,
     description: 'High-level, general-purpose programming language',
     type: 'Programming language',
@@ -194,7 +172,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.CSHARP,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_CSHARP]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_CSHARP],
     path: ExtPagePaths.EXT_CSHARP,
     description:
       'Strongly typed, general-purpose programming language used to create desktop applications, cloud services and video games',
@@ -220,7 +198,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.REACT,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_REACT]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_REACT],
     path: ExtPagePaths.EXT_REACT,
     description:
       'Open-source front-end JavaScript library for building user interfaces based on UI components',
@@ -257,7 +235,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.NEXT_JS,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_NEXT_JS]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_NEXT_JS],
     path: ExtPagePaths.EXT_NEXT_JS,
     description:
       'Meta framework with out-of-the-box tools that handle features such as routing and data fetching.',
@@ -284,7 +262,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.GATSBY,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_GATSBY]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_GATSBY],
     path: ExtPagePaths.EXT_GATSBY,
     description:
       'Meta framework for building performant static sites. Comes with a powerful GraphQL API layer.',
@@ -310,7 +288,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.UNITY,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_UNITY]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_UNITY],
     path: ExtPagePaths.EXT_UNITY,
     description:
       'Game development tool built on C# that enables creation of 2D, 3D and VR video games.',
@@ -336,7 +314,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.HTML,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_HTML]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_HTML],
     path: ExtPagePaths.EXT_HTML,
     description: 'Standard markup language for creating Web pages.',
     type: 'Frontend',
@@ -367,7 +345,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.CSS,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_CSS]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_CSS],
     path: ExtPagePaths.EXT_CSS,
     description:
       'Stylesheet language used to describe the presentation of a document written in HTML',
@@ -399,12 +377,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.STYLED_COMPONENTS,
-    icon: (
-      <ExtensionIcon
-        alt="icon"
-        src={LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS]}
-      />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_STYLEDCOMPONENTS],
     path: ExtPagePaths.EXT_STYLEDCOMPONENTS,
     description:
       'CSS-in-JS styling solution that allows developers to write actual CSS code in JavaScript files to style React components',
@@ -431,7 +404,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.MUI,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_MUI]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_MUI],
     path: ExtPagePaths.EXT_MUI,
     description:
       "React ready-for-production component library that implements Google's Material Design",
@@ -457,7 +430,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.TAILWIND,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_TAILWIND]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_TAILWIND],
     path: ExtPagePaths.EXT_TAILWIND,
     description:
       'CSS framework that provides single-purpose utility classes for rapid app development',
@@ -484,9 +457,7 @@ export const ExtensionsList: ExtensionConfig[] = [
 
   {
     title: Skills.REACT_ROUTER,
-    icon: (
-      <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_REACTROUTER]} />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_REACTROUTER],
     path: ExtPagePaths.EXT_REACTROUTER,
     description:
       'Routing framework that enables easier client and server-side routing in React applications',
@@ -513,9 +484,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.REACT_QUERY,
-    icon: (
-      <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_REACTQUERY]} />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_REACTQUERY],
     path: ExtPagePaths.EXT_REACTQUERY,
     description:
       'Data-fetching library that helps with fetching, caching, synchronising, and updating the server state in React applications',
@@ -541,9 +510,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.STORYBOOK,
-    icon: (
-      <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_STORYBOOK]} />
-    ),
+    iconSrc: LogoSrc[ExtPageNames.EXT_STORYBOOK],
     path: ExtPagePaths.EXT_STORYBOOK,
     description:
       'Development environment tool that is used as a playground for UI components',
@@ -569,7 +536,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.STRIPE,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_STRIPE]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_STRIPE],
     path: ExtPagePaths.EXT_STRIPE,
     description:
       "Stripe's JavaScript API allowing businesses to collect payment and customer details using customizable Stripe Elements",
@@ -595,7 +562,7 @@ export const ExtensionsList: ExtensionConfig[] = [
   },
   {
     title: Skills.GIT,
-    icon: <ExtensionIcon alt="icon" src={LogoSrc[ExtPageNames.EXT_GIT]} />,
+    iconSrc: LogoSrc[ExtPageNames.EXT_GIT],
     path: ExtPagePaths.EXT_GIT,
     description:
       'Source code management tool for development collaboration and team organization',

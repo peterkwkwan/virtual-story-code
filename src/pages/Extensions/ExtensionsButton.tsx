@@ -7,6 +7,7 @@ import { ExtensionConfig } from './shared/types'
 import { UnstyledLink } from '@/components/elements/UnstyledLink'
 import { useActivePath } from '@/hooks/useActivePath'
 import { ExplorerContext } from '@/App'
+import SkeletonImage from '@/components/elements/SkeletonImage'
 
 const Button = styled.button<{ selected: boolean }>`
   display: flex;
@@ -55,7 +56,7 @@ const Author = styled.span<{ selected: boolean }>`
 `
 
 export const ExtensionsButton = ({
-  icon,
+  iconSrc,
   title,
   description,
   type,
@@ -75,7 +76,13 @@ export const ExtensionsButton = ({
   return (
     <UnstyledLink path={path}>
       <Button selected={active} aria-label="Select skill">
-        {icon}
+        <SkeletonImage
+          src={iconSrc}
+          alt={`icon-${title}`}
+          width={42}
+          height={42}
+          style={{ margin: '10px 14px 10px 0' }}
+        />
         <Content>
           <Title selected={active}>{title}</Title>
           <Description selected={active}>{description}</Description>
