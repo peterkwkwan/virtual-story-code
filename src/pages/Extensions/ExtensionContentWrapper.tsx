@@ -5,7 +5,8 @@ import { RelatedResources } from './tabs/RelatedResources'
 
 import { StarRating } from '@/components/elements/StarRating'
 import { Tab, Tabs } from '@/components/elements/Tabs'
-import { ResourceLinks } from '@/constants/skills'
+import { ResourceLinks, Skills } from '@/constants/skills'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
 const Container = styled.div`
   color: ${(props) => props.theme.palette.text01};
@@ -24,10 +25,17 @@ const Header = styled.div`
   overflow: hidden;
 `
 
-const ExtensionLogo = styled.img`
+const ExtensionLogo = styled.img<{
+  currentStatus: {
+    disabled: boolean
+    uninstalled: boolean
+  }
+}>`
   height: 128px;
   width: 128px;
   object-fit: contain;
+  filter: ${(props) =>
+    props.currentStatus?.disabled ? 'grayscale(100%)' : ''};
 `
 
 const Details = styled.div`
@@ -70,26 +78,50 @@ const Description = styled.p`
 
 const ButtonContainer = styled.div`
   margin-top: 10px;
-  > button {
-    background-color: ${(props) => props.theme.palette.vsCodeDeepBlue};
-    color: white;
-    border-radius: 2px;
-    border: none;
-    padding: 4px 8px;
-    cursor: pointer;
-  }
+`
+const UninstalledNotification = styled.span`
+  font-size: 11px;
+  font-style: italic;
+  color: ${(props) => props.theme.palette.text03};
 `
 
-const DisableButton = styled.button``
+const ActionButtons = styled.button`
+  background-color: ${(props) => props.theme.palette.vsCodeDeepBlue};
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+`
 
-const UninstallButton = styled.button`
+const DisableButton = styled(ActionButtons)<{ disabling: boolean }>`
+  :hover {
+    background-color: ${(props) =>
+      !props.disabling && props.theme.palette.vsCodeBlue};
+  }
+  background-color: ${(props) =>
+    props.disabling
+      ? props.theme.palette.text03
+      : props.theme.palette.vsCodeDeepBlue};
+`
+
+const UninstallButton = styled(ActionButtons)<{ uninstalling: boolean }>`
   margin-left: 8px;
+  :hover {
+    background-color: ${(props) =>
+      !props.uninstalling && props.theme.palette.vsCodeBlue};
+  }
+  background-color: ${(props) =>
+    props.uninstalling
+      ? props.theme.palette.text03
+      : props.theme.palette.vsCodeDeepBlue};
 `
 
 const Status = styled.div`
   margin-top: 8px;
   line-height: 22px;
   font-size: 90%;
+  height: 22px;
 `
 
 const Body = styled.div`
@@ -114,7 +146,7 @@ const Content = styled.div`
 `
 interface Props {
   logoSrc: string
-  title: string
+  title: Skills
   type: string
   proficiency: string
   rating: number
@@ -134,15 +166,56 @@ export const ExtensionContentWrapper = ({
   resourceLinks,
 }: Props) => {
   const [activeTab, setActiveTab] = useState(tabs[0])
+  const [uninstalling, setUninstalling] = useState(false)
+  const [disabling, setDisabling] = useState(false)
+  const [extensionsStatus, setExtensionStatus] = useBoundStore((state) => [
+    state.extensionStatus,
+    state.setExtensionStatus,
+  ])
+
+  const currentStatus = extensionsStatus[title]
 
   function handleTabChange(tab: Tab) {
     setActiveTab(tab)
   }
 
+  const handleDisable = () => {
+    setDisabling(true)
+    setTimeout(() => {
+      currentStatus?.disabled
+        ? setExtensionStatus({
+            [title]: { disabled: false, uninstalled: false },
+          })
+        : setExtensionStatus({
+            [title]: { disabled: true, uninstalled: false },
+          })
+      setDisabling(false)
+    }, 500)
+  }
+
+  const handleUninstall = (title: Skills) => {
+    setUninstalling(true)
+
+    setTimeout(() => {
+      currentStatus?.uninstalled
+        ? setExtensionStatus({
+            [title]: { uninstalled: false, disabled: false },
+          })
+        : setExtensionStatus({
+            [title]: { uninstalled: true, disabled: false },
+          })
+      setUninstalling(false)
+    }, 500)
+  }
+
   return (
     <Container>
       <Header>
-        <ExtensionLogo src={logoSrc} alt={`${title}-logo`} />
+        <ExtensionLogo
+          currentStatus={currentStatus}
+          src={logoSrc}
+          alt={`${title}-logo`}
+        />
         <Details>
           <Title>{title}</Title>
           <Subtitle>
@@ -155,12 +228,40 @@ export const ExtensionContentWrapper = ({
           </Subtitle>
           <Description>{description}</Description>
           <ButtonContainer>
-            <DisableButton aria-label="Disable skill">Disable</DisableButton>
-            <UninstallButton aria-label="Uninstall skill">
-              Uninstall
+            {currentStatus?.uninstalled && (
+              <UninstalledNotification>
+                <img
+                  width={11}
+                  height={11}
+                  style={{ marginRight: '2px' }}
+                  src="/assets/icons/check.svg"
+                  alt="check"
+                />
+                Uninstalled
+              </UninstalledNotification>
+            )}
+            {!currentStatus?.uninstalled && (
+              <DisableButton
+                aria-label="Disable skill"
+                disabling={disabling}
+                onClick={handleDisable}
+              >
+                {currentStatus?.disabled ? 'Enable' : 'Disable'}
+              </DisableButton>
+            )}
+            <UninstallButton
+              aria-label="Uninstall skill"
+              uninstalling={uninstalling}
+              onClick={() => handleUninstall(title)}
+            >
+              {currentStatus?.uninstalled ? 'Install' : 'Uninstall'}
             </UninstallButton>
           </ButtonContainer>
-          <Status>This skill is installed globally.</Status>
+          <Status>
+            {currentStatus?.uninstalled
+              ? ''
+              : 'This skill is installed globally.'}
+          </Status>
         </Details>
       </Header>
       <Body>

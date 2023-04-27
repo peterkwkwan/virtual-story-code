@@ -1,17 +1,14 @@
-import React, { RefObject, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { ExtensionsButton } from './ExtensionsButton'
 import { ExtensionsList } from './ExtensionsRouterConfig'
+import { ExtensionConfig } from './shared/types'
 
-import {
-  Tracker,
-  useIntersectionObserver,
-} from '@/hooks/useIntersectionObserver'
+import { useBoundStore } from '@/hooks/useBoundStore'
 
 interface FolderButton {
   opened: boolean
-  shadow: boolean
 }
 
 interface StyledFolder {
@@ -20,13 +17,16 @@ interface StyledFolder {
 }
 
 const Container = styled.div`
-  padding: 12px 0 0;
-  height: calc(100% - 26px - 14px);
+  height: calc(100% - 34px);
+  overflow: auto;
+
+  margin-top: 8px;
+  background-color: ${(props) => props.theme.palette.dark03};
 `
 
 const FolderButton = styled.button<FolderButton>`
   width: 100%;
-  background-color: inherit;
+  background-color: ${(props) => props.theme.palette.dark03};
   border: none;
   line-height: 22px;
   padding: 0;
@@ -37,13 +37,8 @@ const FolderButton = styled.button<FolderButton>`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: start;
-  box-shadow: ${(props) =>
-    props.shadow ? '-10px 5px 2px ' + props.theme.palette.dark01 : ''};
   color: inherit;
   cursor: pointer;
-
-  transition: box-shadow 0.5s;
-
   &:before {
     content: url('/assets/icons/arrow.svg');
     display: inline-block;
@@ -57,19 +52,19 @@ const FolderButton = styled.button<FolderButton>`
 `
 
 const CollapsibleFolder = styled.div<StyledFolder>`
-  visibility: ${(props) => (props.opened ? 'visible' : 'hidden')};
-  height: calc(100% - 22px);
+  /* height: ${(props) =>
+    props.opened ? 'calc(100% - 22px - 22px)' : '0px'}; */
+  height: ${(props) => (props.opened ? 'auto' : '0px')};
+  max-height: calc(100% - 22px - 22px);
   overflow: auto;
-  transition: background-color 0.5s;
-  background-color: ${(props) => props.theme.palette.dark04};
-  background-clip: text;
+  background-color: ${(props) => props.theme.palette.dark03};
   &::-webkit-scrollbar {
     width: 10px;
     background-color: ${(props) => props.theme.palette.dark01};
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background-color: inherit;
+    background-color: ${(props) => props.theme.palette.dark02};
   }
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
@@ -81,18 +76,16 @@ const CollapsibleFolder = styled.div<StyledFolder>`
 `
 
 export const SkillSidebarList = () => {
-  const [visibility, targetRef] = useIntersectionObserver(
-    Tracker.FIRST_EXT_BUTTON,
-    0.1
-  )
-  const showBoxShadow = !visibility[Tracker.FIRST_EXT_BUTTON]
-  const divRef = targetRef as RefObject<HTMLDivElement>
-
-  const [opened, setOpened] = useState(true)
+  const [installedFolderOpened, setInstalledFolderOpened] = useState(true)
+  const [availableFolderOpened, setAvailableFolderOpened] = useState(true)
   const [hovering, setHovering] = useState(false)
+  const extensionsStatus = useBoundStore((state) => state.extensionStatus)
 
-  const handleFolderClick = () => {
-    setOpened((prevState) => !prevState)
+  const handleInstalledFolderClick = () => {
+    setInstalledFolderOpened((prevState) => !prevState)
+  }
+  const handleAvailableFolderClick = () => {
+    setAvailableFolderOpened((prevState) => !prevState)
   }
 
   const handleMouseLeave = () => {
@@ -102,30 +95,50 @@ export const SkillSidebarList = () => {
     setHovering(true)
   }
 
+  const installedExtensions: ExtensionConfig[] = []
+  const availableExtensions: ExtensionConfig[] = []
+
+  ExtensionsList.forEach((extension) => {
+    if (extensionsStatus[extension.title]?.uninstalled) {
+      availableExtensions.push(extension)
+    } else {
+      installedExtensions.push(extension)
+    }
+  })
+
   return (
     <Container>
       <FolderButton
-        opened={opened}
-        shadow={showBoxShadow}
+        opened={availableFolderOpened}
         aria-label="Toggle skill folder"
-        onClick={handleFolderClick}
+        onClick={handleAvailableFolderClick}
       >
-        INSTALLED
+        AVAILABLE
       </FolderButton>
       <CollapsibleFolder
-        opened={opened}
+        opened={availableFolderOpened}
         isHovering={hovering}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {ExtensionsList.map((extension, index) => {
-          if (index === 0) {
-            return (
-              <div ref={divRef} key={extension.title}>
-                <ExtensionsButton {...extension} />
-              </div>
-            )
-          }
+        {availableExtensions.map((extension) => {
+          return <ExtensionsButton key={extension.title} {...extension} />
+        })}
+      </CollapsibleFolder>
+      <FolderButton
+        opened={installedFolderOpened}
+        aria-label="Toggle skill folder"
+        onClick={handleInstalledFolderClick}
+      >
+        INSTALLED
+      </FolderButton>
+      <CollapsibleFolder
+        opened={installedFolderOpened}
+        isHovering={hovering}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {installedExtensions.map((extension) => {
           return <ExtensionsButton key={extension.title} {...extension} />
         })}
       </CollapsibleFolder>
