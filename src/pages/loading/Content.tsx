@@ -39,11 +39,11 @@ const Container = styled.div<{ showLoadingPage: boolean }>`
 
 const ButtonContainer = styled.div`
   z-index: 5;
-  margin-bottom: 16px;
+  margin: 16px 0;
 `
 const EllipsisContainer = styled.div`
   height: 46px;
-  width: 130px;
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;

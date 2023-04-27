@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  user-select: none;
   animation: footerFadeIn 1s linear;
   @keyframes footerFadeIn {
     0% {

@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   font-family: League Spartan;
   font-weight: 600;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 1.2rem;
   cursor: pointer;
   background: var(--background-color);
   padding: 0.87rem 2rem;
