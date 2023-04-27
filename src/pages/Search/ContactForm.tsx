@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   border-top: 3px dotted ${(props) => props.theme.palette.dark04};
-  padding-top: 24px;
+  padding-top: 40px;
   margin: 0 auto;
-  max-width: 80%;
+  width: 80%;
   label,
   input,
   textarea,

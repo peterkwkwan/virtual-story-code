@@ -6,9 +6,19 @@ import { HyperLink } from './shared/constants'
 import { AvatarContainer } from './AvatarContainer'
 import { ContactForm } from './ContactForm'
 
+const StyledBaseContainer = styled(BaseContentContainer)`
+  justify-content: center;
+  align-items: center;
+`
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 1920px) {
+    max-width: 50%;
+  }
 `
 
 const ProfilesContainer = styled.div`
@@ -27,7 +37,7 @@ const Profiles = [
 
 export const SearchHome = () => {
   return (
-    <BaseContentContainer>
+    <StyledBaseContainer>
       <Container>
         <ProfilesContainer>
           {Profiles.map((profile) => (
@@ -36,6 +46,6 @@ export const SearchHome = () => {
         </ProfilesContainer>
         <ContactForm />
       </Container>
-    </BaseContentContainer>
+    </StyledBaseContainer>
   )
 }
