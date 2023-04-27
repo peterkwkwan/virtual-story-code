@@ -15,12 +15,11 @@ import layer10 from '/assets/images/parallax/home/layer_10.webp'
 import styled from 'styled-components'
 
 const Image = styled.img`
-  height: 776px;
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  aspect-ratio: 0.82;
 `
 
 const LAYERS = [
