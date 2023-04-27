@@ -16,13 +16,18 @@ import { BlackNWhiteSlice, createBnWSlice } from './slices/createBnWSlice'
 import {
   createExtensionStatusSlice,
   ExtensionStatusSlice,
-} from './slices/createExtensionsStatus'
+} from './slices/createExtensionStatusSlice'
+import {
+  createSearchValueSlice,
+  SearchValueSlice,
+} from './slices/createSearchValueSlice'
 
 type Slices = BlackNWhiteSlice &
   OffsetPercentageSlice &
   SpeechTrackerSlice &
   VisibilitySlice &
-  ExtensionStatusSlice
+  ExtensionStatusSlice &
+  SearchValueSlice
 
 export const useBoundStore = create<Slices>()((...a) => ({
   ...createVisibilitySlice(...a),
@@ -30,4 +35,5 @@ export const useBoundStore = create<Slices>()((...a) => ({
   ...createSpeechTrackerSlice(...a),
   ...createBnWSlice(...a),
   ...createExtensionStatusSlice(...a),
+  ...createSearchValueSlice(...a),
 }))

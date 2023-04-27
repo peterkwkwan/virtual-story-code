@@ -19,7 +19,6 @@ interface StyledFolder {
 const Container = styled.div`
   height: calc(100% - 34px);
   overflow: auto;
-
   margin-top: 8px;
   background-color: ${(props) => props.theme.palette.dark03};
 `
@@ -80,6 +79,7 @@ export const SkillSidebarList = () => {
   const [availableFolderOpened, setAvailableFolderOpened] = useState(true)
   const [hovering, setHovering] = useState(false)
   const extensionsStatus = useBoundStore((state) => state.extensionStatus)
+  const searchValue = useBoundStore((state) => state.searchValue.toLowerCase())
 
   const handleInstalledFolderClick = () => {
     setInstalledFolderOpened((prevState) => !prevState)
@@ -106,6 +106,23 @@ export const SkillSidebarList = () => {
     }
   })
 
+  const filteredInstalledExtensions = installedExtensions.filter(
+    (extension) => {
+      return (
+        extension.description.toLowerCase().includes(searchValue) ||
+        extension.title.toLowerCase().includes(searchValue)
+      )
+    }
+  )
+  const filteredAvailableExtensions = availableExtensions.filter(
+    (extension) => {
+      return (
+        extension.description.toLowerCase().includes(searchValue) ||
+        extension.title.toLowerCase().includes(searchValue)
+      )
+    }
+  )
+
   return (
     <Container>
       <FolderButton
@@ -121,7 +138,7 @@ export const SkillSidebarList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {availableExtensions.map((extension) => {
+        {filteredAvailableExtensions.map((extension) => {
           return <ExtensionsButton key={extension.title} {...extension} />
         })}
       </CollapsibleFolder>
@@ -138,7 +155,7 @@ export const SkillSidebarList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {installedExtensions.map((extension) => {
+        {filteredInstalledExtensions.map((extension) => {
           return <ExtensionsButton key={extension.title} {...extension} />
         })}
       </CollapsibleFolder>
