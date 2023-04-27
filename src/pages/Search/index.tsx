@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   @media only screen and (min-width: 1920px) {
-    max-width: 50%;
+    max-width: 60%;
   }
 `
 
@@ -25,6 +25,8 @@ const ProfilesContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
   margin: 12px 0 28px;
 `
 

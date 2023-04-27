@@ -7,7 +7,6 @@ import { Avatar } from './Avatar'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: fit-content;
   justify-content: center;
   align-items: center;
