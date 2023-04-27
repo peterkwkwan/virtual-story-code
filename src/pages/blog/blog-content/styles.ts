@@ -25,8 +25,12 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   margin: 0 auto;
   max-width: 80%;
+  @media only screen and (min-width: 1440px) {
+    max-width: 50%;
+  }
   p {
     line-height: 28px;
+    font-weight: 200;
     word-break: break-word;
   }
   figure {
@@ -36,6 +40,7 @@ export const InnerContainer = styled.div`
     }
   }
   li {
+    line-height: 24px;
     :not(:first-of-type) {
       margin-top: 12px;
     }

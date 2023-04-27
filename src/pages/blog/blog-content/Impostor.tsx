@@ -3,6 +3,7 @@ import React from 'react'
 import { Container, InnerContainer } from './styles'
 import { BlogLinks, Blogs } from '../shared/constants'
 import { ContinueReading } from './ContinueReading'
+import { BlockQuote } from '../shared/BlockQuote'
 
 import { ExternalLink } from '@/components/elements/ExternalLink'
 
@@ -61,8 +62,48 @@ export const Impostor = () => {
           I thought to myself, “Wow…if he feels this too, then when am I ever
           going to be good enough?!”.
         </p>
-
         <p>Thus, I came to this realisation: it is OK to not be good enough!</p>
+        <p>
+          There will always be someone smarter than you, more hard-working than
+          you, more confident than you, and that is FINE! In fact, you should
+          embrace this opportunity. Rather than be intimidated by your peer, let
+          this be a chance for you to grow, ask questions, and to learn.
+        </p>
+        <p>
+          If you are a self-taught developer, seek out talented individuals and
+          pick their brains. Better yet, get a mentor to guide you along the
+          correct path. Surround yourself with talented individuals and you will
+          grow so much more than you can imagine.
+        </p>
+        <p>As a famous saying goes:</p>
+        <BlockQuote text="If you are the smartest person in the room, you are in the wrong room." />
+        <h2>2. Focus on your own goals and know your limits</h2>
+        <p>
+          As a self-taught developer, I can’t help but compare my meagre coding
+          skills with my peers. Already feeling behind due to the lack of CS
+          knowledge that comes with a relevant university degree, I feel immense
+          pressure not just to keep up, but stay ahead!
+        </p>
+        <p>
+          The mental pressure of needing to stay ahead of the curve can be
+          utterly crushing, especially if you are the type to set a high bar for
+          personal excellence.
+        </p>
+        <p>
+          This is one reason I refuse to go down the full-stack route. I would
+          rather be an excellent frontend developer, rather than a mediocre
+          full-stack. As a father and husband, I simply do not have the time or
+          energy to excel at both.
+        </p>
+        <p>
+          From my experience, it is also quite common for developers to develop
+          a preference for a particular stack. With preference comes passion,
+          and we often only do our best work&nbsp;
+          <ExternalLink
+            text="in accordance with our passion."
+            href="https://news.stanford.edu/2005/06/12/youve-got-find-love-jobs-says/"
+          />
+        </p>
         <ContinueReading href={BlogLinks[Blogs.IMPOSTOR]} />
       </InnerContainer>
     </Container>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div<{ gradient: boolean }>`
@@ -33,7 +33,7 @@ const LEDLight = styled.span`
   width: ${size}px;
   height: ${size}px;
   border-radius: 50%;
-  margin: 4px;
+  margin: 4px 4px 4px 8px;
   background: ${(props) => props.theme.palette.marioGreen};
   ::before {
     background: ${(props) => props.theme.palette.marioGreen};
@@ -96,13 +96,21 @@ const getCurrentTime = () => {
 }
 
 export const StatusCenter = ({ gradient }: Props) => {
+  const [currentTime, setCurrentTime] = useState('---- 01 ---- 00:00AM')
+
+  useEffect(() => {
+    setCurrentTime(getCurrentTime())
+    const interval = setInterval(() => setCurrentTime(getCurrentTime()), 10000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <Container gradient={gradient}>
       <StatusIndicator>
         Site status: ON
         <LEDLight />
       </StatusIndicator>
-      <span>{getCurrentTime()}</span>
+      <span>{currentTime}</span>
     </Container>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Editor } from '@monaco-editor/react'
 
 import { Container, InnerContainer, StyledCaption } from './styles'
 import { BlogLinks, Blogs } from '../shared/constants'

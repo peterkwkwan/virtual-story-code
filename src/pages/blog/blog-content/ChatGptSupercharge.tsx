@@ -47,6 +47,22 @@ export const ChatGptSupercharge = () => {
           Writing documentation is great and all, but what about emails or text
           messages?
         </p>
+
+        <p>
+          As an AI that was trained to be impartial and provide information that
+          is factual and unbiased, and also not capable of expressing personal
+          opinions (yet), ChatGPT is a great tool to help come up with basic
+          template responses.
+        </p>
+        <p>
+          This is incredibly handy when emotions and stress run high at work,
+          and you want to refrain from letting your emotions get the better of
+          you.
+        </p>
+        <p>
+          Here are some scenarios where you could turn to ChatGPT to draft up an
+          impartial response:
+        </p>
         <ContinueReading href={BlogLinks[Blogs.CHATGPT_SUPERCHARGE]} />
       </InnerContainer>
     </Container>
