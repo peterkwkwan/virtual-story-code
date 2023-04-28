@@ -26,7 +26,7 @@ export const InnerContainer = styled.div`
   margin: 0 auto;
   max-width: 80%;
   @media only screen and (min-width: 1440px) {
-    max-width: 50%;
+    max-width: 550px;
   }
   p {
     line-height: 28px;

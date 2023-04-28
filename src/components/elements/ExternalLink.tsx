@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Link = styled.a`
   text-decoration: none;
+  font-weight: 400;
   color: ${(props) => props.theme.palette.hyperlink};
   :hover {
     text-decoration: underline;

@@ -7,6 +7,12 @@ import { BlogSidebarButton } from './BlogSidebarButton'
 
 const MyBlogs = [
   {
+    title: Blogs.GO_FAST_GO_SMOOTH,
+    date: 'Apr 27, 2023',
+    url: BlogLinks[Blogs.GO_FAST_GO_SMOOTH],
+    internalPath: BlogsPagePaths.BLOG_GO_FAST_GO_SMOOTH,
+  },
+  {
     title: Blogs.CHATGPT_SUPERCHARGE,
     date: 'Feb 19, 2023',
     url: BlogLinks[Blogs.CHATGPT_SUPERCHARGE],
