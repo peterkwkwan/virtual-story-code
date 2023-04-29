@@ -7,6 +7,7 @@ export enum Tracker {
   INTRO = 'INTRO',
   MARIO_VINE = 'MARIO_VINE',
   SPEECH_BUBBLE = 'SPEECH_BUBBLE',
+  MY_CAREER_TITLE_CARD = 'MY_CAREER_TITLE_CARD',
 }
 
 type UseIntersectionObserver = (

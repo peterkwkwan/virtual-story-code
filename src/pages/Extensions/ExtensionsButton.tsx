@@ -9,7 +9,7 @@ import { useActivePath } from '@/hooks/useActivePath'
 import { ExplorerContext } from '@/App'
 import SkeletonImage from '@/components/elements/SkeletonImage'
 
-const Button = styled.button<{ selected: boolean }>`
+const Button = styled.span<{ selected: boolean }>`
   display: flex;
   width: 100%;
   padding: 0 0 0 16px;

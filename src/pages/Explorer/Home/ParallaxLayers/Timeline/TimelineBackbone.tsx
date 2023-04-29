@@ -36,6 +36,7 @@ const MarioVine = styled.img`
 const TimelineContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 44px;
 `
 
 const TimelineEvent = styled.div`
@@ -56,9 +57,9 @@ const Col1TimelineEvent = styled(TimelineEvent)`
     }
   }
   :nth-of-type(3) {
-    color: ${(props) => props.theme.palette.dark01};
     h3 {
       background-color: ${(props) => props.theme.palette.marioYellow};
+      color: ${(props) => props.theme.palette.dark01};
     }
   }
 `
@@ -67,6 +68,7 @@ const Col2TimelineEvent = styled(TimelineEvent)`
   :nth-of-type(1) {
     h3 {
       background-color: ${(props) => props.theme.palette.marioGreen};
+      color: ${(props) => props.theme.palette.dark01};
     }
   }
   :nth-of-type(2) {
@@ -76,16 +78,56 @@ const Col2TimelineEvent = styled(TimelineEvent)`
   }
 `
 
-const COL1_EVENTS = [
-  { title: Companies.WTW },
-  { title: Companies.SERAI },
-  { title: Companies.MANULIFE },
+export interface TimelineEvent {
+  title: string
+  date: string
+  role: string
+  iconSrc: string
+}
+
+const COL1_EVENTS: TimelineEvent[] = [
+  {
+    title: Companies.WTW,
+    date: '2023',
+    role: 'Software Engineer',
+    iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
+  },
+  {
+    title: Companies.SERAI,
+    date: '2021',
+    role: 'Software Engineer',
+    iconSrc: '/assets/icons/companies/serai.webp',
+  },
+  {
+    title: Companies.MANULIFE,
+    date: '2019',
+    role: 'Frontend Developer',
+    iconSrc: '/assets/icons/companies/manulife.webp',
+  },
 ]
 
-const COL2_EVENTS = [{ title: Companies.BCW }, { title: Companies.PAG }]
+const COL2_EVENTS: TimelineEvent[] = [
+  {
+    title: Companies.BCW,
+    date: '2022',
+    role: 'Frontend Developer',
+    iconSrc: '/assets/icons/companies/bcw-group.webp',
+  },
+  {
+    title: Companies.PAG,
+    date: '2020',
+    role: 'Software Developer',
+    iconSrc: '/assets/icons/companies/pag.webp',
+  },
+]
 
 export const TimelineBackbone = () => {
-  const [, targetRef] = useIntersectionObserver(Tracker.MARIO_VINE, 0.12)
+  const [visibility, targetRef] = useIntersectionObserver(
+    Tracker.MARIO_VINE,
+    0.12
+  )
+
+  console.log(visibility)
 
   const divRef = targetRef as RefObject<HTMLDivElement>
 

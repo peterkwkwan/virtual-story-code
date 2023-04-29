@@ -18,7 +18,7 @@ interface StyledFolder {
 
 const Container = styled.div`
   height: calc(100% - 34px);
-  overflow: auto;
+  overflow: scroll;
   margin-top: 8px;
   background-color: ${(props) => props.theme.palette.dark03};
 `
@@ -51,11 +51,10 @@ const FolderButton = styled.button<FolderButton>`
 `
 
 const CollapsibleFolder = styled.div<StyledFolder>`
-  /* height: ${(props) =>
-    props.opened ? 'calc(100% - 22px - 22px)' : '0px'}; */
   height: ${(props) => (props.opened ? 'auto' : '0px')};
   max-height: calc(100% - 22px - 22px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: ${(props) => props.theme.palette.dark03};
   &::-webkit-scrollbar {
     width: 10px;

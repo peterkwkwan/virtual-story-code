@@ -38,7 +38,7 @@ const Label = styled.p`
   text-overflow: ellipsis;
 `
 
-const Cross = styled.button`
+const Cross = styled.span`
   margin-left: 4px;
   height: 18px;
   width: 18px;
@@ -46,7 +46,7 @@ const Cross = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
-  padding: 0;
+  padding: 0 0 2px;
   border-radius: 4px;
   font-size: 18px;
   font-weight: 200;

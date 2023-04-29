@@ -26,7 +26,7 @@ const calcPadding = (
   return `${selectedPx + (isRoot ? rootPx : nonRootPx)}px`
 }
 
-const StyledButton = styled.button<Props>`
+const StyledButton = styled.span<Props>`
   width: 100%;
   background-color: ${(props) =>
     props.selected ? 'hsla(215, 78%, 30%, 0.83)' : 'inherit'};

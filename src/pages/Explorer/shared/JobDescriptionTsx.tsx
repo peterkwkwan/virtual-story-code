@@ -4,7 +4,11 @@ import { Editor } from '@monaco-editor/react'
 import { getTsxEditorDefaultValue } from './editorUtils'
 
 import { PageNames } from '@/pages/shared/routerConfig'
-import { Companies, CompanyDescriptions } from '@/constants/companies'
+import {
+  Companies,
+  CompaniesDates,
+  CompanyDescriptions,
+} from '@/constants/companies'
 import { ExplorerContext } from '@/App'
 
 export const JobDescriptionTsx = () => {
@@ -16,7 +20,7 @@ export const JobDescriptionTsx = () => {
       role: 'Software Engineer',
       isCurrentRole: true,
       companyName: Companies.WTW,
-      date: 'November 2022 - Present',
+      date: CompaniesDates[Companies.WTW],
       location: 'Hong Kong',
       companyDescription: CompanyDescriptions[Companies.WTW],
       functions: [
@@ -39,7 +43,7 @@ export const JobDescriptionTsx = () => {
     [PageNames.BCW_GROUP]: getTsxEditorDefaultValue({
       role: 'Frontend Developer',
       companyName: Companies.BCW,
-      date: 'July 2022 - October 2022',
+      date: CompaniesDates[Companies.BCW],
       location: 'Hong Kong',
       companyDescription: CompanyDescriptions[Companies.BCW],
       functions: [
@@ -63,7 +67,7 @@ export const JobDescriptionTsx = () => {
     [PageNames.MANULIFE]: getTsxEditorDefaultValue({
       role: 'Software Developer',
       companyName: Companies.MANULIFE,
-      date: 'August 2019 - May 2020',
+      date: CompaniesDates[Companies.MANULIFE],
       location: 'Hong Kong',
       companyDescription: CompanyDescriptions[Companies.MANULIFE],
       functions: [
@@ -82,7 +86,7 @@ export const JobDescriptionTsx = () => {
     [PageNames.PAG]: getTsxEditorDefaultValue({
       role: 'Software Developer',
       companyName: Companies.PAG,
-      date: 'May 2020 - October 2021',
+      date: CompaniesDates[Companies.PAG],
       location: 'Hong Kong',
       companyDescription: CompanyDescriptions[Companies.PAG],
       functions: [
@@ -105,7 +109,7 @@ export const JobDescriptionTsx = () => {
     [PageNames.SERAI]: getTsxEditorDefaultValue({
       role: 'Software Engineer',
       companyName: Companies.SERAI,
-      date: 'October 2021 - July 2022',
+      date: CompaniesDates[Companies.SERAI],
       location: 'Hong Kong',
       companyDescription: CompanyDescriptions[Companies.SERAI],
       functions: [

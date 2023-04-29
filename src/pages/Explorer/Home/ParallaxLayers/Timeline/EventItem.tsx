@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { TimelineEvent } from './TimelineBackbone'
+
 const Container = styled.div`
   position: relative;
   width: 300px;
@@ -15,6 +17,7 @@ const InnerContainer = styled.div`
   height: 100px;
   color: ${(props) => props.theme.palette.white};
   background-color: ${(props) => props.theme.palette.dark02};
+  padding-top: 30px;
 `
 
 const Title = styled.h3`
@@ -27,15 +30,34 @@ const Title = styled.h3`
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `
 
-interface Props {
-  title: string
-}
+const Date = styled.span`
+  position: absolute;
+  z-index: 1;
+  bottom: 8px;
+  right: 0;
+  font-size: 2rem;
+  font-weight: 900;
+`
 
-export const EventItem = ({ title }: Props) => {
+const Role = styled.span``
+
+const CompanyLogo = styled.img`
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  border: 4px solid ${(props) => props.theme.palette.text04};
+`
+
+export const EventItem = ({ title, date, role, iconSrc }: TimelineEvent) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <InnerContainer></InnerContainer>
+      <Date>{date}</Date>
+
+      <InnerContainer>
+        <CompanyLogo src={iconSrc} alt={title} />
+        <Role>- {role} -</Role>
+      </InnerContainer>
     </Container>
   )
 }

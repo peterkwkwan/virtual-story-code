@@ -14,7 +14,7 @@ export const ${job.companyName.replace(/\s/g, '')} = () => {
     job.isCurrentRole ? ', isCurrentRole' : ''
   })
 
-  job.date = "November 2022 - Present"
+  job.date = "${job.date}"
   job.role = "${job.role}"
   job.location = "${job.location}"
   job.companyDescription = "${job.companyDescription}"

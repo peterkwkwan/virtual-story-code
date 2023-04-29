@@ -105,7 +105,6 @@ export const Home = () => {
             <Title />
             <ScrollPrompt />
           </CareerParallaxLayer>
-
           <ParallaxLayer offset={5} sticky={{ start: 5, end: 7 }}>
             <TimelineBackbone />
           </ParallaxLayer>

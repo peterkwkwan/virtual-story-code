@@ -25,9 +25,7 @@ const ButtonUnorderedList = styled.ul`
   padding: 0;
 `
 
-const SidebarButtons = styled.button<{ selected: boolean }>`
-  border: none;
-  background-color: inherit;
+const SidebarButtons = styled.span<{ selected: boolean }>`
   cursor: pointer;
   width: ${(props) => (props.selected ? '46px' : '48px')};
   height: 48px;
