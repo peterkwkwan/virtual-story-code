@@ -8,6 +8,7 @@ import {
   useIntersectionObserver,
 } from '@/hooks/useIntersectionObserver'
 import { Companies } from '@/constants/companies'
+import { ActionButton } from '@/components/elements/ActionButton'
 
 const Container = styled.div`
   display: flex;

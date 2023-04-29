@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { TimelineEvent } from './TimelineBackbone'
 
+import { ActionButton } from '@/components/elements/ActionButton'
+
 const Container = styled.div`
   position: relative;
   width: 360px;
@@ -50,10 +52,8 @@ const TitleHeader = styled.div`
   width: max-content;
 `
 
-const CompanyName = styled.h3`
-  padding: 8px 12px;
-  margin-bottom: 4px;
-  font-size: 1.5rem;
+const CompanyName = styled.div`
+  margin: 12px;
 `
 
 const Role = styled.span`
@@ -95,7 +95,16 @@ export const EventItem = ({
       <Title>
         <CompanyLogo src={iconSrc} alt={title} />
         <TitleHeader>
-          <CompanyName>{title}</CompanyName>
+          <CompanyName>
+            <ActionButton
+              text={title}
+              href=""
+              fontSize="1.5rem"
+              height="1.2rem"
+              spanMargin="0px"
+            />
+          </CompanyName>
+
           <Role>{role}</Role>
         </TitleHeader>
       </Title>
