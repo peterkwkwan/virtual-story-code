@@ -83,6 +83,7 @@ export interface TimelineEvent {
   date: string
   role: string
   iconSrc: string
+  techStack: string[]
 }
 
 const COL1_EVENTS: TimelineEvent[] = [
@@ -91,18 +92,38 @@ const COL1_EVENTS: TimelineEvent[] = [
     date: '2023',
     role: 'Software Engineer',
     iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
+    techStack: [
+      '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/nextjs.svg',
+      '/assets/icons/extensions/gatsby.svg',
+      '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/mui.svg',
+      '/assets/icons/extensions/sanity.webp',
+    ],
   },
   {
     title: Companies.SERAI,
     date: '2021',
     role: 'Software Engineer',
     iconSrc: '/assets/icons/companies/serai.webp',
+    techStack: [
+      '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/router.svg',
+      '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/storybook.svg',
+    ],
   },
   {
     title: Companies.MANULIFE,
     date: '2019',
     role: 'Frontend Developer',
     iconSrc: '/assets/icons/companies/manulife.webp',
+    techStack: [
+      '/assets/icons/extensions/angular.svg',
+      '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/html.svg',
+      '/assets/icons/extensions/css.svg',
+    ],
   },
 ]
 
@@ -112,12 +133,24 @@ const COL2_EVENTS: TimelineEvent[] = [
     date: '2022',
     role: 'Frontend Developer',
     iconSrc: '/assets/icons/companies/bcw-group.webp',
+    techStack: [
+      '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/query.webp',
+      '/assets/icons/extensions/mui.svg',
+      '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/stripe.webp',
+    ],
   },
   {
     title: Companies.PAG,
     date: '2020',
     role: 'Software Developer',
     iconSrc: '/assets/icons/companies/pag.webp',
+    techStack: [
+      '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/c-sharp.svg',
+    ],
   },
 ]
 

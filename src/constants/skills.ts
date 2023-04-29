@@ -16,6 +16,7 @@ export enum Skills {
   REACT_QUERY = 'React Query',
   STORYBOOK = 'Storybook',
   STRIPE = 'Stripe.js',
+  SANITY = 'Sanity',
   GIT = 'Git',
 }
 
@@ -97,6 +98,11 @@ export const Resources: ResourceLinkMapping = {
     Stripe: 'https://stripe.com/',
     'Stripe.js Docs': 'https://stripe.com/docs/js',
     'React Stripe.js SDK': 'https://stripe.com/docs/stripe-js/react',
+  },
+  [Skills.SANITY]: {
+    Sanity: 'https://www.sanity.io/',
+    'Sanity Studio': 'https://www.sanity.io/studio',
+    GROQ: 'https://www.sanity.io/docs/groq',
   },
   [Skills.GIT]: {
     Git: 'https://git-scm.com/',

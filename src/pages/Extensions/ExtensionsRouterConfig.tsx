@@ -26,6 +26,7 @@ export enum ExtPagePaths {
   EXT_MUI = 'extensions/mui',
   EXT_STORYBOOK = 'extensions/storybook',
   EXT_STRIPE = 'extensions/stripe',
+  EXT_SANITY = 'extensions/sanity',
   EXT_GIT = 'extensions/git',
 }
 
@@ -47,6 +48,7 @@ export enum ExtPageNames {
   EXT_MUI = 'Skill: MUI',
   EXT_STORYBOOK = 'Skill: Storybook',
   EXT_STRIPE = 'Skill: Stripe',
+  EXT_SANITY = 'Skill: Sanity',
   EXT_GIT = 'Skill: Git',
 }
 
@@ -69,6 +71,7 @@ const LogoSrc = {
   [ExtPageNames.EXT_MUI]: '/assets/icons/extensions/mui.svg',
   [ExtPageNames.EXT_STORYBOOK]: '/assets/icons/extensions/storybook.svg',
   [ExtPageNames.EXT_STRIPE]: '/assets/icons/extensions/stripe.webp',
+  [ExtPageNames.EXT_SANITY]: '/assets/icons/extensions/sanity.webp',
   [ExtPageNames.EXT_GIT]: '/assets/icons/extensions/git.svg',
 }
 
@@ -556,6 +559,32 @@ export const ExtensionsList: ExtensionConfig[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.BCW],
+        }),
+      })
+    },
+  },
+  {
+    title: Skills.SANITY,
+    iconSrc: LogoSrc[ExtPageNames.EXT_SANITY],
+    path: ExtPagePaths.EXT_SANITY,
+    description:
+      'Powerful, fully customizable headless CMS solution utilizing the GROQ querying language',
+    type: 'Headless CMS',
+    fileName: ExtPageNames.EXT_SANITY,
+    proficiency: 'Intermediate',
+    rating: 3.5,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_SANITY],
+        resourceLinks: Resources[Skills.SANITY],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.WTW],
         }),
       })
     },
