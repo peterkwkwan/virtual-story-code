@@ -109,7 +109,8 @@ export const SkillSidebarList = () => {
     (extension) => {
       return (
         extension.description.toLowerCase().includes(searchValue) ||
-        extension.title.toLowerCase().includes(searchValue)
+        extension.title.toLowerCase().includes(searchValue) ||
+        extension.type.toLowerCase().includes(searchValue)
       )
     }
   )
@@ -117,7 +118,8 @@ export const SkillSidebarList = () => {
     (extension) => {
       return (
         extension.description.toLowerCase().includes(searchValue) ||
-        extension.title.toLowerCase().includes(searchValue)
+        extension.title.toLowerCase().includes(searchValue) ||
+        extension.type.toLowerCase().includes(searchValue)
       )
     }
   )

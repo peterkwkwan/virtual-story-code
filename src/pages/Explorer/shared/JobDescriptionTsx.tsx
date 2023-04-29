@@ -37,6 +37,7 @@ export const JobDescriptionTsx = () => {
         'AngularJS',
         'styled-components',
         'Material UI',
+        'Sanity',
         'Git',
       ],
     }),

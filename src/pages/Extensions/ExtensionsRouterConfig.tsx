@@ -12,6 +12,7 @@ export enum ExtPagePaths {
   EXT_REACT = 'extensions/react',
   EXT_NEXT_JS = 'extensions/next-js',
   EXT_GATSBY = 'extensions/gatsby',
+  EXT_ANGULAR = 'extensions/angular',
   EXT_REACTROUTER = 'extensions/react-router',
   EXT_REACTQUERY = 'extensions/react-query',
   EXT_JAVASCRIPT = 'extensions/javascript',
@@ -34,6 +35,7 @@ export enum ExtPageNames {
   EXT_REACT = 'Skill: React',
   EXT_NEXT_JS = 'Skill: Next.js',
   EXT_GATSBY = 'Skill: Gatsby',
+  EXT_ANGULAR = 'Skill: Angular',
   EXT_REACTROUTER = 'Skill: React Router',
   EXT_REACTQUERY = 'Skill: React Query',
   EXT_JAVASCRIPT = 'Skill: JavaScript',
@@ -56,6 +58,7 @@ const LogoSrc = {
   [ExtPageNames.EXT_REACT]: '/assets/icons/extensions/react.svg',
   [ExtPageNames.EXT_NEXT_JS]: '/assets/icons/extensions/nextjs.svg',
   [ExtPageNames.EXT_GATSBY]: '/assets/icons/extensions/gatsby.svg',
+  [ExtPageNames.EXT_ANGULAR]: '/assets/icons/extensions/angular.svg',
   [ExtPageNames.EXT_REACTROUTER]: '/assets/icons/extensions/router.svg',
   [ExtPageNames.EXT_REACTQUERY]: '/assets/icons/extensions/query.webp',
   [ExtPageNames.EXT_JAVASCRIPT]: '/assets/icons/extensions/javascript.svg',
@@ -285,6 +288,32 @@ export const ExtensionsList: ExtensionConfig[] = [
         tabs: generateTabs({
           title: this.title,
           companies: [Companies.WTW],
+        }),
+      })
+    },
+  },
+  {
+    title: Skills.ANGULAR,
+    iconSrc: LogoSrc[ExtPageNames.EXT_ANGULAR],
+    path: ExtPagePaths.EXT_ANGULAR,
+    description:
+      'Component-based framework for building scalable web applications based on TypeScript',
+    type: 'Frontend Framework',
+    fileName: ExtPageNames.EXT_ANGULAR,
+    proficiency: 'Functional',
+    rating: 2.5,
+    component: function () {
+      return ExtensionContentWrapper({
+        title: this.title,
+        type: this.type,
+        description: this.description,
+        proficiency: this.proficiency,
+        rating: this.rating,
+        logoSrc: LogoSrc[ExtPageNames.EXT_ANGULAR],
+        resourceLinks: Resources[Skills.ANGULAR],
+        tabs: generateTabs({
+          title: this.title,
+          companies: [Companies.WTW, Companies.MANULIFE],
         }),
       })
     },

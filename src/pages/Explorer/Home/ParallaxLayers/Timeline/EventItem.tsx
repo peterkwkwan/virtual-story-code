@@ -5,8 +5,11 @@ import { TimelineEvent } from './TimelineBackbone'
 
 const Container = styled.div`
   position: relative;
-  width: 340px;
+  width: 360px;
   user-select: none;
+  @media only screen and (min-width: 1440px) {
+    width: 460px;
+  }
 `
 
 const InnerContainer = styled.div`
@@ -14,7 +17,7 @@ const InnerContainer = styled.div`
   top: -30px;
   left: 10px;
   width: 100%;
-  height: 100px;
+  height: 150px;
   color: ${(props) => props.theme.palette.white};
   background-color: ${(props) => props.theme.palette.dark02};
   padding-top: 30px;

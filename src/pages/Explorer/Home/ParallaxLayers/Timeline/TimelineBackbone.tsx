@@ -94,9 +94,9 @@ const COL1_EVENTS: TimelineEvent[] = [
     iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
     techStack: [
       '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/typescript.svg',
       '/assets/icons/extensions/nextjs.svg',
       '/assets/icons/extensions/gatsby.svg',
-      '/assets/icons/extensions/typescript.svg',
       '/assets/icons/extensions/mui.svg',
       '/assets/icons/extensions/sanity.webp',
     ],
@@ -108,8 +108,9 @@ const COL1_EVENTS: TimelineEvent[] = [
     iconSrc: '/assets/icons/companies/serai.webp',
     techStack: [
       '/assets/icons/extensions/react.svg',
-      '/assets/icons/extensions/router.svg',
       '/assets/icons/extensions/typescript.svg',
+      '/assets/icons/extensions/nextjs.svg',
+      '/assets/icons/extensions/query.webp',
       '/assets/icons/extensions/storybook.svg',
     ],
   },
@@ -135,9 +136,9 @@ const COL2_EVENTS: TimelineEvent[] = [
     iconSrc: '/assets/icons/companies/bcw-group.webp',
     techStack: [
       '/assets/icons/extensions/react.svg',
+      '/assets/icons/extensions/typescript.svg',
       '/assets/icons/extensions/query.webp',
       '/assets/icons/extensions/mui.svg',
-      '/assets/icons/extensions/typescript.svg',
       '/assets/icons/extensions/stripe.webp',
     ],
   },
@@ -169,7 +170,7 @@ export const TimelineBackbone = () => {
       <Backbone>
         <MarioVine src="/assets/images/mario-vine.svg" alt="mario-vine" />
         <TimelineContainer>
-          <div>
+          <div style={{ marginRight: '40px' }}>
             {COL1_EVENTS.map((event) => {
               return (
                 <Col1TimelineEvent key={event.title}>

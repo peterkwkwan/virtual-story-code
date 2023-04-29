@@ -6,6 +6,7 @@ export enum Skills {
   REACT = 'React',
   NEXT_JS = 'Next.js',
   GATSBY = 'Gatsby',
+  ANGULAR = 'Angular',
   UNITY = 'Unity',
   HTML = 'HTML',
   CSS = 'CSS',
@@ -48,6 +49,9 @@ export const Resources: ResourceLinkMapping = {
   [Skills.GATSBY]: {
     'Official Gatsby Docs': 'https://www.gatsbyjs.com/docs/',
     'Gatsby Cloud': 'https://www.gatsbyjs.com/products/cloud/',
+  },
+  [Skills.ANGULAR]: {
+    'Official Docs': 'https://angular.io/docs',
   },
   [Skills.UNITY]: {
     'Official Unity Site': 'https://unity.com/',
