@@ -9,6 +9,7 @@ import {
   useIntersectionObserver,
 } from '@/hooks/useIntersectionObserver'
 import { Companies } from '@/constants/companies'
+import { Skills } from '@/constants/skills'
 
 const Container = styled.div`
   display: flex;
@@ -66,7 +67,7 @@ export interface TimelineEvent {
   date: string
   role: string
   iconSrc: string
-  techStack: string[]
+  techStack: { name: Skills; iconSrc: string }[]
   color: string
 }
 
@@ -85,12 +86,21 @@ export const TimelineBackbone = () => {
       iconSrc: '/assets/images/home/timeline/luigi.webp',
 
       techStack: [
-        '/assets/icons/extensions/react.svg',
-        '/assets/icons/extensions/typescript.svg',
-        '/assets/icons/extensions/nextjs.svg',
-        '/assets/icons/extensions/gatsby.svg',
-        '/assets/icons/extensions/mui.svg',
-        '/assets/icons/extensions/sanity.webp',
+        { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
+        {
+          name: Skills.TYPESCRIPT,
+          iconSrc: '/assets/icons/extensions/typescript.svg',
+        },
+        {
+          name: Skills.NEXT_JS,
+          iconSrc: '/assets/icons/extensions/nextjs.svg',
+        },
+        { name: Skills.GATSBY, iconSrc: '/assets/icons/extensions/gatsby.svg' },
+        { name: Skills.MUI, iconSrc: '/assets/icons/extensions/mui.svg' },
+        {
+          name: Skills.SANITY,
+          iconSrc: '/assets/icons/extensions/sanity.webp',
+        },
       ],
       color: themeContext.palette.marioRed,
     },
@@ -101,11 +111,23 @@ export const TimelineBackbone = () => {
       iconSrc: '/assets/images/home/timeline/peach.webp',
 
       techStack: [
-        '/assets/icons/extensions/react.svg',
-        '/assets/icons/extensions/typescript.svg',
-        '/assets/icons/extensions/nextjs.svg',
-        '/assets/icons/extensions/query.webp',
-        '/assets/icons/extensions/storybook.svg',
+        { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
+        {
+          name: Skills.TYPESCRIPT,
+          iconSrc: '/assets/icons/extensions/typescript.svg',
+        },
+        {
+          name: Skills.NEXT_JS,
+          iconSrc: '/assets/icons/extensions/nextjs.svg',
+        },
+        {
+          name: Skills.REACT_QUERY,
+          iconSrc: '/assets/icons/extensions/query.webp',
+        },
+        {
+          name: Skills.STORYBOOK,
+          iconSrc: '/assets/icons/extensions/storybook.svg',
+        },
       ],
       color: themeContext.palette.marioBlue,
     },
@@ -115,10 +137,16 @@ export const TimelineBackbone = () => {
       role: 'Frontend Developer',
       iconSrc: '/assets/images/home/timeline/bowser.webp',
       techStack: [
-        '/assets/icons/extensions/angular.svg',
-        '/assets/icons/extensions/typescript.svg',
-        '/assets/icons/extensions/html.svg',
-        '/assets/icons/extensions/css.svg',
+        {
+          name: Skills.ANGULAR,
+          iconSrc: '/assets/icons/extensions/angular.svg',
+        },
+        {
+          name: Skills.TYPESCRIPT,
+          iconSrc: '/assets/icons/extensions/typescript.svg',
+        },
+        { name: Skills.HTML, iconSrc: '/assets/icons/extensions/html.svg' },
+        { name: Skills.CSS, iconSrc: '/assets/icons/extensions/css.svg' },
       ],
       color: themeContext.palette.marioYellow,
     },
@@ -131,11 +159,20 @@ export const TimelineBackbone = () => {
       role: 'Frontend Developer',
       iconSrc: '/assets/images/home/timeline/toad.webp',
       techStack: [
-        '/assets/icons/extensions/react.svg',
-        '/assets/icons/extensions/typescript.svg',
-        '/assets/icons/extensions/query.webp',
-        '/assets/icons/extensions/mui.svg',
-        '/assets/icons/extensions/stripe.webp',
+        { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
+        {
+          name: Skills.TYPESCRIPT,
+          iconSrc: '/assets/icons/extensions/typescript.svg',
+        },
+        {
+          name: Skills.REACT_QUERY,
+          iconSrc: '/assets/icons/extensions/query.webp',
+        },
+        { name: Skills.MUI, iconSrc: '/assets/icons/extensions/mui.svg' },
+        {
+          name: Skills.STRIPE,
+          iconSrc: '/assets/icons/extensions/stripe.webp',
+        },
       ],
       color: themeContext.palette.marioGreen,
     },
@@ -146,9 +183,15 @@ export const TimelineBackbone = () => {
       role: 'Software Developer',
       iconSrc: '/assets/images/home/timeline/yoshi.webp',
       techStack: [
-        '/assets/icons/extensions/react.svg',
-        '/assets/icons/extensions/typescript.svg',
-        '/assets/icons/extensions/c-sharp.svg',
+        { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
+        {
+          name: Skills.TYPESCRIPT,
+          iconSrc: '/assets/icons/extensions/typescript.svg',
+        },
+        {
+          name: Skills.CSHARP,
+          iconSrc: '/assets/icons/extensions/c-sharp.svg',
+        },
       ],
       color: themeContext.palette.marioRed,
     },

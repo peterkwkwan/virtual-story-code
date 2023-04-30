@@ -92,7 +92,7 @@ export const EventItem = ({
 
   return (
     <Container>
-      <Character src={iconSrc} alt={title} />
+      <Character src={iconSrc} alt="mario-character" />
       <Title>
         <CompanyName>
           <ActionButton
@@ -117,8 +117,8 @@ export const EventItem = ({
           <KeyTech>
             {techStack.map((tech) => {
               return (
-                <Tooltip key={tech} content="text" direction="top">
-                  <Tech src={tech} />
+                <Tooltip key={tech.name} content={tech.name} direction="top">
+                  <Tech src={tech.iconSrc} />
                 </Tooltip>
               )
             })}

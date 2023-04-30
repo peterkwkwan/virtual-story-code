@@ -12,7 +12,7 @@ const TooltipTip = styled.div<{ direction: string }>`
   left: 50%;
   transform: translateX(-50%);
   padding: 6px;
-  color: ${(props) => props.theme.palette.text01};
+  color: ${(props) => props.theme.palette.white};
   background: black;
   z-index: 100;
   white-space: nowrap;
