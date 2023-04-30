@@ -82,7 +82,8 @@ export const TimelineBackbone = () => {
       title: Companies.WTW,
       date: '2023',
       role: 'Software Engineer',
-      iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
+      iconSrc: '/assets/images/home/timeline/luigi.webp',
+
       techStack: [
         '/assets/icons/extensions/react.svg',
         '/assets/icons/extensions/typescript.svg',
@@ -97,7 +98,8 @@ export const TimelineBackbone = () => {
       title: Companies.SERAI,
       date: '2021',
       role: 'Software Engineer',
-      iconSrc: '/assets/icons/companies/serai.webp',
+      iconSrc: '/assets/images/home/timeline/peach.webp',
+
       techStack: [
         '/assets/icons/extensions/react.svg',
         '/assets/icons/extensions/typescript.svg',
@@ -111,7 +113,7 @@ export const TimelineBackbone = () => {
       title: Companies.MANULIFE,
       date: '2019',
       role: 'Frontend Developer',
-      iconSrc: '/assets/icons/companies/manulife.webp',
+      iconSrc: '/assets/images/home/timeline/bowser.webp',
       techStack: [
         '/assets/icons/extensions/angular.svg',
         '/assets/icons/extensions/typescript.svg',
@@ -127,7 +129,7 @@ export const TimelineBackbone = () => {
       title: Companies.BCW,
       date: '2022',
       role: 'Frontend Developer',
-      iconSrc: '/assets/icons/companies/bcw-group.webp',
+      iconSrc: '/assets/images/home/timeline/toad.webp',
       techStack: [
         '/assets/icons/extensions/react.svg',
         '/assets/icons/extensions/typescript.svg',
@@ -142,7 +144,7 @@ export const TimelineBackbone = () => {
       title: Companies.PAG,
       date: '2020',
       role: 'Software Developer',
-      iconSrc: '/assets/icons/companies/pag.webp',
+      iconSrc: '/assets/images/home/timeline/yoshi.webp',
       techStack: [
         '/assets/icons/extensions/react.svg',
         '/assets/icons/extensions/typescript.svg',

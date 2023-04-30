@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { TimelineEvent } from './TimelineBackbone'
 
 import { ActionButton } from '@/components/elements/ActionButton'
+import { Tooltip } from '@/components/elements/Tooltip'
 
 const Container = styled.div`
   position: relative;
@@ -26,31 +27,12 @@ const InnerContainer = styled.div`
   padding-top: 30px;
 `
 
-const Content = styled.div`
-  padding: 12px;
-  height: calc(100% - 24px);
-`
-
 const Title = styled.div`
   position: relative;
+  top: 24px;
   z-index: 1;
   margin: 0;
   width: fit-content;
-`
-
-const CompanyLogo = styled.img`
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  border: 4px solid ${(props) => props.theme.palette.text01};
-  background-color: ${(props) => props.theme.palette.text01};
-`
-
-const TitleHeader = styled.div`
-  position: absolute;
-  top: -28px;
-  left: 58px;
-  width: max-content;
 `
 
 const CompanyName = styled.div`
@@ -60,7 +42,15 @@ const CompanyName = styled.div`
 const Role = styled.span`
   font-size: 1rem;
   font-weight: 300;
-  margin-left: 12px;
+  margin-left: 28px;
+`
+
+const Character = styled.img`
+  height: 120px;
+  position: absolute;
+  bottom: 42px;
+  right: -12px;
+  z-index: 2;
 `
 
 const Date = styled.span`
@@ -72,16 +62,22 @@ const Date = styled.span`
   font-weight: 900;
 `
 
+const Content = styled.div`
+  padding: 12px;
+  height: calc(100% - 24px);
+`
+
 const KeyTech = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
+  padding-top: 40px;
 `
 
 const Tech = styled.img`
   width: 40px;
   height: 40px;
   margin: 0 4px;
+  cursor: pointer;
 `
 
 export const EventItem = ({
@@ -96,30 +92,35 @@ export const EventItem = ({
 
   return (
     <Container>
+      <Character src={iconSrc} alt={title} />
       <Title>
-        <CompanyLogo src={iconSrc} alt={title} />
-        <TitleHeader>
-          <CompanyName>
-            <ActionButton
-              text={title}
-              href=""
-              fontSize="1.5rem"
-              height="1.2rem"
-              spanMargin="0px"
-              background={color}
-              contrast={color === themeContext.palette.marioYellow}
-            />
-          </CompanyName>
+        <CompanyName>
+          <ActionButton
+            text={title}
+            href=""
+            fontSize="1.5rem"
+            height="1.2rem"
+            spanMargin="0px"
+            background={color}
+            contrast={
+              color === themeContext.palette.marioYellow ||
+              color === themeContext.palette.marioGreen
+            }
+          />
+        </CompanyName>
 
-          <Role>{role}</Role>
-        </TitleHeader>
+        <Role>{role}</Role>
       </Title>
       <Date>{date}</Date>
       <InnerContainer>
         <Content>
           <KeyTech>
             {techStack.map((tech) => {
-              return <Tech key={tech} src={tech} />
+              return (
+                <Tooltip key={tech} content="text" direction="top">
+                  <Tech src={tech} />
+                </Tooltip>
+              )
             })}
           </KeyTech>
         </Content>
