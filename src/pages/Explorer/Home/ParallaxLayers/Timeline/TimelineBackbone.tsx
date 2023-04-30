@@ -1,5 +1,6 @@
 import React, { RefObject } from 'react'
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
+import { useContext } from 'react'
 
 import { EventItem } from './EventItem'
 
@@ -8,7 +9,6 @@ import {
   useIntersectionObserver,
 } from '@/hooks/useIntersectionObserver'
 import { Companies } from '@/constants/companies'
-import { ActionButton } from '@/components/elements/ActionButton'
 
 const Container = styled.div`
   display: flex;
@@ -46,20 +46,8 @@ const TimelineEvent = styled.div`
 
 const Col1TimelineEvent = styled(TimelineEvent)`
   color: ${(props) => props.theme.palette.white};
-
-  :nth-of-type(1) {
-    h3 {
-      background-color: ${(props) => props.theme.palette.marioRed};
-    }
-  }
-  :nth-of-type(2) {
-    h3 {
-      background-color: ${(props) => props.theme.palette.marioBlue};
-    }
-  }
   :nth-of-type(3) {
-    h3 {
-      background-color: ${(props) => props.theme.palette.marioYellow};
+    a > p {
       color: ${(props) => props.theme.palette.dark01};
     }
   }
@@ -67,14 +55,8 @@ const Col1TimelineEvent = styled(TimelineEvent)`
 
 const Col2TimelineEvent = styled(TimelineEvent)`
   :nth-of-type(1) {
-    h3 {
-      background-color: ${(props) => props.theme.palette.marioGreen};
+    a > p {
       color: ${(props) => props.theme.palette.dark01};
-    }
-  }
-  :nth-of-type(2) {
-    h3 {
-      background-color: ${(props) => props.theme.palette.marioRed};
     }
   }
 `
@@ -85,82 +67,90 @@ export interface TimelineEvent {
   role: string
   iconSrc: string
   techStack: string[]
+  color: string
 }
 
-const COL1_EVENTS: TimelineEvent[] = [
-  {
-    title: Companies.WTW,
-    date: '2023',
-    role: 'Software Engineer',
-    iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
-    techStack: [
-      '/assets/icons/extensions/react.svg',
-      '/assets/icons/extensions/typescript.svg',
-      '/assets/icons/extensions/nextjs.svg',
-      '/assets/icons/extensions/gatsby.svg',
-      '/assets/icons/extensions/mui.svg',
-      '/assets/icons/extensions/sanity.webp',
-    ],
-  },
-  {
-    title: Companies.SERAI,
-    date: '2021',
-    role: 'Software Engineer',
-    iconSrc: '/assets/icons/companies/serai.webp',
-    techStack: [
-      '/assets/icons/extensions/react.svg',
-      '/assets/icons/extensions/typescript.svg',
-      '/assets/icons/extensions/nextjs.svg',
-      '/assets/icons/extensions/query.webp',
-      '/assets/icons/extensions/storybook.svg',
-    ],
-  },
-  {
-    title: Companies.MANULIFE,
-    date: '2019',
-    role: 'Frontend Developer',
-    iconSrc: '/assets/icons/companies/manulife.webp',
-    techStack: [
-      '/assets/icons/extensions/angular.svg',
-      '/assets/icons/extensions/typescript.svg',
-      '/assets/icons/extensions/html.svg',
-      '/assets/icons/extensions/css.svg',
-    ],
-  },
-]
-
-const COL2_EVENTS: TimelineEvent[] = [
-  {
-    title: Companies.BCW,
-    date: '2022',
-    role: 'Frontend Developer',
-    iconSrc: '/assets/icons/companies/bcw-group.webp',
-    techStack: [
-      '/assets/icons/extensions/react.svg',
-      '/assets/icons/extensions/typescript.svg',
-      '/assets/icons/extensions/query.webp',
-      '/assets/icons/extensions/mui.svg',
-      '/assets/icons/extensions/stripe.webp',
-    ],
-  },
-  {
-    title: Companies.PAG,
-    date: '2020',
-    role: 'Software Developer',
-    iconSrc: '/assets/icons/companies/pag.webp',
-    techStack: [
-      '/assets/icons/extensions/react.svg',
-      '/assets/icons/extensions/typescript.svg',
-      '/assets/icons/extensions/c-sharp.svg',
-    ],
-  },
-]
-
 export const TimelineBackbone = () => {
+  const themeContext = useContext(ThemeContext)
   const [visibility, targetRef] = useIntersectionObserver(
     Tracker.MARIO_VINE,
     0.12
   )
+
+  const COL1_EVENTS: TimelineEvent[] = [
+    {
+      title: Companies.WTW,
+      date: '2023',
+      role: 'Software Engineer',
+      iconSrc: '/assets/icons/companies/willis-towers-watson.webp',
+      techStack: [
+        '/assets/icons/extensions/react.svg',
+        '/assets/icons/extensions/typescript.svg',
+        '/assets/icons/extensions/nextjs.svg',
+        '/assets/icons/extensions/gatsby.svg',
+        '/assets/icons/extensions/mui.svg',
+        '/assets/icons/extensions/sanity.webp',
+      ],
+      color: themeContext.palette.marioRed,
+    },
+    {
+      title: Companies.SERAI,
+      date: '2021',
+      role: 'Software Engineer',
+      iconSrc: '/assets/icons/companies/serai.webp',
+      techStack: [
+        '/assets/icons/extensions/react.svg',
+        '/assets/icons/extensions/typescript.svg',
+        '/assets/icons/extensions/nextjs.svg',
+        '/assets/icons/extensions/query.webp',
+        '/assets/icons/extensions/storybook.svg',
+      ],
+      color: themeContext.palette.marioBlue,
+    },
+    {
+      title: Companies.MANULIFE,
+      date: '2019',
+      role: 'Frontend Developer',
+      iconSrc: '/assets/icons/companies/manulife.webp',
+      techStack: [
+        '/assets/icons/extensions/angular.svg',
+        '/assets/icons/extensions/typescript.svg',
+        '/assets/icons/extensions/html.svg',
+        '/assets/icons/extensions/css.svg',
+      ],
+      color: themeContext.palette.marioYellow,
+    },
+  ]
+
+  const COL2_EVENTS: TimelineEvent[] = [
+    {
+      title: Companies.BCW,
+      date: '2022',
+      role: 'Frontend Developer',
+      iconSrc: '/assets/icons/companies/bcw-group.webp',
+      techStack: [
+        '/assets/icons/extensions/react.svg',
+        '/assets/icons/extensions/typescript.svg',
+        '/assets/icons/extensions/query.webp',
+        '/assets/icons/extensions/mui.svg',
+        '/assets/icons/extensions/stripe.webp',
+      ],
+      color: themeContext.palette.marioGreen,
+    },
+
+    {
+      title: Companies.PAG,
+      date: '2020',
+      role: 'Software Developer',
+      iconSrc: '/assets/icons/companies/pag.webp',
+      techStack: [
+        '/assets/icons/extensions/react.svg',
+        '/assets/icons/extensions/typescript.svg',
+        '/assets/icons/extensions/c-sharp.svg',
+      ],
+      color: themeContext.palette.marioRed,
+    },
+  ]
 
   console.log(visibility)
 

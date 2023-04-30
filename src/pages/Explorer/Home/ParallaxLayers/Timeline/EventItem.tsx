@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
+import { useContext } from 'react'
 
 import { TimelineEvent } from './TimelineBackbone'
 
@@ -89,7 +90,10 @@ export const EventItem = ({
   role,
   iconSrc,
   techStack,
+  color,
 }: TimelineEvent) => {
+  const themeContext = useContext(ThemeContext)
+
   return (
     <Container>
       <Title>
@@ -102,6 +106,8 @@ export const EventItem = ({
               fontSize="1.5rem"
               height="1.2rem"
               spanMargin="0px"
+              background={color}
+              contrast={color === themeContext.palette.marioYellow}
             />
           </CompanyName>
 
