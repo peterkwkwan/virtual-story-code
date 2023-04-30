@@ -70,13 +70,15 @@ const Content = styled.div`
 const KeyTech = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 40px;
+  width: 240px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  gap: 8px;
 `
 
 const Tech = styled.img`
   width: 40px;
   height: 40px;
-  margin: 0 4px;
   cursor: pointer;
 `
 
@@ -84,7 +86,8 @@ export const EventItem = ({
   title,
   date,
   role,
-  iconSrc,
+  marioToonSrc,
+  href,
   techStack,
   color,
 }: TimelineEvent) => {
@@ -92,12 +95,12 @@ export const EventItem = ({
 
   return (
     <Container>
-      <Character src={iconSrc} alt="mario-character" />
+      <Character src={marioToonSrc} alt="mario-character" />
       <Title>
         <CompanyName>
           <ActionButton
             text={title}
-            href=""
+            href={href}
             fontSize="1.5rem"
             height="1.2rem"
             spanMargin="0px"

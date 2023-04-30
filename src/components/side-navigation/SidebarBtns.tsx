@@ -3,14 +3,15 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { UnstyledLink } from '../elements/UnstyledLink'
+import { Tooltip } from '../elements/Tooltip'
 
 import { ExplorerContext } from '@/App'
 
 enum SidebarOptions {
-  EXPLORER = 'Explorer',
-  SEARCH = 'Search',
+  EXPLORER = 'Home',
+  SEARCH = 'Contact Me',
   BLOG = 'Blog',
-  EXTENSIONS = 'Extensions',
+  EXTENSIONS = 'Skills',
 }
 
 const Sidebar = styled.aside`
@@ -37,7 +38,7 @@ const SidebarButtons = styled.span<{ selected: boolean }>`
   filter: brightness(150%);
 `
 
-const buttons = [
+const BUTTONS = [
   {
     title: SidebarOptions.EXPLORER,
     src: '/assets/icons/sidebar/explorer-btn.svg',
@@ -73,17 +74,19 @@ export const SidebarBtns = () => {
   return (
     <Sidebar>
       <ButtonUnorderedList>
-        {buttons.map((btn) => (
+        {BUTTONS.map((btn) => (
           <li key={btn.title}>
-            <UnstyledLink key={btn.title} path={btn.path}>
-              <SidebarButtons
-                aria-label={`Go to ${btn.title}`}
-                selected={pathname.includes(btn.path)}
-                onClick={handleChangePage}
-              >
-                <img src={btn.src} width="24" height="24" alt="sidebar-btn" />
-              </SidebarButtons>
-            </UnstyledLink>
+            <Tooltip content={btn.title} direction="right">
+              <UnstyledLink path={btn.path}>
+                <SidebarButtons
+                  aria-label={`Go to ${btn.title}`}
+                  selected={pathname.includes(btn.path)}
+                  onClick={handleChangePage}
+                >
+                  <img src={btn.src} width="24" height="24" alt="sidebar-btn" />
+                </SidebarButtons>
+              </UnstyledLink>
+            </Tooltip>
           </li>
         ))}
       </ButtonUnorderedList>

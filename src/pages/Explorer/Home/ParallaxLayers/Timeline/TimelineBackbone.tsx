@@ -10,6 +10,7 @@ import {
 } from '@/hooks/useIntersectionObserver'
 import { Companies } from '@/constants/companies'
 import { Skills } from '@/constants/skills'
+import { PagePaths } from '@/pages/shared/routerConfig'
 
 const Container = styled.div`
   display: flex;
@@ -66,7 +67,8 @@ export interface TimelineEvent {
   title: string
   date: string
   role: string
-  iconSrc: string
+  marioToonSrc: string
+  href: PagePaths
   techStack: { name: Skills; iconSrc: string }[]
   color: string
 }
@@ -83,8 +85,8 @@ export const TimelineBackbone = () => {
       title: Companies.WTW,
       date: '2023',
       role: 'Software Engineer',
-      iconSrc: '/assets/images/home/timeline/luigi.webp',
-
+      marioToonSrc: '/assets/images/home/timeline/luigi.webp',
+      href: PagePaths.WTW,
       techStack: [
         { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
         {
@@ -108,8 +110,8 @@ export const TimelineBackbone = () => {
       title: Companies.SERAI,
       date: '2021',
       role: 'Software Engineer',
-      iconSrc: '/assets/images/home/timeline/peach.webp',
-
+      marioToonSrc: '/assets/images/home/timeline/peach.webp',
+      href: PagePaths.SERAI,
       techStack: [
         { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
         {
@@ -135,7 +137,8 @@ export const TimelineBackbone = () => {
       title: Companies.MANULIFE,
       date: '2019',
       role: 'Frontend Developer',
-      iconSrc: '/assets/images/home/timeline/bowser.webp',
+      marioToonSrc: '/assets/images/home/timeline/bowser.webp',
+      href: PagePaths.MANULIFE,
       techStack: [
         {
           name: Skills.ANGULAR,
@@ -157,7 +160,8 @@ export const TimelineBackbone = () => {
       title: Companies.BCW,
       date: '2022',
       role: 'Frontend Developer',
-      iconSrc: '/assets/images/home/timeline/toad.webp',
+      marioToonSrc: '/assets/images/home/timeline/toad.webp',
+      href: PagePaths.BCW_GROUP,
       techStack: [
         { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
         {
@@ -181,7 +185,8 @@ export const TimelineBackbone = () => {
       title: Companies.PAG,
       date: '2020',
       role: 'Software Developer',
-      iconSrc: '/assets/images/home/timeline/yoshi.webp',
+      marioToonSrc: '/assets/images/home/timeline/yoshi.webp',
+      href: PagePaths.PAG,
       techStack: [
         { name: Skills.REACT, iconSrc: '/assets/icons/extensions/react.svg' },
         {
