@@ -13,6 +13,8 @@ export const theme: DefaultTheme = {
     marioGreen: '#40B22F',
     marioYellow: '#FED503',
     marioBlue: '#039DE2',
+    waluigiPurple: '#6225e6',
+    warioYellow: '#fbc638',
 
     dark01: '#1e1e1e',
     dark02: 'rgb(51, 51, 51)',

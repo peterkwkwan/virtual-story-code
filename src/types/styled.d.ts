@@ -14,6 +14,8 @@ declare module 'styled-components' {
       marioGreen: string
       marioYellow: string
       marioBlue: string
+      waluigiPurple: string
+      warioYellow: string
 
       dark01: string
       dark02: string

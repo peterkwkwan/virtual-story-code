@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const WALUIGI_PURPLE = '#6225e6'
-const WARIO_YELLOW = '#fbc638'
-
 const ArrowOne = styled.path`
   transition: 0.4s;
   transform: translateX(-60%);
@@ -40,7 +37,10 @@ const Button = styled.a<{
   :hover {
     transition: 0.5s;
     box-shadow: 10px 10px 0
-      ${(props) => (props.contrast ? WALUIGI_PURPLE : WARIO_YELLOW)};
+      ${(props) =>
+        props.contrast
+          ? props.theme.palette.waluigiPurple
+          : props.theme.palette.warioYellow};
     span:nth-child(2) {
       transition: 0.5s;
       margin-right: ${(props) => props.fontSize};
@@ -81,7 +81,7 @@ const Button = styled.a<{
       fill: white;
     }
     50% {
-      fill: ${WARIO_YELLOW};
+      fill: ${(props) => props.theme.palette.warioYellow};
     }
     100% {
       fill: white;
@@ -114,7 +114,7 @@ export const ActionButton = ({
   text,
   href,
   fontSize = '44px',
-  background = WALUIGI_PURPLE,
+  background = '#6225e6',
   height = '43px',
   spanMargin = '30px',
   contrast = false,

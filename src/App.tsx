@@ -11,6 +11,7 @@ import { PagePaths } from './pages/shared/routerConfig'
 import GlobalStyle from './theme/globalStyles'
 import { theme } from './theme/theme'
 import { useBoundStore } from './hooks/useBoundStore'
+import { Guidance } from './components/guidance'
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
@@ -45,6 +46,7 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
+          <Guidance />
           <MainContainer>
             <TopNavigation />
             <Body>
