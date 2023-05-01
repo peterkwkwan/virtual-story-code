@@ -8,7 +8,7 @@ import { useActivePath } from '@/hooks/useActivePath'
 import { UnstyledLink } from '@/components/elements/UnstyledLink'
 
 const BlogItem = styled.div<{ selected: boolean }>`
-  padding: 4px 0 4px 20px;
+  position: relative;
   background-color: ${(props) =>
     props.selected ? 'hsla(215, 78%, 30%, 0.83)' : 'transparent'};
   border: ${(props) =>
@@ -33,6 +33,7 @@ const BlogItem = styled.div<{ selected: boolean }>`
 
 const BlogButton = styled.div`
   cursor: pointer;
+  padding: 4px 0 24px 20px;
   span {
     user-select: none;
   }
@@ -53,9 +54,10 @@ const BlogDate = styled.span<{ selected: boolean }>`
 `
 
 const BlogLink = styled.a<{ selected: boolean }>`
-  display: flex;
-  justify-content: flex-start;
-  width: fit-content;
+  position: absolute;
+  bottom: 4px;
+  left: 20px;
+  width: min-content;
   align-items: center;
   color: ${(props) => (props.selected ? 'white' : props.theme.palette.text03)};
   font-size: 0.75rem;

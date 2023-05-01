@@ -5,8 +5,13 @@ import Background from './Background'
 import { Content } from './Content'
 import { PagePaths } from '../shared/routerConfig'
 
+import { useBoundStore } from '@/hooks/useBoundStore'
+
 export const Loading = () => {
-  const [showLoadingPage, setShowLoadingPage] = useState(true)
+  const [showLoadingPage, setShowLoadingPage] = useBoundStore((state) => [
+    state.showLoadingPage,
+    state.setShowLoadingPage,
+  ])
   const navigate = useNavigate()
 
   const handleEnterSite = () => {

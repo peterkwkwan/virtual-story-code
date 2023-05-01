@@ -12,6 +12,7 @@ import GlobalStyle from './theme/globalStyles'
 import { theme } from './theme/theme'
 import { useBoundStore } from './hooks/useBoundStore'
 import { Guidance } from './components/guidance'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
@@ -40,8 +41,12 @@ export const ExplorerContext = React.createContext<ExplorerContextProp>({
 function App() {
   const [file, setFile] = useState(initFile)
   const isBlackNWhite = useBoundStore((state) => state.isBlackNWhite)
+  const showLoadingPage = useBoundStore((state) => state.showLoadingPage)
+  const [showGuidance, setShowGuidance] = useLocalStorage<boolean>(
+    'guidance',
+    true
+  )
 
-  const [showGuidance, setShowGuidance] = useState(true)
   const handleCloseGuidance = () => {
     setShowGuidance(false)
   }
@@ -51,7 +56,7 @@ function App() {
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
-          {showGuidance && (
+          {showGuidance && !showLoadingPage && (
             <Guidance handleCloseGuidance={handleCloseGuidance} />
           )}
           <MainContainer>
