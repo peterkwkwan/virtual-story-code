@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import './styles/main.css'
 
@@ -41,12 +41,19 @@ function App() {
   const [file, setFile] = useState(initFile)
   const isBlackNWhite = useBoundStore((state) => state.isBlackNWhite)
 
+  const [showGuidance, setShowGuidance] = useState(true)
+  const handleCloseGuidance = () => {
+    setShowGuidance(false)
+  }
+
   return (
     <BrowserRouter>
       <ExplorerContext.Provider value={{ currentFile: [file, setFile] }}>
         <GlobalStyle isBlackNWhite={isBlackNWhite} />
         <ThemeProvider theme={theme}>
-          <Guidance />
+          {showGuidance && (
+            <Guidance handleCloseGuidance={handleCloseGuidance} />
+          )}
           <MainContainer>
             <TopNavigation />
             <Body>

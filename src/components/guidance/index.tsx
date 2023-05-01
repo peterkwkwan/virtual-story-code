@@ -8,10 +8,10 @@ const Container = styled.div`
   z-index: 50;
 `
 
-const StepContainer = styled.div`
+const StepContainer = styled.div<{ step: number }>`
   position: absolute;
-  top: 32px;
-  left: 52px;
+  top: ${(props) => (props.step === 0 ? '32px' : '56px')};
+  left: ${(props) => (props.step === 0 ? '52px' : '352px')};
   background-color: ${(props) => props.theme.palette.waluigiPurple};
   color: white;
   padding: 4px;
@@ -48,6 +48,10 @@ const Button = styled.button`
   border-radius: 2px;
   padding: 2px 8px;
   font-size: 1rem;
+  :hover {
+    filter: brightness(110%);
+    box-shadow: 1px 1px 4px black;
+  }
 `
 
 const Darken = styled.div<{ step: number }>`
@@ -55,36 +59,52 @@ const Darken = styled.div<{ step: number }>`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  clip-path: polygon(
-    0 28px,
-    354px 28px,
-    354px 0%,
-    100% 0%,
-    100% 100%,
-    0% 100%,
-    0% 248px,
-    48px 248px,
-    48px 56px,
-    0% 56px
-  );
+  clip-path: ${(props) =>
+    props.step === 0
+      ? 'polygon(0 28px, 354px 28px, 354px 0%, 100% 0%, 100% 100%, 48px 100%, 48px 56px, 0% 56px)'
+      : 'polygon(0% 0%, 100% 0%, 100% 100%, 348px 100%, 348px 56px, 48px 56px, 48px 100%, 0% 100%);'};
 `
 
-export const Guidance = () => {
+const DESCRIPTION_STRINGS = [
+  {
+    first: 'Welcome to my site!',
+    second: 'Use the top or side navigation menus to change pages.',
+  },
+  {
+    first: 'Use the submenu to navigate within each page.',
+    second: 'Enjoy your stay!',
+  },
+]
+
+interface Props {
+  handleCloseGuidance: () => void
+}
+export const Guidance = ({ handleCloseGuidance }: Props) => {
   const [step, setStep] = useState(0)
+
+  const handleClick = () => {
+    if (step === 0) {
+      setStep((prev) => prev + 1)
+    } else {
+      handleCloseGuidance()
+    }
+  }
 
   return (
     <Container>
-      <StepContainer>
+      <StepContainer step={step}>
         <Description>
-          <p>Welcome to my portfolio site!</p>
-          <p>Use the top navigational menu or sidebar to change pages</p>
+          <p>{DESCRIPTION_STRINGS[step].first}</p>
+          <p>{DESCRIPTION_STRINGS[step].second}</p>
         </Description>
         <StepIndicator step={step}>
           <div>
             <Dot />
             <Dot />
           </div>
-          <Button>Next</Button>
+          <Button onClick={handleClick}>
+            {step === 0 ? 'Next' : 'Complete'}
+          </Button>
         </StepIndicator>
       </StepContainer>
       <Darken step={step} />
