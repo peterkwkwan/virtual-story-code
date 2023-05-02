@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, useLocation } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import './styles/main.css'
 
