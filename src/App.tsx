@@ -13,6 +13,7 @@ import { theme } from './theme/theme'
 import { useBoundStore } from './hooks/useBoundStore'
 import { Guidance } from './components/guidance'
 import { useLocalStorage } from './hooks/useLocalStorage'
+import { MobilePage } from './pages/mobile'
 
 interface ExplorerContextProp {
   currentFile: [File, React.Dispatch<React.SetStateAction<File>>]
@@ -20,12 +21,23 @@ interface ExplorerContextProp {
 
 const initFile: File = { title: '', path: PagePaths.HOME }
 
-const MainContainer = styled.div`
+const Container = styled.div`
   height: 100vh;
   width: 100vw;
   position: absolute;
   top: 0;
   z-index: 0;
+`
+const MainContainer = styled(Container)`
+  @media only screen and (max-width: 1023px) {
+    display: none;
+  }
+`
+
+const MobileContainer = styled(Container)`
+  @media only screen and (min-width: 1024px) {
+    display: none;
+  }
 `
 const Body = styled.div`
   display: flex;
@@ -66,6 +78,9 @@ function App() {
               <Content />
             </Body>
           </MainContainer>
+          <MobileContainer>
+            <MobilePage />
+          </MobileContainer>
         </ThemeProvider>
       </ExplorerContext.Provider>
     </BrowserRouter>
