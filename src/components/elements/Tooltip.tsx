@@ -12,8 +12,8 @@ const TooltipTip = styled.div<{ direction: string }>`
   left: 50%;
   transform: translateX(-50%);
   padding: 6px;
-  color: ${(props) => props.theme.palette.white};
-  background: black;
+  color: ${(props) => props.theme.palette.dark01};
+  background: ${(props) => props.theme.palette.text01};
   z-index: 100;
   white-space: nowrap;
 
@@ -49,18 +49,21 @@ const TooltipTip = styled.div<{ direction: string }>`
 
     //top
     top: ${(props) => props.direction === 'top' && '100%'};
-    border-top-color: ${(props) => props.direction === 'top' && 'black'};
+    border-top-color: ${(props) =>
+      props.direction === 'top' && props.theme.palette.text01};
 
     // right
     left: ${(props) => props.direction === 'right' && 'calc(6px * -1)'};
     top: ${(props) => props.direction === 'right' && '50%'};
     transform: ${(props) =>
       props.direction === 'right' && 'translateX(0) translateY(-50%)'};
-    border-right-color: ${(props) => props.direction === 'right' && 'black'};
+    border-right-color: ${(props) =>
+      props.direction === 'right' && props.theme.palette.text01};
 
     // bottom
     bottom: ${(props) => props.direction === 'bottom' && '100%'};
-    border-bottom-color: ${(props) => props.direction === 'bottom' && 'black'};
+    border-bottom-color: ${(props) =>
+      props.direction === 'bottom' && props.theme.palette.text01};
 
     // left
     left: ${(props) => props.direction === 'left' && 'auto'};
@@ -68,7 +71,8 @@ const TooltipTip = styled.div<{ direction: string }>`
     top: ${(props) => props.direction === 'left' && '50%'};
     transform: ${(props) =>
       props.direction === 'left' && 'translateX(0) translateY(-50%)'};
-    border-left-color: ${(props) => props.direction === 'left' && 'black'};
+    border-left-color: ${(props) =>
+      props.direction === 'left' && props.theme.palette.text01};
   }
 `
 interface Props {
