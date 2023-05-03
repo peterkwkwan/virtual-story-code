@@ -121,7 +121,7 @@ export const EventItem = ({
             {techStack.map((tech) => {
               return (
                 <Tooltip key={tech.name} content={tech.name} direction="top">
-                  <Tech src={tech.iconSrc} />
+                  <Tech src={tech.iconSrc} alt={tech.name} />
                 </Tooltip>
               )
             })}
