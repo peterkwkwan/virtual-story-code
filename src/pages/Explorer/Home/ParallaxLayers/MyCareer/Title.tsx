@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { RefObject } from 'react'
 import styled from 'styled-components'
 
+import {
+  Tracker,
+  useIntersectionObserver,
+} from '@/hooks/useIntersectionObserver'
+
 const Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+`
+
+const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -48,11 +61,28 @@ const Subtitle = styled.span`
   z-index: 10;
 `
 
+const TrackerDiv = styled.div`
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+`
+
 export const Title = () => {
+  const [, targetRef] = useIntersectionObserver(
+    Tracker.MY_CAREER_TITLE_CARD,
+    0.2
+  )
+
+  const divRef = targetRef as RefObject<HTMLDivElement>
+
   return (
     <Container>
-      <Header>My Career</Header>
-      <Subtitle>(so far)</Subtitle>
+      <TitleContainer>
+        <Header>My Career</Header>
+        <Subtitle>(so far)</Subtitle>
+      </TitleContainer>
+      <TrackerDiv ref={divRef} />
     </Container>
   )
 }
