@@ -16,10 +16,10 @@ import {
 } from './ParallaxLayers/SpeechBubble/SpeechBubble'
 import { ParallaxStars } from './ParallaxLayers/Intro/ParallaxStars'
 import { Title } from './ParallaxLayers/MyCareer/Title'
-import { ScrollPrompt } from './ParallaxLayers/shared/ScrollPrompt'
 import { IntersectionTrackerLayer } from './ParallaxLayers/shared/IntersectionTrackerLayer'
 import { MovingMario } from './ParallaxLayers/Intro/MovingMario'
 import { ParallaxMountains } from './ParallaxLayers/Intro/ParallaxMountains'
+import { MyCareerPrompt } from './ParallaxLayers/shared/MyCareerPrompt'
 
 import { Tracker } from '@/hooks/useIntersectionObserver'
 import { useBoundStore } from '@/hooks/useBoundStore'
@@ -103,7 +103,7 @@ export const Home = () => {
             sticky={{ start: myCareerPage, end: 4.5 }}
           >
             <Title />
-            <ScrollPrompt />
+            <MyCareerPrompt />
           </CareerParallaxLayer>
           <ParallaxLayer offset={5} sticky={{ start: 5, end: 7 }}>
             <TimelineBackbone />
